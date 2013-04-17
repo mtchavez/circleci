@@ -2,17 +2,15 @@ module CircleCi
 
   class Response
 
-    attr_reader :success, :body, :errors, :code, :path, :params, :over_limit, :suspeneded
-
+    attr_reader :success, :body, :errors, :code, :path
     ##
     # Initializing response object to be returned from API calls, used internally.
     #
     # @private
 
-    def initialize(http, _code, _path, _params) # @private
+    def initialize(http, _code, _path) # @private
       @success, @body, @errors = http.success, http.response, http.errors
-      @over_limit, @suspended  = http.over_limit, http.suspended
-      @code, @path, @params    = _code, _path, _params
+      @code, @path, @params    = _code, _path
     end
 
     ##
@@ -22,24 +20,6 @@ module CircleCi
 
     def success?
       !!@success
-    end
-
-    ##
-    #
-    # Convenience method to see if you have reached your hourly limit
-    # @return [Boolean]
-
-    def over_limit?
-      !!@over_limit
-    end
-
-    ##
-    #
-    # Convenience method to see if your account is supended
-    # @return [Boolean]
-
-    def suspended?
-      !!@suspended
     end
 
     ##

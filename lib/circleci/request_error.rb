@@ -2,10 +2,10 @@ module CircleCi
 
   class RequestError
 
-    attr_reader :message, :code, :path, :params
+    attr_reader :message, :code, :path
 
-    def initialize(_message, _code, _path, _params) # @private
-      @message, @code, @path, @params = _message, _code, _path, _params
+    def initialize(_message, _code, _path) # @private
+      @message, @code, @path = _message, _code, _path
     end
 
   end

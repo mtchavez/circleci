@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://circleci.com/api/v1/project/mtchavez/rb-array-sorting/build-cache?circle-token=asdf-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      content-type:
+      - application/json
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 17 Apr 2013 05:06:08 GMT
+      server:
+      - nginx/1.1.19
+      set-cookie:
+      - ring-session=9d719609-d0ea-48e0-add2-dfb8511714a0;Path=/;HttpOnly;Expires=Thu,
+        17 Apr 2014 04:53:10 +0000;Max-Age=31536000;Secure
+      content-length:
+      - '33'
+      connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"status":"build caches deleted"}'
+    http_version: '1.1'
+  recorded_at: Wed, 17 Apr 2013 05:06:08 GMT
+recorded_with: VCR 2.4.0

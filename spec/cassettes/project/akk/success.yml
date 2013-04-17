@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/rb-array-sorting?circle-token=asdf-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      content-type:
+      - application/json
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        V2VkLCAxNyBBcHIgMjAxMyAwNTowMToyNCBHTVQ=
+      !binary "c2VydmVy":
+      - !binary |-
+        bmdpbngvMS4xLjE5
+      !binary "c2V0LWNvb2tpZQ==":
+      - !binary |-
+        cmluZy1zZXNzaW9uPWNiNTdkMTk4LTJmOTQtNDZmZS1iMTYwLWNjM2E4ZjM1
+        YjM0YTtQYXRoPS87SHR0cE9ubHk7RXhwaXJlcz1XZWQsIDE2IEFwciAyMDE0
+        IDIxOjE3OjU3ICswMDAwO01heC1BZ2U9MzE1MzYwMDA7U2VjdXJl
+      !binary "Y29udGVudC1sZW5ndGg=":
+      - !binary |-
+        NjY3
+      !binary "Y29ubmVjdGlvbg==":
+      - !binary |-
+        a2VlcC1hbGl2ZQ==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAJWUTU/cMBCG/4rlC5f9SHazASKKqFoOPfRCeyqgyHEmG7OO
+        ndpjViniv3ecsHypHHpKPH49fux3xtcPvLYGyyooXfPCBK1nXNquU4jgSiM6
+        4AX/0op7+MNnvHLCyJYinfA0HyO2HmhMfyJga11ZC4xL0vVmkyQnx6uMv074
+        r1kH6BR4XlzfzngvnNAaNC/S1+ugE0qP+yK2sF/Ikehi2lPhoEXlFySPRPEo
+        JaoOyk5prSjxOtmsZnzfRtJGOY/z6bzP0P+R3qNwOKYn/SpJ1/Mkm6fHP5N1
+        kW2K5OTXqLH9h5I0jRKtGpCD1DAiGeVbiDzB060WD1z5cvpFF4DUdqtM5EN5
+        sOK9NYcjGPr4ytkdCFM3oPXFNs6M9I+EFqo7kEjCH9Yh2ytsme9BekZydnX5
+        +ev3yylaAVndCbfzlL0D78V2NOmB49DHrffCGWW2L7MU+4ZMW7vzTKsdsD0w
+        aYOuzREyZRpwDMEj84BICz1rrGODDY71zkaqBbuCUWVZjJ4J1jpoPh21iL0v
+        lkupHN2YVPEwy9pKv+yECVQvw9H5Df8xpZ0yjgaz0LOD4oafLcU5o1WhA4Nx
+        jy0QS7QT6gUjct9GWGaNHhgK4hesgT3rlAnEveCPVJ93tnrqiqlXYvEOpW0O
+        YxuQ4OJVGFvG0/qpZjD4t7F76UsH98orG51N4TiTTVLJPM+y0yyv0lqc5vkm
+        rfOVWOer+mTTZGmePBe4Cd3YIzFPcNH5wy1tyb1QjXd0qJelq+bCOTHMPbk+
+        mRbrsyZcXjRCeyqyPuLYyPn0DFCvg6ayPAjIQkd974LE4KBsxoJ7mosDeH5B
+        JsS3WG/M27Yfsy3Tl8Z8X+W/AwSoS4EfNd/j7V+eK+AY0wQAAA==
+    http_version: !binary |-
+      MS4x
+  recorded_at: Wed, 17 Apr 2013 05:01:24 GMT
+recorded_with: VCR 2.4.0
