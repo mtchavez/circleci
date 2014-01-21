@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/rb-array-sorting/tree/master?circle-token=asdf-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      content-type:
+      - application/json
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      access-control-allow-origin:
+      - '*'
+      content-encoding:
+      - gzip
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 21 Jan 2014 13:38:24 GMT
+      server:
+      - nginx/1.2.6 (Ubuntu)
+      set-cookie:
+      - ring-session=02DWkHLeQaAe9qrSOMCl0xyOuXOo8EZ9ZvEs%2FyluWUo%3D--ILSIt%2BetjtBwYEQ2%2BjgqhwijkeYkDwHfrd1OEZAg6H8%3D;Secure;Max-Age=31536000;Expires=Wed,
+        21 Jan 2015 11:06:54 +0000;HttpOnly;Path=/
+      x-circleci-identity:
+      - i-ca2c9be4
+      x-route:
+      - /api/v1/project/:username/:repo/tree/:branch
+      content-length:
+      - '997'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAO2Zy3LbNhSGXwXDjTcURfAmiZNm0mmz6KKbpKs6Hg5IHoqI
+        QUDFxRrW43cPQEpR1DpO7ZGdTMWVJOAA+HFunyhd3nq14LooDWW1l3PDmO9V
+        ouuo1iALTjrwcu+XltzA357vlZLwqrUjHVF23o2Iuref7TtidCtkURPtluA4
+        TcNwuYgSO8VFDf/e/D5LCVpSUHvjDZGEMWBejr9cCR2hbFChdQvboBr0vRkV
+        UN0zUqrAmjt97mKFph0UHWWM2q2jNPK9betku+P6g/ZH7KtUWwAnJYPPblOa
+        SD0cZbeIQhzPwmSGF3+EaY5xHkZBHK7+dEu12DxklmbYmTHaQNVXzJk1lFPV
+        2qN8zyjr9/zWo6oY32ppwFqLNeVOuq72wfpn8Pa34/ZFlVJcA+F1A4y9WbuZ
+        4WJ3Vp4pP0KlreF7ITXaUt0itYFKIWuO3r39+dff346jJdhk6Ii8Vnb3DpQi
+        axe6y1tP9xt39JZITvn6MGvHftOICXGtEKPXgLaAKmFYzS80orwBiTQojRRo
+        bRcq1AiJemEk2kjhVAXoHQxWArnRD94rgloJzU8XrdYblc/nFZXWZxV115nX
+        olLzjnBjs6i/eP1+3HbcccgMZDZoP/9qTl5/8JBdYzrg2p2xBqvFhRXqAFnl
+        qnVikeCsR5pY/QQ1sEUd5cbqDry7K9/7KMpd3YxpMeRYIZohhzcSbqgwqlCm
+        qqxPGsOOa08YbYU7R3FROF+oIWOINup47KZShdtMUeHijmGRVE1YVlmWJKsk
+        K3FNVlmW4jqLSJxF9TJtEpyFn0uCm87L03EfI11e7D24trE15eC/fTbNZTkj
+        UpJ+pmxOjCF1GVxbuV7eEKbgcDeXnfeUXRy6urvvKl8IwjYBbSyKsdaLGrRL
+        1iGnTt6VHu5EOwWPd818XDl/RESe1Nme0LOeVtmjusfl2E7ccaRcdVQ2VDA0
+        zV3W2KqXNmzSVNpIKJrhNrs59+HQX8c0OQ7IUbWv2weiklpVDZDxEEbWLk3v
+        viLU9/4yYKAuiP5Kjw6XtpXf+WdIzxjH34OeOFik4X+hZ5jFEz0ner4EPZOJ
+        nhM9z4OeyQnpiYNoFZ0pPaM0e3F6hnmcBDjLvkHPwSyJoomeEz1fgp7xRM+J
+        nudBz/hU9LQ9Og6Wq+xc6blafA96xkGCo2/TMw4W4w+8Ez0nej43PaOJnhM9
+        z4Oe0UnpGWY/9LPnZeTHfuKnV8/18214+PezoVLp2eiC5yZpnCdpHi6DZfgg
+        SQczjINlmkwk/T+SdPft8MeCKX4emI5XmaA4QfH0UMQngeK+K0cL90h59QnH
+        qTuEDiQAAA==
+    http_version: '1.1'
+  recorded_at: Tue, 21 Jan 2014 13:38:24 GMT
+recorded_with: VCR 2.4.0
