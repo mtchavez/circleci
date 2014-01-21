@@ -1,5 +1,5 @@
 module CircleCi
-##
+  ##
   #
   # Config class used internally.
   # Configure API calls using AlPapi.configure
