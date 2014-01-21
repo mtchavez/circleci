@@ -10,6 +10,10 @@ module CircleCi
       CircleCi.http.get "/project/#{username}/#{project}"
     end
 
+    def self.recent_builds_branch username, project, branch
+      CircleCi.http.get "/project/#{username}/#{project}/tree/#{branch}"
+    end
+
     def self.clear_cache username, project
       CircleCi.http.delete "/project/#{username}/#{project}/build-cache"
     end

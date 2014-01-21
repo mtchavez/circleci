@@ -61,6 +61,39 @@ describe CircleCi::Project do
 
   end
 
+  describe 'recent_builds_branch' do
+
+    context 'successfully' do
+
+      use_vcr_cassette 'project/recent_builds_branch/success', :record => :none
+
+      let(:res) { CircleCi::Project.recent_builds_branch 'mtchavez', 'rb-array-sorting', 'master' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns all projects for a branch' do
+        res.body.should be_an_instance_of(Array)
+        res.body.size.should eql 5
+        build = res.body.first
+        build['committer_name'].should eql 'Chavez'
+        build.should have_key 'messages'
+        build.should have_key 'start_time'
+        build.should have_key 'stop_time'
+        build.should have_key 'status'
+        build.should have_key 'subject'
+
+        user = build['user']
+        user['is_user'].should be
+        user['login'].should eql 'mtchavez'
+      end
+
+    end
+
+  end
+
   describe 'clear_cache' do
 
     context 'successfully' do
