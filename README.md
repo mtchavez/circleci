@@ -140,6 +140,45 @@ Example response
   } ]
 ```
 
+#### CircleCi::Project.recent_builds_branch
+
+Build summary for each of the last 30 recent builds for a specific branch, ordered by build_num.
+
+```ruby
+res = CirclCi::Project.recent_builds_branch 'username', 'reponame', 'branch'
+res.success?
+res.body
+```
+
+Example response
+
+```json
+[ {
+  "vcs_url" : "https://github.com/circleci/mongofinil",
+  "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
+  "build_num" : 22,
+  "branch" : "new_feature",
+  "vcs_revision" : "1d231626ba1d2838e599c5c598d28e2306ad4e48",
+  "committer_name" : "Allen Rohner",
+  "committer_email" : "arohner@gmail.com",
+  "subject" : "Don't explode when the system clock shifts backwards",
+  "body" : "", // commit message body
+  "why" : "github", // short string explaining the reason we built
+  "dont_build" : null, // reason why we didn't build, if we didn't build
+  "queued_at" : "2013-02-12T21:33:30Z" // time build was queued
+  "start_time" : "2013-02-12T21:33:38Z", // time build started running
+  "stop_time" : "2013-02-12T21:34:01Z", // time build finished running
+  "build_time_millis" : 23505,
+  "lifecycle" : "finished",
+  "outcome" : "failed",
+  "status" : "failed",
+  "retry_of" : null, // build_num of the build this is a retry of
+  "previous" : { // previous build
+    "status" : "failed",
+    "build_num" : 21
+  } ]
+```
+
 #### CircleCi::Project.clear_cache
 
 Clears the cache for a project
