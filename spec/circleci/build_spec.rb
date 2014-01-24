@@ -58,4 +58,25 @@ describe CircleCi::Build do
 
   end
 
+  describe 'artifacts' do
+
+    context 'successfully' do
+
+      use_vcr_cassette 'build/artifacts/success', :record => :new_episodes
+
+      let(:res) { CircleCi::Build.artifacts 'mtchavez', 'rb-array-sorting', 1 }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns all artifacts for build' do
+        res.body.should be_an_instance_of(Array)
+      end
+
+    end
+
+  end
+
 end

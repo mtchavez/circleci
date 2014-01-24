@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/rb-array-sorting/1/artifacts?circle-token=asdf-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      content-type:
+      - application/json
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      access-control-allow-origin:
+      - '*'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Fri, 24 Jan 2014 16:49:10 GMT
+      server:
+      - nginx/1.2.6 (Ubuntu)
+      set-cookie:
+      - ring-session=AnROSecDrwKdHVKrp1hUWCvO3JOtEK%2Bl0sgv%2FyUYFLk%3D--BA69NkwPuob1NYtbLE%2F7l9NVtklg8EczyqVyR%2BU06Co%3D;Secure;Max-Age=31536000;Expires=Sat,
+        24 Jan 2015 11:13:37 +0000;HttpOnly;Path=/
+      x-circleci-identity:
+      - i-f7c281d7
+      x-route:
+      - /api/v1/project/:username/:repo/:build_num/artifacts
+      content-length:
+      - '2'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[]'
+    http_version: '1.1'
+  recorded_at: Fri, 24 Jan 2014 16:49:10 GMT
+recorded_with: VCR 2.4.0

@@ -10,6 +10,10 @@ module CircleCi
       CircleCi.http.post "/project/#{username}/#{project}/#{build}/retry"
     end
 
+    def self.artifacts username, project, build
+      CircleCi.http.get "/project/#{username}/#{project}/#{build}/artifacts"
+    end
+
   end
 
 end
