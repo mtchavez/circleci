@@ -1,6 +1,10 @@
 Gem::Specification.new do |s|
   s.name             = 'circleci'
+<<<<<<< HEAD
   s.version          = '0.0.3'
+=======
+  s.version          = '0.0.2'
+>>>>>>> master
   s.date             = '2013-04-16'
   s.summary          = 'Circle CI API Wrapper'
   s.description      = 'Wraps Circle CI API calls in a gem.'
