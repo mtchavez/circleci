@@ -324,6 +324,32 @@ Example response
     "build_num" : 22
   }
 ```
+#### CircleCi::Build.artifacts
+
+Artifacts produced by the build, returns an array of artifact details
+
+```ruby
+res = CircleCi::Build.artifacts 'username', 'repo', 'build #'
+res.success?
+res.body
+```
+
+```json
+[
+  {
+    node_index: 0,
+    path: "/tmp/circle-artifacts.NHQxLku/cherry-pie.png",
+    pretty_path: "$CIRCLE_ARTIFACTS/cherry-pie.png",
+    url: "https://circleci.com/gh/circleci/mongofinil/22/artifacts/0/tmp/circle-artifacts.NHQxLku/cherry-pie.png"
+  },
+  {
+    node_index: 0,
+    path: "/tmp/circle-artifacts.NHQxLku/rhubarb-pie.png",
+    pretty_path: "$CIRCLE_ARTIFACTS/rhubarb-pie.png",
+    url: "https://circleci.com/gh/circleci/mongofinil/22/artifacts/0/tmp/circle-artifacts.NHQxLku/rhubarb-pie.png"
+  }
+]
+```
 
 ### Tests
 
