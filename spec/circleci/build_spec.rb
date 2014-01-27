@@ -62,9 +62,9 @@ describe CircleCi::Build do
 
     context 'successfully' do
 
-      use_vcr_cassette 'build/artifacts/success', :record => :new_episodes
+      use_vcr_cassette 'build/artifacts/success', :record => :none
 
-      let(:res) { CircleCi::Build.artifacts 'mtchavez', 'rb-array-sorting', 1 }
+      let(:res) { CircleCi::Build.artifacts 'janstenpickle', 'logback-flume', 2 }
 
       it 'returns a response object' do
         res.should be_an_instance_of(CircleCi::Response)
@@ -73,6 +73,16 @@ describe CircleCi::Build do
 
       it 'returns all artifacts for build' do
         res.body.should be_an_instance_of(Array)
+
+        artifacts = res.body
+        artifacts.size.should eql 2
+        artifacts.first.should be_an_instance_of(Hash)
+
+        artifact = artifacts.first
+        artifact.should have_key 'url'
+        artifact.should have_key 'node_index'
+        artifact.should have_key 'pretty_path'
+        artifact.should have_key 'path'
       end
 
     end

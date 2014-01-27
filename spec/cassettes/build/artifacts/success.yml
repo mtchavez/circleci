@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/mtchavez/rb-array-sorting/1/artifacts?circle-token=asdf-token
+    uri: https://circleci.com/api/v1/project/janstenpickle/logback-flume/2/artifacts?circle-token=asdf-token
     body:
       encoding: US-ASCII
       string: ''
@@ -22,26 +22,33 @@ http_interactions:
     headers:
       access-control-allow-origin:
       - '*'
+      content-encoding:
+      - gzip
       content-type:
       - application/json; charset=utf-8
       date:
-      - Fri, 24 Jan 2014 16:49:10 GMT
+      - Mon, 27 Jan 2014 11:21:59 GMT
       server:
       - nginx/1.2.6 (Ubuntu)
       set-cookie:
-      - ring-session=AnROSecDrwKdHVKrp1hUWCvO3JOtEK%2Bl0sgv%2FyUYFLk%3D--BA69NkwPuob1NYtbLE%2F7l9NVtklg8EczyqVyR%2BU06Co%3D;Secure;Max-Age=31536000;Expires=Sat,
-        24 Jan 2015 11:13:37 +0000;HttpOnly;Path=/
+      - ring-session=N4%2B4NEKHoDMAeAoJyeqcQWc4A6cfHlxfOAFFI0PWAmA%3D--pw6nWJpJCObVebEAjgbuwliFIJBCVpAEIDsR%2FPo6C%2B4%3D;Secure;Max-Age=31536000;Expires=Tue,
+        27 Jan 2015 09:56:43 +0000;HttpOnly;Path=/
       x-circleci-identity:
-      - i-f7c281d7
+      - i-e3068cc2
       x-route:
       - /api/v1/project/:username/:repo/:build_num/artifacts
       content-length:
-      - '2'
+      - '201'
       connection:
       - keep-alive
     body:
-      encoding: UTF-8
-      string: '[]'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAMWQwQrCMBAF/yV4bLJV8NJbKVYEQVFvIiWmWxtN05CuqIj/
+        bsEieBQLXgfeY5jtnZ29YREriVwTASjtlUGlhaorOJRwlLYhtE6rk0Ew9WEv
+        1YkX5lwhjEB60oVU1EAIVLluzd9YpAs/XeajzyEfilCM+VF6ftFU8hwd2hyt
+        0tiIlrKA2TrHTLfwyqIwYM4j0S1zksrWdZDMVsl8ksWrzSyNk8366/vuqE/n
+        R/C/lL1F+zHPK8TuCZiXi39VAgAA
     http_version: '1.1'
-  recorded_at: Fri, 24 Jan 2014 16:49:10 GMT
+  recorded_at: Mon, 27 Jan 2014 11:21:59 GMT
 recorded_with: VCR 2.4.0
