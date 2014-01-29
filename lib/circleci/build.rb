@@ -32,6 +32,19 @@ module CircleCi
       CircleCi.http.post "/project/#{username}/#{project}/#{build}/retry"
     end
 
+    ##
+    #
+    # Get artifacts for a specific build of a project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @param build    [String] - Build ID
+    # @return         [CircleCi::Response] - Response object
+
+    def self.artifacts username, project, build
+      CircleCi.http.get "/project/#{username}/#{project}/#{build}/artifacts"
+    end
+
   end
 
 end
