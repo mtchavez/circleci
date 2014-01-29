@@ -1,3 +1,7 @@
+## 1-29-2014 [0.0.3]
+
+* [Build artifacts](https://github.com/mtchavez/circleci/pull/3) added
+
 ## 1-21-2014 [0.0.2]
 
 * [Branch builds endpoint](https://github.com/mtchavez/circleci/pull/1)
