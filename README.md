@@ -106,7 +106,7 @@ Example response
 Build summary for each of the last 30 recent builds, ordered by build_num.
 
 ```ruby
-res = CirclCi::Project.recent_builds 'username', 'reponame'
+res = CircleCi::Project.recent_builds 'username', 'reponame'
 res.success?
 res.body
 ```
@@ -145,7 +145,7 @@ Example response
 Build summary for each of the last 30 recent builds for a specific branch, ordered by build_num.
 
 ```ruby
-res = CirclCi::Project.recent_builds_branch 'username', 'reponame', 'branch'
+res = CircleCi::Project.recent_builds_branch 'username', 'reponame', 'branch'
 res.success?
 res.body
 ```
