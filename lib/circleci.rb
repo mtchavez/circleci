@@ -41,4 +41,18 @@ module CircleCi
     Http.new(config)
   end
 
+  ##
+  #
+  # Get recent builds for an organization
+  #
+  # @param name   [String] Name of the organization. Currently CircleCi treats
+  #               the name case sensetive so make sure the spelling is the same
+  #               as the github organisation.
+  # @param params [Hash] Additional query params.
+  # @return       [CircleCi::Response] - Response object.
+
+  def organization(name, params = {})
+    http.get "/organization/#{name}", params
+  end
+
 end

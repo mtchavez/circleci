@@ -22,4 +22,21 @@ describe CircleCi do
 
   end
 
+  describe 'organization' do
+    use_vcr_cassette 'organization', record: :none
+
+    subject { CircleCi.organization(ENV['ORGANIZATION'] || 'orga-name') }
+    let(:body) { subject.body }
+
+    it { should be_an_instance_of(CircleCi::Response) }
+    it { should be_success }
+
+    it 'returns a list of recent builds' do
+      expect(body).to be_an_instance_of(Array)
+      expect(body.size).to eq(2)
+      expect(body.first).to have_key('username')
+      expect(body.first).to have_key('reponame')
+      expect(body.first).to have_key('vcs_url')
+    end
+  end
 end
