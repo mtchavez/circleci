@@ -19,13 +19,13 @@ Gem::Specification.new do |s|
 
   # Dev Dependencies
   s.add_development_dependency 'dotenv',    '~> 0.10.0', '>= 0.10.0'
-  s.add_development_dependency 'fakeweb',   '~> 1.3.0',  '>= 1.3.0'
   s.add_development_dependency 'gemcutter', '~> 0.7.1',  '>= 0.7.1'
   s.add_development_dependency 'pry',       '~> 0.9.12', '>= 0.9.12.6'
   s.add_development_dependency 'redcarpet', '~> 3.1.0',  '>= 3.1.0'
   s.add_development_dependency 'rspec',     '~> 2.14.1', '>= 2.14.1'
   s.add_development_dependency 'simplecov', '~> 0.8.2',  '>= 0.8.2'
+  s.add_development_dependency 'typhoeus',  '~> 0.6.8',  '>= 0.6.8'
   s.add_development_dependency 'vcr',       '~> 2.9.0',  '>= 2.9.0'
-  s.add_development_dependency 'webmock',   '~> 1.8.11', '>= 1.8.11'
+  s.add_development_dependency 'webmock',   '~> 1.17.4', '>= 1.17.4'
   s.add_development_dependency 'yard',      '~> 0.8.7',  '>= 0.8.7.4'
 end
