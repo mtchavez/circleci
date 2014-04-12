@@ -22,8 +22,7 @@ describe CircleCi do
 
   end
 
-  describe 'organization' do
-    use_vcr_cassette 'organization', record: :none
+  describe 'organization', vcr: { cassette_name: 'organization', record: :none } do
 
     subject { CircleCi.organization(ENV['ORGANIZATION'] || 'orga-name') }
     let(:body) { subject.body }
@@ -38,5 +37,7 @@ describe CircleCi do
       expect(body.first).to have_key('reponame')
       expect(body.first).to have_key('vcs_url')
     end
+
   end
+
 end

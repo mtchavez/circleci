@@ -4,9 +4,7 @@ describe CircleCi::Build do
 
   describe 'get' do
 
-    context 'successfully' do
-
-      use_vcr_cassette 'build/get/success', :record => :none
+    context 'successfully', vcr: { cassette_name: 'build/get/success', record: :none } do
 
       let(:res) { CircleCi::Build.get 'mtchavez', 'rb-array-sorting', 1 }
 
@@ -32,9 +30,7 @@ describe CircleCi::Build do
 
   describe 'retry' do
 
-    context 'successfully' do
-
-      use_vcr_cassette 'build/retry/success', :record => :none
+    context 'successfully', vcr: { cassette_name: 'build/retry/success', record: :none } do
 
       let(:res) { CircleCi::Build.retry 'mtchavez', 'rb-array-sorting', 1 }
 
@@ -60,9 +56,7 @@ describe CircleCi::Build do
 
   describe 'artifacts' do
 
-    context 'successfully' do
-
-      use_vcr_cassette 'build/artifacts/success', :record => :none
+    context 'successfully', vcr: { cassette_name: 'build/artifacts/success', record: :none } do
 
       let(:res) { CircleCi::Build.artifacts 'janstenpickle', 'logback-flume', 2 }
 

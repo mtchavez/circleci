@@ -1,20 +1,7 @@
-#ruby=2.0.0
+#ruby=2.1.1
 #ruby-gemset=circleci
 
+ruby '2.1.1'
 source 'https://rubygems.org'
 
-gem 'rake'
-
-gem 'rest-client'
-gem 'hashie'
-
-gem 'yard'
-gem 'redcarpet'
-gem 'pry'
-gem 'gemcutter'
-gem 'dotenv'
-
-gem 'rspec'
-gem 'simplecov'
-gem 'fakeweb'
-gem 'vcr'
+gemspec

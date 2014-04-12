@@ -4,9 +4,7 @@ describe CircleCi::Project do
 
   describe 'all' do
 
-    context 'successfully' do
-
-      use_vcr_cassette 'project/all/success', :record => :none
+    context 'successfully', vcr: { cassette_name: 'project/all/success', record: :none } do
 
       let(:res) { CircleCi::Project.all }
 
@@ -30,9 +28,7 @@ describe CircleCi::Project do
 
   describe 'recent_builds' do
 
-    context 'successfully' do
-
-      use_vcr_cassette 'project/akk/success', :record => :none
+    context 'successfully', vcr: { cassette_name: 'project/recent_builds/success', record: :none } do
 
       let(:res) { CircleCi::Project.recent_builds 'mtchavez', 'rb-array-sorting' }
 
@@ -63,9 +59,7 @@ describe CircleCi::Project do
 
   describe 'recent_builds_branch' do
 
-    context 'successfully' do
-
-      use_vcr_cassette 'project/recent_builds_branch/success', :record => :none
+    context 'successfully', vcr: { cassette_name: 'project/recent_builds_branch/success', record: :none } do
 
       let(:res) { CircleCi::Project.recent_builds_branch 'mtchavez', 'rb-array-sorting', 'master' }
 
@@ -96,9 +90,7 @@ describe CircleCi::Project do
 
   describe 'clear_cache' do
 
-    context 'successfully' do
-
-      use_vcr_cassette 'project/clear_cache/success', :record => :none
+    context 'successfully', vcr: { cassette_name: 'project/clear_cache/success', record: :none } do
 
       let(:res) { CircleCi::Project.clear_cache 'mtchavez', 'rb-array-sorting' }
 
