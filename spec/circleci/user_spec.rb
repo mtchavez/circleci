@@ -4,9 +4,7 @@ describe CircleCi::User do
 
   describe 'me' do
 
-    context 'successfully' do
-
-      use_vcr_cassette 'user/me/success', :record => :none
+    context 'successfully', vcr: { cassette_name: 'user/me/success', record: :none } do
 
       it 'returns a response object' do
         res = CircleCi::User.me
