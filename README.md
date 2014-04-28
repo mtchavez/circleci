@@ -2,7 +2,7 @@ circleci
 ========
 
 [![Build Status](https://travis-ci.org/mtchavez/circleci.png)](https://travis-ci.org/mtchavez/circleci)
-[![endorse](http://api.coderwall.com/mtchavez/endorsecount.png)](http://coderwall.com/mtchavez)
+[![Code Climate](https://codeclimate.com/github/mtchavez/circleci.png)](https://codeclimate.com/github/mtchavez/circleci)
 
 Circle CI API Wrapper
 
