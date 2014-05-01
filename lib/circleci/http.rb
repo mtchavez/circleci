@@ -34,21 +34,26 @@ module CircleCi
       url  = "#{@config.host}#{path}"
       args = [http_verb, url, headers]
 
-      response = RestClient.send *args do |res, req, raw_res|
-        body = res.body
+      RestClient.send(*args) do |res, req, raw_res|
+        body = res.body.to_s
+        body.force_encoding(Encoding::UTF_8)
         code = raw_res.code.to_i
 
         self.response = body
         self.errors   = []
 
-        if code == 200
-          self.response = JSON.parse(body) rescue body
-          self.success = true
-        else
-          self.errors << RequestError.new(body, code, path)
-        end
-
+        handle_response(body, code, path)
         Response.new(self, code, path)
+      end
+    end
+
+    def handle_response(body, code, path)
+      parsed = JSON.parse(body) rescue nil
+      if parsed && code == 200
+        self.response = parsed
+        self.success = true
+      else
+        self.errors << RequestError.new(body, code, path)
       end
     end
 
