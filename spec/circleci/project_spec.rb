@@ -55,6 +55,18 @@ describe CircleCi::Project do
 
     end
 
+    context 'non-utf8 encoding', vcr: { cassette_name: 'project/recent_builds/encoding', serialize_with: :json, record: :none } do
+
+      let(:res) { CircleCi::Project.recent_builds 'mtchavez', 'encoding' }
+
+      it 'JSON parsed correctly' do
+        res.should be_success
+        res.body.should be_an_instance_of(Array)
+        res.body.size.should eql 1
+      end
+
+    end
+
   end
 
   describe 'recent_builds_branch' do

@@ -1,0 +1,34 @@
+{
+  "http_interactions": [
+    {
+      "response": {
+        "body": {
+          "encoding": "UTF-8",
+          "string": "[{\"dont_build\":null,\"committer_name\":\"Shinn Chong\",\"usage_queued_at\":\"2014-04-28T15:01:59.826Z\",\"branch\":\"master\",\"body\":\"Third-party authentication services\",\"author_date\":\"2014-04-28T23:01:55+08:00\",\"node\":[{\"username\":\"ubuntu\",\"ssh_enabled\":null,\"port\":64703,\"public_ip_addr\":\"23.21.15.127\"}],\"committer_date\":\"2014-04-28T23:01:55+08:00\",\"compare\":\"https://github.com/tinkerbox/iamplus/compare/bce9536f154d...7ee1528d0ae0\",\"retries\":null,\"parallel\":1,\"committer_email\":\"shinn@tinkerbox.com.sg\",\"build_time_millis\":49194,\"why\":\"github\",\"author_email\":\"shinn@tinkerbox.com.sg\",\"ssh_enabled\":null,\"start_time\":\"2014-04-28T15:02:00.443Z\",\"stop_time\":\"2014-04-28T15:02:49.637Z\",\"lifecycle\":\"finished\",\"user\":{\"is_user\":true,\"login\":\"shinnyx\",\"name\":\"Shinn Chong\",\"email\":\"shinn@tinkerbox.com.sg\"},\"subject\":\"Fix copy and paste typo \xF0\x9F\x98\x9D\",\"job_name\":null,\"retry_of\":null,\"previous_successful_build\":{\"build_time_millis\":31555,\"status\":\"success\",\"build_num\":17},\"outcome\":\"success\",\"status\":\"success\",\"vcs_revision\":\"7ee1528d0ae0014ff4529b0c5b3c0d7e7152541a\",\"build_num\":24,\"username\":\"tinkerbox\",\"vcs_url\":\"https://github.com/tinkerbox/iamplus\",\"timedout\":false,\"previous\":{\"build_time_millis\":31555,\"status\":\"success\",\"build_num\":17},\"canceled\":false,\"infrastructure_fail\":false,\"failed\":null,\"reponame\":\"iamplus\",\"build_url\":\"https://circleci.com/gh/tinkerbox/iamplus/24\",\"feature_flags\":{},\"author_name\":\"Shinn Chong\",\"queued_at\":\"2014-04-28T15:02:00.187Z\"}]"
+        },
+        "http_version": null,
+        "status": { "code": 200, "message": "OK" },
+        "headers": {
+          "Date": [ "Thu, 27 Oct 2011 06:16:31 GMT" ],
+          "Content-Type": [ "text/html;charset=utf-8" ],
+          "Content-Length": [ "9" ],
+          "Server": [ "WEBrick/1.3.1 (Ruby/1.8.7/2011-06-30)" ],
+          "Connection": [ "Keep-Alive" ]
+        }
+      },
+      "request": {
+        "uri": "https://circleci.com/api/v1/project/mtchavez/encoding?circle-token=asdf-token",
+        "body": {
+          "encoding": "UTF-8",
+          "string": ""
+        },
+        "method": "get",
+        "headers": {
+          "Accept-Encoding": [ "gzip", "deflate" ]
+        }
+      },
+      "recorded_at": "Tue, 01 Nov 2011 04:58:44 GMT"
+    }
+  ],
+  "recorded_with": "VCR 2.0.0"
+}
