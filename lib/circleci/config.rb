@@ -8,10 +8,9 @@ module CircleCi
 
     VERSION = 'v1'
     DEFAULT_HOST = "https://circleci.com/api/#{VERSION}"
-    DEFAULT_PORT = 80 # @private
+    DEFAULT_PORT = 80
 
-    attr_accessor :token
-    attr_reader   :host, :port # @private
+    attr_accessor :token, :host, :port
 
     ##
     #
