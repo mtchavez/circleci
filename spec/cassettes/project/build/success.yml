@@ -1,0 +1,118 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/Shopify/google_auth?circle-token=asdf-token
+    body:
+      encoding: US-ASCII
+      string: accept=application%2Fjson&content-type=application%2Fjson
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '57'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Thu, 05 Jun 2014 17:22:52 GMT
+      Location:
+      - https://circleci.com/api/v1/project/Shopify/google_auth/6
+      Server:
+      - nginx
+      X-Circleci-Identity:
+      - i-3b4c056b
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo"
+      Content-Length:
+      - '2218'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        // Hello human (for machine readable JSON, use the "application/json" Accept header)
+
+        {
+          "dont_build" : null,
+          "committer_name" : "Francois Chagnon",
+          "usage_queued_at" : "2014-06-05T17:22:52.650Z",
+          "branch" : "master",
+          "body" : "",
+          "author_date" : "2014-05-27T18:21:16Z",
+          "node" : null,
+          "committer_date" : "2014-05-27T18:21:16Z",
+          "compare" : null,
+          "retries" : null,
+          "parallel" : 1,
+          "committer_email" : "francois.chagnon@jadedpixel.com",
+          "build_time_millis" : null,
+          "why" : "edit",
+          "author_email" : "francois.chagnon@jadedpixel.com",
+          "circle_yml" : null,
+          "ssh_enabled" : null,
+          "start_time" : null,
+          "stop_time" : null,
+          "lifecycle" : "not_running",
+          "user" : {
+            "is_user" : true,
+            "login" : "samuelkadolph",
+            "name" : "Samuel Kadolph",
+            "email" : "samuel.kadolph@jadedpixel.com"
+          },
+          "subject" : "Bump version to 0.1.1",
+          "messages" : [ ],
+          "job_name" : null,
+          "retry_of" : null,
+          "is_first_green_build" : false,
+          "previous_successful_build" : null,
+          "outcome" : null,
+          "status" : "not_running",
+          "vcs_revision" : "66d398cb635c5f4dd666dd1526bda5894d1246e4",
+          "build_num" : 6,
+          "username" : "Shopify",
+          "vcs_url" : "https://github.com/Shopify/google_auth",
+          "timedout" : false,
+          "previous" : {
+            "build_time_millis" : 0,
+            "status" : "not_run",
+            "build_num" : 5
+          },
+          "all_commit_details" : [ {
+            "committer_name" : "Francois Chagnon",
+            "body" : "",
+            "author_date" : "2014-05-27T18:21:16Z",
+            "committer_date" : "2014-05-27T18:21:16Z",
+            "commit_url" : "https://github.com/Shopify/google_auth/commit/66d398cb635c5f4dd666dd1526bda5894d1246e4",
+            "committer_email" : "francois.chagnon@jadedpixel.com",
+            "author_email" : "francois.chagnon@jadedpixel.com",
+            "subject" : "Bump version to 0.1.1",
+            "committer_login" : "EiNSTeiN-",
+            "author_login" : "EiNSTeiN-",
+            "commit" : "66d398cb635c5f4dd666dd1526bda5894d1246e4",
+            "author_name" : "Francois Chagnon"
+          } ],
+          "canceled" : false,
+          "infrastructure_fail" : false,
+          "build_parameters" : null,
+          "failed" : null,
+          "reponame" : "google_auth",
+          "build_url" : "https://circleci.com/gh/Shopify/google_auth/6",
+          "feature_flags" : { },
+          "author_name" : "Francois Chagnon"
+        }
+    http_version: 
+  recorded_at: Thu, 05 Jun 2014 17:22:52 GMT
+recorded_with: VCR 2.9.0

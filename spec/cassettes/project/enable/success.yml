@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/Shopify/google_auth/enable?circle-token=asdf-token
+    body:
+      encoding: US-ASCII
+      string: accept=application%2Fjson&content-type=application%2Fjson
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '57'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Thu, 05 Jun 2014 17:26:00 GMT
+      Server:
+      - nginx
+      X-Circleci-Identity:
+      - i-12422941
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/enable"
+      Content-Length:
+      - '681'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAO1Vy27bMBC8+ysInVrAjiLZUhLfemrQQ3tITy0KgiJXJmuK
+        JPhIGhT+91KU7UiR/Qe9zmi5w+HuKM/RI0ipEQ8dUehDqy3qCOVCAbJAGGkk
+        oC9P374uUXCAPAeUEWOkoMQLrfLfTqsMfaIUjEc8FoD9uFj8XSCUcSIlVtqL
+        9hUbC63L0BapIOWyZ4Wl2BDnXrRlE4JBS4L0uLFEUd5TWUecB5slmgtDOfHH
+        gyeVlHSmFRauNz1/YbXuZnL28DpT4yShe0yMwF7vQU04Q2y8IsgeLBKyE56H
+        Bken7OTLI27AdsK56FuS1bsUScI6kQ72NsBywExwfAZJeYIicjjLjs2e3/Xj
+        YPU+YAZG6te5nIiDYqCogCQky0Z3vWqec7y3KIE/0a+EwR9vyeiIVsdZeoHk
+        YUukS+Kz4SlhfOnjk56BCMkIxe4KuxDHybkxmWxiwDDxqVt5W2xWt/Xqtvpe
+        3G3L9basbtZV+SNbvhX0Hl6tKLdVeVMV95OKZ+qwhWfRv1Aqqmu2frinTb2u
+        aNVuGKsjwoqqrBtGqvuHDSvKTQ2b8SFNEJJhFdJ81SPCeeLD4LfS2IPzblyn
+        g6e6gyl/pA+n7zILFFRcjr7J8SX+ezR4NIzk4FJQSqjdxKZfiTycV+ecBfPF
+        nmbMhVXoG4+mPmoyQsIIOZ0wy5lhxyKn1BAc7xgXGqY7IqaCetODTd9n3Hvj
+        tnk+ZMpN7J0/cW2i0Hyn9U4CJsHz4zrGZWT6aoClhO4lXuEHSS/QcK33JwGT
+        yOyjRZHhRWb2XT707Pvlq3ISr+r6304fNuMMzBz4YEYm9wIuOdlCHKLYoJVk
+        N86cYeo+PxZFdYepVj72Bou1FXGl4hYEMT5maLgabF69DeYsfy9NyeLwD8Ci
+        XsxZBwAA
+    http_version: 
+  recorded_at: Thu, 05 Jun 2014 17:25:59 GMT
+recorded_with: VCR 2.9.0
