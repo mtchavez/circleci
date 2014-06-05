@@ -30,6 +30,18 @@ module CircleCi
 
     ##
     #
+    # Build the latest master push for this project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @return         [CircleCi::Response] - Response object
+
+    def self.build username, project
+      CircleCi.http.post "/project/#{username}/#{project}"
+    end
+
+    ##
+    #
     # Get all recent builds for a specific branch of a project
     #
     # @param username [String] - User or org name who owns project
@@ -51,6 +63,54 @@ module CircleCi
 
     def self.clear_cache username, project
       CircleCi.http.delete "/project/#{username}/#{project}/build-cache"
+    end
+
+    ##
+    #
+    # Enable a project in CircleCI. Causes a CircleCI SSH key to be added to the GitHub. Requires admin privilege to the repository.
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @return         [CircleCi::Response] - Response object
+
+    def self.enable username, project
+      CircleCi.http.post "/project/#{username}/#{project}/enable"
+    end
+
+    ##
+    #
+    # Follow the project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @return         [CircleCi::Response] - Response object
+
+    def self.follow username, project
+      CircleCi.http.post "/project/#{username}/#{project}/follow"
+    end
+
+    ##
+    #
+    # Unfollow the project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @return         [CircleCi::Response] - Response object
+
+    def self.unfollow username, project
+      CircleCi.http.post "/project/#{username}/#{project}/unfollow"
+    end
+
+    ##
+    #
+    # Get the project configuration
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @return         [CircleCi::Response] - Response object
+
+    def self.settings username, project
+      CircleCi.http.get "/project/#{username}/#{project}/settings"
     end
 
   end
