@@ -3,6 +3,7 @@ circleci
 
 [![Build Status](https://travis-ci.org/mtchavez/circleci.png)](https://travis-ci.org/mtchavez/circleci)
 [![Code Climate](https://codeclimate.com/github/mtchavez/circleci.png)](https://codeclimate.com/github/mtchavez/circleci)
+[![Coverage Status](https://coveralls.io/repos/mtchavez/circleci/badge.png)](https://coveralls.io/r/mtchavez/circleci)
 
 Circle CI API Wrapper
 

@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rest-client', '~> 1.6.7', '>= 1.6.7'
 
   # Dev Dependencies
+  s.add_development_dependency 'coveralls', '~> 0.7.0',  '>= 0.7.0'
   s.add_development_dependency 'dotenv',    '~> 0.10.0', '>= 0.10.0'
   s.add_development_dependency 'gemcutter', '~> 0.7.1',  '>= 0.7.1'
   s.add_development_dependency 'pry',       '~> 0.9.12', '>= 0.9.12.6'
