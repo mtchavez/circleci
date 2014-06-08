@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    circleci (0.0.5)
+    circleci (0.0.6)
       hashie (~> 2.1.0, >= 2.1.0)
       rest-client (~> 1.6.7, >= 1.6.7)
 
