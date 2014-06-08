@@ -2,7 +2,7 @@
 
 ## 6-8-2014
 
-* New hidden endpoints added to API - Thanks to (@EiNSTeiN-)[https://github.com/EiNSTeiN-]
+* New hidden endpoints added to API - Thanks to [@EiNSTeiN-](https://github.com/EiNSTeiN-)
 
   * CircleCi::Project#build - Build the latest master push for this project
   * CircleCi::Project#enable - Enable a project in CircleCI
