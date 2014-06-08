@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name             = 'circleci'
-  s.version          = '0.0.5'
-  s.date             = '2014-04-30'
+  s.version          = '0.0.6'
+  s.date             = '2014-06-08'
   s.summary          = 'Circle CI API Wrapper'
   s.description      = 'Wraps Circle CI API calls in a gem.'
   s.licenses         = ['MIT']
