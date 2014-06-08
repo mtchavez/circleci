@@ -26,6 +26,34 @@ describe CircleCi::Project do
 
   end
 
+  describe 'build' do
+
+    context 'successfully', vcr: { cassette_name: 'project/build/success', record: :none } do
+
+      let(:res) { CircleCi::Project.build 'Shopify', 'google_auth' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns newly created build' do
+        res.body.should be_an_instance_of(Hash)
+        build = res.body
+        build['committer_name'].should eql 'Francois Chagnon'
+        build['branch'].should eql 'master'
+
+        build.should have_key 'messages'
+        build.should have_key 'start_time'
+        build.should have_key 'stop_time'
+        build.should have_key 'status'
+        build.should have_key 'subject'
+      end
+
+    end
+
+  end
+
   describe 'recent_builds' do
 
     context 'successfully', vcr: { cassette_name: 'project/recent_builds/success', record: :none } do
@@ -114,6 +142,100 @@ describe CircleCi::Project do
       it 'returns all projects' do
         res.body.should be_an_instance_of(Hash)
         res.body['status'].should eql 'build caches deleted'
+      end
+
+    end
+
+  end
+
+  describe 'enable' do
+
+    context 'successfully', vcr: { cassette_name: 'project/enable/success', record: :none } do
+
+      let(:res) { CircleCi::Project.enable 'Shopify', 'google_auth' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns the circleci project settings' do
+        res.body.should be_an_instance_of(Hash)
+        project = res.body
+        project['has_usable_key'].should eql true
+        project['github_permissions'].should be_an_instance_of(Hash)
+        project['github_permissions']['admin'].should eql true
+        project['github_permissions']['push'].should eql true
+        project['github_permissions']['pull'].should eql true
+
+        project.should have_key 'branches'
+      end
+
+    end
+
+  end
+
+  describe 'follow' do
+
+    context 'successfully', vcr: { cassette_name: 'project/follow/success', record: :none } do
+
+      let(:res) { CircleCi::Project.follow 'Shopify', 'google_auth' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns a response hash' do
+        res.body.should be_an_instance_of(Hash)
+        response = res.body
+        response.should have_key 'followed'
+        response['followed'].should eql true
+      end
+
+    end
+
+  end
+
+  describe 'unfollow' do
+
+    context 'successfully', vcr: { cassette_name: 'project/unfollow/success', record: :none } do
+
+      let(:res) { CircleCi::Project.unfollow 'Shopify', 'google_auth' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns a response hash' do
+        res.body.should be_an_instance_of(Hash)
+        response = res.body
+        response.should have_key 'followed'
+        response['followed'].should eql false
+      end
+
+    end
+
+  end
+
+  describe 'settings' do
+
+    context 'successfully', vcr: { cassette_name: 'project/settings/success', record: :none } do
+
+      let(:res) { CircleCi::Project.settings 'Shopify', 'google_auth' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns a response hash' do
+        res.body.should be_an_instance_of(Hash)
+        project = res.body
+        project.should have_key 'github_permissions'
+        project.should have_key 'branches'
+        project.should have_key 'default_branch'
       end
 
     end
