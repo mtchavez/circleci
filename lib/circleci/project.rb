@@ -55,6 +55,19 @@ module CircleCi
 
     ##
     #
+    # Build the latest push for this branch of a specific project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @param branch   [String] - Name of branch
+    # @return         [CircleCi::Response] - Response object
+
+    def self.build_branch username, project, branch
+      CircleCi.http.post "/project/#{username}/#{project}/tree/#{branch}"
+    end
+
+    ##
+    #
     # Clear the build cache for a specific project
     #
     # @param username [String] - User or org name who owns project

@@ -54,6 +54,34 @@ describe CircleCi::Project do
 
   end
 
+  describe 'build_branch' do
+
+    context 'successfully', vcr: { cassette_name: 'project/build_branch/success', record: :none } do
+
+      let(:res) { CircleCi::Project.build_branch 'ad2games', 'soapy_cake', 'master' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns newly created build' do
+        res.body.should be_an_instance_of(Hash)
+        build = res.body
+        build['committer_name'].should eql 'Harald Wartig'
+        build['branch'].should eql 'master'
+
+        build.should have_key 'messages'
+        build.should have_key 'start_time'
+        build.should have_key 'stop_time'
+        build.should have_key 'status'
+        build.should have_key 'subject'
+      end
+
+    end
+
+  end
+
   describe 'recent_builds' do
 
     context 'successfully', vcr: { cassette_name: 'project/recent_builds/success', record: :none } do
