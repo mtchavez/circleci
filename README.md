@@ -197,6 +197,93 @@ Example response
 }
 ```
 
+#### CircleCI::Project.build_branch
+
+Build a specific branch of a project
+
+```ruby
+res = CircleCi::Project.build_branch 'username', 'reponame', 'branch'
+res.body['status'] # Not running
+res.body['build_url'] # Get url of build
+```
+
+Example response
+
+```json
+{
+  "compare" : null,
+  "previous_successful_build" : {
+    "build_time_millis" : 40479,
+    "status" : "success",
+    "build_num" : 76
+  },
+  "build_parameters" : { },
+  "committer_date" : "2014-07-27T14:40:15Z",
+  "body" : "",
+  "usage_queued_at" : "2014-07-29T14:05:36.373Z",
+  "retry_of" : null,
+  "reponame" : "soapy_cake",
+  "build_url" : "https://circleci.com/gh/ad2games/soapy_cake/77",
+  "parallel" : 1,
+  "failed" : null,
+  "branch" : "master",
+  "username" : "ad2games",
+  "author_date" : "2014-07-27T14:40:15Z",
+  "why" : "edit",
+  "user" : {
+    "is_user" : true,
+    "login" : "hwartig",
+    "name" : "Harald Wartig",
+    "email" : "hw@ad2games.com"
+  },
+  "vcs_revision" : "f932ea1b564ceaaa8cdba06b1bb93e1869a9a905",
+  "build_num" : 77,
+  "infrastructure_fail" : false,
+  "ssh_enabled" : null,
+  "committer_email" : "hwartig@gmail.com",
+  "previous" : {
+    "build_time_millis" : 40479,
+    "status" : "success",
+    "build_num" : 76
+  },
+  "status" : "not_running",
+  "committer_name" : "Harald Wartig",
+  "retries" : null,
+  "subject" : "Fix link to api_versions.yml",
+  "timedout" : false,
+  "dont_build" : null,
+  "feature_flags" : { },
+  "lifecycle" : "not_running",
+  "stop_time" : null,
+  "build_time_millis" : null,
+  "circle_yml" : null,
+  "messages" : [ ],
+  "is_first_green_build" : false,
+  "job_name" : null,
+  "start_time" : null,
+  "all_commit_details" : [ {
+    "committer_date" : "2014-07-27T14:40:15Z",
+    "body" : "",
+    "author_date" : "2014-07-27T14:40:15Z",
+    "committer_email" : "hwartig@gmail.com",
+    "commit" : "f932ea1b564ceaaa8cdba06b1bb93e1869a9a905",
+    "committer_login" : "hwartig",
+    "committer_name" : "Harald Wartig",
+    "subject" : "Fix link to api_versions.yml",
+    "commit_url" : "https://github.com/ad2games/soapy_cake/commit/f932ea1b564ceaaa8cdba06b1bb93e1869a9a905",
+    "author_login" : "hwartig",
+    "author_name" : "Harald Wartig",
+    "author_email" : "hwartig@gmail.com"
+  } ],
+  "outcome" : null,
+  "vcs_url" : "https://github.com/ad2games/soapy_cake",
+  "author_name" : "Harald Wartig",
+  "node" : null,
+  "canceled" : false,
+  "author_email" : "hwartig@gmail.com"
+}
+```
+
 ### Build
 
 #### CircleCi::Build.get
