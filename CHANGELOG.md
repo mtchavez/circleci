@@ -1,3 +1,11 @@
+# Version 0.0.7
+
+## 8-1-2014
+
+* Add method to build specific branch of project - Thanks to [@hwartig](https://github.com/hwartig)
+
+  * CircleCi::Project#build_branch - Triggers build for specific branch of project
+
 # Version 0.0.6
 
 ## 6-8-2014
