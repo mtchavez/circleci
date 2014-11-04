@@ -14,20 +14,20 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ['README.md']
 
   # Gem Dependencies
-  s.add_dependency 'hashie',      '~> 2.1.0', '>= 2.1.0'
-  s.add_dependency 'rest-client', '~> 1.6.7', '>= 1.6.7'
+  s.add_dependency 'hashie',      '~> 3.3.1', '>= 3.3.1'
+  s.add_dependency 'rest-client', '~> 1.7.2', '>= 1.7.2'
 
   # Dev Dependencies
-  s.add_development_dependency 'coveralls', '~> 0.7.0',  '>= 0.7.0'
-  s.add_development_dependency 'dotenv',    '~> 0.10.0', '>= 0.10.0'
+  s.add_development_dependency 'coveralls', '~> 0.7.1',  '>= 0.7.1'
+  s.add_development_dependency 'dotenv',    '~> 1.0.2',  '>= 1.0.2'
   s.add_development_dependency 'gemcutter', '~> 0.7.1',  '>= 0.7.1'
-  s.add_development_dependency 'pry',       '~> 0.9.12', '>= 0.9.12.6'
-  s.add_development_dependency 'rake',      '~> 10.1.0', '>= 10.1.0'
-  s.add_development_dependency 'redcarpet', '~> 3.1.0',  '>= 3.1.0'
+  s.add_development_dependency 'pry',       '~> 0.10.1', '>= 0.10.1'
+  s.add_development_dependency 'rake',      '~> 10.3.2', '>= 10.3.2'
+  s.add_development_dependency 'redcarpet', '~> 3.2.0',  '>= 3.2.0'
   s.add_development_dependency 'rspec',     '~> 2.14.1', '>= 2.14.1'
-  s.add_development_dependency 'simplecov', '~> 0.8.2',  '>= 0.8.2'
-  s.add_development_dependency 'typhoeus',  '~> 0.6.8',  '>= 0.6.8'
-  s.add_development_dependency 'vcr',       '~> 2.9.0',  '>= 2.9.0'
+  s.add_development_dependency 'simplecov', '~> 0.9.1',  '>= 0.9.1'
+  s.add_development_dependency 'typhoeus',  '~> 0.6.9',  '>= 0.6.9'
+  s.add_development_dependency 'vcr',       '~> 2.9.3',  '>= 2.9.3'
   s.add_development_dependency 'webmock',   '~> 1.17.4', '>= 1.17.4'
-  s.add_development_dependency 'yard',      '~> 0.8.7',  '>= 0.8.7.4'
+  s.add_development_dependency 'yard',      '~> 0.8.7',  '>= 0.8.7.6'
 end
