@@ -78,6 +78,12 @@ describe CircleCi::Project do
         build.should have_key 'subject'
       end
 
+      it 'can use experimental API for Build Parameters' do
+        res = CircleCi::Project.build_branch 'ad2games', 'soapy_cake', 'master', 'SOME_VAR' => '123'
+
+        res.should be_success
+      end
+
     end
 
   end
