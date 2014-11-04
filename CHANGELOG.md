@@ -1,3 +1,10 @@
+# Version 0.0.8
+
+## 9-4-2014
+
+* Support [parameterized builds](https://circleci.com/docs/parameterized-builds)
+  * Thanks to [@dlitvakb](https://github.com/dlitvakb) merged in [#15](https://github.com/mtchavez/circleci/pull/15)
+
 # Version 0.0.7
 
 ## 8-1-2014
