@@ -60,10 +60,13 @@ module CircleCi
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @param branch   [String] - Name of branch
+    # @param build_parameters   [Hash] - Optional Build Parameters
     # @return         [CircleCi::Response] - Response object
 
-    def self.build_branch username, project, branch
-      CircleCi.http.post "/project/#{username}/#{project}/tree/#{branch}"
+    def self.build_branch username, project, branch, build_parameters = {}
+      body = {}
+      body["build_parameters"] = build_parameters unless build_parameters.empty?
+      CircleCi.http.post "/project/#{username}/#{project}/tree/#{branch}", {}, body
     end
 
     ##
