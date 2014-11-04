@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name             = 'circleci'
-  s.version          = '0.0.8'
-  s.date             = '2014-06-08'
+  s.version          = '0.0.9'
+  s.date             = '2014-11-04'
   s.summary          = 'Circle CI API Wrapper'
   s.description      = 'Wraps Circle CI API calls in a gem.'
   s.licenses         = ['MIT']
@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ['README.md']
 
   # Gem Dependencies
-  s.add_dependency 'hashie',      '~> 3.3.1', '>= 3.3.1'
   s.add_dependency 'rest-client', '~> 1.7.2', '>= 1.7.2'
 
   # Dev Dependencies
