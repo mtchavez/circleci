@@ -1,6 +1,12 @@
+# Version 0.0.9
+
+## 11-4-2014
+
+* Deprecate `CircleCi::Response#parsed_body` to not use `hashie` gem
+
 # Version 0.0.8
 
-## 9-4-2014
+## 11-4-2014
 
 * Support [parameterized builds](https://circleci.com/docs/parameterized-builds)
   * Thanks to [@dlitvakb](https://github.com/dlitvakb) merged in [#15](https://github.com/mtchavez/circleci/pull/15)
