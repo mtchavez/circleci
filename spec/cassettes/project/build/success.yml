@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/Shopify/google_auth?circle-token=asdf-token
+    uri: https://circleci.com/api/v1/project/Shopify/google_auth?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
     body:
       encoding: US-ASCII
       string: accept=application%2Fjson&content-type=application%2Fjson
@@ -113,6 +113,6 @@ http_interactions:
           "feature_flags" : { },
           "author_name" : "Francois Chagnon"
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 05 Jun 2014 17:22:52 GMT
 recorded_with: VCR 2.9.0

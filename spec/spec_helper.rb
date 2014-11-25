@@ -38,7 +38,7 @@ VCR.configure do |config|
   config.ignore_localhost         = true
   config.default_cassette_options = { :record => :new_episodes }
 
-  config.filter_sensitive_data('asdf-token') { ENV['TOKEN'] }
+  config.filter_sensitive_data('d121d128bf0b9d185cbad163fa410d958a30d37d') { ENV['TOKEN'] }
   config.filter_sensitive_data('orga-name') { ENV['ORGANIZATION'] }
   config.configure_rspec_metadata!
 end

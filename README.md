@@ -611,6 +611,10 @@ Tests are ran using Rspec and VCR for API interaction recording.
 Run using `rake` or `rspec`. Please add tests for any new features or
 endpoints added if you are contributing.
 
+Tests are using a live CircleCi API token for this repository. Any tests
+should be using this key, which is in the `.env` file. You should not have
+to do anything outside of writing the tests against this repository.
+
 ## License
 
 Written by Chavez
