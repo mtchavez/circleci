@@ -17,7 +17,7 @@
         }
       },
       "request": {
-        "uri": "https://circleci.com/api/v1/project/mtchavez/encoding?circle-token=asdf-token",
+        "uri": "https://circleci.com/api/v1/project/mtchavez/encoding?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d",
         "body": {
           "encoding": "UTF-8",
           "string": ""

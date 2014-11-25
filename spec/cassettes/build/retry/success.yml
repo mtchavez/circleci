@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/rb-array-sorting/1/retry?circle-token=asdf-token
+    uri: https://circleci.com/api/v1/project/mtchavez/rb-array-sorting/1/retry?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
     body:
       encoding: US-ASCII
       string: accept=application%2Fjson&content-type=application%2Fjson

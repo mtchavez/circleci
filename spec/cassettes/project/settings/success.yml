@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/Shopify/google_auth/settings?circle-token=asdf-token
+    uri: https://circleci.com/api/v1/project/Shopify/google_auth/settings?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
     body:
       encoding: US-ASCII
       string: ''
@@ -55,6 +55,6 @@ http_interactions:
         YpHz84Ysi1/CWBSy2BmzU0BZDCLtDDfGzatoXv6ppOT5KtMfoRXG7DPjPfgp
         VpqNDt2HekK52fY0h2A4h2ctysSgjXHyEKLNRiWefyzpAdeFYL1iu0vi8jZ/
         /CyKak07owMSgKPGSdABcxTlbRwI82zUfFz65Bd63t/5L3TX3M5xBAAA
-    http_version: 
+    http_version:
   recorded_at: Thu, 05 Jun 2014 17:22:52 GMT
 recorded_with: VCR 2.9.0

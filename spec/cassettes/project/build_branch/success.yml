@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/ad2games/soapy_cake/tree/master?circle-token=asdf-token
+    uri: https://circleci.com/api/v1/project/ad2games/soapy_cake/tree/master?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
     body:
       encoding: US-ASCII
       string: accept=application%2Fjson&content-type=application%2Fjson
@@ -128,6 +128,6 @@ http_interactions:
           "canceled" : false,
           "author_email" : "hwartig@gmail.com"
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 29 Jul 2014 14:05:36 GMT
 recorded_with: VCR 2.9.0
