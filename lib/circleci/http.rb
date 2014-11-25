@@ -14,8 +14,8 @@ module CircleCi
       request 'get', "#{path}?#{RestClient::Payload.generate(build_params(params))}"
     end
 
-    def post(path, params = {})
-      request 'post', "#{path}?#{RestClient::Payload.generate(build_params(params))}"
+    def post(path, params = {}, body = {})
+      request 'post', "#{path}?#{RestClient::Payload.generate(build_params(params))}", body
     end
 
     def delete(path, params = {})
@@ -30,9 +30,17 @@ module CircleCi
       params.merge('circle-token' => @config.token)
     end
 
-    def request(http_verb, path)
+    def create_request_args(http_verb, url, body)
+      if http_verb == "post"
+        return [http_verb, url, body, headers]
+      end
+
+      [http_verb, url, headers]
+    end
+
+    def request(http_verb, path, body = {})
       url  = "#{@config.host}#{path}"
-      args = [http_verb, url, headers]
+      args = create_request_args http_verb, url, body
 
       RestClient.send(*args) do |res, req, raw_res|
         body = res.body.to_s

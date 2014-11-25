@@ -1,7 +1,6 @@
 require 'json'
 require 'rest-client'
 require 'net/http'
-require 'hashie'
 
 files = [
   'build',

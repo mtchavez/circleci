@@ -24,12 +24,12 @@ module CircleCi
 
     ##
     #
-    # Parses JSON body of request and returns a Hashie::Mash
-    # @return [Hashie::Mash]
+    # *Deprecated* - To remove hashie dependency
+    # Parses JSON body of request
+    # @return [@body]
 
     def parsed_body
-      return @body if @body.is_a?(Array)
-      Hashie::Mash.new(@body) rescue {}
+      @body
     end
 
   end

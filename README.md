@@ -285,6 +285,13 @@ Example response
 }
 ```
 
+It also supports the Experimental Parameterized Builds
+
+```
+  build_environment_variables = {"ENV_VAR1" => "VALUE1", "ENV_VAR2" => "VALUE2"}
+  res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', build_environment_variables
+```
+
 ### Build
 
 #### CircleCi::Build.get
