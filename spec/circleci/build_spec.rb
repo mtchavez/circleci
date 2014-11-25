@@ -83,4 +83,32 @@ describe CircleCi::Build do
 
   end
 
+  describe 'tests' do
+
+    context 'successfully', vcr: { cassette_name: 'build/tests/success', record: :none } do
+
+      let(:res) { CircleCi::Build.tests 'janstenpickle', 'logback-flume', 2 }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns all artifacts for build' do
+        res.body.should be_an_instance_of(Array)
+
+        tests = res.body
+        tests.size.should eql 2
+        tests.first.should be_an_instance_of(Hash)
+
+        test = test.first
+        test.should have_key 'file'
+        test.should have_key 'source'
+        test.should have_key 'result'
+      end
+
+    end
+
+  end
+
 end
