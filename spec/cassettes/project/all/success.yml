@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/projects?circle-token=asdf-token
+    uri: https://circleci.com/api/v1/projects?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
     body:
       encoding: US-ASCII
       string: ''
