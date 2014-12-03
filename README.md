@@ -4,6 +4,7 @@ circleci
 [![Circle CI](https://circleci.com/gh/mtchavez/circleci.svg?style=svg)](https://circleci.com/gh/mtchavez/circleci)
 [![Code Climate](https://codeclimate.com/github/mtchavez/circleci.png)](https://codeclimate.com/github/mtchavez/circleci)
 [![Coverage Status](https://coveralls.io/repos/mtchavez/circleci/badge.png)](https://coveralls.io/r/mtchavez/circleci)
+[![license](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://raw.githubusercontent.com/mtchavez/circleci/master/LICENSE)
 
 Circle CI API Wrapper
 
@@ -613,9 +614,3 @@ endpoints added if you are contributing.
 Tests are using a live CircleCi API token for this repository. Any tests
 should be using this key, which is in the `.env` file. You should not have
 to do anything outside of writing the tests against this repository.
-
-## License
-
-Written by Chavez
-
-Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
