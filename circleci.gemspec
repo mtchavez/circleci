@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ['README.md']
 
   # Gem Dependencies
-  s.add_dependency 'rest-client', '~> 1.7.2', '>= 1.7.2'
+  s.add_dependency 'rest-client', '~> 1.6'
 
   # Dev Dependencies
   s.add_development_dependency 'coveralls', '~> 0.7.1',  '>= 0.7.1'

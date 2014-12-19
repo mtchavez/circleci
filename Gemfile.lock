@@ -11,7 +11,7 @@ PATH
   remote: .
   specs:
     circleci (0.0.9)
-      rest-client (~> 1.7.2, >= 1.7.2)
+      rest-client (~> 1.6)
 
 GEM
   remote: https://rubygems.org/
