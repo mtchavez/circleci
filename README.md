@@ -1,6 +1,7 @@
 circleci
 ========
 
+[![Latest Version](https://img.shields.io/gem/v/circleci.svg)](http://rubygems.org/gems/circleci)
 [![Circle CI](https://circleci.com/gh/mtchavez/circleci.svg?style=svg)](https://circleci.com/gh/mtchavez/circleci)
 [![Code Climate](https://codeclimate.com/github/mtchavez/circleci.png)](https://codeclimate.com/github/mtchavez/circleci)
 [![Coverage Status](https://coveralls.io/repos/mtchavez/circleci/badge.png)](https://coveralls.io/r/mtchavez/circleci)
