@@ -1,3 +1,9 @@
+# Version 0.1.0
+
+## 11-4-2014
+
+* Loosen `rest-client` dependency to `~> 1.6`
+
 # Version 0.0.9
 
 ## 11-4-2014
