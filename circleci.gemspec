@@ -1,12 +1,12 @@
 Gem::Specification.new do |s|
   s.name             = 'circleci'
-  s.version          = '0.0.9'
-  s.date             = '2014-11-04'
+  s.version          = '0.1.0'
+  s.date             = '2014-12-19'
   s.summary          = 'Circle CI API Wrapper'
   s.description      = 'Wraps Circle CI API calls in a gem.'
   s.licenses         = ['MIT']
   s.authors          = ['Chavez']
-  s.email            = 'nailsbrokeandfell@gmail.com'
+  s.email            = 'chavez@example.com'
   s.files            = Dir.glob('{bin,lib}/**/*') + %w(README.md)
   s.require_paths    = ['lib']
   s.homepage         = 'http://github.com/mtchavez/circleci'

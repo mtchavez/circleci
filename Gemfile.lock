@@ -10,7 +10,7 @@ GIT
 PATH
   remote: .
   specs:
-    circleci (0.0.9)
+    circleci (0.1.0)
       rest-client (~> 1.6)
 
 GEM
