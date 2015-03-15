@@ -419,6 +419,50 @@ Example response
     "status" : "failed",
     "build_num" : 22
   }
+
+#### CircleCi::Build.cancel
+
+Cancels the build, returns a summary of the build.
+
+```ruby
+res = CircleCi::Build.cancel 'username', 'repo', 'build #'
+res.success?
+res.body['status'] # 'canceled'
+res.body['outcome'] # 'canceled'
+res.body['canceled'] # true
+```
+
+Example response
+
+```json
+{
+  "vcs_url" : "https://github.com/circleci/mongofinil",
+  "build_url" : "https://circleci.com/gh/circleci/mongofinil/26",
+  "build_num" : 26,
+  "branch" : "master",
+  "vcs_revision" : "59c9c5ea3e289f2f3b0c94e128267cc0ce2d65c6",
+  "committer_name" : "Allen Rohner",
+  "committer_email" : "arohner@gmail.com",
+  "subject" : "Merge pull request #6 from dlowe/master"
+  "body" : "le bump", // commit message body
+  "why" : "retry", // short string explaining the reason we built
+  "dont_build" : null, // reason why we didn't build, if we didn't build
+  "queued_at" : "2013-05-24T19:37:59.095Z" // time build was queued
+  "start_time" : null, // time build started running
+  "stop_time" : null, // time build finished running
+  "build_time_millis" : null,
+  "username" : "circleci",
+  "reponame" : "mongofinil",
+  "lifecycle" : "queued",
+  "outcome" : "canceled",
+  "status" : "canceled",
+  "canceled" : true,
+  "retry_of" : 25, // build_num of the build this is a retry of
+  "previous" : { // previous build
+    "status" : "success",
+    "build_num" : 25
+  }
+}
 ```
 
 #### CircleCi::Build.artifacts
