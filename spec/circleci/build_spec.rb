@@ -28,6 +28,31 @@ describe CircleCi::Build do
 
   end
 
+  describe 'cancel' do
+
+    context 'successfully', vcr: { cassette_name: 'build/cancel/success', record: :none } do
+
+      let(:res) do
+        CircleCi::Build.cancel 'Shopify', 'spy', 572
+      end
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns a canceled build' do
+        res.body.should be_an_instance_of(Hash)
+        build = res.body
+        build['status'].should eql 'canceled'
+        build['outcome'].should eql 'canceled'
+        build['canceled'].should eql true
+      end
+
+    end
+
+  end
+
   describe 'retry' do
 
     context 'successfully', vcr: { cassette_name: 'build/retry/success', record: :none } do

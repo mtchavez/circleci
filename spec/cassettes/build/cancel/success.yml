@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/Shopify/spy/572/cancel?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '0'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 15 Mar 2015 02:03:43 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.739841590420344;Expires=Tue, 15 Mar 2016 02:03:43 +0000;Path=/;Secure
+      - ring-session=UCVFOFrbuyNHJWEOHGLh1r9IDBxN5gqozcaSCk5SRtEg5HjG1chZSLU9%2BLLiHt%2FhZkeBWqX8nnwsAbR84QMHjKo5DD5aeYgweeppilJM%2FtzJ60GZU1lwkIU6pA17gALda8CACCSW7qmtKkFmb40PbDIMB3w5Nma7ihuwedWYf8QLjh78rtYLWW%2FI3Ndbwlh0I9Ojn4rOs9dYWznCCy7VxB4EpcZB9biSONRqPns3ByM%3D--MSp0oMzazkML68IhSkyPM4sk9C%2B6UEkkxgo6EIes4MU%3D;Secure;Max-Age=31536000;Expires=Tue,
+        15 Mar 2016 01:10:44 +0000;HttpOnly;Path=/
+      X-Circleci-Identity:
+      - i-5b5dada7
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/:build_num/cancel"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '859'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKRU227jNhD9FYHooy3LuliKnoouskCLAi0SP+2mIChqZHGX
+        IlVe0hhBPmA/Zb9jf6xDSXbsboo+9EWghsOZM2fOzDPhehiZAVKT3rnR1pvN
+        QbjeNzFebO57PYruuLHjcbM4bjiDMm+qrIWkiOM4Z2XRJWXZNEVBVmQ08Ci0
+        t9R6zsHazkvaeCFbUj+T6UCdGIAOQkphSZ2VVXmzItYx5/GXLM8w0uys/EDq
+        oty+nAyIgQ3gwKC38lKuiEb3umPSwipUMwiHt7RlDk4ejW6Pp7O37AD0Tw8e
+        WsocpkyTbbFOsvW22CdpnWR1UsVFtv2AGAw4c6S6myCE31ErzB5wjsczRm/k
+        BX1cGC6Bi4nAQ3/FYVGmgSMsQUrARxizY0JCe0ZqmOI9RpujkIAXzJJziYRG
+        5l2vr2v8q8cSZ8DLq8C4sHQ+OuORHqkPQqEbOAFKQcOMESHJkuDbl9ke/RQu
+        vn3FGxgQ3+uLeH7yo52hhBoJtuaRWxoab4UO4S81wSvW8gKKqqwqyPIEoKrS
+        gm23HW//2eV0RYTqDLOIljtvgHZT9qW51vYUFGsu+Hrt9wJ0Np9U+P9Fd/bh
+        2BgImS+TzrzNOQP1As6qtL75BNydfkP+Vnt3LqbVyp0mY3bpgM01S3YIyDG7
+        FB3wYxBCTTqhhO0nANbpcaroLfVmaXwzq/eNytOs2pWrRV30OMjAENIt1AFj
+        DYz3QkH9oKLI+OY4HaLoEYcNG1tHaZzGyQMKFPhnrGW6HrV1i9864mPEterE
+        YWPBOQxqY3hiwyghxlzf3aHtQTlYAmjMY0QL52iNV62ECJ6AR8aO+F2vO20G
+        5qK78PuLV8K9nwzYDLxETNEP736+e/frLd3f3u/p3e3vv93t7zfT6/gppAty
+        HbDZuAWQj49/rMKMdMJYRw8GQJ16srTpk26uuox6MO5fuU9u4mSXB+5xwOms
+        E9qCQ2kuyRAimuFaUGF8rpfI2zv4dfIvISnd4vnjMxl9IwWnYqSsbXHmSZHH
+        aVrEuyROt1lYPNqgAHd5WeZXi8Uj086jgxjCchTteQFhteskL27WeZmzbh0K
+        TtK03G/LIkmmQr8byhes8r/W664ow9szBct6Woq7GOWXvwEAAP//AwCV2GHi
+        oQYAAA==
+    http_version: 
+  recorded_at: Sun, 15 Mar 2015 02:03:43 GMT
+recorded_with: VCR 2.9.3
