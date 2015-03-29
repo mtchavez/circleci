@@ -1,0 +1,186 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/janstenpickle/logback-flume/2/tests?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 29 Mar 2015 22:53:18 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.02252737909991609;Expires=Tue, 29 Mar 2016 22:53:18 +0000;Path=/;Secure
+      - ring-session=vfa3HzCi8SolNQBwKBhYXU4vOmQ%2FmZAQ31pSCXY%2BXfknk2HDkO3lKSlJVvTQOvoylplfEJq3nhmluExOmWrhgamrci7hN4GEdLxwvNOKQnj8pY%2Bb4BLyy9%2BsIFXxCL4Qhk5LKzMWKMPeFt258dTvNWBwR85qKm7OW0kQe0DNBCgjjIoqUTb8cA1aKtmlEaZd%2BFG5KEQ8G64R%2F278zkhHk4E47zcXRVkRWP4%2FJKWKvWU%3D--%2FTvyDCVWQ%2Fz6ZjjuAAb7SVtQZyyWGPXUWLOsXHK5SXs%3D;Secure;Max-Age=31536000;Expires=Tue,
+        29 Mar 2016 20:42:56 +0000;HttpOnly;Path=/
+      X-Circleci-Identity:
+      - i-1c5e7a33
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/:build_num/tests"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Project not found"}'
+    http_version: 
+  recorded_at: Sun, 29 Mar 2015 22:53:18 GMT
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/2/tests?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 29 Mar 2015 22:54:26 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.07012574442665254;Expires=Tue, 29 Mar 2016 22:54:26 +0000;Path=/;Secure
+      - ring-session=ag%2F3K1G92xn9Dx3B3kxFxAxMoW7n5B9h4d7khw54Qf%2FQlFopWcMaeu7QFvA0NPJN0Aarp4us4K%2B8cmHvgnWRq%2FIkmLEiczpIIWVi7jdPhMm7dZZafd5abXZNyXvrO8Wm3w%2FwAXwbI16VulwiPKPN8pkPXw5VSTdIXhu%2FGKVqhSTSGJERlb03zlLqUJbvOMju62f4PM%2BqgFB6le7MV2Yx76sLyXyIAfu1ZQ4MvSwbphk%3D--gTk0xyefciKWdrkuGQYTQ9FIatFcpw1znfkqNRGNMLU%3D;Secure;Max-Age=31536000;Expires=Tue,
+        29 Mar 2016 18:11:07 +0000;HttpOnly;Path=/
+      X-Circleci-Identity:
+      - i-0375c9ff
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/:build_num/tests"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '12'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"tests":[]}'
+    http_version: 
+  recorded_at: Sun, 29 Mar 2015 22:54:25 GMT
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/29/tests?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 29 Mar 2015 22:55:57 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.39268708614490533;Expires=Tue, 29 Mar 2016 22:55:57 +0000;Path=/;Secure
+      - ring-session=CzS62UD0EyDOhDL38YweoV%2FYDBdyTa%2BoIWPRBOS9gkFdfeKS0QJGnLEHwYv2CY%2FeolK0Dypk3Y1pFS7zhdg7SDuK3WtWbC5WHu1Aq8zl8WLrAvNfsdhvIpgsMB6TOoI%2BJm3H9j64%2F91oBtMt%2B4jStTAEgX4EBIK%2Bdnym0zrRyRFUPG%2Bc0lLwzZRZ%2BoBbP3xANRHXBQpiMIPpZXVcYOS2SRfdYY9OFTJue5ufEwekGAA%3D--OgruTcmL77%2Fr1UDxot%2B3j13CkEcoc7ts07yAbO6ii3k%3D;Secure;Max-Age=31536000;Expires=Tue,
+        29 Mar 2016 20:42:56 +0000;HttpOnly;Path=/
+      X-Circleci-Identity:
+      - i-1c5e7a33
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/:build_num/tests"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '895'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAANyZTW/bIBjHvwryuU1tx7GNb1u1w3bYqk07TVNECE5YCViA
+        1aVVv/vAbpp2WmJo2sTeLcEPmB9/eF7MXaCJ0iooftwFStQSk6leVyQoAqkq
+        goOzYEWUQgvTwmvGzoKSMvvUPrzAVGJGMJ3afyM5M9btGE+6y5pPNV2ZpnAU
+        htkE5qaNqJppO0qNsRnemHFkTYLLZsRLCoRcIE5vkaaCA0l0LbkCCDCqNBCl
+        acGEazCrKZvb7pghpR7GaCbzbGrB/dlR6NIsHvvTqaWo2RzMCNh26AdPDiE8
+        hAdxQLnSiGNiRduYF8VXoirBFekFaTRKkg/niRMoFryki1q2pNgAWszGmswB
+        KjWRpoXyBVBE94UufRmdRtdEgRkT+BpoYYEeDN6Y66JWRLpv0knuBFcU382w
+        YPV4ykozgfWja1mtwRxptA9t9Divo/LlYeh0CDsAkfnVHjogZr8I3rs7Xw21
+        ksK+y8OF5nDiRnvVDm33pTYHTnViL5Fa7oV+Otljc8MsSd+I20HuU5KnMPYk
+        r3kpGBM3Q1d87JQKvYC734rHaR5HfuT/hd7j3Ck59Kbut9rGo7slxVtuwtGM
+        7QhjeknAZi6g+ssV9nYNYOIb1fatwYC0n0BP327+IjnFCC93wTO20b3HeqeJ
+        p97d3IMRPYsmjhn5Br6t5qdtNT+dSVMwLrvVN/5RmmVpzfu6GpF1/G+2GkPZ
+        E1E0Tg9ZBcAFP691mRu/iMXc1tefvn35DCokbd2NhTTmmq37yh+mSZYdwj9g
+        VxjFjuWrD/lQNn6YZtBT+Ib7n8fefm4yhTkgvysizRu4Rgy8u/rYOML3thu4
+        QtKMq4ns74bIovDVVmSzHzi5sesjCdLGHTT2feU3ASH0zA26+Yd0HiaeGWFD
+        P3jZ43wcemZFe8AHo7cJ/K6fZzfYNqoNNtxFYe6b+e/mPZXI7Vd+1+uFce54
+        vVAUl83AgHKqKWL0ltjKXYE5KZHpCyoh9zM+mdhREbP4tRCXQh0LsY0a7mE5
+        dEzQ20QDSU1LZKuwnWd1a2Lzk27vvJ3wUcmjME4cM1Q3dK9jeyLoMIWuZWkL
+        bejk+kC/fCpWmEHH783drIMQN0tTx6uFFhjbG/qdUah96pRgnUzh1DHouvAO
+        QmHna9KWeEH0MA9vDGHuWC52kb5Y2J/3fwAAAP//AwCbqG4IJiUAAA==
+    http_version: 
+  recorded_at: Sun, 29 Mar 2015 22:55:57 GMT
+recorded_with: VCR 2.9.3

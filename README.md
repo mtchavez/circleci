@@ -492,6 +492,40 @@ res.body
 ]
 ```
 
+#### CircleCi::Build.tests
+
+Tests endpoint to get the recorded tests for a build. Will return an array of
+the tests ran and some details.
+
+```ruby
+res = CircleCi::Build.tests 'username', 'repo', 'build #'
+res.success?
+res.body
+```
+
+```json
+[
+  {
+    "message" => nil,
+    "file" => "spec/unit/user_spec.rb",
+    "source" => "rspec",
+    "run_time" => 0.240912,
+    "result" => "success",
+    "name" => "user creation",
+    "classname"=> "spec.unit.user_spec"
+  },
+  {
+    "message" => "Unable to update user",
+    "file" => "spec/unit/user_spec.rb",
+    "source"=>"rspec",
+    "run_time"=>5.58533,
+    "result"=>"failure",
+    "name"=>"user update",
+    "classname"=>"spec.unit.user_spec"
+  }
+]
+```
+
 #### CircleCi.organization
 
 Recent builds for an entire organization
