@@ -8,6 +8,36 @@ module CircleCi
 
     ##
     #
+    # Class for interacting with and managing builds
+
+    ##
+    #
+    # Get artifacts for a specific build of a project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @param build    [String] - Build ID
+    # @return         [CircleCi::Response] - Response object
+
+    def self.artifacts username, project, build
+      CircleCi.http.get "/project/#{username}/#{project}/#{build}/artifacts"
+    end
+
+    ##
+    #
+    # Cancel a specific build
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @param build    [String] - Build ID
+    # @return         [CircleCi::Response] - Response object
+
+    def self.cancel username, project, build
+      CircleCi.http.post "/project/#{username}/#{project}/#{build}/cancel"
+    end
+
+    ##
+    #
     # Get a specific build for a project
     #
     # @param username [String] - User or org name who owns project
@@ -34,28 +64,15 @@ module CircleCi
 
     ##
     #
-    # Cancel a specific build
+    # Get tests for a specific build of a project
     #
     # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @param build    [String] - Build ID
-    # @return         [CircleCi::Response] - Response object
+    # @param project [String] - Name of project
+    # @param build [String] - Build ID
+    # @return [CircleCi::Response] - Response object
 
-    def self.cancel username, project, build
-      CircleCi.http.post "/project/#{username}/#{project}/#{build}/cancel"
-    end
-
-    ##
-    #
-    # Get artifacts for a specific build of a project
-    #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @param build    [String] - Build ID
-    # @return         [CircleCi::Response] - Response object
-
-    def self.artifacts username, project, build
-      CircleCi.http.get "/project/#{username}/#{project}/#{build}/artifacts"
+    def self.tests username, project, build
+      CircleCi.http.get "/project/#{username}/#{project}/#{build}/tests"
     end
 
   end
