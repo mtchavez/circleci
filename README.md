@@ -35,14 +35,26 @@ end
 ## API Endpoints
 
 * User
-  * [/me](#me)
+  * [Me](#me)
 * Project
-  * [/projects](#all)
+  * [All](#all)
+  * [Build Branch](#build_branch)
+  * [Clear Cache](#clear_cache)
+  * [Recent Builds Branch](#recent_builds_branch)
+  * [Recent Builds](#recent_builds)
+* Build
+  * [Artifacts](#artifacts)
+  * [Cancel](#cancel)
+  * [Get](#get)
+  * [Retry](#retry)
+  * [Tests](#tests)
+* [Organization](#organization)
 
 ### User
 
 #### [/me](#me)
 
+Endpoint: `/me`
 Provides information about the signed in user.
 
 ```ruby
@@ -62,8 +74,9 @@ Example response
 
 ### Project
 
-#### [/all](#all)
+#### [all](#all)
 
+Endpoint: `/projects`
 List of all the repos you have access to on Github, with build information organized by branch.
 
 ```ruby
@@ -110,8 +123,9 @@ Example response
 } ]
 ```
 
-#### CircleCi::Project.recent_builds
+#### [recent_builds](#recent_builds)
 
+Endpoint: `/project/:username/:repository`
 Build summary for each of the last 30 recent builds, ordered by build_num.
 
 ```ruby
@@ -122,7 +136,7 @@ res.body
 
 Example response
 
-```json
+```javascript
 [ {
   "vcs_url" : "https://github.com/circleci/mongofinil",
   "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
@@ -149,8 +163,9 @@ Example response
   } ]
 ```
 
-#### CircleCi::Project.recent_builds_branch
+#### [recent_builds_branch](#recent_builds_branch)
 
+Endpoint: `/project/:username/:repository/tree/:branch`
 Build summary for each of the last 30 recent builds for a specific branch, ordered by build_num.
 
 ```ruby
@@ -161,7 +176,7 @@ res.body
 
 Example response
 
-```json
+```javascript
 [ {
   "vcs_url" : "https://github.com/circleci/mongofinil",
   "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
@@ -188,8 +203,9 @@ Example response
   } ]
 ```
 
-#### CircleCi::Project.clear_cache
+#### [clear_cache](#clear_cache)
 
+Endpoint: `/project/:username/:repository/build-cache`
 Clears the cache for a project
 
 ```ruby
@@ -199,14 +215,15 @@ res.body['status']
 
 Example response
 
-```json
+```javascript
 {
   "status" : "build caches deleted"
 }
 ```
 
-#### CircleCI::Project.build_branch
+#### [build_branch](#build_branch)
 
+Endpoint: `/project/:username/:repository/tree/:branch`
 Build a specific branch of a project
 
 ```ruby
@@ -217,7 +234,7 @@ res.body['build_url'] # Get url of build
 
 Example response
 
-```json
+```javascript
 {
   "compare" : null,
   "previous_successful_build" : {
@@ -301,8 +318,9 @@ It also supports the Experimental Parameterized Builds
 
 ### Build
 
-#### CircleCi::Build.get
+#### [get](#get)
 
+Endpoint: `/project/:username/:repository/:build`
 Full details for a single build, including the output for all actions. The response includes all of the fields from the build summary.
 
 ```ruby
@@ -313,7 +331,7 @@ res.body
 
 Example response
 
-```json
+```javascript
 {
   "vcs_url" : "https://github.com/circleci/mongofinil",
   "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
@@ -388,8 +406,9 @@ Example response
 }
 ```
 
-#### CircleCi::Build.retry
+#### [retry](#retry)
 
+Endpoint: `/project/:username/:repository/:build/retry`
 Retries the build, returns a summary of the new build.
 
 ```ruby
@@ -401,7 +420,7 @@ res.body
 
 Example response
 
-```json
+```javascript
 {
   "vcs_url" : "https://github.com/circleci/mongofinil",
   "build_url" : "https://circleci.com/gh/circleci/mongofinil/23",
@@ -426,9 +445,11 @@ Example response
     "status" : "failed",
     "build_num" : 22
   }
+```
 
-#### CircleCi::Build.cancel
+#### [cancel](#cancel)
 
+Endpoint: `/project/:username/:repository/:build/cancel`
 Cancels the build, returns a summary of the build.
 
 ```ruby
@@ -441,7 +462,7 @@ res.body['canceled'] # true
 
 Example response
 
-```json
+```javascript
 {
   "vcs_url" : "https://github.com/circleci/mongofinil",
   "build_url" : "https://circleci.com/gh/circleci/mongofinil/26",
@@ -472,8 +493,9 @@ Example response
 }
 ```
 
-#### CircleCi::Build.artifacts
+#### [artifacts](#artifacts)
 
+Endpoint: `/project/:username/:repository/:build/artifacts`
 Artifacts produced by the build, returns an array of artifact details
 
 ```ruby
@@ -482,7 +504,7 @@ res.success?
 res.body
 ```
 
-```json
+```javascript
 [
   {
     node_index: 0,
@@ -499,8 +521,9 @@ res.body
 ]
 ```
 
-#### CircleCi::Build.tests
+#### [tests](#tests)
 
+Endpoint: `/project/:username/:repository/:build/tests`
 Tests endpoint to get the recorded tests for a build. Will return an array of
 the tests ran and some details.
 
@@ -510,7 +533,7 @@ res.success?
 res.body
 ```
 
-```json
+```javascript
 [
   {
     "message" => nil,
@@ -533,8 +556,9 @@ res.body
 ]
 ```
 
-#### CircleCi.organization
+### [organization](#organization)
 
+Endpoint: `/organization/:name`
 Recent builds for an entire organization
 
 ```ruby
@@ -543,7 +567,7 @@ res.succes?
 res.body
 ```
 
-```json
+```javascript
 [
    {
       "dont_build":null,
