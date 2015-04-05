@@ -11,7 +11,7 @@ Circle CI API Wrapper
 ## Install
 
 ```ruby
-gem install 'circleci'
+gem install circleci
 ```
 
 or with Bundler
@@ -56,7 +56,7 @@ end
 
 ### User
 
-#### [/me](#me)
+#### [me](#me)
 
 Endpoint: `/me`
 
