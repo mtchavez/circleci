@@ -34,9 +34,9 @@ end
 
 ## API Endpoints
 
-* User
+* [User](#user)
   * [Me](#me)
-* Project
+* [Project](#project)
   * [All](#all)
   * [Build Branch](#build_branch)
   * [Clear Cache](#clear_cache)
@@ -46,7 +46,7 @@ end
   * [Recent Builds](#recent_builds)
   * [Settings](#settings)
   * [Unfollow](#unfollow)
-* Build
+* [Build](#build)
   * [Artifacts](#artifacts)
   * [Cancel](#cancel)
   * [Get](#get)
@@ -54,7 +54,7 @@ end
   * [Tests](#tests)
 * [Organization](#organization)
 
-### User
+### [User](#user)
 
 #### [me](#me)
 
@@ -77,7 +77,7 @@ Example response
 }
 ```
 
-### Project
+### [Project](#project)
 
 #### [all](#all)
 
@@ -532,7 +532,7 @@ Example response
 }
 ```
 
-### Build
+### [Build](#build)
 
 #### [get](#get)
 
