@@ -41,6 +41,7 @@ end
   * [Build Branch](#build_branch)
   * [Clear Cache](#clear_cache)
   * [Enable](#enable)
+  * [Follow](#follow)
   * [Recent Builds Branch](#recent_builds_branch)
   * [Recent Builds](#recent_builds)
 * Build
@@ -409,6 +410,26 @@ Example response
         "set-github-status"=>true
     },
     "irc_notify_prefs"=>nil
+}
+```
+
+#### [follow](#follow)
+
+Endpoint: `/project/:username/:repository/follow`
+
+Follow a project
+
+```ruby
+res = CircleCi::Build.follow 'username', 'repo'
+res.success?
+```
+
+Example response
+
+```javascript
+{
+    "followed"=>true,
+    "first_build"=>nil
 }
 ```
 
