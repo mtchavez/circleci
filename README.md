@@ -44,6 +44,8 @@ end
   * [Follow](#follow)
   * [Recent Builds Branch](#recent_builds_branch)
   * [Recent Builds](#recent_builds)
+  * [Settings](#settings)
+  * [Unfollow](#unfollow)
 * Build
   * [Artifacts](#artifacts)
   * [Cancel](#cancel)
@@ -339,77 +341,77 @@ res.success?
 Example response
 ```javascript
 {
-    "hall_notify_prefs"=>nil,
-    "irc_password"=>nil,
-    "default_branch"=>"master",
-    "hipchat_notify"=>nil,
-    "campfire_notify_prefs"=>nil,
-    "campfire_room"=>nil,
-    "irc_keyword"=>nil,
-    "slack_api_token"=>nil,
-    "parallel"=>1,
-    "github_user"=>nil,
-    "github_permissions"=>{
-        "admin"=>true,
-        "push"=>true,
-        "pull"=>true
+    "hall_notify_prefs": nil,
+    "irc_password": nil,
+    "default_branch": "master",
+    "hipchat_notify": nil,
+    "campfire_notify_prefs": nil,
+    "campfire_room": nil,
+    "irc_keyword": nil,
+    "slack_api_token": nil,
+    "parallel": 1,
+    "github_user": nil,
+    "github_permissions": {
+        "admin": true,
+        "push": true,
+        "pull": true
     },
-    "irc_server"=>nil,
-    "heroku_deploy_user"=>nil,
-    "dependencies"=>"",
-    "slack_notify_prefs"=>nil,
-    "ssh_keys"=>[
+    "irc_server": nil,
+    "heroku_deploy_user": nil,
+    "dependencies": "",
+    "slack_notify_prefs": nil,
+    "ssh_keys": [
 
     ],
-    "extra"=>"",
-    "followed"=>false,
-    "branches"=>{
-        "master"=>{
-            "last_non_success"=>{
-                "added_at"=>"2014-06-05T17:23:25.352Z",
-                "pushed_at"=>"2014-06-05T17:22:52.518Z",
-                "vcs_revision"=>"66d398cb635c5f4dd666dd1526bda5894d1246e4",
-                "build_num"=>6,
-                "status"=>"no_tests",
-                "outcome"=>"no_tests"
+    "extra": "",
+    "followed": false,
+    "branches": {
+        "master": {
+            "last_non_success": {
+                "added_at": "2014-06-05T17:23:25.352Z",
+                "pushed_at": "2014-06-05T17:22:52.518Z",
+                "vcs_revision": "66d398cb635c5f4dd666dd1526bda5894d1246e4",
+                "build_num": 6,
+                "status": "no_tests",
+                "outcome": "no_tests"
             },
-            "recent_builds"=>[
+            "recent_builds": [
                 {
-                    "added_at"=>"2014-06-05T17:23:25.352Z",
-                    "pushed_at"=>"2014-06-05T17:22:52.518Z",
-                    "vcs_revision"=>"66d398cb635c5f4dd666dd1526bda5894d1246e4",
-                    "build_num"=>6,
-                    "status"=>"no_tests",
-                    "outcome"=>"no_tests"
+                    "added_at": "2014-06-05T17:23:25.352Z",
+                    "pushed_at": "2014-06-05T17:22:52.518Z",
+                    "vcs_revision": "66d398cb635c5f4dd666dd1526bda5894d1246e4",
+                    "build_num": 6,
+                    "status": "no_tests",
+                    "outcome": "no_tests"
                 }
             ],
-            "running_builds"=>[
+            "running_builds": [
 
             ]
         }
     },
-    "campfire_token"=>nil,
-    "hipchat_notify_prefs"=>nil,
-    "test"=>"",
-    "compile"=>"",
-    "hipchat_room"=>nil,
-    "slack_channel"=>nil,
-    "slack_subdomain"=>nil,
-    "vcs_url"=>"https://github.com/Shopify/google_auth",
-    "flowdock_api_token"=>nil,
-    "hall_room_api_token"=>nil,
-    "slack_webhook_url"=>nil,
-    "irc_username"=>nil,
-    "hipchat_api_token"=>nil,
-    "campfire_subdomain"=>nil,
-    "has_usable_key"=>true,
-    "setup"=>"",
-    "irc_channel"=>nil,
-    "feature_flags"=>{
-        "build_GH1157_container_oriented_ui"=>nil,
-        "set-github-status"=>true
+    "campfire_token": nil,
+    "hipchat_notify_prefs": nil,
+    "test": "",
+    "compile": "",
+    "hipchat_room": nil,
+    "slack_channel": nil,
+    "slack_subdomain": nil,
+    "vcs_url": "https://github.com/Shopify/google_auth",
+    "flowdock_api_token": nil,
+    "hall_room_api_token": nil,
+    "slack_webhook_url": nil,
+    "irc_username": nil,
+    "hipchat_api_token": nil,
+    "campfire_subdomain": nil,
+    "has_usable_key": true,
+    "setup": "",
+    "irc_channel": nil,
+    "feature_flags": {
+        "build_GH1157_container_oriented_ui": nil,
+        "set-github-status": true
     },
-    "irc_notify_prefs"=>nil
+    "irc_notify_prefs": nil
 }
 ```
 
@@ -428,8 +430,27 @@ Example response
 
 ```javascript
 {
-    "followed"=>true,
-    "first_build"=>nil
+    "followed": true,
+    "first_build": nil
+}
+```
+
+#### [follow](#follow)
+
+Endpoint: `/project/:username/:repository/unfollow`
+
+Unfollow a project
+
+```ruby
+res = CircleCi::Build.unfollow 'username', 'repo'
+res.success?
+```
+
+Example response
+
+```javascript
+{
+    "followed": false
 }
 ```
 
