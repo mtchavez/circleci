@@ -35,13 +35,13 @@ end
 ## API Endpoints
 
 * User
-  * [/me](#user-me)
+  * [/me](#/me)
 * Project
-  * [/projects](#project-all)
+  * [/projects](#/projects)
 
 ### User
 
-#### [/me](#user-me)
+#### [/me](#/me)
 
 Provides information about the signed in user.
 
@@ -62,7 +62,7 @@ Example response
 
 ### Project
 
-#### [/all](#project-all)
+#### [/all](#/projects)
 
 List of all the repos you have access to on Github, with build information organized by branch.
 
