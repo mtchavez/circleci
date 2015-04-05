@@ -32,9 +32,16 @@ CircleCi.configure do |config|
 end
 ```
 
+## API Endpoints
+
+* User
+  * [/me](#user-me)
+* Project
+  * [/projects](#project-all)
+
 ### User
 
-#### CircleCi::User.me
+#### [/me](#user-me)
 
 Provides information about the signed in user.
 
@@ -46,7 +53,7 @@ res.body
 
 Example response
 
-```json
+```javascript
 {
   "basic_email_prefs" : "smart", // can be "smart", "none" or "all"
   "login" : "pbiggar" // your github username
@@ -55,7 +62,7 @@ Example response
 
 ### Project
 
-#### CircleCi::Project.all
+#### [/all](#project-all)
 
 List of all the repos you have access to on Github, with build information organized by branch.
 
@@ -67,7 +74,7 @@ res.body
 
 Example response
 
-```json
+```javascript
 [ {
   "vcs_url": "https://github.com/circleci/mongofinil"
   "followed": true // true if you follow this project in Circle
