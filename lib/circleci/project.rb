@@ -83,7 +83,8 @@ module CircleCi
 
     ##
     #
-    # Enable a project in CircleCI. Causes a CircleCI SSH key to be added to the GitHub. Requires admin privilege to the repository.
+    # Enable a project in CircleCI. Causes a CircleCI SSH key to be added to
+    # the GitHub. Requires admin privilege to the repository.
     #
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project

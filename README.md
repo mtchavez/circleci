@@ -40,6 +40,7 @@ end
   * [All](#all)
   * [Build Branch](#build_branch)
   * [Clear Cache](#clear_cache)
+  * [Enable](#enable)
   * [Recent Builds Branch](#recent_builds_branch)
   * [Recent Builds](#recent_builds)
 * Build
@@ -55,6 +56,7 @@ end
 #### [/me](#me)
 
 Endpoint: `/me`
+
 Provides information about the signed in user.
 
 ```ruby
@@ -77,6 +79,7 @@ Example response
 #### [all](#all)
 
 Endpoint: `/projects`
+
 List of all the repos you have access to on Github, with build information organized by branch.
 
 ```ruby
@@ -126,6 +129,7 @@ Example response
 #### [recent_builds](#recent_builds)
 
 Endpoint: `/project/:username/:repository`
+
 Build summary for each of the last 30 recent builds, ordered by build_num.
 
 ```ruby
@@ -166,6 +170,7 @@ Example response
 #### [recent_builds_branch](#recent_builds_branch)
 
 Endpoint: `/project/:username/:repository/tree/:branch`
+
 Build summary for each of the last 30 recent builds for a specific branch, ordered by build_num.
 
 ```ruby
@@ -206,6 +211,7 @@ Example response
 #### [clear_cache](#clear_cache)
 
 Endpoint: `/project/:username/:repository/build-cache`
+
 Clears the cache for a project
 
 ```ruby
@@ -224,6 +230,7 @@ Example response
 #### [build_branch](#build_branch)
 
 Endpoint: `/project/:username/:repository/tree/:branch`
+
 Build a specific branch of a project
 
 ```ruby
@@ -316,11 +323,101 @@ It also supports the Experimental Parameterized Builds
   res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', build_environment_variables
 ```
 
+#### [enable](#enable)
+
+Endpoint: `/project/:username/:repository/enable`
+
+Enable a project in CircleCI. Causes a CircleCI SSH key to be added to
+the GitHub. Requires admin privilege to the repository.
+
+```ruby
+res = CircleCi::Project.enable 'username', 'reponame'
+res.success?
+```
+
+Example response
+```javascript
+{
+    "hall_notify_prefs"=>nil,
+    "irc_password"=>nil,
+    "default_branch"=>"master",
+    "hipchat_notify"=>nil,
+    "campfire_notify_prefs"=>nil,
+    "campfire_room"=>nil,
+    "irc_keyword"=>nil,
+    "slack_api_token"=>nil,
+    "parallel"=>1,
+    "github_user"=>nil,
+    "github_permissions"=>{
+        "admin"=>true,
+        "push"=>true,
+        "pull"=>true
+    },
+    "irc_server"=>nil,
+    "heroku_deploy_user"=>nil,
+    "dependencies"=>"",
+    "slack_notify_prefs"=>nil,
+    "ssh_keys"=>[
+
+    ],
+    "extra"=>"",
+    "followed"=>false,
+    "branches"=>{
+        "master"=>{
+            "last_non_success"=>{
+                "added_at"=>"2014-06-05T17:23:25.352Z",
+                "pushed_at"=>"2014-06-05T17:22:52.518Z",
+                "vcs_revision"=>"66d398cb635c5f4dd666dd1526bda5894d1246e4",
+                "build_num"=>6,
+                "status"=>"no_tests",
+                "outcome"=>"no_tests"
+            },
+            "recent_builds"=>[
+                {
+                    "added_at"=>"2014-06-05T17:23:25.352Z",
+                    "pushed_at"=>"2014-06-05T17:22:52.518Z",
+                    "vcs_revision"=>"66d398cb635c5f4dd666dd1526bda5894d1246e4",
+                    "build_num"=>6,
+                    "status"=>"no_tests",
+                    "outcome"=>"no_tests"
+                }
+            ],
+            "running_builds"=>[
+
+            ]
+        }
+    },
+    "campfire_token"=>nil,
+    "hipchat_notify_prefs"=>nil,
+    "test"=>"",
+    "compile"=>"",
+    "hipchat_room"=>nil,
+    "slack_channel"=>nil,
+    "slack_subdomain"=>nil,
+    "vcs_url"=>"https://github.com/Shopify/google_auth",
+    "flowdock_api_token"=>nil,
+    "hall_room_api_token"=>nil,
+    "slack_webhook_url"=>nil,
+    "irc_username"=>nil,
+    "hipchat_api_token"=>nil,
+    "campfire_subdomain"=>nil,
+    "has_usable_key"=>true,
+    "setup"=>"",
+    "irc_channel"=>nil,
+    "feature_flags"=>{
+        "build_GH1157_container_oriented_ui"=>nil,
+        "set-github-status"=>true
+    },
+    "irc_notify_prefs"=>nil
+}
+```
+
 ### Build
 
 #### [get](#get)
 
 Endpoint: `/project/:username/:repository/:build`
+
 Full details for a single build, including the output for all actions. The response includes all of the fields from the build summary.
 
 ```ruby
@@ -409,6 +506,7 @@ Example response
 #### [retry](#retry)
 
 Endpoint: `/project/:username/:repository/:build/retry`
+
 Retries the build, returns a summary of the new build.
 
 ```ruby
@@ -450,6 +548,7 @@ Example response
 #### [cancel](#cancel)
 
 Endpoint: `/project/:username/:repository/:build/cancel`
+
 Cancels the build, returns a summary of the build.
 
 ```ruby
@@ -496,6 +595,7 @@ Example response
 #### [artifacts](#artifacts)
 
 Endpoint: `/project/:username/:repository/:build/artifacts`
+
 Artifacts produced by the build, returns an array of artifact details
 
 ```ruby
@@ -524,6 +624,7 @@ res.body
 #### [tests](#tests)
 
 Endpoint: `/project/:username/:repository/:build/tests`
+
 Tests endpoint to get the recorded tests for a build. Will return an array of
 the tests ran and some details.
 
@@ -559,6 +660,7 @@ res.body
 ### [organization](#organization)
 
 Endpoint: `/organization/:name`
+
 Recent builds for an entire organization
 
 ```ruby
