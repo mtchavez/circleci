@@ -64,7 +64,7 @@ Provides information about the signed in user.
 
 ```ruby
 res = CircleCi::User.me
-res.succes? # True
+res.success? # True
 res.body
 ```
 
