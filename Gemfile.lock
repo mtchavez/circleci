@@ -17,6 +17,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.8)
+    bigdecimal (1.2.7)
     builder (3.2.2)
     coderay (1.1.0)
     coveralls (0.7.12)
@@ -38,6 +39,7 @@ GEM
     gemcutter (0.7.1)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
+    json (1.8.3)
     method_source (0.8.2)
     mime-types (2.4.3)
     multi_json (1.11.0)
@@ -86,10 +88,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bigdecimal
   circleci!
   coveralls (~> 0.7.12, >= 0.7.12)
   dotenv (~> 2.0.0, >= 2.0.0)
   gemcutter (~> 0.7.1, >= 0.7.1)
+  json
   pry (~> 0.10.1, >= 0.10.1)
   rake (~> 10.4.2, >= 10.4.2)
   redcarpet (~> 3.2.2, >= 3.2.2)
