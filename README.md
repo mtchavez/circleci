@@ -461,7 +461,7 @@ Endpoint: `/project/:username/:repository/settings`
 Get project settings
 
 ```ruby
-res = CircleCi::Build.settings 'username', 'repo'
+res = CircleCi::Project.settings 'username', 'repo'
 res.success?
 ```
 
