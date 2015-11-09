@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# Bootstrap script to set up project
+#
+
+
+RED=$(tput setaf 160)
+RESET=$(tput sgr0)
+
+function display() {
+    echo "-----> [`date +"%Y-%m-%d-%H:%M:%S"`] [bootstrap] $1"
+}
+
+if [ ! `which bundle` ]; then
+    display "${RED}Please install bundle to install requirements${RESET}"
+    exit 1
+fi
+
+display "Installing requirements in Gemfile"
+bundle install --clean --path vendor
+display "Done bootstrapping"
+
+exit 0
+
+# vim: ft=sh:

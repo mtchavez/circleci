@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#
+# Run tests for project
+#
+
+RED=$(tput setaf 160)
+RESET=$(tput sgr0)
+
+function display() {
+    echo "-----> [`date +"%Y-%m-%d-%H:%M:%S"`] [test] $1"
+}
+
+if [ ! `bundle exec which rspec` ]; then
+    display "${RED}Rspec not found. Try running ./script/bootstrap or install requirements in the Gemfile${RESET}"
+    exit 1
+fi
+
+display "Running specs"
+bundle exec rspec
+
+# vim: ft=sh:

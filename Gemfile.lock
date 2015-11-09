@@ -100,3 +100,6 @@ DEPENDENCIES
   vcr (~> 2.9.3, >= 2.9.3)
   webmock (~> 1.21.0, >= 1.21.0)
   yard (~> 0.8.7, >= 0.8.7.6)
+
+BUNDLED WITH
+   1.10.3
