@@ -435,7 +435,7 @@ Example response
 }
 ```
 
-#### [follow](#follow)
+#### [unfollow](#unfollow)
 
 Endpoint: `/project/:username/:repository/unfollow`
 
