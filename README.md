@@ -1,4 +1,4 @@
-circleci
+﻿circleci
 ========
 
 [![Latest Version](https://img.shields.io/gem/v/circleci.svg)](http://rubygems.org/gems/circleci)
@@ -47,6 +47,7 @@ end
   * [Recent Builds](#recent_builds)
   * [Settings](#settings)
   * [Unfollow](#unfollow)
+  * [Delete Checkout](#delete_checkout)
 * [Build](#build)
   * [Artifacts](#artifacts)
   * [Cancel](#cancel)
@@ -468,6 +469,26 @@ Example response
     "status" : "failed",
     "build_num" : 21
   } ]
+```
+
+#### [delete checkout](#delete_checkout)
+
+Endpoint: `/project/:username/:repository/checkout-key/:fingerprint`
+
+Delete a checkout key
+
+```ruby
+res = CircleCi::Build.fingerprint 'username', 'repo', 'fingerprint'
+res.success?
+res.body
+```
+
+Example response
+
+```javascript
+{
+  "message" : "ok"
+}
 ```
 
 #### [settings](#settings)

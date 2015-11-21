@@ -299,4 +299,109 @@ describe CircleCi::Project do
 
   end
 
+  describe 'delete fingerprint' do
+
+    context 'not found', vcr: { cassette_name: 'project/delete_fingerprint/failure', record: :none } do
+
+      let(:res) { CircleCi::Project.fingerprint 'shwetakale', 'recipe_guru', '8d:98:82:ad:2c:c4:28:d4:fb:4d:d8:d3:c1:79:bd:0d'}
+
+      it 'returns a response hash' do
+        res.body.should_not be_an_instance_of(Hash)
+        response = JSON.parse(res.body)
+        response.should have_key 'message'
+        response['message'] = "checkout key not found"
+      end
+
+    end
+
+    context 'successfully', vcr: { cassette_name: 'project/delete_fingerprint/success', record: :none } do
+
+      let(:res) { CircleCi::Project.fingerprint 'shwetakale', 'recipe_guru', '39:ad:62:5e:a5:d3:bd:a0:e2:af:ef:df:37:70:38:83'}
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns a response hash' do
+        res.body.should be_an_instance_of(Hash)
+        response = res.body
+        response.should have_key 'message'
+        response['message'] = "ok"
+      end
+
+    end
+
+  end
+
+  describe 'delete fingerprint' do
+
+    context 'not found', vcr: { cassette_name: 'project/delete_fingerprint/failure', record: :none } do
+
+      let(:res) { CircleCi::Project.fingerprint 'shwetakale', 'recipe_guru', '8d:98:82:ad:2c:c4:28:d4:fb:4d:d8:d3:c1:79:bd:0d'}
+
+      it 'returns a response hash' do
+        res.body.should_not be_an_instance_of(Hash)
+        response = JSON.parse(res.body)
+        response.should have_key 'message'
+        response['message'] = "checkout key not found"
+      end
+
+    end
+
+    context 'successfully', vcr: { cassette_name: 'project/delete_fingerprint/success', record: :none } do
+
+      let(:res) { CircleCi::Project.fingerprint 'shwetakale', 'recipe_guru', '39:ad:62:5e:a5:d3:bd:a0:e2:af:ef:df:37:70:38:83'}
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns a response hash' do
+        res.body.should be_an_instance_of(Hash)
+        response = res.body
+        response.should have_key 'message'
+        response['message'] = "ok"
+      end
+
+    end
+
+  end
+
+  describe 'delete fingerprint' do
+
+    context 'not found', vcr: { cassette_name: 'project/delete_fingerprint/failure', record: :none } do
+
+      let(:res) { CircleCi::Project.fingerprint 'shwetakale', 'recipe_guru', '8d:98:82:ad:2c:c4:28:d4:fb:4d:d8:d3:c1:79:bd:0d'}
+
+      it 'returns a response hash' do
+        res.body.should_not be_an_instance_of(Hash)
+        response = JSON.parse(res.body)
+        response.should have_key 'message'
+        response['message'] = "checkout key not found"
+      end
+
+    end
+
+    context 'successfully', vcr: { cassette_name: 'project/delete_fingerprint/success', record: :none } do
+
+      let(:res) { CircleCi::Project.fingerprint 'shwetakale', 'recipe_guru', '39:ad:62:5e:a5:d3:bd:a0:e2:af:ef:df:37:70:38:83'}
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns a response hash' do
+        res.body.should be_an_instance_of(Hash)
+        response = res.body
+        response.should have_key 'message'
+        response['message'] = "ok"
+      end
+
+    end
+
+  end
+
 end
