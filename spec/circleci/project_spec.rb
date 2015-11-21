@@ -299,4 +299,29 @@ describe CircleCi::Project do
 
   end
 
+  describe 'fingerprint' do
+
+    context 'successfully', vcr: { cassette_name: 'project/fingerprint/success', record: :none } do
+
+      let(:res) { CircleCi::Project.fingerprint 'shwetakale', 'recipe_guru', '8d:98:82:ad:2c:c4:28:d4:fb:4d:d8:d3:c1:79:bd:0c'}
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns a response hash' do
+        res.body.should be_an_instance_of(Hash)
+        checkout = res.body
+        checkout.should have_key 'public_key'
+        checkout.should have_key 'type'
+        checkout.should have_key 'fingerprint'
+        checkout.should have_key 'login'
+        checkout['fingerprint'].should eq('8d:98:82:ad:2c:c4:28:d4:fb:4d:d8:d3:c1:79:bd:0c')
+      end
+
+    end
+
+  end
+
 end
