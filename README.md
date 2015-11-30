@@ -39,6 +39,7 @@ end
 * [Project](#project)
   * [All](#all)
   * [Build Branch](#build_branch)
+  * [Checkout Keys](#checkout_keys)
   * [Clear Cache](#clear_cache)
   * [Enable](#enable)
   * [Follow](#follow)
@@ -46,7 +47,6 @@ end
   * [Recent Builds](#recent_builds)
   * [Settings](#settings)
   * [Unfollow](#unfollow)
-  * [Checkout Keys](#checkout_keys)
 * [Build](#build)
   * [Artifacts](#artifacts)
   * [Cancel](#cancel)
@@ -128,107 +128,6 @@ Example response
     }
   }
 } ]
-```
-
-#### [recent_builds](#recent_builds)
-
-Endpoint: `/project/:username/:repository`
-
-Build summary for each of the last 30 recent builds, ordered by build_num.
-
-```ruby
-res = CircleCi::Project.recent_builds 'username', 'reponame'
-res.success?
-res.body
-```
-
-Example response
-
-```javascript
-[ {
-  "vcs_url" : "https://github.com/circleci/mongofinil",
-  "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
-  "build_num" : 22,
-  "branch" : "master",
-  "vcs_revision" : "1d231626ba1d2838e599c5c598d28e2306ad4e48",
-  "committer_name" : "Allen Rohner",
-  "committer_email" : "arohner@gmail.com",
-  "subject" : "Don't explode when the system clock shifts backwards",
-  "body" : "", // commit message body
-  "why" : "github", // short string explaining the reason we built
-  "dont_build" : null, // reason why we didn't build, if we didn't build
-  "queued_at" : "2013-02-12T21:33:30Z" // time build was queued
-  "start_time" : "2013-02-12T21:33:38Z", // time build started running
-  "stop_time" : "2013-02-12T21:34:01Z", // time build finished running
-  "build_time_millis" : 23505,
-  "lifecycle" : "finished",
-  "outcome" : "failed",
-  "status" : "failed",
-  "retry_of" : null, // build_num of the build this is a retry of
-  "previous" : { // previous build
-    "status" : "failed",
-    "build_num" : 21
-  } ]
-```
-
-#### [recent_builds_branch](#recent_builds_branch)
-
-Endpoint: `/project/:username/:repository/tree/:branch`
-
-Build summary for each of the last 30 recent builds for a specific branch, ordered by build_num.
-
-```ruby
-res = CircleCi::Project.recent_builds_branch 'username', 'reponame', 'branch'
-res.success?
-res.body
-```
-
-Example response
-
-```javascript
-[ {
-  "vcs_url" : "https://github.com/circleci/mongofinil",
-  "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
-  "build_num" : 22,
-  "branch" : "new_feature",
-  "vcs_revision" : "1d231626ba1d2838e599c5c598d28e2306ad4e48",
-  "committer_name" : "Allen Rohner",
-  "committer_email" : "arohner@gmail.com",
-  "subject" : "Don't explode when the system clock shifts backwards",
-  "body" : "", // commit message body
-  "why" : "github", // short string explaining the reason we built
-  "dont_build" : null, // reason why we didn't build, if we didn't build
-  "queued_at" : "2013-02-12T21:33:30Z" // time build was queued
-  "start_time" : "2013-02-12T21:33:38Z", // time build started running
-  "stop_time" : "2013-02-12T21:34:01Z", // time build finished running
-  "build_time_millis" : 23505,
-  "lifecycle" : "finished",
-  "outcome" : "failed",
-  "status" : "failed",
-  "retry_of" : null, // build_num of the build this is a retry of
-  "previous" : { // previous build
-    "status" : "failed",
-    "build_num" : 21
-  } ]
-```
-
-#### [clear_cache](#clear_cache)
-
-Endpoint: `/project/:username/:repository/build-cache`
-
-Clears the cache for a project
-
-```ruby
-res = CircleCi::Project.clear_cache
-res.body['status']
-```
-
-Example response
-
-```javascript
-{
-  "status" : "build caches deleted"
-}
 ```
 
 #### [build_branch](#build_branch)
@@ -325,6 +224,59 @@ It also supports the Experimental Parameterized Builds
 ```
   build_environment_variables = {"ENV_VAR1" => "VALUE1", "ENV_VAR2" => "VALUE2"}
   res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', build_environment_variables
+```
+
+#### [checkout_keys](#checkout_keys)
+
+Endpoint: `/project/#{username}/#{project}/checkout-key`
+
+List checkout keys
+
+```ruby
+res = CircleCi::Project.checkout_keys 'username', 'repo'
+res.success?
+```
+
+Example response
+
+```javascript
+[
+    {
+        "public_key"=>"ssh-rsa key",
+        "type"=>"github-user-key",
+        "fingerprint"=>"finger_print",
+        "login"=>"login",
+        "preferred"=>true,
+        "time"=>"2015-11-21T16:55:26.922Z"
+    },
+    {
+        "public_key"=>"ssh-rsa key",
+        "type"=>"github-user-key",
+        "fingerprint"=>"fingerprint",
+        "login"=>"anujaware",
+        "preferred"=>false,
+        "time"=>"2015-11-21T16:48:44.024Z"
+    }
+]
+```
+
+#### [clear_cache](#clear_cache)
+
+Endpoint: `/project/:username/:repository/build-cache`
+
+Clears the cache for a project
+
+```ruby
+res = CircleCi::Project.clear_cache
+res.body['status']
+```
+
+Example response
+
+```javascript
+{
+  "status" : "build caches deleted"
+}
 ```
 
 #### [enable](#enable)
@@ -436,57 +388,86 @@ Example response
 }
 ```
 
-#### [unfollow](#unfollow)
+#### [recent_builds](#recent_builds)
 
-Endpoint: `/project/:username/:repository/unfollow`
+Endpoint: `/project/:username/:repository`
 
-Unfollow a project
+Build summary for each of the last 30 recent builds, ordered by build_num.
 
 ```ruby
-res = CircleCi::Build.unfollow 'username', 'repo'
+res = CircleCi::Project.recent_builds 'username', 'reponame'
 res.success?
+res.body
 ```
 
 Example response
 
 ```javascript
-{
-    "followed": false
-}
+[ {
+  "vcs_url" : "https://github.com/circleci/mongofinil",
+  "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
+  "build_num" : 22,
+  "branch" : "master",
+  "vcs_revision" : "1d231626ba1d2838e599c5c598d28e2306ad4e48",
+  "committer_name" : "Allen Rohner",
+  "committer_email" : "arohner@gmail.com",
+  "subject" : "Don't explode when the system clock shifts backwards",
+  "body" : "", // commit message body
+  "why" : "github", // short string explaining the reason we built
+  "dont_build" : null, // reason why we didn't build, if we didn't build
+  "queued_at" : "2013-02-12T21:33:30Z" // time build was queued
+  "start_time" : "2013-02-12T21:33:38Z", // time build started running
+  "stop_time" : "2013-02-12T21:34:01Z", // time build finished running
+  "build_time_millis" : 23505,
+  "lifecycle" : "finished",
+  "outcome" : "failed",
+  "status" : "failed",
+  "retry_of" : null, // build_num of the build this is a retry of
+  "previous" : { // previous build
+    "status" : "failed",
+    "build_num" : 21
+  } ]
 ```
 
-#### [checkout_keys](#checkout_keys)
+#### [recent_builds_branch](#recent_builds_branch)
 
-Endpoint: `/project/#{username}/#{project}/checkout-key`
+Endpoint: `/project/:username/:repository/tree/:branch`
 
-List checkout keys
+Build summary for each of the last 30 recent builds for a specific branch, ordered by build_num.
 
 ```ruby
-res = CircleCi::Project.checkout_keys 'username', 'repo'
+res = CircleCi::Project.recent_builds_branch 'username', 'reponame', 'branch'
 res.success?
+res.body
 ```
 
 Example response
 
 ```javascript
-[
-    {
-        "public_key"=>"ssh-rsa key",
-        "type"=>"github-user-key",
-        "fingerprint"=>"finger_print",
-        "login"=>"login",
-        "preferred"=>true,
-        "time"=>"2015-11-21T16:55:26.922Z"
-    },
-    {
-        "public_key"=>"ssh-rsa key",
-        "type"=>"github-user-key",
-        "fingerprint"=>"fingerprint",
-        "login"=>"anujaware",
-        "preferred"=>false,
-        "time"=>"2015-11-21T16:48:44.024Z"
-    }
-]
+[ {
+  "vcs_url" : "https://github.com/circleci/mongofinil",
+  "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
+  "build_num" : 22,
+  "branch" : "new_feature",
+  "vcs_revision" : "1d231626ba1d2838e599c5c598d28e2306ad4e48",
+  "committer_name" : "Allen Rohner",
+  "committer_email" : "arohner@gmail.com",
+  "subject" : "Don't explode when the system clock shifts backwards",
+  "body" : "", // commit message body
+  "why" : "github", // short string explaining the reason we built
+  "dont_build" : null, // reason why we didn't build, if we didn't build
+  "queued_at" : "2013-02-12T21:33:30Z" // time build was queued
+  "start_time" : "2013-02-12T21:33:38Z", // time build started running
+  "stop_time" : "2013-02-12T21:34:01Z", // time build finished running
+  "build_time_millis" : 23505,
+  "lifecycle" : "finished",
+  "outcome" : "failed",
+  "status" : "failed",
+  "retry_of" : null, // build_num of the build this is a retry of
+  "previous" : { // previous build
+    "status" : "failed",
+    "build_num" : 21
+  } ]
 ```
 
 #### [settings](#settings)
@@ -567,7 +548,102 @@ Example response
 }
 ```
 
+#### [unfollow](#unfollow)
+
+Endpoint: `/project/:username/:repository/unfollow`
+
+Unfollow a project
+
+```ruby
+res = CircleCi::Build.unfollow 'username', 'repo'
+res.success?
+```
+
+Example response
+
+```javascript
+{
+    "followed": false
+}
+```
+
 ### [Build](#build)
+
+#### [artifacts](#artifacts)
+
+Endpoint: `/project/:username/:repository/:build/artifacts`
+
+Artifacts produced by the build, returns an array of artifact details
+
+```ruby
+res = CircleCi::Build.artifacts 'username', 'repo', 'build #'
+res.success?
+res.body
+```
+
+```javascript
+[
+  {
+    node_index: 0,
+    path: "/tmp/circle-artifacts.NHQxLku/cherry-pie.png",
+    pretty_path: "$CIRCLE_ARTIFACTS/cherry-pie.png",
+    url: "https://circleci.com/gh/circleci/mongofinil/22/artifacts/0/tmp/circle-artifacts.NHQxLku/cherry-pie.png"
+  },
+  {
+    node_index: 0,
+    path: "/tmp/circle-artifacts.NHQxLku/rhubarb-pie.png",
+    pretty_path: "$CIRCLE_ARTIFACTS/rhubarb-pie.png",
+    url: "https://circleci.com/gh/circleci/mongofinil/22/artifacts/0/tmp/circle-artifacts.NHQxLku/rhubarb-pie.png"
+  }
+]
+```
+
+#### [cancel](#cancel)
+
+Endpoint: `/project/:username/:repository/:build/cancel`
+
+Cancels the build, returns a summary of the build.
+
+```ruby
+res = CircleCi::Build.cancel 'username', 'repo', 'build #'
+res.success?
+res.body['status'] # 'canceled'
+res.body['outcome'] # 'canceled'
+res.body['canceled'] # true
+```
+
+Example response
+
+```javascript
+{
+  "vcs_url" : "https://github.com/circleci/mongofinil",
+  "build_url" : "https://circleci.com/gh/circleci/mongofinil/26",
+  "build_num" : 26,
+  "branch" : "master",
+  "vcs_revision" : "59c9c5ea3e289f2f3b0c94e128267cc0ce2d65c6",
+  "committer_name" : "Allen Rohner",
+  "committer_email" : "arohner@gmail.com",
+  "subject" : "Merge pull request #6 from dlowe/master"
+  "body" : "le bump", // commit message body
+  "why" : "retry", // short string explaining the reason we built
+  "dont_build" : null, // reason why we didn't build, if we didn't build
+  "queued_at" : "2013-05-24T19:37:59.095Z" // time build was queued
+  "start_time" : null, // time build started running
+  "stop_time" : null, // time build finished running
+  "build_time_millis" : null,
+  "username" : "circleci",
+  "reponame" : "mongofinil",
+  "lifecycle" : "queued",
+  "outcome" : "canceled",
+  "status" : "canceled",
+  "canceled" : true,
+  "retry_of" : 25, // build_num of the build this is a retry of
+  "previous" : { // previous build
+    "status" : "success",
+    "build_num" : 25
+  }
+}
+```
 
 #### [get](#get)
 
@@ -698,82 +774,6 @@ Example response
     "status" : "failed",
     "build_num" : 22
   }
-```
-
-#### [cancel](#cancel)
-
-Endpoint: `/project/:username/:repository/:build/cancel`
-
-Cancels the build, returns a summary of the build.
-
-```ruby
-res = CircleCi::Build.cancel 'username', 'repo', 'build #'
-res.success?
-res.body['status'] # 'canceled'
-res.body['outcome'] # 'canceled'
-res.body['canceled'] # true
-```
-
-Example response
-
-```javascript
-{
-  "vcs_url" : "https://github.com/circleci/mongofinil",
-  "build_url" : "https://circleci.com/gh/circleci/mongofinil/26",
-  "build_num" : 26,
-  "branch" : "master",
-  "vcs_revision" : "59c9c5ea3e289f2f3b0c94e128267cc0ce2d65c6",
-  "committer_name" : "Allen Rohner",
-  "committer_email" : "arohner@gmail.com",
-  "subject" : "Merge pull request #6 from dlowe/master"
-  "body" : "le bump", // commit message body
-  "why" : "retry", // short string explaining the reason we built
-  "dont_build" : null, // reason why we didn't build, if we didn't build
-  "queued_at" : "2013-05-24T19:37:59.095Z" // time build was queued
-  "start_time" : null, // time build started running
-  "stop_time" : null, // time build finished running
-  "build_time_millis" : null,
-  "username" : "circleci",
-  "reponame" : "mongofinil",
-  "lifecycle" : "queued",
-  "outcome" : "canceled",
-  "status" : "canceled",
-  "canceled" : true,
-  "retry_of" : 25, // build_num of the build this is a retry of
-  "previous" : { // previous build
-    "status" : "success",
-    "build_num" : 25
-  }
-}
-```
-
-#### [artifacts](#artifacts)
-
-Endpoint: `/project/:username/:repository/:build/artifacts`
-
-Artifacts produced by the build, returns an array of artifact details
-
-```ruby
-res = CircleCi::Build.artifacts 'username', 'repo', 'build #'
-res.success?
-res.body
-```
-
-```javascript
-[
-  {
-    node_index: 0,
-    path: "/tmp/circle-artifacts.NHQxLku/cherry-pie.png",
-    pretty_path: "$CIRCLE_ARTIFACTS/cherry-pie.png",
-    url: "https://circleci.com/gh/circleci/mongofinil/22/artifacts/0/tmp/circle-artifacts.NHQxLku/cherry-pie.png"
-  },
-  {
-    node_index: 0,
-    path: "/tmp/circle-artifacts.NHQxLku/rhubarb-pie.png",
-    pretty_path: "$CIRCLE_ARTIFACTS/rhubarb-pie.png",
-    url: "https://circleci.com/gh/circleci/mongofinil/22/artifacts/0/tmp/circle-artifacts.NHQxLku/rhubarb-pie.png"
-  }
-]
 ```
 
 #### [tests](#tests)
