@@ -271,6 +271,29 @@ describe CircleCi::Project do
         project.should have_key 'branches'
         project.should have_key 'default_branch'
       end
+    
+    end
+  
+  end
+
+  describe 'checkout_keys' do
+
+    context 'successfully', vcr: { cassette_name: 'project/checkout_keys/success', record: :once } do
+
+      let(:res) { CircleCi::Project.checkout_keys 'shwetakale', 'recipe_guru' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns a response hash' do
+        res.body.should be_an_instance_of(Array)
+        project = res.body[0]
+        project.should have_key 'public_key'
+        project.should have_key 'type'
+        project.should have_key 'fingerprint'
+      end
 
     end
 

@@ -130,6 +130,17 @@ module CircleCi
       CircleCi.http.get "/project/#{username}/#{project}/settings"
     end
 
+    ##
+    #
+    # Lists checkout keys
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @return         [CircleCi::Response] - Response object
+
+    def self.checkout_keys username, project
+      CircleCi.http.get "/project/#{username}/#{project}/checkout-key"
+    end
   end
 
 end

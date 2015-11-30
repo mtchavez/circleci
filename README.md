@@ -46,6 +46,7 @@ end
   * [Recent Builds](#recent_builds)
   * [Settings](#settings)
   * [Unfollow](#unfollow)
+  * [Checkout Keys](#checkout_keys)
 * [Build](#build)
   * [Artifacts](#artifacts)
   * [Cancel](#cancel)
@@ -452,6 +453,40 @@ Example response
 {
     "followed": false
 }
+```
+
+#### [checkout_keys](#checkout_keys)
+
+Endpoint: `/project/#{username}/#{project}/checkout-key`
+
+List checkout keys
+
+```ruby
+res = CircleCi::Project.checkout_keys 'username', 'repo'
+res.success?
+```
+
+Example response
+
+```javascript
+[
+    {
+        "public_key"=>"ssh-rsa key",
+        "type"=>"github-user-key",
+        "fingerprint"=>"finger_print",
+        "login"=>"login",
+        "preferred"=>true,
+        "time"=>"2015-11-21T16:55:26.922Z"
+    },
+    {
+        "public_key"=>"ssh-rsa key",
+        "type"=>"github-user-key",
+        "fingerprint"=>"fingerprint",
+        "login"=>"anujaware",
+        "preferred"=>false,
+        "time"=>"2015-11-21T16:48:44.024Z"
+    }
+]
 ```
 
 #### [settings](#settings)
