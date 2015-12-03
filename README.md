@@ -41,13 +41,13 @@ end
   * [Build Branch](#build_branch)
   * [Checkout Keys](#checkout_keys)
   * [Clear Cache](#clear_cache)
+  * [Delete Checkout](#delete_checkout)
   * [Enable](#enable)
   * [Follow](#follow)
   * [Recent Builds Branch](#recent_builds_branch)
   * [Recent Builds](#recent_builds)
   * [Settings](#settings)
   * [Unfollow](#unfollow)
-  * [Delete Checkout](#delete_checkout)
 * [Build](#build)
   * [Artifacts](#artifacts)
   * [Cancel](#cancel)
@@ -280,6 +280,26 @@ Example response
 }
 ```
 
+#### [delete checkout](#delete_checkout)
+
+Endpoint: `/project/:username/:repository/checkout-key/:fingerprint`
+
+Delete a checkout key
+
+```ruby
+res = CircleCi::Build.fingerprint 'username', 'repo', 'fingerprint'
+res.success?
+res.body
+```
+
+Example response
+
+```javascript
+{
+  "message" : "ok"
+}
+```
+
 #### [enable](#enable)
 
 Endpoint: `/project/:username/:repository/enable`
@@ -469,26 +489,6 @@ Example response
     "status" : "failed",
     "build_num" : 21
   } ]
-```
-
-#### [delete checkout](#delete_checkout)
-
-Endpoint: `/project/:username/:repository/checkout-key/:fingerprint`
-
-Delete a checkout key
-
-```ruby
-res = CircleCi::Build.fingerprint 'username', 'repo', 'fingerprint'
-res.success?
-res.body
-```
-
-Example response
-
-```javascript
-{
-  "message" : "ok"
-}
 ```
 
 #### [settings](#settings)
