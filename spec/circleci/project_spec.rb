@@ -102,6 +102,43 @@ describe CircleCi::Project do
 
   end
 
+  describe 'delete_checkout_key' do
+
+    context 'successfully', vcr: { cassette_name: 'project/delete_checkout_key/successfully', record: :none } do
+
+      let(:res) { CircleCi::Project.delete_checkout_key 'mtchavez', 'circleci', test_delete_checkout_key_fingerprint }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns message' do
+        res.body.should be_an_instance_of(Hash)
+        res.body['message'].should eql 'ok'
+      end
+
+    end
+
+    context 'unsuccessfully', vcr: { cassette_name: 'project/delete_checkout_key/unsuccessfully', record: :none } do
+
+      let(:res) { CircleCi::Project.delete_checkout_key 'mtchavez', 'circleci', 'asdf-bogus' }
+      let(:message) { 'checkout key not found' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should_not be_success
+      end
+
+      it 'returns an error message' do
+        res.body.should be_an_instance_of(Hash)
+        res.body['message'].should eql message
+      end
+
+    end
+
+  end
+
   describe 'get_checkout_key' do
 
     context 'successfully', vcr: { cassette_name: 'project/get_checkout_key/successfully', record: :none } do
@@ -113,7 +150,7 @@ describe CircleCi::Project do
         res.should be_success
       end
 
-      it 'returns created key' do
+      it 'returns key' do
         res.body.should be_an_instance_of(Hash)
         res.body['public_key'].should match(/^ssh-rsa/)
         res.body['type'].should eql 'deploy-key'

@@ -73,6 +73,19 @@ module CircleCi
 
     ##
     #
+    # Delete a checkout key for a project
+    #
+    # @param username     [String] - User or org name who owns project
+    # @param project      [String] - Name of project
+    # @param fingerprint  [String] - Fingerprint of a checkout key
+    # @return             [CircleCi::Response] - Response object
+
+    def self.delete_checkout_key username, project, fingerprint
+      CircleCi.http.delete "/project/#{username}/#{project}/checkout-key/#{fingerprint}"
+    end
+
+    ##
+    #
     # Enable a project in CircleCI. Causes a CircleCI SSH key to be added to
     # the GitHub. Requires admin privilege to the repository.
     #
@@ -103,7 +116,7 @@ module CircleCi
     # @param username     [String] - User or org name who owns project
     # @param project      [String] - Name of project
     # @param fingerprint  [String] - Fingerprint of a checkout key
-    # @return         [CircleCi::Response] - Response object
+    # @return             [CircleCi::Response] - Response object
 
     def self.get_checkout_key username, project, fingerprint
       CircleCi.http.get "/project/#{username}/#{project}/checkout-key/#{fingerprint}"
