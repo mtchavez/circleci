@@ -22,4 +22,18 @@ describe CircleCi::User do
 
   end
 
+  describe 'heroku-key' do
+
+    context 'successfully',  vcr: { cassette_name: 'user/heroku-key/success', record: :none } do
+
+      it 'returns a response object' do
+        res = CircleCi::User.heroku_key test_heroku_key
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+    end
+
+  end
+
 end
