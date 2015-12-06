@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/github/hub/checkout-key?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: type=deploy-key
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '15'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 06 Dec 2015 22:50:02 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.7517555819776258;Expires=Tue, 06 Dec 2016 22:50:02 +0000;Path=/;Secure
+      - ring-session=mzakSbnolYI4FYsSwkMY5gvr21J2eZmw3D19%2F5psxBrJnj%2BcgrX2eYqtoQ%2FEkbmMx3yYaSjTtm4q9guQsMaqUah7Xtf30nKaBCdECuqsJl85Yuqdp0bN2N%2FQGnsSZZz8IxAbThGJ6U1LhMOwbiPNHHq0hD%2FYXALmNF3NYL0hnkYjvMUtmNTtJJGz1RrK9LAyX1jRPPJoiX%2BPPV2P3yeYCqbmhYmUdiUjBaPj2AaTAes%3D--JiKSJCjhlUfldGha5vJ0YTD1CeDfJvk3uLHV5KP%2FhZo%3D;Path=/;HttpOnly;Expires=Fri,
+        02 Dec 2016 18:38:06 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-072214b9
+      X-Circleci-Request-Id:
+      - f1a59c2f-f798-45c3-9fde-1515aceae63d
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/checkout-key"
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Project not found"}'
+    http_version: 
+  recorded_at: Sun, 06 Dec 2015 22:49:57 GMT
+recorded_with: VCR 2.9.3

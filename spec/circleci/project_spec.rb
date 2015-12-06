@@ -102,6 +102,45 @@ describe CircleCi::Project do
 
   end
 
+  describe 'new_checkout_key' do
+
+    context 'successfully', vcr: { cassette_name: 'project/new_checkout_key/success', record: :none } do
+
+      let(:res) { CircleCi::Project.new_checkout_key 'mtchavez', 'circleci', 'deploy-key' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns created key' do
+        res.body.should be_an_instance_of(Hash)
+        res.body['public_key'].should match(/^ssh-rsa/)
+        res.body['type'].should eql 'deploy-key'
+        res.body.should have_key 'fingerprint'
+      end
+
+    end
+
+    context 'unsuccessfully', vcr: { cassette_name: 'project/new_checkout_key/unsuccessfully', record: :none } do
+
+      let(:res) { CircleCi::Project.new_checkout_key 'github', 'hub', 'deploy-key' }
+      let(:message) { 'Project not found' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should_not be_success
+      end
+
+      it 'returns an error message' do
+        res.body.should be_an_instance_of(Hash)
+        res.body['message'].should eql message
+      end
+
+    end
+
+  end
+
   describe 'recent_builds' do
 
     context 'successfully', vcr: { cassette_name: 'project/recent_builds/success', record: :none } do
@@ -188,7 +227,7 @@ describe CircleCi::Project do
 
     end
 
-    context 'unsuccessful', vcr: { cassette_name: 'project/ssh_key/unsuccessful', record: :all } do
+    context 'unsuccessfully', vcr: { cassette_name: 'project/ssh_key/unsuccessfully', record: :none } do
 
       let(:res) { CircleCi::Project.ssh_key 'mtchavez', 'circleci', 'RSA Private Key', 'hostname' }
       let(:message) { 'it looks like private key is invalid key.  Double check' }
