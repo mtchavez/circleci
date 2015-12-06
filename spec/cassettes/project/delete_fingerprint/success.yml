@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://circleci.com/api/v1/project/shwetakale/recipe_guru/checkout-key/39:ad:62:5e:a5:d3:bd:a0:e2:af:ef:df:37:70:38:83?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 21 Nov 2015 16:28:38 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.12345093343925395;Expires=Mon, 21 Nov 2016 16:28:38 +0000;Path=/;Secure
+      - ring-session=PdWnhRG7ggZxLf1p5UjvMYA%2BhkpyNsP2rNASxjW4ffkFr%2BJeQqzyws0iCOP%2FbVsCM2V4zJXwNZC4xlxIQqFnFKrjg1UqTVqiEMSxRXP2B0g%2FmCxuN8lDJIKjNPc2eKyU8Pem4mcLHy0SWxgXnDj6o75DZLgooNzTmM6jgvqTbFJUHxmny8njuCN19RYkeMXfQ48aMdMTAzCtHRbWpytmkvuIp1LykHHRt57fpG%2Fp%2Fuc%3D--dliDwHyrfgTowqfAG5s%2B03XDpRJx5JmdVUoFKBtgkmY%3D;Path=/;HttpOnly;Expires=Sat,
+        19 Nov 2016 06:21:23 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-e2c8595c
+      X-Circleci-Request-Id:
+      - 150ac090-ca9b-47d9-80b3-6cff55831511
+      X-Circleci-Scopes:
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/checkout-key/:fingerprint"
+      Content-Length:
+      - '16'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"ok"}'
+    http_version: 
+  recorded_at: Sat, 21 Nov 2015 16:28:34 GMT
+recorded_with: VCR 2.9.3

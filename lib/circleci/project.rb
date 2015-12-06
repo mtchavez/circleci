@@ -170,6 +170,17 @@ module CircleCi
     def self.checkout_keys username, project
       CircleCi.http.get "/project/#{username}/#{project}/checkout-key"
     end
+    # Delete a checkout key
+    #
+    # @param username     [String] - User or org name who owns project
+    # @param project      [String] - Name of project
+    # @param fingerprint  [String] - Fingerprint
+    # @return             [CircleCi::Response] - Response object
+
+   def self.fingerprint username, project, fingerprint
+     CircleCi.http.delete "/project/#{username}/#{project}/checkout-key/#{fingerprint}"
+   end
+
   end
 
 end

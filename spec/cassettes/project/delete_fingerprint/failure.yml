@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://circleci.com/api/v1/project/shwetakale/recipe_guru/checkout-key/8d:98:82:ad:2c:c4:28:d4:fb:4d:d8:d3:c1:79:bd:0d?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 21 Nov 2015 16:28:31 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.12345093343925395;Expires=Mon, 21 Nov 2016 16:28:30 +0000;Path=/;Secure
+      - ring-session=8iFWAy%2BqBOShgPnDgUeTycrVYdhnm1iqc8Kr2uuI0NZyaQeeaQZaCZ4qSrwphnHr%2BWvBLC1eiiJi0aaEfY7SvCzyn3O2U9EESo8kxnPQBw%2BIYCN0FF3ZnVojS2jJgBjWUbMGQXte5kMzIG1BfR75pXf8WKQ62QgPN6k%2BlzjjIg2UPvYAjBUWrRXsf1YZPmJ4T6qsDw0i8JtMFMGQAvsf2BcJR0rQVpE1ldZtgBAbsF0%3D--bJzaL%2FtcQXbPaAUhDsBUwsoj4e0LC3A%2BC84yLmFhqiQ%3D;Path=/;HttpOnly;Expires=Sat,
+        19 Nov 2016 10:31:31 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-6cdc52dc
+      X-Circleci-Request-Id:
+      - d03b272e-2015-47b7-ace6-814f1ba588bc
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/checkout-key/:fingerprint"
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"checkout key not found"}'
+    http_version: 
+  recorded_at: Sat, 21 Nov 2015 16:28:32 GMT
+recorded_with: VCR 2.9.3
