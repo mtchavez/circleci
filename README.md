@@ -44,6 +44,7 @@ end
   * [Clear Cache](#clear_cache)
   * [Enable](#enable)
   * [Follow](#follow)
+  * [Delete Checkout Key](#delete_checkout_key)
   * [Get Checkout Key](#get_checkout_key)
   * [List Checkout Keys](#list_checkout_keys)
   * [New Checkout Key](#new_checkout_key)
@@ -286,6 +287,23 @@ Example response
 }
 ```
 
+#### [delete_checkout_key](#delete_checkout_key)
+
+Endpoint: `/project/:username/:repository/checkout-key/:fingerprint`
+
+Delete a checkout key for a project by supplying the fingerprint of the key.
+```ruby
+res = CircleCi::Project.delete_checkout_key 'username', 'reponame', 'fingerprint'
+res.success?
+res.body
+```
+
+Example response
+
+```javascript
+{"message":"ok"}
+```
+
 #### [enable](#enable)
 
 Endpoint: `/project/:username/:repository/enable`
@@ -401,7 +419,7 @@ Endpoint: `/project/:username/:repository/checkout-key/:fingerprint`
 
 Get a checkout key for a project by supplying the fingerprint of the key.
 ```ruby
-res = CircleCi::Project.new_checkout_key 'username', 'reponame', 'fingerprint'
+res = CircleCi::Project.get_checkout_key 'username', 'reponame', 'fingerprint'
 res.success?
 res.body
 ```
