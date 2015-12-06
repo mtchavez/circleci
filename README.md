@@ -35,6 +35,7 @@ end
 ## API Endpoints
 
 * [User](#user)
+  * [Heroku Key](#heroku_key)
   * [Me](#me)
 * [Project](#project)
   * [All](#all)
@@ -56,6 +57,24 @@ end
 * [Organization](#organization)
 
 ### [User](#user)
+
+#### [heroku_key](#heroku_key)
+
+Endpoint: `/user/heroku-key`
+
+Adds your Heroku API key to CircleCI.
+```ruby
+res = CircleCi::User.heroku_key 'your-api-key'
+res.success? # True
+res.body
+```
+
+Example response
+
+Empty body response with a `200 OK` response code
+```javascript
+""
+```
 
 #### [me](#me)
 
