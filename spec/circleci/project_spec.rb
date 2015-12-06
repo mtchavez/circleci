@@ -315,7 +315,7 @@ describe CircleCi::Project do
         res.should be_success
       end
 
-      it 'returns a response hash' do
+      it 'returns a list of checkout keys' do
         res.body.should be_an_instance_of(Array)
         res.body.size.should eql 2
         project = res.body[0]
