@@ -161,7 +161,7 @@ module CircleCi
 
     ##
     #
-    # Lists checkout keys
+    # Get a list of checkout keys for project
     #
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
