@@ -102,6 +102,69 @@ describe CircleCi::Project do
 
   end
 
+  describe 'get_checkout_key' do
+
+    context 'successfully', vcr: { cassette_name: 'project/get_checkout_key/successfully', record: :none } do
+
+      let(:res) { CircleCi::Project.get_checkout_key 'mtchavez', 'circleci', test_checkout_key_fingerprint }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns created key' do
+        res.body.should be_an_instance_of(Hash)
+        res.body['public_key'].should match(/^ssh-rsa/)
+        res.body['type'].should eql 'deploy-key'
+        res.body['fingerprint'].should eql test_checkout_key_fingerprint
+      end
+
+    end
+
+    context 'unsuccessfully', vcr: { cassette_name: 'project/get_checkout_key/unsuccessfully', record: :none } do
+
+      let(:res) { CircleCi::Project.get_checkout_key 'mtchavez', 'circleci', 'asdf-bogus' }
+      let(:message) { 'checkout key not found' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should_not be_success
+      end
+
+      it 'returns an error message' do
+        res.body.should be_an_instance_of(Hash)
+        res.body['message'].should eql message
+      end
+
+    end
+
+  end
+
+  describe 'list_checkout_keys' do
+
+    context 'successfully', vcr: { cassette_name: 'project/list_checkout_keys/success', record: :none } do
+
+      let(:res) { CircleCi::Project.list_checkout_keys 'mtchavez', 'circleci' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns a list of checkout keys' do
+        res.body.should be_an_instance_of(Array)
+        res.body.size.should eql 3
+        project = res.body[0]
+        project.should have_key 'public_key'
+        project.should have_key 'type'
+        project.should have_key 'fingerprint'
+      end
+
+    end
+
+  end
+
   describe 'new_checkout_key' do
 
     context 'successfully', vcr: { cassette_name: 'project/new_checkout_key/success', record: :none } do
@@ -353,30 +416,6 @@ describe CircleCi::Project do
         project.should have_key 'github_permissions'
         project.should have_key 'branches'
         project.should have_key 'default_branch'
-      end
-
-    end
-
-  end
-
-  describe 'checkout_keys' do
-
-    context 'successfully', vcr: { cassette_name: 'project/checkout_keys/success', record: :none } do
-
-      let(:res) { CircleCi::Project.list_checkout_keys 'mtchavez', 'circleci' }
-
-      it 'returns a response object' do
-        res.should be_an_instance_of(CircleCi::Response)
-        res.should be_success
-      end
-
-      it 'returns a list of checkout keys' do
-        res.body.should be_an_instance_of(Array)
-        res.body.size.should eql 3
-        project = res.body[0]
-        project.should have_key 'public_key'
-        project.should have_key 'type'
-        project.should have_key 'fingerprint'
       end
 
     end

@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/github/hub/checkout-key/asdf-bogus?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 06 Dec 2015 23:15:36 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.9023649085651924;Expires=Tue, 06 Dec 2016 23:15:36 +0000;Path=/;Secure
+      - ring-session=M8PvJAqksv1HLoFdOQDmqcSktmnmYcAeddf7AnSAYukYbwWOfVJg1tTaj0DrPy4jBgkpt9N3ZhtZ2JPtLS3n%2FWE69eBcgrE0IlcqVWvi37sN4LXZzN3dgYfSjfMxEJjC7xVtKR%2B0lSYCED5zLjSJejD1H%2BW31Reb67v%2FnArp8nwwOH0c2NgfkYZQGlcx3FiJQ%2FjivgCL5OVgc%2FQzRGevhNUG6aOyx824pobDal3iOss%3D--XqyRNuAICo8w1ns7%2BH4MEi%2FX%2Fscy0VqFwwfe2zmvRhY%3D;Path=/;HttpOnly;Expires=Fri,
+        02 Dec 2016 18:39:00 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-062214b8
+      X-Circleci-Request-Id:
+      - a8aed473-2566-4af3-9430-39908b80f6eb
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/checkout-key/:fingerprint"
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Project not found"}'
+    http_version: 
+  recorded_at: Sun, 06 Dec 2015 23:15:32 GMT
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/asdf-bogus?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 06 Dec 2015 23:16:03 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.9741277297085531;Expires=Tue, 06 Dec 2016 23:16:03 +0000;Path=/;Secure
+      - ring-session=%2Bo1yIbW0uRUKs9kzgEJLHU1NjOWI7pomoIFt%2F%2BDc8OqYoVCIqhn4ONX7YqijtieGIfuiyD7oAvRjqleqTkqVX54dMlRn0jLLPA4IHsYXExy5L%2F1CerICnDX1zCjFtHyNiZDSEmArCcatm0%2F4DBkvJ3S6Pe%2B5wGQj%2F3hQF530hltug0cC%2B65HWcoyFMiPgHG4chYII2T2fMkp1XeQNkQWEbkABEwdIpBqsYAVAFS3XHQ%3D--5t%2FEJRZ7VZWJzGBXwpI1Wqr8Pua7EMw9ALsctiF9b9A%3D;Path=/;HttpOnly;Expires=Fri,
+        02 Dec 2016 18:33:06 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-bb380e05
+      X-Circleci-Request-Id:
+      - e1cf3cc1-7906-489d-81b9-898d0bd76e7f
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/checkout-key/:fingerprint"
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"checkout key not found"}'
+    http_version: 
+  recorded_at: Sun, 06 Dec 2015 23:16:05 GMT
+recorded_with: VCR 2.9.3
