@@ -5,6 +5,8 @@
 * CircleCi::Project#build_ssh_key – Add an SSH key to a project build
 * CircleCi::Project#new_checkout_key – Add a checkout key to a project
 * CircleCi::Project#list_checkout_keys – Get all checkout keys for a project
+* CircleCi::Project#get_checkout_key – Get a project checkout key
+* CircleCi::Project#delete_checkout_key – Delete a project checkout key
 
 # Version 0.1.1 - (3-29-2015)
 
