@@ -40,6 +40,7 @@ end
 * [Project](#project)
   * [All](#all)
   * [Build Branch](#build_branch)
+  * [Build SSH Key](#build_ssh_key)
   * [List Checkout Keys](#list_checkout_keys)
   * [Clear Cache](#clear_cache)
   * [Enable](#enable)
@@ -244,6 +245,24 @@ It also supports the Experimental Parameterized Builds
 ```
   build_environment_variables = {"ENV_VAR1" => "VALUE1", "ENV_VAR2" => "VALUE2"}
   res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', build_environment_variables
+```
+
+#### [build_ssh_key](#build_ssh_key)
+
+Endpoint: `/project/:username/:repository/:build_num/ssh-users`
+
+Adds a user to the build's SSH permissions.
+
+```ruby
+res = CircleCi::Project.build_ssh_key 'username', 'repo', 'RSA private key', 'hostname'
+res.success?
+```
+
+Example response
+
+Empty response body with a `200 OK` successful response code
+```javascript
+""
 ```
 
 #### [clear_cache](#clear_cache)
@@ -570,7 +589,7 @@ Example response
 
 #### [ssh_key](#ssh_key)
 
-Endpoint: `/project/:username/:repository/settings`
+Endpoint: `/project/:username/:repository/ssh-key`
 
 Creates an ssh key that will be used to access the external system identified
 by the hostname parameter for SSH key-based authentication.
