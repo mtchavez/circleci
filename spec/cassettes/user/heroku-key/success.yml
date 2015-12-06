@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/user/heroku-key?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: apikey=01234567-89ab-cdef-0123-456789abcdef
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '43'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 06 Dec 2015 20:52:27 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 06 Dec 2016 20:52:27 +0000;Path=/;Secure
+      - ring-session=XO8Y9RRNzy5M0SLPflzTMPD1cj8SIxHioWBPexDXLovzDYO6su8ePX0%2BufZqeECITgUWWvBaGv9o938xx97voc5dTKlEkx0iPVK2fE71nTpq9rEl06TOoreG6n3tD1ndagASdeLmLN0ETpTV6cb3X9UWd9Xx%2B7KwPUWtYwWo7Zo2%2Bym5XEG%2B%2FdsCiQ6Txq6rMtlZxNmtGRp%2BzwzSfzLox9iq%2F0xmA1n%2FUoLAQY5gwsU%3D--5pHWFpnreg8eEV64tf9BhluCO%2BI74OnfQRNwlf9Dr0g%3D;Path=/;HttpOnly;Expires=Fri,
+        02 Dec 2016 18:39:10 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-2322149d
+      X-Circleci-Request-Id:
+      - 79e873a6-8f82-4e10-b67b-ed67a8718878
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/user/heroku-key"
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '""'
+    http_version:
+  recorded_at: Sun, 06 Dec 2015 20:52:21 GMT
+recorded_with: VCR 2.9.3

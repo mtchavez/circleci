@@ -57,7 +57,7 @@ module CircleCi
 
     def handle_response(body, code, path)
       parsed = JSON.parse(body) rescue nil
-      if parsed && (200..299).include?(code)
+      if parsed || (200...299).include?(code)
         self.response = parsed
         self.success = true
       else
