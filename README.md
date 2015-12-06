@@ -39,6 +39,7 @@ end
 * [Project](#project)
   * [All](#all)
   * [Build Branch](#build_branch)
+  * [Checkout](#checkout)
   * [Checkout Keys](#checkout_keys)
   * [Clear Cache](#clear_cache)
   * [Enable](#enable)
@@ -224,6 +225,31 @@ It also supports the Experimental Parameterized Builds
 ```
   build_environment_variables = {"ENV_VAR1" => "VALUE1", "ENV_VAR2" => "VALUE2"}
   res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', build_environment_variables
+```
+
+#### [checkout](#checkout)
+
+Endpoint: `/project/:username/:repository/checkout-key/:fingerprint`
+
+Get a checkout key
+
+```ruby
+res = CircleCi::Build.fingerprint 'username', 'repo', 'fingerprint'
+res.success?
+res.body
+```
+
+Example response
+
+```javascript
+{
+  "public_key" : "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCnp9Mksi0kjdG4fUcFwrlEDTL3T7S5llOxxmI/mf91IX+/cElNvn1POiOgp++CE+NJze2rglXXk9BLaBqamNW2F8pEmCv1cwk3RaEbcCB/ZzXarpo4aHhybrfu3GCQR6zZL5cKAijh9vym60m8zzqEEPwVyXHyfh1udjWSnpelXhs7KO7A+C+vFydO5xqCkwU2QcT0iiyV6LZv7GUBEte2m6OgScr0bbeiN9OI/IEv96wbKyDepIcdBP+mvNf8sECTJpLwA1e+m75LhVnaXNHb0wR3YQ4FT9aREfKoJTlg0QvVjO5ICgIU96+CGUKoLPhqA0HGo1AOq238tyuy5oqJql \n",
+    "type" : "github-user-key",
+    "fingerprint" : "91:e5:2c:89:c8:46:e2:e8:9f:d2:5b:97:3e:63:a8:a3",
+    "login" : "anujaware",
+    "preferred" : false,
+    "time" : "2015-11-21T16:48:44.024Z"
+}
 ```
 
 #### [checkout_keys](#checkout_keys)

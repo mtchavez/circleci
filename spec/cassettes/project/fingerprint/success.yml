@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/shwetakale/recipe_guru/checkout-key/8d:98:82:ad:2c:c4:28:d4:fb:4d:d8:d3:c1:79:bd:0c?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 21 Nov 2015 12:36:19 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.12345093343925395;Expires=Mon, 21 Nov 2016 12:36:19 +0000;Path=/;Secure
+      - ring-session=GzjES3rf8LzCRJZOzg1hQUqQ1Jsy%2B8lHstlz90eDz8xGC1RZzLdf9puh%2FSWF44tvlebfBWk5BhdJ2nrbelAII4oLI%2Fyw%2BbXlU9NfjrV9qOfR%2B1jue3Lgz9rZwo%2BkqH4k4nxvACHEFGQg2GJVP2W0KCHIOFChwCnV80bf%2FeQuOppRqHoNQgJRveCCFsjCZv7E%2BwWi1iyTZ8aL2%2BL9svs0s%2BGPNEapwUOOGNI4CaxYpaA%3D--Yk48fKW8kpKb%2BQO2WlGADTTnupd6DqxkKj8e9mVmB%2Fg%3D;Path=/;HttpOnly;Expires=Sat,
+        19 Nov 2016 06:16:52 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-5cfcc0eb
+      X-Circleci-Request-Id:
+      - 5f96bb8a-a984-47c7-87a1-9c6edf15d9d7
+      X-Circleci-Scopes:
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/checkout-key/:fingerprint"
+      Content-Length:
+      - '474'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAABRR2ZKiMAD8lSle1ZWEgJg3UDxwRBQZlqmt2gokXCJHxCNM
+        7b8v9lMf1dUP/SM196jM478XJiQs3W7ZhN/IhzHAVJyeLICIofWWS+NomG/b
+        OC4tFykjI7oGSLsk7jHTtadqgISPyBom5tJ7uUI/57ETaVqbXfmRhNvKrguG
+        ws3UO5DFguy+svU+4TkApVgIFjjf9aX0VZuO5EhsjfRFM1mvbpyi4PVabewo
+        +32uHaOt3Sb1V57WnlK9ka9NX7DPVVApensiDtwVRWgZq/sl5PuOikPRsn4/
+        8wyT7EMB50w16x28zJHWLqyEh6frwTs+bihQ7GxlLoI1sxv+ilCyXatp8Kgz
+        aJOCxbLB/PsjF0S2LOa21JkrHRAhry26pqox2zzutj5FecU1t+n8OpwWemZB
+        cVCPkbL2Sdmd+r7f5tlTbXjUPr/28W1p+85n6jmx258Z4topWX78qaSx1ImG
+        DUdQ1pS1mLxfGUtJXqWMNzyvuiHSKZ7rWIeYUAxjHCMMdUwRTiKMKKYDV3AM
+        8GyOI4rleOiXdZpXEq7uZTmWGs4SxjmjEu74nQ2L+fW9CGWgTgCYQHAGEIM5
+        BuAXlGff0r//AAAA//8DAIhoOYgkAgAA
+    http_version: 
+  recorded_at: Sat, 21 Nov 2015 12:36:25 GMT
+recorded_with: VCR 2.9.3
