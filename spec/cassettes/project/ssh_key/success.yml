@@ -5,7 +5,7 @@ http_interactions:
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/ssh-key?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
     body:
       encoding: US-ASCII
-      string: hostname=hostname&private_key=RSA%20Private%20Key
+      string: hostname=hostname&private_key=-----BEGIN%20RSA%20PRIVATE%20KEY-----%0AMIIEowIBAAKCAQEAwwuwmtxV5vZwAuZKSEPrgdmu0oSZI%2BD74zSUrCNa5s9mfHlw%0AzCzhFtPKhlwYxVpQ7WZBrQMNlPFJmhyj3Cd2DPkrObMNLEVEVt6T6ahdCcyrw2jY%0APFMQywZPAhcW9mC440qTNhuQTGOcN%2FAH%2F1P%2FB4W9vOJYO7HW7TPa0S5Q3mFRMfk%2F%0A51TlrB%2Fo90gCAmX6Sm%2Bxgs9Tgmx9pYRF0KjzIp%2FtFGMOHj6wdDb7Qv8eeX0PnCtS%0At428lZGSF0cNSmQIVIxBgi7twmLKpFgqS1LAAAb9%2BlXW%2Byh%2Ff5Fl4VBirEvC3olS%0A6yUAxWhDQ27waOK7ptTkYYGw%2B9g7QWSjjeK%2BvwIDAQABAoIBAG%2Boa4vcA1lbTzh5%0AuaCxMUt%2B4PQncLv3envRiCMbgliL9vHfW9GnB5zX1iMg6hVg5N9jIMn463eOwkH1%0Aj2DjPlOi%2BTno5OupI7xPY4HqHokToGkXxmKScxSnIefibATTzkRgVvIsyWjRxYbI%0AZOuonGEkEUDmmvhhkNbuTqBd0XHcZxG8EJaeGsTLiJG4fG9x3ib%2Fo4w7Lrfh2usb%0ACjQt52L5Hg3JHXNokpwFOvhTN4uXUmjZKTQGmJceRz0Rqcemwn0ulcTYrQwQGyw%2F%0AzncwkaNbiWRLJZJtRbMoTd3Mhr8ZvKp91vZGGLhn%2FBE2s7D5d%2FOXgz5N11T8iyN8%0ASCW5YaECgYEA%2BRlrlhui%2Btan9vo39VXh7wqJujrxlNTLP70ImpAfIoVVhAuPg%2BpL%0AaEPs%2FHIzSJOYppyI3fv6Bz8lKK46gO5VouokxmNQFNz2bxHn2FaXt37k%2Fye4tbqQ%0ACuou%2BUvAlR%2Fr4OT0Yj9wla0P5wo7IWRrdwWiAhj1DSkvkyGL3VLxF8kCgYEAyHLt%0Ao43wRg50l63gectGCSRfyXuml3o38BLwQhToqbqPQFVncur%2BlNar9Xh5FRO9T%2Bam%0Ad8ET%2BGLdCUXxfpu6eytEUgG3yndsHgXJz5Ta2hQdQT4lkkOlirO4ozYrBIilSrZh%0Ar8CQP2GKrDZ0QZkZRsBYKUZ0OnNPQXyboCfa9kcCgYB79mCJ9ProZYZ07BSI7NJg%0AyRe9K7QpYrQ65fGwKWS1IzFpYu9qsGASZSs8fgBzb7AZyfB6t%2Fi3Pn9ZfUrz%2Bqd3%0ASZo%2FeBDUMRoaMAj2qjEaSfXf3H6ZQVyJcf0qZr5R9%2B7EnmvXsMZwVg2B5p%2BCgJzS%0AQGVdMdpRUFuylpEp9SqxsQKBgDkuB7obOEpTv1CxahJ0ORNMjAKGwlv9ok1aqazA%0AGCqqrEiW1D7E6EB%2FCGiqqCeqDNvpGN2ad17onNMTX7NVKxoNmpymHs6jyHS8A%2Fiy%0AJsgE6t98oe0aXPO3FtmADz9o13X7ltwy2zMpWQyNMBayXLKBFeUYUvmFgTtWF3LV%0AS7HrAoGBANhxhjIHYrsAy008UAHHebsyoteIPv2i%2F5uaRqgkEAVA%2B6lgTGBxK%2FHq%0AJ0WRSY%2B9eJAJn29Br0TO6pCbXS9PUwilFxfEs2iUvDkjYjpR%2Fp3FMNfuzHf0eqoz%0ACbCL2YiGWojMIyPkfhOn%2FvGeE8O7qAJ2xsNFARXes5tYY8h%2BMmR2%0A-----END%20RSA%20PRIVATE%20KEY-----%0A
     headers:
       Accept:
       - application/json
@@ -14,39 +14,41 @@ http_interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Content-Length:
-      - '49'
+      - '1859'
       User-Agent:
       - Ruby
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 06 Dec 2015 21:31:35 GMT
+      - Sun, 06 Dec 2015 22:37:21 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.9679275151565622;Expires=Tue, 06 Dec 2016 21:31:35 +0000;Path=/;Secure
-      - ring-session=p5yj6aHcT2dsJaqJ1rplpL48U59Tfdexhfd0fVwx8DPKbbRO3w9q4bnMBhn3askIzfQfukBe7UFJuBNHaCHelamg7yEAGduyqT2ktlGtwuT%2FSzZOS9ACBCsg%2BEXwJgtAoBAB9Sq1NyBq0cTor5vwhtq2POex1R5t1iN%2FD3oLsHe1UopcUtsZjeLPVoSsg7PNSO05IIgMMh6GYBwlGFO%2F6UlahezuqglJZj5lRfFkpKM%3D--V1qM7%2FsXL9DOco52%2BOJxg5anSDuOrkD4UQF9EEE1nW0%3D;Path=/;HttpOnly;Expires=Fri,
-        02 Dec 2016 18:32:31 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.15150562638622833;Expires=Tue, 06 Dec 2016 22:37:21 +0000;Path=/;Secure
+      - ring-session=ikEWilZ257InlQle9RyZSqPqdRLSBdU5L0HG69yWTkEmS%2Bb7vt9djFbWtco7zUf1KKceRR7QeNYaWK7pxLTxXg3iLjOAFlrqHzVZiCUcRpVbJYMzotq2rGqeukhdVSnjIUtrLu1TGH7OAquGQCXCnXVKjKCMrf%2BZbYo3ugqpYIYFUsFyItd4c8TLSEFs8sSnAaXpWnGZdr1%2BDgjdOH6%2BHgrl0Wrs1AyVIDJ58%2BjWNZM%3D--8e2hzAE1IZPG%2FJsi0bxc5xBLxByAsaZmfqVI%2FvxQdX4%3D;Path=/;HttpOnly;Expires=Fri,
+        02 Dec 2016 18:38:06 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
       X-Circleci-Identity:
-      - i-ba380e04
+      - i-072214b9
       X-Circleci-Request-Id:
-      - de4ac41d-ac5f-4c2c-bb64-0656b27036a8
+      - 96063948-0fda-4951-9c00-593cafa7989f
       X-Frame-Options:
       - DENY
       X-Route:
       - "/api/v1/project/:username/:repo/ssh-key"
       Content-Length:
-      - '69'
+      - '2'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"message":"it looks like private key is invalid key.  Double check"}'
+      string: '""'
     http_version: 
-  recorded_at: Sun, 06 Dec 2015 21:31:27 GMT
+  recorded_at: Sun, 06 Dec 2015 22:37:15 GMT
 recorded_with: VCR 2.9.3

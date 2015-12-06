@@ -170,6 +170,7 @@ module CircleCi
     def self.checkout_keys username, project
       CircleCi.http.get "/project/#{username}/#{project}/checkout-key"
     end
+
   end
 
 end

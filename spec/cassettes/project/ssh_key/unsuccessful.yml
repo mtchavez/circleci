@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/ssh-key?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: hostname=hostname&private_key=RSA%20Private%20Key
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '49'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 06 Dec 2015 22:40:58 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3630043257200286;Expires=Tue, 06 Dec 2016 22:40:58 +0000;Path=/;Secure
+      - ring-session=vTXx6Uk2e6bYJ%2FG%2FXf9edKONmJTvBlF4dR54gbSJLR%2B13XJG8kukcHgrNnFYpYOoiYRG3Q6CdPafHDxxyortWhOp3GbI0ytLupL2NbDQ8zoX92dYK1n4R32RqIPwYXcfYZESWHUuLN7wcBUz3hxDstMyg7Pwqetm8HNH84J6BXTfBiUonwwL8O1xm7guQf7Jg%2BEubV3UVbY0C3MB2pRwA%2FsKjnwqgsoAlq6nGfIIANU%3D--MB9BjpgkoJzcPrRIypYnE339RoHpWVg4jilF2MWw%2F%2Bo%3D;Path=/;HttpOnly;Expires=Fri,
+        02 Dec 2016 18:38:24 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-002214be
+      X-Circleci-Request-Id:
+      - 735a3cfd-e812-4d01-b3be-68e8036e866f
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/ssh-key"
+      Content-Length:
+      - '69'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"it looks like private key is invalid key.  Double check"}'
+    http_version: 
+  recorded_at: Sun, 06 Dec 2015 22:40:50 GMT
+recorded_with: VCR 2.9.3

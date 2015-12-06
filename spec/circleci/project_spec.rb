@@ -181,9 +181,25 @@ describe CircleCi::Project do
     context 'successfully', vcr: { cassette_name: 'project/ssh_key/success', record: :none } do
 
       it 'returns a response object' do
-        res = CircleCi::Project.ssh_key 'mtchavez', 'circleci', 'RSA Private Key', 'hostname'
+        res = CircleCi::Project.ssh_key 'mtchavez', 'circleci', test_rsa_private_key, 'hostname'
         res.should be_an_instance_of(CircleCi::Response)
         res.should be_success
+      end
+
+    end
+
+    context 'unsuccessful', vcr: { cassette_name: 'project/ssh_key/unsuccessful', record: :all } do
+
+      let(:res) { CircleCi::Project.ssh_key 'mtchavez', 'circleci', 'RSA Private Key', 'hostname' }
+      let(:message) { 'it looks like private key is invalid key.  Double check' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should_not be_success
+      end
+
+      it 'returns error message' do
+        res.body['message'].should eql message
       end
 
     end
@@ -306,7 +322,7 @@ describe CircleCi::Project do
 
   describe 'checkout_keys' do
 
-    context 'successfully', vcr: { cassette_name: 'project/checkout_keys/success', record: :once } do
+    context 'successfully', vcr: { cassette_name: 'project/checkout_keys/success', record: :none } do
 
       let(:res) { CircleCi::Project.checkout_keys 'shwetakale', 'recipe_guru' }
 
