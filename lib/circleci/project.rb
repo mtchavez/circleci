@@ -108,6 +108,20 @@ module CircleCi
 
     ##
     #
+    # Add a ssh key to a project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @param key      [String] - The ssh private key
+    # @param hostname [String] - The hostname identified by the key
+    # @return         [CircleCi::Response] - Response object
+    def self.ssh_key username, project, key, hostname
+      body = { hostname: hostname, private_key: key }
+      CircleCi.http.post "/project/#{username}/#{project}/ssh-key", {}, body
+    end
+
+    ##
+    #
     # Unfollow the project
     #
     # @param username [String] - User or org name who owns project
