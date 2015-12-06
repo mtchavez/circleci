@@ -39,7 +39,7 @@ end
 * [Project](#project)
   * [All](#all)
   * [Build Branch](#build_branch)
-  * [Checkout Keys](#checkout_keys)
+  * [List Checkout Keys](#list_checkout_keys)
   * [Clear Cache](#clear_cache)
   * [Enable](#enable)
   * [Follow](#follow)
@@ -226,40 +226,6 @@ It also supports the Experimental Parameterized Builds
   res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', build_environment_variables
 ```
 
-#### [checkout_keys](#checkout_keys)
-
-Endpoint: `/project/#{username}/#{project}/checkout-key`
-
-List checkout keys
-
-```ruby
-res = CircleCi::Project.checkout_keys 'username', 'repo'
-res.success?
-```
-
-Example response
-
-```javascript
-[
-    {
-        "public_key"=>"ssh-rsa key",
-        "type"=>"github-user-key",
-        "fingerprint"=>"finger_print",
-        "login"=>"login",
-        "preferred"=>true,
-        "time"=>"2015-11-21T16:55:26.922Z"
-    },
-    {
-        "public_key"=>"ssh-rsa key",
-        "type"=>"github-user-key",
-        "fingerprint"=>"fingerprint",
-        "login"=>"anujaware",
-        "preferred"=>false,
-        "time"=>"2015-11-21T16:48:44.024Z"
-    }
-]
-```
-
 #### [clear_cache](#clear_cache)
 
 Endpoint: `/project/:username/:repository/build-cache`
@@ -386,6 +352,40 @@ Example response
     "followed": true,
     "first_build": nil
 }
+```
+
+#### [list_checkout_keys](#list_checkout_keys)
+
+Endpoint: `/project/#{username}/#{project}/checkout-key`
+
+List checkout keys
+
+```ruby
+res = CircleCi::Project.checkout_keys 'username', 'repo'
+res.success?
+```
+
+Example response
+
+```javascript
+[
+    {
+        "public_key"=>"ssh-rsa key",
+        "type"=>"github-user-key",
+        "fingerprint"=>"finger_print",
+        "login"=>"login",
+        "preferred"=>true,
+        "time"=>"2015-11-21T16:55:26.922Z"
+    },
+    {
+        "public_key"=>"ssh-rsa key",
+        "type"=>"github-user-key",
+        "fingerprint"=>"fingerprint",
+        "login"=>"anujaware",
+        "preferred"=>false,
+        "time"=>"2015-11-21T16:48:44.024Z"
+    }
+]
 ```
 
 #### [recent_builds](#recent_builds)

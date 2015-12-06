@@ -61,6 +61,55 @@ module CircleCi
 
     ##
     #
+    # Clear the build cache for a specific project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @return         [CircleCi::Response] - Response object
+
+    def self.clear_cache username, project
+      CircleCi.http.delete "/project/#{username}/#{project}/build-cache"
+    end
+
+    ##
+    #
+    # Enable a project in CircleCI. Causes a CircleCI SSH key to be added to
+    # the GitHub. Requires admin privilege to the repository.
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @return         [CircleCi::Response] - Response object
+
+    def self.enable username, project
+      CircleCi.http.post "/project/#{username}/#{project}/enable"
+    end
+
+    ##
+    #
+    # Follow the project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @return         [CircleCi::Response] - Response object
+
+    def self.follow username, project
+      CircleCi.http.post "/project/#{username}/#{project}/follow"
+    end
+
+    ##
+    #
+    # Get a list of checkout keys for project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @return         [CircleCi::Response] - Response object
+
+    def self.list_checkout_keys username, project
+      CircleCi.http.get "/project/#{username}/#{project}/checkout-key"
+    end
+
+    ##
+    #
     # Create a checkout key for a project
     #
     # @param username [String] - User or org name who owns project
@@ -100,39 +149,14 @@ module CircleCi
 
     ##
     #
-    # Clear the build cache for a specific project
+    # Get the project configuration
     #
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @return         [CircleCi::Response] - Response object
 
-    def self.clear_cache username, project
-      CircleCi.http.delete "/project/#{username}/#{project}/build-cache"
-    end
-
-    ##
-    #
-    # Enable a project in CircleCI. Causes a CircleCI SSH key to be added to
-    # the GitHub. Requires admin privilege to the repository.
-    #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @return         [CircleCi::Response] - Response object
-
-    def self.enable username, project
-      CircleCi.http.post "/project/#{username}/#{project}/enable"
-    end
-
-    ##
-    #
-    # Follow the project
-    #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @return         [CircleCi::Response] - Response object
-
-    def self.follow username, project
-      CircleCi.http.post "/project/#{username}/#{project}/follow"
+    def self.settings username, project
+      CircleCi.http.get "/project/#{username}/#{project}/settings"
     end
 
     ##
@@ -159,30 +183,6 @@ module CircleCi
 
     def self.unfollow username, project
       CircleCi.http.post "/project/#{username}/#{project}/unfollow"
-    end
-
-    ##
-    #
-    # Get the project configuration
-    #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @return         [CircleCi::Response] - Response object
-
-    def self.settings username, project
-      CircleCi.http.get "/project/#{username}/#{project}/settings"
-    end
-
-    ##
-    #
-    # Get a list of checkout keys for project
-    #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @return         [CircleCi::Response] - Response object
-
-    def self.checkout_keys username, project
-      CircleCi.http.get "/project/#{username}/#{project}/checkout-key"
     end
 
   end

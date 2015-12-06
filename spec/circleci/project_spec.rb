@@ -363,7 +363,7 @@ describe CircleCi::Project do
 
     context 'successfully', vcr: { cassette_name: 'project/checkout_keys/success', record: :none } do
 
-      let(:res) { CircleCi::Project.checkout_keys 'shwetakale', 'recipe_guru' }
+      let(:res) { CircleCi::Project.list_checkout_keys 'mtchavez', 'circleci' }
 
       it 'returns a response object' do
         res.should be_an_instance_of(CircleCi::Response)
@@ -372,7 +372,7 @@ describe CircleCi::Project do
 
       it 'returns a list of checkout keys' do
         res.body.should be_an_instance_of(Array)
-        res.body.size.should eql 2
+        res.body.size.should eql 3
         project = res.body[0]
         project.should have_key 'public_key'
         project.should have_key 'type'
