@@ -44,6 +44,7 @@ end
   * [Clear Cache](#clear_cache)
   * [Enable](#enable)
   * [Follow](#follow)
+  * [Get Checkout Key](#get_checkout_key)
   * [List Checkout Keys](#list_checkout_keys)
   * [New Checkout Key](#new_checkout_key)
   * [Recent Builds](#recent_builds)
@@ -394,6 +395,29 @@ Example response
 }
 ```
 
+#### [get_checkout_key](#get_checkout_key)
+
+Endpoint: `/project/:username/:repository/checkout-key/:fingerprint`
+
+Get a checkout key for a project by supplying the fingerprint of the key.
+```ruby
+res = CircleCi::Project.new_checkout_key 'username', 'reponame', 'fingerprint'
+res.success?
+res.body
+```
+
+Example response
+
+```javascript
+{
+    "public_key": "ssh-rsa...",
+    "type": "deploy-key", // can be "deploy-key" or "user-key"
+    "fingerprint": "c9:0b:1c:4f:d5:65:56:b9:ad:88:f9:81:2b:37:74:2f",
+    "preferred": true,
+    "time" : "2015-09-21T17:29:21.042Z" // when the key was issued
+}
+```
+
 #### [list_checkout_keys](#list_checkout_keys)
 
 Endpoint: `/project/#{username}/#{project}/checkout-key`
@@ -410,20 +434,11 @@ Example response
 ```javascript
 [
     {
-        "public_key"=>"ssh-rsa key",
-        "type"=>"github-user-key",
-        "fingerprint"=>"finger_print",
-        "login"=>"login",
-        "preferred"=>true,
-        "time"=>"2015-11-21T16:55:26.922Z"
-    },
-    {
-        "public_key"=>"ssh-rsa key",
-        "type"=>"github-user-key",
-        "fingerprint"=>"fingerprint",
-        "login"=>"anujaware",
-        "preferred"=>false,
-        "time"=>"2015-11-21T16:48:44.024Z"
+        "public_key": "ssh-rsa...",
+        "type": "deploy-key", // can be "deploy-key" or "user-key"
+        "fingerprint": "c9:0b:1c:4f:d5:65:56:b9:ad:88:f9:81:2b:37:74:2f",
+        "preferred": true,
+        "time" : "2015-09-21T17:29:21.042Z" // when the key was issued
     }
 ]
 ```
