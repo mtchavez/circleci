@@ -47,6 +47,7 @@ end
   * [Recent Builds Branch](#recent_builds_branch)
   * [Recent Builds](#recent_builds)
   * [Settings](#settings)
+  * [SSH Key](#ssh_key)
   * [Unfollow](#unfollow)
 * [Build](#build)
   * [Artifacts](#artifacts)
@@ -565,6 +566,25 @@ Example response
     },
     "irc_notify_prefs": nil
 }
+```
+
+#### [ssh_key](#ssh_key)
+
+Endpoint: `/project/:username/:repository/settings`
+
+Creates an ssh key that will be used to access the external system identified
+by the hostname parameter for SSH key-based authentication.
+
+```ruby
+res = CircleCi::Project.ssh_key 'username', 'repo', 'RSA private key', 'hostname'
+res.success?
+```
+
+Example response
+
+Empty response body with a `200 OK` successful response code
+```javascript
+""
 ```
 
 #### [unfollow](#unfollow)
