@@ -18,18 +18,6 @@ module CircleCi
 
     ##
     #
-    # Get all recent builds for a specific project
-    #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @return         [CircleCi::Response] - Response object
-
-    def self.recent_builds username, project
-      CircleCi.http.get "/project/#{username}/#{project}"
-    end
-
-    ##
-    #
     # Build the latest master push for this project
     #
     # @param username [String] - User or org name who owns project
@@ -38,19 +26,6 @@ module CircleCi
 
     def self.build username, project
       CircleCi.http.post "/project/#{username}/#{project}"
-    end
-
-    ##
-    #
-    # Get all recent builds for a specific branch of a project
-    #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @param branch   [String] - Name of branch
-    # @return         [CircleCi::Response] - Response object
-
-    def self.recent_builds_branch username, project, branch
-      CircleCi.http.get "/project/#{username}/#{project}/tree/#{branch}"
     end
 
     ##
@@ -67,6 +42,46 @@ module CircleCi
       body = {}
       body["build_parameters"] = build_parameters unless build_parameters.empty?
       CircleCi.http.post "/project/#{username}/#{project}/tree/#{branch}", {}, body
+    end
+
+    ##
+    #
+    # Add a ssh key to a build
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @param build    [String] - Build number
+    # @param key      [String] - The ssh private key
+    # @param hostname [String] - The hostname identified by the key
+    # @return         [CircleCi::Response] - Response object
+    def self.build_ssh_key username, project, build, key, hostname
+      body = { hostname: hostname, private_key: key }
+      CircleCi.http.post "/project/#{username}/#{project}/#{build}/ssh-users", {}, body
+    end
+
+    ##
+    #
+    # Get all recent builds for a specific project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @return         [CircleCi::Response] - Response object
+
+    def self.recent_builds username, project
+      CircleCi.http.get "/project/#{username}/#{project}"
+    end
+
+    ##
+    #
+    # Get all recent builds for a specific branch of a project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @param branch   [String] - Name of branch
+    # @return         [CircleCi::Response] - Response object
+
+    def self.recent_builds_branch username, project, branch
+      CircleCi.http.get "/project/#{username}/#{project}/tree/#{branch}"
     end
 
     ##

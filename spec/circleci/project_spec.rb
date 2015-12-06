@@ -88,6 +88,20 @@ describe CircleCi::Project do
 
   end
 
+  describe 'build_ssh_key' do
+
+    context 'successfully', vcr: { cassette_name: 'project/build_ssh_key/success', record: :none } do
+
+      it 'returns a response object' do
+        res = CircleCi::Project.build_ssh_key 'mtchavez', 'circleci', '65', 'RSA Private Key', 'hostname'
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+    end
+
+  end
+
   describe 'recent_builds' do
 
     context 'successfully', vcr: { cassette_name: 'project/recent_builds/success', record: :none } do
@@ -162,9 +176,9 @@ describe CircleCi::Project do
 
   end
 
-  describe 'ssk_key' do
+  describe 'ssh_key' do
 
-    context 'successfully', vcr: { cassette_name: 'project/ssh_key/success', record: :all } do
+    context 'successfully', vcr: { cassette_name: 'project/ssh_key/success', record: :none } do
 
       it 'returns a response object' do
         res = CircleCi::Project.ssh_key 'mtchavez', 'circleci', 'RSA Private Key', 'hostname'

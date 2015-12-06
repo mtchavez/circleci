@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/65/ssh-users?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: hostname=hostname&private_key=RSA%20Private%20Key
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '49'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 06 Dec 2015 21:47:17 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.44172831333362417;Expires=Tue, 06 Dec 2016 21:47:17 +0000;Path=/;Secure
+      - ring-session=64j0W%2BdLKvq%2FfdT1aPMue6ee0a8bPzv%2F0d%2F7wcDzZNtexl5NbVzgFlDHQCeGkL7Ya4DlgqyUCP6ZVTQw9ezxfyNQ6pdJtHxcubzfvmtINcy11Mmx99F6bCyjVawKy3XorRvCJMW631gadTi5BRY6N6%2BsSBAmvj6yQJTRDXkKBucmBOikH2zstZpA2zP5IujeWxkhRODeuZHBhIeLIzI6yBvYx0lfoAQAgfHoKb%2Bf4Qg%3D--AMWQOiOAnRZ1sowmI7O%2FaGkYZVZGGFpqWGDhz%2Ben89M%3D;Path=/;HttpOnly;Expires=Fri,
+        02 Dec 2016 18:32:32 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-993b0d27
+      X-Circleci-Request-Id:
+      - 9cc5ce9d-475f-4df1-b9dc-62c819055878
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/:build_num/ssh-users"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '830'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKRV2a7TMBD9FZTnNnXWNpEQIITgAcELvFyELMeeNEbOgpei
+        csW/M87Se3s3Crwl9oznzJlz7OuA9+3ANARl0Fg7mHKz2UvbuCrEjU1recMO
+        8HPDpeYKuNzM4RuScA6FqHICEIZhmhQk5TytigSCVTBoOMjeGWochhlTO0Ur
+        J5UIyutg/KCda4MyT1eBscw6g/XnWEyfIqxsgbZSKYm7WZom5NeyhRBYCxY0
+        7nROqVXQY2JptYOV76iVFjepYNY3FpMoW0fxmuSfoqRMtmVE1mRXEuJL9eKI
+        IfjlDNsD/e7AgaDMnufFkc+LSZjlyRUGa7D6SPt6Ka9h6DuEhFkLVRhlTEOd
+        GVF++bpgd1rdInuJHuneNw8wnmeeUGxYKcDMaBXUTCoQS+lKs443eGTLDDY9
+        dgJ6BrMch6vM2aa/iJMfjadkksF8nJ+bNHT6nGhW/V525yXmoq+Xf2gR6YjM
+        2gZ+vAS1nmLD1quEHZhl+g4h06IJp/K+IO87C50dGXKbNM13xYvD8yRANRy4
+        oV5qRvYeym0VbgtW7xIuhMirOCoyIEm0zQqR51kdTJmW7U8k3tJktgpkV2tk
+        UztunQZaj23UTBmYhgodq8YRzGs3kvtDyw0zlGkra8btSbCLW/7bHA9E3yC7
+        OxwvYQknAxlXfQPuZf958Bp59vrdqw9v37z/+BZjfTXRO3tqWOBMFkdP+UrW
+        wI8oWTyhlp00DfKDkuipgAE6AR0/Us54A6eKth/GPu5bbVdGcUi2u6tH+s2y
+        3XY1O40eW7Uc2WLT6OLZbyjYWmpj6V4DdAvcuYNvfTVTsqDBuTwCB92Rh2kR
+        eTgc3QbK22DKQ1vSiWRs1OLwffHrf72E7pv5ctteLMIp8O/8cnP4A75/XGRP
+        qmqm7dz/f3p9MGPzF7hn+h4APe/cRTwvP0nhLxQXugHRwJnZ/KVyeTePY+h6
+        AaOKBlcpyakcKBMCJRdkaRilaRhnURgnW/8w9Nr6q2IbxWcXP16dnXUYIFv/
+        rElxeplQ5+soSbfrKq3qbO0VFUUJ+UR2JE/JVXDnhvMq9/0++TB6e2TFLXvc
+        +OwiPn8DAAD//wMAKRyYz4cIAAA=
+    http_version: 
+  recorded_at: Sun, 06 Dec 2015 21:47:12 GMT
+recorded_with: VCR 2.9.3
