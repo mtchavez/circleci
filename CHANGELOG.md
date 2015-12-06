@@ -1,4 +1,4 @@
-# Version 0.0.1 - Unreleased
+# Version 0.1.2 - Unreleased
 
 * CircleCi::User#heroku_key – Add your Heroku API key to your account
 * CircleCi::Project#ssh_key – Add an SSH key to a project
