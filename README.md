@@ -41,12 +41,13 @@ end
   * [All](#all)
   * [Build Branch](#build_branch)
   * [Build SSH Key](#build_ssh_key)
-  * [List Checkout Keys](#list_checkout_keys)
   * [Clear Cache](#clear_cache)
   * [Enable](#enable)
   * [Follow](#follow)
-  * [Recent Builds Branch](#recent_builds_branch)
+  * [List Checkout Keys](#list_checkout_keys)
+  * [New Checkout Key](#new_checkout_key)
   * [Recent Builds](#recent_builds)
+  * [Recent Builds Branch](#recent_builds_branch)
   * [Settings](#settings)
   * [SSH Key](#ssh_key)
   * [Unfollow](#unfollow)
@@ -425,6 +426,30 @@ Example response
         "time"=>"2015-11-21T16:48:44.024Z"
     }
 ]
+```
+
+#### [new_checkout_key](#new_checkout_key)
+
+Endpoint: `/project/:username/:repository/checkout-key`
+
+Create an ssh key used to access external systems that require SSH key-based authentication.
+Takes a type of key to create which an be `deploy-key` or `github-user-key`.
+```ruby
+res = CircleCi::Project.new_checkout_key 'username', 'reponame', 'deploy-key'
+res.success?
+res.body
+```
+
+Example response
+
+```javascript
+{
+    "public_key": "ssh-rsa...",
+    "type": "deploy-key", // can be "deploy-key" or "user-key"
+    "fingerprint": "c9:0b:1c:4f:d5:65:56:b9:ad:88:f9:81:2b:37:74:2f",
+    "preferred": true,
+    "time" : "2015-09-21T17:29:21.042Z" // when the key was issued
+}
 ```
 
 #### [recent_builds](#recent_builds)
