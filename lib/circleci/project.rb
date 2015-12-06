@@ -98,6 +98,19 @@ module CircleCi
 
     ##
     #
+    # Get a checkout key for a project
+    #
+    # @param username     [String] - User or org name who owns project
+    # @param project      [String] - Name of project
+    # @param fingerprint  [String] - Fingerprint of a checkout key
+    # @return         [CircleCi::Response] - Response object
+
+    def self.get_checkout_key username, project, fingerprint
+      CircleCi.http.get "/project/#{username}/#{project}/checkout-key/#{fingerprint}"
+    end
+
+    ##
+    #
     # Get a list of checkout keys for project
     #
     # @param username [String] - User or org name who owns project
