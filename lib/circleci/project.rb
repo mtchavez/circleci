@@ -61,6 +61,20 @@ module CircleCi
 
     ##
     #
+    # Create a checkout key for a project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @param type     [String] - The type of key to create. Can be 'deploy-key' or 'github-user-key'.
+    # @return         [CircleCi::Response] - Response object
+
+    def self.new_checkout_key username, project, type
+      body = { type: type }
+      CircleCi.http.post "/project/#{username}/#{project}/checkout-key", {}, body
+    end
+
+    ##
+    #
     # Get all recent builds for a specific project
     #
     # @param username [String] - User or org name who owns project

@@ -25,17 +25,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 06 Dec 2015 22:40:58 GMT
+      - Sun, 06 Dec 2015 22:52:28 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3630043257200286;Expires=Tue, 06 Dec 2016 22:40:58 +0000;Path=/;Secure
-      - ring-session=vTXx6Uk2e6bYJ%2FG%2FXf9edKONmJTvBlF4dR54gbSJLR%2B13XJG8kukcHgrNnFYpYOoiYRG3Q6CdPafHDxxyortWhOp3GbI0ytLupL2NbDQ8zoX92dYK1n4R32RqIPwYXcfYZESWHUuLN7wcBUz3hxDstMyg7Pwqetm8HNH84J6BXTfBiUonwwL8O1xm7guQf7Jg%2BEubV3UVbY0C3MB2pRwA%2FsKjnwqgsoAlq6nGfIIANU%3D--MB9BjpgkoJzcPrRIypYnE339RoHpWVg4jilF2MWw%2F%2Bo%3D;Path=/;HttpOnly;Expires=Fri,
-        02 Dec 2016 18:38:24 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.8421586787294066;Expires=Tue, 06 Dec 2016 22:52:28 +0000;Path=/;Secure
+      - ring-session=jcanfJiGuQiwMNJrVWuza40r3hxW5mC3vamC686QaETrIlCdV3dHp2Let7Lvuy4rU%2Bu0Mc2ClV8TzBamOKnYa9IRepVb%2Fp7Wc7uqJyREbiyxjq4px57civfLIW7r%2BuxecbRKPb%2Fi2B1UAzVl3tjJADcqvs%2FvaMxAE8P7tZB56Q61I0WGAiIpwO5bunNBWDleskPJ%2FWTi3ahUgiiTCgsSxnIPHzPDr%2F8IHbTCmQmKP94%3D--eIfDrNfKE0e0HeyfFL5PW9UZhkq%2FoQaHpKybK%2FcuN6c%3D;Path=/;HttpOnly;Expires=Fri,
+        02 Dec 2016 18:39:00 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-002214be
+      - i-062214b8
       X-Circleci-Request-Id:
-      - 735a3cfd-e812-4d01-b3be-68e8036e866f
+      - 2d0ff97f-d1a6-4554-a92d-008ba6520712
       X-Frame-Options:
       - DENY
       X-Route:
@@ -48,5 +48,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"message":"it looks like private key is invalid key.  Double check"}'
     http_version: 
-  recorded_at: Sun, 06 Dec 2015 22:40:50 GMT
+  recorded_at: Sun, 06 Dec 2015 22:52:23 GMT
 recorded_with: VCR 2.9.3
