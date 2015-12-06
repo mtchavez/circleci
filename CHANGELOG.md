@@ -1,3 +1,7 @@
+# Version 0.0.1 - Unreleased
+
+* CircleCi::User#heroku_key – Add your Heroku API key to your account
+
 # Version 0.1.1 - (3-29-2015)
 
 * Cancel a build merged in [#15](https://github.com/mtchavez/circleci/pull/15) from [@etiennebarrie](https://github.com/etiennebarrie)
