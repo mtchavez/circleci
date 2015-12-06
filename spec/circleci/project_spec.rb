@@ -162,6 +162,20 @@ describe CircleCi::Project do
 
   end
 
+  describe 'ssk_key' do
+
+    context 'successfully', vcr: { cassette_name: 'project/ssh_key/success', record: :all } do
+
+      it 'returns a response object' do
+        res = CircleCi::Project.ssh_key 'mtchavez', 'circleci', 'RSA Private Key', 'hostname'
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+    end
+
+  end
+
   describe 'clear_cache' do
 
     context 'successfully', vcr: { cassette_name: 'project/clear_cache/success', record: :none } do
@@ -271,9 +285,9 @@ describe CircleCi::Project do
         project.should have_key 'branches'
         project.should have_key 'default_branch'
       end
-    
+
     end
-  
+
   end
 
   describe 'checkout_keys' do
