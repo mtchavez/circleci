@@ -149,7 +149,7 @@ module CircleCi
     # @param username     [String] - User or org name who owns project
     # @param project      [String] - Name of project
     # @param fingerprint  [String] - Fingerprint
-    # @return         [CircleCi::Response] - Response object
+    # @return             [CircleCi::Response] - Response object
 
     def self.fingerprint username, project, fingerprint
       CircleCi.http.get "/project/#{username}/#{project}/checkout-key/#{fingerprint}"
