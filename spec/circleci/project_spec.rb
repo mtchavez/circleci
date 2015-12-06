@@ -317,6 +317,7 @@ describe CircleCi::Project do
 
       it 'returns a response hash' do
         res.body.should be_an_instance_of(Array)
+        res.body.size.should eql 2
         project = res.body[0]
         project.should have_key 'public_key'
         project.should have_key 'type'
