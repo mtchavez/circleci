@@ -2,6 +2,7 @@
 
 * CircleCi::User#heroku_key – Add your Heroku API key to your account
 * CircleCi::Project#ssh_key – Add an SSH key to a project
+* CircleCi::Project#build_ssh_key – Add an SSH key to a project build
 
 # Version 0.1.1 - (3-29-2015)
 
