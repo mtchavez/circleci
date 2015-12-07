@@ -1,16 +1,15 @@
 GIT
-  remote: git@github.com:circleci/rspec_junit_formatter.git
-  revision: 7b098c8ab2ac5e5f78190b51629ed6d67a9de4d1
+  remote: git@github.com:sj26/rspec_junit_formatter.git
+  revision: dfa2943f98ff81d57107c7e4e828eb1edb8e04b2
   specs:
-    rspec_junit_formatter (0.2.0)
+    rspec_junit_formatter (0.2.3)
       builder (< 4)
-      rspec (>= 2, < 4)
-      rspec-core (!= 2.12.0)
+      rspec-core (>= 2, < 4, != 2.12.0)
 
 PATH
   remote: .
   specs:
-    circleci (0.1.1)
+    circleci (0.2.0)
       rest-client (~> 1.8)
 
 GEM
