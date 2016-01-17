@@ -9,8 +9,9 @@ module CircleCi
     VERSION = 'v1'
     DEFAULT_HOST = "https://circleci.com/api/#{VERSION}"
     DEFAULT_PORT = 80
+    DEFAULT_PROXY = nil
 
-    attr_accessor :token, :host, :port
+    attr_accessor :token, :host, :port, :proxy
 
     ##
     #
@@ -19,6 +20,7 @@ module CircleCi
     def initialize
       @host = DEFAULT_HOST
       @port = DEFAULT_PORT
+      @proxy = DEFAULT_PROXY
     end
 
   end

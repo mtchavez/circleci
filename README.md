@@ -24,11 +24,16 @@ gem 'circleci'
 
 ### Configuring
 
-Configure using an API token from Circle
+Configure using an API token from CircleCI
 
 ```ruby
 CircleCi.configure do |config|
+  # CircleCI token
   config.token = 'my-token'
+  
+  # Optionally supply a proxy url to have all requests 
+  # to CircleCI routed through the proxy. 
+  config.proxy = 'http://myproxy.com'
 end
 ```
 

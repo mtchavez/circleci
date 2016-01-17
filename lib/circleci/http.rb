@@ -8,6 +8,7 @@ module CircleCi
 
     def initialize(_config)
       @config, @errors, @success, @over_limit, @suspended = _config, [], false, false, false
+      RestClient.proxy = @config.proxy
     end
 
     def get(path, params = {})
