@@ -9,15 +9,25 @@ describe CircleCi do
         config.token = 'test-key'
       end
       CircleCi.config.token.should eql 'test-key'
+      CircleCi.config.proxy.should be_nil
     end
 
-    it 'can be accessed after being set' do
+    it 'can access the API token after being set' do
       CircleCi.configure do |config|
         config.token = 'test-key'
       end
       CircleCi.config.token.should eql 'test-key'
       CircleCi.config.token = 'new-key'
       CircleCi.config.token.should eql 'new-key'
+    end
+
+    it 'can access the proxy after being set' do
+      CircleCi.configure do |config|
+        config.proxy = 'http://username:password@myproxy.com:1234'
+      end
+      CircleCi.config.proxy.should eql 'http://username:password@myproxy.com:1234'
+      CircleCi.config.proxy = 'http://myproxy.com'
+      CircleCi.config.proxy.should eql 'http://myproxy.com'
     end
 
   end
