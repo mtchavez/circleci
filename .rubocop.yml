@@ -1,0 +1,40 @@
+AllCops:
+  Exclude:
+    - 'Gemfile'
+    - '**/Gemfile'
+    - 'Capfile'
+    - '**/Capfile'
+    - 'vendor/**/*'
+    - 'env/vendor/**/*'
+    - 'cookbooks/**/**'
+
+Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/LineLength:
+  Max: 200
+
+Style/NumericLiterals:
+  MinDigits: 7
+
+Metrics/ModuleLength:
+  CountComments: false
+  Max: 300
+
+Style/SpaceBeforeFirstArg:
+  AllowForAlignment: true
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%': '[]'
+    '%Q': '[]'
+    '%W': '[]'
+    '%i': '[]'
+    '%q': '[]'
+    '%r': '{}'
+    '%s': '[]'
+    '%w': '[]'
+    '%x': '[]'
