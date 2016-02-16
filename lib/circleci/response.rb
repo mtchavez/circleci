@@ -1,16 +1,20 @@
 module CircleCi
-
+  ##
+  #
+  # Response class is used to get access to raw HTTP request info
   class Response
-
     attr_reader :success, :body, :errors, :code, :path
     ##
     # Initializing response object to be returned from API calls, used internally.
     #
     # @private
 
-    def initialize(http, _code, _path) # @private
-      @success, @body, @errors = http.success, http.response, http.errors
-      @code, @path, @params    = _code, _path
+    def initialize(http, resp_code, resp_path) # @private
+      @success = http.success
+      @body = http.response
+      @errors = http.errors
+      @code = resp_code
+      @path = resp_path
     end
 
     ##
@@ -19,7 +23,7 @@ module CircleCi
     # @return [Boolean]
 
     def success?
-      !!@success
+      @success == true
     end
 
     ##
@@ -31,7 +35,5 @@ module CircleCi
     def parsed_body
       @body
     end
-
   end
-
 end

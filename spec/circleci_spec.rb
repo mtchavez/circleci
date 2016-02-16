@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 describe CircleCi do
-
   context 'configuration' do
-
     it 'takes block to set config' do
       CircleCi.configure do |config|
         config.token = 'test-key'
@@ -19,11 +17,9 @@ describe CircleCi do
       CircleCi.config.token = 'new-key'
       CircleCi.config.token.should eql 'new-key'
     end
-
   end
 
   describe 'organization', vcr: { cassette_name: 'organization', record: :none } do
-
     subject { CircleCi.organization(ENV['ORGANIZATION'] || 'orga-name') }
     let(:body) { subject.body }
 
@@ -37,7 +33,5 @@ describe CircleCi do
       expect(body.first).to have_key('reponame')
       expect(body.first).to have_key('vcs_url')
     end
-
   end
-
 end
