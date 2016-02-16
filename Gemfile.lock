@@ -8,6 +8,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.8)
+    ast (2.2.0)
     builder (3.2.2)
     coderay (1.1.0)
     coveralls (0.8.10)
@@ -36,10 +37,14 @@ GEM
     mime-types (2.4.3)
     multi_json (1.11.2)
     netrc (0.10.3)
+    parser (2.3.0.6)
+      ast (~> 2.2)
+    powerpack (0.1.1)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    rainbow (2.1.0)
     rake (10.4.2)
     redcarpet (3.2.2)
     rest-client (1.8.0)
@@ -57,6 +62,12 @@ GEM
     rspec_junit_formatter (0.2.3)
       builder (< 4)
       rspec-core (>= 2, < 4, != 2.12.0)
+    rubocop (0.36.0)
+      parser (>= 2.3.0.0, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.7)
+    ruby-progressbar (1.7.5)
     safe_yaml (1.0.4)
     simplecov (0.11.1)
       docile (~> 1.1.0)
@@ -94,6 +105,7 @@ DEPENDENCIES
   redcarpet (~> 3.2.2, >= 3.2.2)
   rspec (~> 2.14.1, >= 2.14.1)
   rspec_junit_formatter (= 0.2.3)
+  rubocop (~> 0.36.0)
   simplecov (~> 0.11.0, >= 0.11.0)
   typhoeus (~> 0.8.0)
   vcr (~> 2.9.3, >= 2.9.3)
@@ -101,4 +113,4 @@ DEPENDENCIES
   yard (~> 0.8.7, >= 0.8.7.6)
 
 BUNDLED WITH
-   1.10.6
+   1.11.1
