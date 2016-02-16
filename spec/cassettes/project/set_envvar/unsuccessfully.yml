@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/asdf-bogus/envvar?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    body:
+      encoding: US-ASCII
+      string: name=TESTENV&value=testvalue
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '28'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2016 20:41:15 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.5679000950422193;Expires=Thu, 16 Feb 2017 20:41:15 +0000;Path=/;Secure
+      - ring-session=FGyOze029ZVuOy8WGvs4JBpIjqE6lVeLaZ74y6WIBsFGQ1gyILGlpVF2MhlYEORHu%2BcXMv%2BegGBV8y2hvoNggl3wcQHqnD4yx4g9s%2BhkK%2BlKX8TQyPxYz%2F0J1%2F0MTWLzjQFX26hOGUAancR3dIymJrPl6%2BmK3swKKa6g%2BetdhRKM6sp3ihaWD1wE086elT39WM5tx%2Fdj3wzESshs3I3GfCpxW0SA84oMLPSrUOO3Jo0%3D--JLTGrGFCKFDgpm3pvPvpzaXO7Q%2FZ5H%2FkLBjQKxljY2g%3D;Path=/;HttpOnly;Expires=Sat,
+        11 Feb 2017 19:58:15 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-1443d88c
+      X-Circleci-Request-Id:
+      - 3bc8f1f1-5cc7-43d3-ab65-cd9cbf60913f
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/api/v1/project/:username/:repo/envvar"
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Project not found"}'
+    http_version: 
+  recorded_at: Tue, 16 Feb 2016 20:41:23 GMT
+recorded_with: VCR 2.9.3
