@@ -1,3 +1,8 @@
+# Unreleased
+
+* CircleCi::Project#envvar – Get environment variables for a project
+* CircleCi::Project#set_envvar – Set environment variable for a project
+
 # Version 0.2.0 - (2015-12-06)
 
 * CircleCi::User#heroku_key – Add your Heroku API key to your account

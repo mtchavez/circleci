@@ -44,6 +44,7 @@ end
   * [Build SSH Key](#build_ssh_key)
   * [Clear Cache](#clear_cache)
   * [Enable](#enable)
+  * [Envvar](#envvar)
   * [Follow](#follow)
   * [Delete Checkout Key](#delete_checkout_key)
   * [Get Checkout Key](#get_checkout_key)
@@ -52,6 +53,7 @@ end
   * [Recent Builds](#recent_builds)
   * [Recent Builds Branch](#recent_builds_branch)
   * [Settings](#settings)
+  * [Set Envvar](#set_envvar)
   * [SSH Key](#ssh_key)
   * [Unfollow](#unfollow)
 * [Build](#build)
@@ -394,6 +396,23 @@ Example response
 }
 ```
 
+#### [envvar](#envvar)
+
+Endpoint: `/project/:username/:project/envvar`
+
+Get a list of environment variables for a project
+
+```ruby
+res = CircleCi::Project.envvar 'username', 'repo'
+res.success?
+```
+
+Example response
+
+```javascript
+[{"name":"foo","value":"xxxx"}]
+```
+
 #### [follow](#follow)
 
 Endpoint: `/project/:username/:repository/follow`
@@ -644,6 +663,24 @@ Example response
     },
     "irc_notify_prefs": nil
 }
+```
+
+#### [set_envvar](#set_envvar)
+
+Endpoint: `/project/:username/:project/envvar`
+
+Creates a new environment variable for a project
+
+```ruby
+environment = { name: 'foo', value: 'bar' }
+res = CircleCi::Project.envvar 'username', 'repo', environment
+res.success?
+```
+
+Example response
+
+```javascript
+{"name":"foo","value":"xxxx"}
 ```
 
 #### [ssh_key](#ssh_key)
