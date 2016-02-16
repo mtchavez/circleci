@@ -2,17 +2,25 @@ require 'rubygems'
 require 'bundler'
 require 'yard'
 require 'rspec/core/rake_task'
+require 'rubocop/rake_task'
 
 Bundler::GemHelper.install_tasks
 
-desc 'Run specs'
-RSpec::Core::RakeTask.new('spec') do |t|
-  t.pattern = 'spec/**/*_spec.rb'
+task test: %i[rubocop spec]
+task default: :test
+
+# Rubocop
+desc 'Run Rubocop lint checks'
+task :rubocop do
+  RuboCop::RakeTask.new
 end
 
-task :default => 'spec'
+desc 'Run specs'
+RSpec::Core::RakeTask.new('spec') do |task|
+  task.pattern = 'spec/**/*_spec.rb'
+end
 
-YARD::Rake::YardocTask.new(:doc) do |t|
-  t.files   = ['lib/**/*.rb', '-', 'README.md']
-  t.options = ['no-private']
+YARD::Rake::YardocTask.new(:doc) do |task|
+  task.files   = %w[lib/**/*.rb - README.md]
+  task.options = %w[no-private]
 end

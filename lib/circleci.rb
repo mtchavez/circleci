@@ -2,23 +2,25 @@ require 'json'
 require 'rest-client'
 require 'net/http'
 
-files = [
-  'build',
-  'config',
-  'http',
-  'project',
-  'request_error',
-  'response',
-  'user'
+files = %w[
+  build
+  config
+  http
+  project
+  request_error
+  response
+  user
 ]
 
 files.each { |path| require_relative "./circleci/#{path}" }
 
-
+##
+#
+# CircleCi module configured to for endpoint interactions
 module CircleCi
+  module_function
 
-  extend self
-
+  ##
   #
   # @example Configure CircleCi with your token
   #   CircleCi.configure do |config|
@@ -29,6 +31,7 @@ module CircleCi
     yield config
   end
 
+  ##
   #
   # @return [CircleCi::Config]
 
@@ -53,5 +56,4 @@ module CircleCi
   def organization(name, params = {})
     http.get "/organization/#{name}", params
   end
-
 end

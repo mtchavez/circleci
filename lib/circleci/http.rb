@@ -1,13 +1,18 @@
 # encoding: utf-8
 
 module CircleCi
-
+  ##
+  #
+  # Http class handles all HTTP requests
   class Http # @private
-
     attr_accessor :errors, :response, :success, :config, :over_limit, :suspended
 
-    def initialize(_config)
-      @config, @errors, @success, @over_limit, @suspended = _config, [], false, false, false
+    def initialize(config)
+      @config = config
+      @errors = []
+      @success = false
+      @over_limit = false
+      @suspended = false
     end
 
     def get(path, params = {})
@@ -31,10 +36,7 @@ module CircleCi
     end
 
     def create_request_args(http_verb, url, body)
-      if http_verb == "post"
-        return [http_verb, url, body, headers]
-      end
-
+      return [http_verb, url, body, headers] if http_verb == 'post'
       [http_verb, url, headers]
     end
 
@@ -42,7 +44,7 @@ module CircleCi
       url  = "#{@config.host}#{path}"
       args = create_request_args http_verb, url, body
 
-      RestClient.send(*args) do |res, req, raw_res|
+      RestClient.send(*args) do |res, _, raw_res|
         body = res.body.to_s
         body.force_encoding(Encoding::UTF_8)
         code = raw_res.code.to_i
@@ -55,22 +57,27 @@ module CircleCi
       end
     end
 
+    def parsed_body(body)
+      JSON.parse(body)
+    rescue
+      nil
+    end
+
     def handle_response(body, code, path)
-      parsed = JSON.parse(body) rescue nil
-      successful_code = (200..299).include?(code)
+      parsed = parsed_body(body)
+      successful_code = (200..299).cover?(code)
       self.response = parsed if parsed
+      self.success = true
 
       # Some responses are empty but are successful
       if body == '""' && successful_code
         self.response = ''
-        self.success = true
       elsif parsed && successful_code
-        self.success = true
+        # Response is successful
       else
-        self.errors << RequestError.new(body, code, path)
+        self.success = false
+        self.errors = [RequestError.new(body, code, path)]
       end
     end
-
   end
-
 end

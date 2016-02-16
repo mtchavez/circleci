@@ -1,11 +1,8 @@
 require 'spec_helper'
 
 describe CircleCi::Build do
-
   describe 'artifacts' do
-
     context 'successfully', vcr: { cassette_name: 'build/artifacts/success', record: :none } do
-
       let(:res) { CircleCi::Build.artifacts 'janstenpickle', 'logback-flume', 2 }
 
       it 'returns a response object' do
@@ -26,15 +23,11 @@ describe CircleCi::Build do
         artifact.should have_key 'pretty_path'
         artifact.should have_key 'path'
       end
-
     end
-
   end
 
   describe 'cancel' do
-
     context 'successfully', vcr: { cassette_name: 'build/cancel/success', record: :none } do
-
       let(:res) do
         CircleCi::Build.cancel 'Shopify', 'spy', 572
       end
@@ -51,15 +44,11 @@ describe CircleCi::Build do
         build['outcome'].should eql 'canceled'
         build['canceled'].should eql true
       end
-
     end
-
   end
 
   describe 'get' do
-
     context 'successfully', vcr: { cassette_name: 'build/get/success', record: :none } do
-
       let(:res) { CircleCi::Build.get 'mtchavez', 'rb-array-sorting', 1 }
 
       it 'returns a response object' do
@@ -77,15 +66,11 @@ describe CircleCi::Build do
         build.should have_key 'status'
         build.should have_key 'subject'
       end
-
     end
-
   end
 
   describe 'retry' do
-
     context 'successfully', vcr: { cassette_name: 'build/retry/success', record: :none } do
-
       let(:res) { CircleCi::Build.retry 'mtchavez', 'rb-array-sorting', 1 }
 
       it 'returns a response object' do
@@ -103,15 +88,11 @@ describe CircleCi::Build do
         build.should have_key 'stop_time'
         build.should have_key 'subject'
       end
-
     end
-
   end
 
   describe 'tests' do
-
     context 'successfully', vcr: { cassette_name: 'build/tests/success', record: :none } do
-
       let(:res) { CircleCi::Build.tests 'mtchavez', 'circleci', 29 }
 
       it 'returns a response object' do
@@ -131,9 +112,6 @@ describe CircleCi::Build do
         test.should have_key 'source'
         test.should have_key 'result'
       end
-
     end
-
   end
-
 end

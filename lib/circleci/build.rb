@@ -1,15 +1,8 @@
 module CircleCi
-
-    ##
-    #
-    # Class for managing builds for a project
-
+  ##
+  #
+  # Class for interacting with and managing builds
   class Build
-
-    ##
-    #
-    # Class for interacting with and managing builds
-
     ##
     #
     # Get artifacts for a specific build of a project
@@ -19,7 +12,7 @@ module CircleCi
     # @param build    [String] - Build ID
     # @return         [CircleCi::Response] - Response object
 
-    def self.artifacts username, project, build
+    def self.artifacts(username, project, build)
       CircleCi.http.get "/project/#{username}/#{project}/#{build}/artifacts"
     end
 
@@ -32,7 +25,7 @@ module CircleCi
     # @param build    [String] - Build ID
     # @return         [CircleCi::Response] - Response object
 
-    def self.cancel username, project, build
+    def self.cancel(username, project, build)
       CircleCi.http.post "/project/#{username}/#{project}/#{build}/cancel"
     end
 
@@ -45,7 +38,7 @@ module CircleCi
     # @param build    [String] - Build ID
     # @return         [CircleCi::Response] - Response object
 
-    def self.get username, project, build
+    def self.get(username, project, build)
       CircleCi.http.get "/project/#{username}/#{project}/#{build}"
     end
 
@@ -58,7 +51,7 @@ module CircleCi
     # @param build    [String] - Build ID
     # @return         [CircleCi::Response] - Response object
 
-    def self.retry username, project, build
+    def self.retry(username, project, build)
       CircleCi.http.post "/project/#{username}/#{project}/#{build}/retry"
     end
 
@@ -71,10 +64,8 @@ module CircleCi
     # @param build [String] - Build ID
     # @return [CircleCi::Response] - Response object
 
-    def self.tests username, project, build
+    def self.tests(username, project, build)
       CircleCi.http.get "/project/#{username}/#{project}/#{build}/tests"
     end
-
   end
-
 end

@@ -16,6 +16,6 @@ if [ ! `bundle exec which rspec` ]; then
 fi
 
 display "Running specs"
-bundle exec rspec
+bundle exec rake
 
 # vim: ft=sh:
