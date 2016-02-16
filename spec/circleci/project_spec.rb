@@ -459,4 +459,81 @@ describe CircleCi::Project do
 
   end
 
+  describe 'envvars' do
+
+    context 'successfully', vcr: { cassette_name: 'project/envvar/success', record: :none } do
+
+      let(:res) { CircleCi::Project.envvars 'mtchavez', 'circleci' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns a response hash' do
+        res.body.should be_an_instance_of(Array)
+        envvar = res.body.first
+        envvar.should have_key 'name'
+        envvar.should have_key 'value'
+      end
+
+    end
+
+    context 'unsuccessfully', vcr: { cassette_name: 'project/envvar/unsuccessfully', record: :none } do
+
+      let(:res) { CircleCi::Project.envvars 'mtchavez', 'asdf-bogus' }
+      let(:message) { 'Project not found' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should_not be_success
+      end
+
+      it 'returns an error message' do
+        res.body.should be_an_instance_of(Hash)
+        res.body['message'].should eql message
+      end
+
+    end
+
+  end
+
+  describe 'set_envvar' do
+
+    context 'successfully', vcr: { cassette_name: 'project/set_envvar/success', record: :none } do
+
+      let(:res) { CircleCi::Project.set_envvar 'mtchavez', 'circleci', { name: 'TESTENV', value: 'testvalue' } }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should be_success
+      end
+
+      it 'returns a response hash' do
+        res.body['name'].should eq 'TESTENV'
+        # obfuscated value
+        res.body['value'].should eq 'xxxxalue'
+      end
+
+    end
+
+    context 'unsuccessfully', vcr: { cassette_name: 'project/set_envvar/unsuccessfully', record: :none } do
+
+      let(:res) { CircleCi::Project.set_envvar 'mtchavez', 'asdf-bogus', { name: 'TESTENV', value: 'testvalue' } }
+      let(:message) { 'Project not found' }
+
+      it 'returns a response object' do
+        res.should be_an_instance_of(CircleCi::Response)
+        res.should_not be_success
+      end
+
+      it 'returns an error message' do
+        res.body.should be_an_instance_of(Hash)
+        res.body['message'].should eql message
+      end
+
+    end
+
+  end
+
 end

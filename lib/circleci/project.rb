@@ -99,6 +99,32 @@ module CircleCi
 
     ##
     #
+    # Get the project envvars
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @return         [CircleCi::Response] - Response object
+
+    def self.envvars username, project
+      CircleCi.http.get "/project/#{username}/#{project}/envvar"
+    end
+
+    ##
+    #
+    # Sets an envvar for a project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    # @param envvar   [Hash] - {name: 'foo', value: 'bar'}
+    # @return         [CircleCi::Response] - Response object
+
+    def self.set_envvar username, project, envvar
+      body = envvar
+      CircleCi.http.post "/project/#{username}/#{project}/envvar", {}, body
+    end
+
+    ##
+    #
     # Follow the project
     #
     # @param username [String] - User or org name who owns project
