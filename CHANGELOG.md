@@ -1,4 +1,4 @@
-# Unreleased
+# Version 0.2.1 - (2016-02-21)
 
 * CircleCi::Project#envvar – Get environment variables for a project
 * CircleCi::Project#set_envvar – Set environment variable for a project
