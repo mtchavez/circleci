@@ -1574,7 +1574,7 @@ Style/SpaceAfterComma:
   Enabled: true
 
 # Supports --auto-correct
-Style/SpaceAfterControlKeyword:
+Style/SpaceAroundKeyword:
   Description: Use spaces after if/elsif/unless/while/until/case/when.
   Enabled: true
 
@@ -1649,11 +1649,6 @@ Style/SpaceBeforeFirstArg:
     argument for method calls without parentheses.
   Enabled: true
   AllowForAlignment: true
-
-# Supports --auto-correct
-Style/SpaceBeforeModifierKeyword:
-  Description: Put a space before the modifier keyword.
-  Enabled: true
 
 # Supports --auto-correct
 Style/SpaceBeforeSemicolon:
