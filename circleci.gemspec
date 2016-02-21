@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake',          '~> 10.5.0'
   s.add_development_dependency 'redcarpet',     '~> 3.3.4'
   s.add_development_dependency 'rspec',         '~> 2.14.1', '>= 2.14.1'
-  s.add_development_dependency 'rubocop',       '~> 0.36.0'
+  s.add_development_dependency 'rubocop',       '~> 0.37.2'
   s.add_development_dependency 'simplecov',     '~> 0.11.2'
   s.add_development_dependency 'typhoeus',      '~> 1.0.1'
   s.add_development_dependency 'vcr',           '~> 3.0.1'
