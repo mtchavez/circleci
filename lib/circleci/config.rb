@@ -4,12 +4,11 @@ module CircleCi
   # Config class used internally.
   # Configure API calls using AlPapi.configure
   class Config
-    VERSION = 'v1'.freeze
-    DEFAULT_HOST = "https://circleci.com/api/#{VERSION}".freeze
+    VERSION = 'v1'
+    DEFAULT_HOST = "https://circleci.com/api/#{VERSION}"
     DEFAULT_PORT = 80
 
-    attr_accessor :token
-    attr_reader :host, :port
+    attr_accessor :token, :host, :port
 
     ##
     #
