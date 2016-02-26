@@ -30,6 +30,7 @@ Configure using an API token from Circle
 ```ruby
 CircleCi.configure do |config|
   config.token = 'my-token'
+  config.host = 'https://circleci.com/api/v1'
 end
 ```
 
