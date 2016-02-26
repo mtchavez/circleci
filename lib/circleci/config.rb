@@ -8,7 +8,8 @@ module CircleCi
     DEFAULT_HOST = "https://circleci.com/api/#{VERSION}".freeze
     DEFAULT_PORT = 80
 
-    attr_accessor :token, :host, :port
+    attr_accessor :token, :host
+    attr_reader :port
 
     ##
     #
