@@ -1,7 +1,13 @@
-# Version 0.2.1 - (2016-02-21)
+# Version 0.2.2 - (2016-02-26)
 
+* Fix regression from [#50](https://github.com/mtchavez/circleci/pull/50) which broke [#10](https://github.com/mtchavez/circleci/pull/10)
+* Make host and port configurable for people using Enterprise CircleCi
 * CircleCi::Project#envvar – Get environment variables for a project
 * CircleCi::Project#set_envvar – Set environment variable for a project
+
+# Version 0.2.1 - (2016-02-21)
+
+**Yanked from rubygems**
 
 # Version 0.2.0 - (2015-12-06)
 
