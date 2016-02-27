@@ -33,6 +33,17 @@ CircleCi.configure do |config|
 end
 ```
 
+Optionally you can configure your own host and/or port if using an enterprise
+CircleCi host. The port will default to `80` if not set.
+
+```ruby
+CircleCi.configure do |config|
+  config.token = 'my-token'
+  config.host = 'https://ci.mycompany.com'
+  config.port = 1234
+end
+```
+
 ## API Endpoints
 
 * [User](#user)

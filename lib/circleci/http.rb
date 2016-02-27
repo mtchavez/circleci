@@ -41,7 +41,7 @@ module CircleCi
     end
 
     def request(http_verb, path, body = {})
-      url  = "#{@config.host}#{path}"
+      url  = "#{@config.uri}#{path}"
       args = create_request_args http_verb, url, body
 
       RestClient.send(*args) do |res, _, raw_res|
