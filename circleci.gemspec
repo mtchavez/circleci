@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name             = 'circleci'
-  s.version          = '0.2.2'
-  s.date             = '2016-02-26'
+  s.version          = '0.2.3'
+  s.date             = '2016-03-12'
   s.summary          = 'Circle CI REST API gem'
   s.description      = 'Ruby gem for Circle CI REST API'
   s.licenses         = %w[MIT]
