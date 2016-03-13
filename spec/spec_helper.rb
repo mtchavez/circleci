@@ -27,6 +27,9 @@ RSpec.configure do |config|
   config.before do
     CircleCi.configure do |c|
       c.token = ENV['TOKEN']
+      c.request_overrides = {
+        verify_ssl: false
+      }
     end
   end
 end

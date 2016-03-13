@@ -9,7 +9,7 @@ module CircleCi
     DEFAULT_URI = "#{DEFAULT_HOST}/api/#{DEFAULT_VERSION}".freeze
     DEFAULT_PORT = 80
 
-    attr_accessor :token, :host, :port, :version
+    attr_accessor :token, :host, :port, :request_overrides, :version
 
     ##
     #
@@ -19,6 +19,7 @@ module CircleCi
       @host = DEFAULT_HOST
       @port = DEFAULT_PORT
       @version = DEFAULT_VERSION
+      @request_overrides = {}
     end
 
     def uri

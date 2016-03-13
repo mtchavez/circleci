@@ -36,15 +36,20 @@ module CircleCi
     end
 
     def create_request_args(http_verb, url, body)
-      return [http_verb, url, body, headers] if http_verb == 'post'
-      [http_verb, url, headers]
+      args = {
+        method: http_verb.to_sym,
+        url: url,
+        headers: headers }
+      args[:payload] = body if http_verb == 'post'
+      args.merge!(@config.request_overrides)
+      args
     end
 
     def request(http_verb, path, body = {})
       url  = "#{@config.uri}#{path}"
       args = create_request_args http_verb, url, body
 
-      RestClient.send(*args) do |res, _, raw_res|
+      RestClient::Request.execute(args) do |res, _, raw_res|
         body = res.body.to_s
         body.force_encoding(Encoding::UTF_8)
         code = raw_res.code.to_i
