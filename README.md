@@ -44,6 +44,17 @@ CircleCi.configure do |config|
 end
 ```
 
+Overriding request settings such as not verifying SSL
+
+```ruby
+CircleCi.configure do |config|
+  config.token = ENV['CIRCLECI_TOKEN']
+  config.request_overrides = {
+    verify_ssl: false
+  }
+end
+```
+
 ## API Endpoints
 
 * [User](#user)

@@ -3,6 +3,7 @@
 * CircleCi::RecentBuilds#get - Replaces old CircleCi#organization endpoint to return all recent builds
 * Remove CircleCi#organization for CircleCi::RecentBuilds#get
 * CircleCi::Project#recent_builds - Takes params to supply limit, offset, and filter query params
+* RestClient::Request overrides or configuration per request is configurable via Config.request_overrides hash
 
 # Version 0.2.2 - (2016-02-26)
 
