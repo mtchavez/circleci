@@ -7,6 +7,7 @@ files = %w[
   config
   http
   project
+  recent_builds
   request_error
   response
   user
