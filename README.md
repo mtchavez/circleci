@@ -73,6 +73,8 @@ end
   * [Get](#get)
   * [Retry](#retry)
   * [Tests](#tests)
+* [Recent Builds](#recent_builds)
+  * [Get](#recent_builds_get)
 * [Organization](#organization)
 
 ### [User](#user)
@@ -975,6 +977,53 @@ res.body
     "classname"=>"spec.unit.user_spec"
   }
 ]
+```
+
+### [Recent Builds](#recent_builds)
+
+#### [get](#recent_builds_get)
+
+Endpoint: `/recent-builds`
+
+Build summary for each of the last 30 recent builds, ordered by build_num.
+
+```ruby
+res = CircleCi::RecentBuilds.get
+
+# Params of limit and offset can be passed in
+# res = CircleCi::RecentBuilds.get limit: 10, offset: 50
+
+res.success?
+res.body
+```
+
+```javascript
+[ {
+  "vcs_url" : "https://github.com/circleci/mongofinil",
+  "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
+  "build_num" : 22,
+  "branch" : "master",
+  "vcs_revision" : "1d231626ba1d2838e599c5c598d28e2306ad4e48",
+  "committer_name" : "Allen Rohner",
+  "committer_email" : "arohner@gmail.com",
+  "subject" : "Don't explode when the system clock shifts backwards",
+  "body" : "", // commit message body
+  "why" : "github", // short string explaining the reason we built
+  "dont_build" : null, // reason why we didn't build, if we didn't build
+  "queued_at" : "2013-02-12T21:33:30Z" // time build was queued
+  "start_time" : "2013-02-12T21:33:38Z", // time build started
+  "stop_time" : "2013-02-12T21:34:01Z", // time build finished
+  "build_time_millis" : 23505,
+  "username" : "circleci",
+  "reponame" : "mongofinil",
+  "lifecycle" : "finished", // :queued, :scheduled, :not_run, :not_running, :running or :finished
+  "outcome" : "failed", // :canceled, :infrastructure_fail, :timedout, :failed, :no_tests or :success
+  "status" : "failed", // :retried, :canceled, :infrastructure_fail, :timedout, :not_run, :running, :failed, :queued, :scheduled, :not_running, :no_tests, :fixed, :success
+  "retry_of" : null, // build_num of the build this is a retry of
+  "previous" : { // previous build
+    "status" : "failed",
+    "build_num" : 21
+  }, ... ]
 ```
 
 ### [organization](#organization)

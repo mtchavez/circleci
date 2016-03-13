@@ -1,3 +1,7 @@
+# Unreleased
+
+* CircleCi::RecentBuilds#get - Replaces old CircleCi.organization endpoint to return all recent builds
+
 # Version 0.2.2 - (2016-02-26)
 
 * Fix regression from [#50](https://github.com/mtchavez/circleci/pull/50) which broke [#10](https://github.com/mtchavez/circleci/pull/10)
