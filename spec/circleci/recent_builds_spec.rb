@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CircleCi::Build do
+describe CircleCi::RecentBuilds do
   describe 'get' do
     context 'successfully', vcr: { cassette_name: 'recent_builds/get/success', record: :none } do
       let(:res) { CircleCi::RecentBuilds.get }
