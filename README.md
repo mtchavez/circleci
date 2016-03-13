@@ -1029,7 +1029,8 @@ res.body
 
 Tests are ran using Rspec and VCR for API interaction recording.
 Run using `rake` or `rspec`. Please add tests for any new features or
-endpoints added if you are contributing.
+endpoints added if you are contributing. Code styling is enforced with RuboCop
+and uses a checked in `.rubocop.yml` for this project.
 
 Tests are using a live CircleCi API token for this repository. Any tests
 should be using this key, which is in the `.env` file. You should not have
