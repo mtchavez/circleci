@@ -1,6 +1,7 @@
 # Unreleased
 
-* CircleCi::RecentBuilds#get - Replaces old CircleCi.organization endpoint to return all recent builds
+* CircleCi::RecentBuilds#get - Replaces old CircleCi#organization endpoint to return all recent builds
+* Remove CircleCi#organization for CircleCi::RecentBuilds#get
 
 # Version 0.2.2 - (2016-02-26)
 
