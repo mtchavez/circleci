@@ -61,7 +61,7 @@ end
   * [Get Checkout Key](#get_checkout_key)
   * [List Checkout Keys](#list_checkout_keys)
   * [New Checkout Key](#new_checkout_key)
-  * [Recent Builds](#recent_builds)
+  * [Recent Builds](#project_recent_builds)
   * [Recent Builds Branch](#recent_builds_branch)
   * [Settings](#settings)
   * [Set Envvar](#set_envvar)
@@ -517,7 +517,7 @@ Example response
 }
 ```
 
-#### [recent_builds](#recent_builds)
+#### [recent_builds](#project_recent_builds)
 
 Endpoint: `/project/:username/:repository`
 
@@ -525,6 +525,13 @@ Build summary for each of the last 30 recent builds, ordered by build_num.
 
 ```ruby
 res = CircleCi::Project.recent_builds 'username', 'reponame'
+
+# Use params to filter by status
+# res = CircleCi::Project.recent_builds 'username', 'reponame', filter: 'failed'
+
+# Use params to limit and give an offset
+# res = CircleCi::Project.recent_builds 'username', 'reponame', limit: 10, offset: 50
+
 res.success?
 res.body
 ```

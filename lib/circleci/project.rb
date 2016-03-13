@@ -177,10 +177,11 @@ module CircleCi
     #
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
+    # @param params   [Hash] - Parameters for builds (limit, offset, filter)
     # @return         [CircleCi::Response] - Response object
 
-    def self.recent_builds(username, project)
-      CircleCi.http.get "/project/#{username}/#{project}"
+    def self.recent_builds(username, project, params = {})
+      CircleCi.http.get "/project/#{username}/#{project}", params
     end
 
     ##

@@ -226,6 +226,24 @@ describe CircleCi::Project do
         user['is_user'].should be
         user['login'].should eql 'mtchavez'
       end
+
+      describe 'params' do
+        context 'limit' do
+          let(:res) { CircleCi::Project.recent_builds 'mtchavez', 'circleci', limit: 5 }
+          it 'returns correct total of builds' do
+            res.body.size.should eql 5
+          end
+        end
+
+        context 'filter' do
+          let(:res) { CircleCi::Project.recent_builds 'mtchavez', 'circleci', limit: 5, filter: 'failed' }
+          it 'returns builds filtered by status' do
+            builds = res.body
+            statuses = builds.map { |build| build['status'] }
+            statuses.each { |status| status.should eql 'failed' }
+          end
+        end
+      end
     end
 
     context 'non-utf8 encoding', vcr: { cassette_name: 'project/recent_builds/encoding', serialize_with: :json, record: :none } do
