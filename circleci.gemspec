@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = %w[README.md]
 
   # Gem Dependencies
-  s.add_dependency 'rest-client', '~> 1.8'
+  s.add_dependency 'httparty', '~> 0.13'
 
   # Dev Dependencies
   s.add_development_dependency 'coveralls',     '~> 0.8.11', '>= 0.8.11'
