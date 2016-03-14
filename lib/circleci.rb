@@ -1,5 +1,5 @@
 require 'json'
-require 'rest-client'
+require 'httparty'
 require 'net/http'
 
 files = %w[
