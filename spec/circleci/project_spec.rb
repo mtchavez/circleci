@@ -72,6 +72,18 @@ describe CircleCi::Project do
 
         res.should be_success
       end
+
+      it 'can pass a specific revision' do
+        res = CircleCi::Project.build_branch 'ad2games', 'soapy_cake', 'master', {}, '123456'
+
+        res.should be_success
+      end
+
+      it 'can use parallel containers' do
+        res = CircleCi::Project.build_branch 'ad2games', 'soapy_cake', 'master', {}, nil, 2
+
+        res.should be_success
+      end
     end
   end
 
