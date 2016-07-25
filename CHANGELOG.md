@@ -1,3 +1,8 @@
+# Unreleased
+
+* CircleCi::Project#envvars renamed to envvar for consistency with API endpoint
+* Deprecated CircleCi::Project#envvars
+
 # Version 0.2.3 - (2016-03-12)
 
 * CircleCi::RecentBuilds#get - Replaces old CircleCi#organization endpoint to return all recent builds
