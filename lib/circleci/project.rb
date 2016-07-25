@@ -102,8 +102,17 @@ module CircleCi
     # @param project  [String] - Name of project
     # @return         [CircleCi::Response] - Response object
 
-    def self.envvars(username, project)
+    def self.envvar(username, project)
       CircleCi.http.get "/project/#{username}/#{project}/envvar"
+    end
+
+    ##
+    #
+    # @deprecated Please use [CircleCi::Project#envvar]
+    def self.envvars(username, project)
+      logger = Logger.new(STDOUT)
+      logger.warn('[Deprecated] Project#envvars is deprecated please use Project#envvar')
+      envvar username, project
     end
 
     ##
