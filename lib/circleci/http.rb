@@ -39,7 +39,8 @@ module CircleCi
       args = {
         method: http_verb.to_sym,
         url: url,
-        headers: headers }
+        headers: headers
+      }
       args[:payload] = body if http_verb == 'post'
       args.merge!(@config.request_overrides)
       args
