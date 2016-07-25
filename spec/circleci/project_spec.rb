@@ -402,9 +402,9 @@ describe CircleCi::Project do
     end
   end
 
-  describe 'envvars' do
+  describe 'envvar' do
     context 'successfully', vcr: { cassette_name: 'project/envvar/success', record: :none } do
-      let(:res) { CircleCi::Project.envvars 'mtchavez', 'circleci' }
+      let(:res) { CircleCi::Project.envvar 'mtchavez', 'circleci' }
 
       it 'returns a response object' do
         res.should be_an_instance_of(CircleCi::Response)
@@ -420,7 +420,7 @@ describe CircleCi::Project do
     end
 
     context 'unsuccessfully', vcr: { cassette_name: 'project/envvar/unsuccessfully', record: :none } do
-      let(:res) { CircleCi::Project.envvars 'mtchavez', 'asdf-bogus' }
+      let(:res) { CircleCi::Project.envvar 'mtchavez', 'asdf-bogus' }
       let(:message) { 'Project not found' }
 
       it 'returns a response object' do
@@ -432,6 +432,10 @@ describe CircleCi::Project do
         res.body.should be_an_instance_of(Hash)
         res.body['message'].should eql message
       end
+    end
+
+    context 'envvars deprecation' do
+      # TODO: Fill this in
     end
   end
 
