@@ -825,12 +825,6 @@ Style/DefWithParentheses:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#method-parens
   Enabled: true
 
-# Supports --auto-correct
-Style/DeprecatedHashMethods:
-  Description: Checks for use of deprecated Hash methods.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#hash-key
-  Enabled: true
-
 Style/Documentation:
   Description: Document classes and non-namespace modules.
   Enabled: false
