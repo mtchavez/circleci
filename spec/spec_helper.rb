@@ -1,9 +1,15 @@
+# frozen_string_literal: true
 require 'simplecov'
-require 'coveralls'
-
-SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+if ENV['COVERALLS_REPO_TOKEN']
+  require 'coveralls'
+  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+end
+SimpleCov.at_exit do
+  SimpleCov.result.format!
+end
 SimpleCov.start do
   add_filter '/spec/'
+  add_filter 'vendor'
 end
 
 project_root = File.expand_path(File.dirname(__FILE__) + '/..')
@@ -20,9 +26,11 @@ Dotenv.load
 Dir["#{project_root}/spec/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|
-  config.treat_symbols_as_metadata_keys_with_true_values = true
-  config.run_all_when_everything_filtered = true
   config.filter_run :focus
+  config.run_all_when_everything_filtered = true
+  config.disable_monkey_patching!
+  config.warnings = true
+  config.profile_examples = 10
 
   config.before do
     CircleCi.configure do |c|
@@ -40,7 +48,8 @@ VCR.configure do |config|
   config.ignore_localhost         = true
   config.default_cassette_options = { record: :new_episodes }
 
-  config.filter_sensitive_data('d121d128bf0b9d185cbad163fa410d958a30d37d') { ENV['TOKEN'] }
-  config.filter_sensitive_data('orga-name') { ENV['ORGANIZATION'] }
+  config.filter_sensitive_data('<TOKEN>') { ENV['TOKEN'] }
+  config.filter_sensitive_data('<ORG_NAME>') { ENV['ORGANIZATION'] }
+  config.filter_sensitive_data('<HEROKU_TOKEN>') { ENV['HEROKU_TOKEN'] }
   config.configure_rspec_metadata!
 end

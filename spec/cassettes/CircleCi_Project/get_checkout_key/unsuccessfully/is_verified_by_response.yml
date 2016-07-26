@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/asdf-bogus?circle-token=<TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 25 Jul 2016 22:53:14 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:53:14 +0000;Path=/;Secure
+      - ring-session=cpohNHWcmxAQqAWSgEDm0MfCeWamVMR7I4R8pcP14KGic2bJOqg25snBYPh9PDdrYtETYhxRvl9IWVVi5hOvC%2Bos510vXNCK1nxzUpzAwBaLY0%2F3sropGnYRcMfegjedyN%2FaSoLcGJudU4g0uA92xiwmZ4T1e4nmyuWM%2FQgy%2F2MK7SJuEYMdE1Hgnxb%2B7Na1l%2BbsclSF3PDixKgUE8BiG%2B%2BevuS%2B7Na9x2cDw1rb%2FzQ%3D--ScsejCIvxrUDk%2Bs1Hqgijw%2Fio31jomfjDo8xc4LiHKQ%3D;Path=/;HttpOnly;Expires=Tue,
+        25 Jul 2017 19:12:11 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-7dadfbfb
+      X-Circleci-Request-Id:
+      - b4373e7c-559f-4769-93e4-952077ed5c4e
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/checkout-key/:fingerprint"
+      Content-Length:
+      - '42'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message" : "checkout key not found"
+        }
+    http_version: 
+  recorded_at: Mon, 25 Jul 2016 22:52:52 GMT
+recorded_with: VCR 3.0.3

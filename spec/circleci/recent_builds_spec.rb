@@ -1,34 +1,42 @@
+# frozen_string_literal: true
 require 'spec_helper'
 
-describe CircleCi::RecentBuilds do
+RSpec.describe CircleCi::RecentBuilds, :vcr do
   describe 'get' do
-    context 'successfully', vcr: { cassette_name: 'recent_builds/get/success', record: :none } do
-      let(:res) { CircleCi::RecentBuilds.get }
+    context 'successfully' do
+      let(:res) { described_class.get }
 
-      it 'returns a response object' do
-        res.should be_an_instance_of(CircleCi::Response)
-        res.should be_success
+      it 'is verified by response' do
+        expect(res).to be_instance_of(CircleCi::Response)
+        expect(res).to be_success
       end
 
-      it 'returns recent builds' do
-        res.body.should be_an_instance_of(Array)
+      describe 'recent builds' do
+        subject(:builds) { res.body }
 
-        builds = res.body
-        builds.size.should eql 30
-        builds.first.should be_an_instance_of(Hash)
+        it 'has metadata' do
+          expect(subject).to be_instance_of(Array)
+          expect(subject.size).to eq 30
+        end
 
-        build = builds.first
-        build.should have_key 'build_num'
-        build.should have_key 'build_url'
-        build.should have_key 'status'
+        context 'first build' do
+          subject { builds.first }
+
+          it 'has metadata' do
+            expect(subject).to be_instance_of(Hash)
+            expect(subject).to have_key 'build_num'
+            expect(subject).to have_key 'build_url'
+            expect(subject).to have_key 'status'
+          end
+        end
       end
 
       describe 'with limit' do
-        let(:res) { CircleCi::RecentBuilds.get limit: 3 }
+        let(:res) { described_class.get limit: 3 }
+        subject { res.body }
 
         it 'returns correct total of builds' do
-          builds = res.body
-          builds.size.should eql 3
+          expect(subject.size).to eq 3
         end
       end
     end

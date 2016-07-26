@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/140/artifacts?circle-token=<TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 25 Jul 2016 22:33:38 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:33:38 +0000;Path=/;Secure
+      - ring-session=Yt6yYJa4AO%2BFdNITpd%2BgianpktU5TGfm68FRnfOsH7TsTssaIjD%2FS7kPBShp3cPDlcrFGTNJJo%2BP2HxKJYB8okdQAAxI3UxodXrwqiRQRd0OLEbHzh977QfTpT%2FJlYxP1LfVdJyFOhKXLGxsJVLK0eU6USyccK%2FzWfDFll%2BHWMCYsNKk5Lpe6q9hdekJ0uRzp7ug%2Bp0tljoCrMd4VFqJ2BF%2BU03uHjFzidXXP%2FO78RI%3D--Hf1tRRugQNRc1hK1FFnXwVStavG%2BFNT3aQUKyh0inDU%3D;Path=/;HttpOnly;Expires=Tue,
+        25 Jul 2017 22:26:45 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-50fa44a8
+      X-Circleci-Request-Id:
+      - e4a2c5df-dae7-4dfb-9a44-4ef7075ee327
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/artifacts"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '181'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAIpWqOZSUFAqSCzJUFKwUlDSL8kt0E/OLErOSdXNKs3LLNEr
+        c3bz8Sgw1y8qLkhN1oeIVeTmKOmA9RWllpRUxsO1qzh7Bjn7uMaHuAaHxAe5
+        BvgHhQRj15mXn5Ian5mXkloB0mgAFistygGbklFSUlBspa9vaGKga2liYWpu
+        ZqKbnqEHdVZiUUlmWmJySbFecn6uvoE+8U7mqlWIBQAAAP//AwDzNVaW8QAA
+        AA==
+    http_version: 
+  recorded_at: Mon, 25 Jul 2016 22:33:35 GMT
+recorded_with: VCR 3.0.3

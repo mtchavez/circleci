@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/recent-builds?circle-token=<TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 25 Jul 2016 22:25:56 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:25:56 +0000;Path=/;Secure
+      - ring-session=2w1z8FHiTZS%2FBxtifkxY7aBGvCwf9iSbgIpJnPLvsnZWjCk%2FWriJNBaDtQdv%2BNKfogKxWKzyd8bJkZfXL0x2hailWo0nEV25CyIeLwvQXyxebVkfZ5LVTNv9esQad1sGk1OX%2BLTJWJAejaZQTeQX2dC3KiYHjdJBrxFr6iOSp78T%2FdLxVrd8kFN8BVtWLwVsJB2PSQXH4v%2Bu%2BghkMT8wxCI3YFu8lf%2BKBtW3Eh3TTyw%3D--bhEXwMjEr6PQUiganVlJ19Q6%2FJu6NmIv225Wx7%2FPQV4%3D;Path=/;HttpOnly;Expires=Tue,
+        25 Jul 2017 17:22:09 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-b0f84648
+      X-Circleci-Request-Id:
+      - d8b46b50-a578-4eeb-9789-7a370f88f248
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/recent-builds"
+      Content-Length:
+      - '2920'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAOzdSW/jyBUA4Ht+BeG5JI3ucu2LTh0kyHJrBMmlxwOBpkoW
+        BxSpkJR7PIP57ykukiW1F7EcSqT1gBmgLVEUyapX/PRYy4/Bb38IgqsoW67C
+        3F4Fk+BqUZarYnJ9fReXi/Utcm9dL8toEd7bX6+jOI8SG8XX7tVlXF7PTChC
+        ipUlmF59rPa0yu19nK2LabGOIlsU83UyvV3Hyazad7pOknqr+pWp+8pwaUub
+        F3tvZkX9d5mv7cf24Nx3uc2ms7BsjpFiIj9h9YmKfxM8wWzCjftzgnFzELfZ
+        7KHe7kPwt/iXYJ5ny2CVrPMwCWx6fx/mQZm1/yqCeZYHUZYWcVHaNHoIvrnz
+        Dv785Z9ug9kqi9PyJv0QfMltYfN7G2TJLJiv06iMszRM4vKh+cZ1Ed7Z6X/X
+        dm1n07A8PEhKJ9V/HFElvzafmIdxMs1tWGTp3tnntswfptm8epFw3L62ct+2
+        bM59UwbNbopiMV0X7SX8Mfhp5/Ku82SvQDcfrIv0bvFEqRJt2lJ0JZMktv48
+        2R6uPSjEPEyjRf0V5cMq21wIm28PdfMNzVvhulxkxxfit0VThvUFedx59VpV
+        Z92fcTHdvDIPk6KuLe7lJLuL0++/371zHxVTd6jN1zf1+8q983u98+rNqvIW
+        cVMiV7uVGxtrIzvXdoYp1UZTHmrJsJ1JNbvafrwM756o5ul6WV9HbeoX43Se
+        h4Wr3VG5zu20urB7Z7BT3+2yffNqGZblwn77bJNPzSkhd4nrrRdhMQ3zMp6H
+        UbkfN5tQ3Lli+wfU1K6qEpVh2Wx31Ybt5oo1HyjjpZ0u4ySJ640oZVLx7YV7
+        5tM757GtEH/ZqQ5VucZ2P/SL9e3PNmrC50ueVf/+oY1Y11AsslngdhWnd8E8
+        /mXnsh8Uaf1GdcyzbF3uX9tZlpZPtEdJPLfRgwuCejfzOI2LhW0LNs2mM7ty
+        jUHVOkyjMFrY/X0WZbaqL9HTUS8kEgp/fQzXWVyEt20wPe7lySstuBBNE9DE
+        6PRhmewUp6tF7mK0FSRaxKmd3KRBkK9vH+p/BMG9axlcfXZlhihiN+ljdV+6
+        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
+    http_version: 
+  recorded_at: Mon, 25 Jul 2016 22:26:07 GMT
+recorded_with: VCR 3.0.3

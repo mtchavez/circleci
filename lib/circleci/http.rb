@@ -1,4 +1,5 @@
 # encoding: utf-8
+# frozen_string_literal: true
 
 module CircleCi
   ##
@@ -27,10 +28,6 @@ module CircleCi
       request 'delete', "#{path}?#{RestClient::Payload.generate(build_params(params))}"
     end
 
-    def headers
-      { 'accept' => 'application/json', 'content-type' => 'application/json' }
-    end
-
     def build_params(params = {})
       params.merge('circle-token' => @config.token)
     end
@@ -38,8 +35,7 @@ module CircleCi
     def create_request_args(http_verb, url, body)
       args = {
         method: http_verb.to_sym,
-        url: url,
-        headers: headers
+        url: url
       }
       args[:payload] = body if http_verb == 'post'
       args.merge!(@config.request_overrides)

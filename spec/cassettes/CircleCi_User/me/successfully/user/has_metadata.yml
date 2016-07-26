@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/me?circle-token=<TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 25 Jul 2016 23:00:44 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:00:44 +0000;Path=/;Secure
+      - ring-session=onuygHiHp4kxApYdn0e39%2Fd%2FImx6eTVCq1Psd4T1C1HbrKl32yTTVJXYqUWRy1NtGn4LIeW0BIyqzLoYUYiJRMZ55yjBirmYA8gw3EMSBajgTOohPFbda9CI2MqOUd92%2BQ04wX7YIeU3SUH8RVryPJR2nUjGP8QaRhgzjGdPjWZgR2j01BiO56sMWQ8uut9yQSPDOnenCF%2F7LARZ4TdN0eS6Lkze2jt7s4cZcrmuDGg%3D--LHlznDfu5iSsEVOAwwSB45aC9ghhmJokucLaT0gUaMo%3D;Path=/;HttpOnly;Expires=Tue,
+        25 Jul 2017 21:45:29 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-98fb4560
+      X-Circleci-Request-Id:
+      - b71e6598-ee91-40e3-9a99-5ff49ebb722e
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/me"
+      Content-Length:
+      - '663'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKxU246bMBB936+IeA4J1wCRqq7UX+hTqwoNZgjuGhvZJm12
+        tf9eX8iFNPu2PCA0xzNz5swxb0+rVYBcCsawrRvUoILVfvVz9WttEcpdrB6l
+        OEgYLNQBU+hAhQyJNmk4AGUWCwbQusc/z8hC0sMRXzcDBu4wHEGDrCfpD/Za
+        j2q/3fqw2hyo7qdmUiiJ4Bq53hAxbKdtlu3K6uvxS+qraEmB1chbVySJ4jSM
+        8jCKv0fJPo/3cbmJsvTH3LEdKF8ybkBR4umakbBzswZqAKl9jqIHXpuhiZi4
+        tmAau7inVwuYdF8rIkacZQos5b0XYL0KJI4imLUDDuykKVE19XTjKMvKLinC
+        Isl3YVa1GFZRVYU7UlZtVJEmSXNPg4ORzaZ8cyL6oFmA19CX4xNjLt7CSdUM
+        O22JO4EsHMZx6bmPIMFsl1Hl9ueDDdXNRF5Q13YkIekrtkut5pF9M7eGZeKS
+        Ax7rB3qbvl7ts1p2uUD0nT/swOZMI8ULAm87ZOz5YNOsCSzszz53oLQLdy76
+        0Gyz+EQiWGuCvnFKFsbFI6eMDPhinB4NlamGkdYveHIV/s5P+OBln64g8/Jo
+        a+xLNfUWeTOhi5rXwAdLdoC5bEdTRN5r78BWGAUc27mm1+gM69OIN+AV6I2w
+        zEODJncdP+VyukpU3RlKywlvUVvlHHfhd/N+92uQ4rf5odzKdmZyHXV7Zr8l
+        VBLzA6ILUQWvW1B9I0D+3/5qRWPYDiamA09h/WE3MU6KQaPcxyd0ugzLxGFe
+        42IdgZAH4PQVNDUNLv+otznL3R/KUarrVTbE+otZgi7vUgLlLomruGhaaBCT
+        PCkBSVLl0Oy6tKgSQorg6f0fAAAA//8DAHG1a1D8BQAA
+    http_version: 
+  recorded_at: Mon, 25 Jul 2016 23:01:30 GMT
+recorded_with: VCR 3.0.3
