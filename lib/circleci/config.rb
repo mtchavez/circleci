@@ -5,9 +5,9 @@ module CircleCi
   # Config class used internally.
   # Configure API calls using AlPapi.configure
   class Config
-    DEFAULT_VERSION = 'v1'.freeze # rubocop:disable Style/RedundantFreeze
-    DEFAULT_HOST = 'https://circleci.com'.freeze # rubocop:disable Style/RedundantFreeze
-    DEFAULT_URI = "#{DEFAULT_HOST}/api/#{DEFAULT_VERSION}".freeze # rubocop:disable Style/RedundantFreeze
+    DEFAULT_VERSION = 'v1'.freeze
+    DEFAULT_HOST = 'https://circleci.com'.freeze
+    DEFAULT_URI = "#{DEFAULT_HOST}/api/#{DEFAULT_VERSION}".freeze
     DEFAULT_PORT = 80
 
     attr_accessor :token, :host, :port, :request_overrides, :version
