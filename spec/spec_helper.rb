@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 require 'simplecov'
-require 'coveralls'
-
-SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+if ENV['COVERALLS_REPO_TOKEN']
+  require 'coveralls'
+  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+end
+SimpleCov.at_exit do
+  SimpleCov.result.format!
+end
 SimpleCov.start do
   add_filter '/spec/'
   add_filter 'vendor'

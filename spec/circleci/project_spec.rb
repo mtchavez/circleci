@@ -33,6 +33,8 @@ RSpec.describe CircleCi::Project, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
+        # NOTE: Check deprecated method
+        expect(res.body).to eql res.parsed_body
       end
 
       describe 'build' do
