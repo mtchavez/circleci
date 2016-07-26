@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/envvar?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: name=TESTENV&value=testvalue
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '28'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 25 Jul 2016 23:27:07 GMT
+      Location:
+      - https://circleci.com/api/v1/project/mtchavez/circleci/envvar/TESTENV
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:27:07 +0000;Path=/;Secure
+      - ring-session=rnC5CBpvHUE2by49YHUhyrCGGuuEmiySHz%2FAFs3CfFCP1xATF9KbaQDP9NuRT99a5ieTLcN9Y2Vp%2FAXHI80RgNGigcVPdX8MsbLGvJV22CZgRzhlNOcbf6bvrWZCrbYn2opZxGU6QHuzOFK0YR6y9RMYIWw263TROpLbw7glfLs52ahuYqTjlkcxZIpdOhkLJj5s7KKV6DLWeG4WBDub8k78dy2shJE2ihUUj%2B4C1%2Bg%3D--uQHFpT4xetHaunnxA0RQuLgh3RbeT2PMPc8rLmnDE6U%3D;Path=/;HttpOnly;Expires=Tue,
+        25 Jul 2017 23:19:25 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-e5c3077a
+      X-Circleci-Request-Id:
+      - 2e1dfa60-6f1a-49b1-a581-d979531fa103
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/envvar"
+      Content-Length:
+      - '48'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "name" : "TESTENV",
+          "value" : "xxxxalue"
+        }
+    http_version: 
+  recorded_at: Mon, 25 Jul 2016 23:27:14 GMT
+recorded_with: VCR 3.0.3

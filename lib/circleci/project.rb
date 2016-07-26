@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module CircleCi
   ##
   #
@@ -110,6 +111,7 @@ module CircleCi
     #
     # @deprecated Please use [CircleCi::Project#envvar]
     def self.envvars(username, project)
+      # NOTE: Make logger configurable on config object?
       logger = Logger.new(STDOUT)
       logger.warn('[Deprecated] Project#envvars is deprecated please use Project#envvar')
       envvar username, project

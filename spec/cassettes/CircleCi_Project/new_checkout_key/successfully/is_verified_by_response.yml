@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: type=deploy-key
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '15'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 25 Jul 2016 23:09:23 GMT
+      Location:
+      - https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/46:0f:2a:f3:ed:58:b6:dd:60:27:bb:94:d4:04:84:a6
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:09:23 +0000;Path=/;Secure
+      - ring-session=xsrvl2qUqzGH1wQv8oY6lK%2B5IY%2BZ%2BChdNFA%2BZYeeGSSlp8FTAZPtXWsdFx5M3FUH7eCaFpzS%2BrWvnbgiDw%2FiiOg%2FY%2FLX7mQ7VF4sZdI6B%2BiuZEmpbT1COkhDgXktOPugdh%2FWDKThPa3JKe3g0%2FFjgjAMn6lG0WkXxkyijbvagxtnv2cM9d%2FY3xtweyFi%2F4r5aU1zqN3d6wGx4ZIF9mOOZ8zmtFtqyzGf5XVIiR5itWg%3D--7vdmm2s5w62PxBTIJKNBh41SQBv0jmRHZemsk5bzMxU%3D;Path=/;HttpOnly;Expires=Tue,
+        25 Jul 2017 18:46:44 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-d7a5f351
+      X-Circleci-Request-Id:
+      - b35c7896-310f-4ac1-aa05-b7019ca0a567
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/checkout-key"
+      Content-Length:
+      - '579'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "public_key" : "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEoPJViHgx4aMO5Xhcku4tTvXDdsePiZYqPsZFsnfZUmyfcdQea7oTK52gkic8lqzWxZTqcV92jytx5W8F2B/7P2iDUmM/haId73HDB4IdXWyN8AFCtiywhXIoeUurpHoVWphBD30Bafe5vDquaC9sxndKnNgFRXM42Y4wI6rfPhrJ3cdGh49E5keGq+w81Dn2yazuw7nvu8xno9+a6xLENI1q2LmBKR8XjD0MpvPmGIsvu73HuFbfCaIfB0omnpeJq5pOeScPO0aXyZlvjPCpF43e4C+EkfugpeqnSa5pxNqkWCZFy7tV3yfAIy4PTb7dTyxqHT3IMrRU7tJrlTEJ \n",
+          "type" : "deploy-key",
+          "fingerprint" : "46:0f:2a:f3:ed:58:b6:dd:60:27:bb:94:d4:04:84:a6",
+          "login" : null,
+          "preferred" : true,
+          "time" : "2016-07-25T23:09:23.881Z"
+        }
+    http_version: 
+  recorded_at: Mon, 25 Jul 2016 23:09:17 GMT
+recorded_with: VCR 3.0.3

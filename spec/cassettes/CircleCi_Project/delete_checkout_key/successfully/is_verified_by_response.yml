@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/46:0f:2a:f3:ed:58:b6:dd:60:27:bb:94:d4:04:84:a6?circle-token=<TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 25 Jul 2016 23:21:51 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:21:51 +0000;Path=/;Secure
+      - ring-session=ClxUhKfSUmA%2FgOBBY65rhuE602uCJl2Ein%2Brh2oIABg2PW%2BWYwmb3ortvIj9qQDU0gWBtnWQymE3pCpmPvpxVdHWXFenwKWyheZdK0GtmyTXHQEcItbZSJ5LGSrOOS%2BC679Fa50kNHzsLPrpuhGe8IVnXpnAbZvwdwZaT7asjFLlwbNgnGDKmUi%2BvweQfQvMgqvUi3iiCxyYBRNcUGq8GMdT%2BAJvTJR6DwfTkyXNloI%3D--PTGJPQuBVioomYDeWb31QNbWRuNuXKh%2FELDJX9zNxqg%3D;Path=/;HttpOnly;Expires=Tue,
+        25 Jul 2017 18:45:09 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-4ac206d5
+      X-Circleci-Request-Id:
+      - 2da55212-fe8c-481f-ae39-cf4741498abf
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/checkout-key/:fingerprint"
+      Content-Length:
+      - '22'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message" : "ok"
+        }
+    http_version: 
+  recorded_at: Mon, 25 Jul 2016 23:21:44 GMT
+recorded_with: VCR 3.0.3

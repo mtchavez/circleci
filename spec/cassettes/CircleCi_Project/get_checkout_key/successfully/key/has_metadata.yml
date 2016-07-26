@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/96:08:ec:3c:fd:df:1f:6a:09:ad:e0:0f:83:ae:17:0a?circle-token=<TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 25 Jul 2016 22:52:21 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:52:21 +0000;Path=/;Secure
+      - ring-session=V312jZ6eYj4ZyBvLBh7LmBfZ8%2F%2F49NUb9%2F8WxiVwvJd%2BYW08noi7n41e3%2FGYp%2BeWO%2FeGc266elxE4zlvpLHTmJvFyvAGcvcO0J6hKqXi%2F6LEURtZYf04CxnAmY%2F9I6gK2kVDTsxrVZpqyxzVSQvZlBy%2BQvTMSierqwG6qcnON4DSOHVA%2FRUlktDbz3o03xP%2FSFvmgnP54pm3P1QXjfPFOaTFVlGE5Vyk6HLDThBS4vA%3D--1AhewtBnKJeORj6Sf66vLG2EMjL9hZTeAz71vQcLiyQ%3D;Path=/;HttpOnly;Expires=Tue,
+        25 Jul 2017 21:32:05 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-55c004ca
+      X-Circleci-Request-Id:
+      - 783327bd-4574-47f9-8a1e-61af02bea63e
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/checkout-key/:fingerprint"
+      Content-Length:
+      - '42'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message" : "checkout key not found"
+        }
+    http_version: 
+  recorded_at: Mon, 25 Jul 2016 22:52:51 GMT
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/56:c8:49:a4:55:b8:2a:ec:9b:0f:b8:69:33:54:32:0b?circle-token=<TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 25 Jul 2016 23:10:16 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:10:16 +0000;Path=/;Secure
+      - ring-session=DUbUIBSOLZ2j9uE23daLjmq%2FSuYLogjdiJJldfN%2FNNKPpy2QfpW3CyTqp1dZPwfa7ZZ2JmfF4K%2Fh0wgjabbnOVqupByizWRvsuwppBqcR83K%2Fh0AoFr3nGbQQbw%2BSiJOM0kMluyEtH9cW2aWOZBk6BxbzvvvwGvNN%2BaB2cmkf7oFW6Sd2AGTD6ZDGcL7wGvOg%2FbA1V8MArxsOlU4V4spHBwjay3YLNK4jPwlqOtBr%2FY%3D--xCpc9jxhcukiiXh%2FEL3Cs1I8RoJQVgMPxVuy0SIZVNI%3D;Path=/;HttpOnly;Expires=Tue,
+        25 Jul 2017 22:26:38 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-54c004cb
+      X-Circleci-Request-Id:
+      - 74f55af2-1203-40f1-bbf4-91237d4d1599
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/checkout-key/:fingerprint"
+      Content-Length:
+      - '488'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAACSRW4+iQBSE3+dXEF933cFubvabAgKDoKhcxmyy6cbm4nAX
+        ENzsf99Bz1t9lVOppP6+Mcys6kiWhn++6DhjEDO73ZJ5c8PM6vvW0H5geTGG
+        QJ2ksnJW6wmvHPkAP79K0+ZLa7w2wsfQBmSf+v3dqEBFoA+G7r0WuSTQbtXO
+        9e5UWpOa5/RH8anvXL2HhiCnx97pqtbZsqRdqDQhSo0lW9DcyErqwNgkWM2C
+        weyPm6ssysd8GVg5p2c/Dn58sE1L8DuoBGfOXOXGuQ4Wp9OuF4M487SNCp3G
+        KKLC35u83y42YlauR0i1D6fxovyo7fziI7N0YIWKxrpgf2hvh118N7YZVM1Y
+        Y6He3T28PvblpoMllkvelbY0zTExVwO9hbp3WNtJ9BisjQJYsbdtB9tG834f
+        sIJHp9W20jkOr71bk4uDd3F5UgziJHcvt+U6ybYVaP2aACyDMPRo78KL5Yq+
+        2jO/i9nPaZN2rOhzjQutsnKcT+M8jSgtYtpUTVq0T58XUCghbokwh3geEQkB
+        jGiIlgSx0SSFJYIQ8RyCALHkFZKVcVpM70WXZU9SNTSiTUMvE22bjr5apPmr
+        BWAXwpwV54A/AYjY70j2Fw/gefb27z8AAAD//wMA41D1XEMCAAA=
+    http_version: 
+  recorded_at: Mon, 25 Jul 2016 23:10:27 GMT
+recorded_with: VCR 3.0.3

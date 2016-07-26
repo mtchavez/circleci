@@ -1,21 +1,21 @@
+# frozen_string_literal: true
 require 'spec_helper'
 
-describe CircleCi do
-  context 'configuration' do
-    it 'takes block to set config' do
-      CircleCi.configure do |config|
+RSpec.describe CircleCi do
+  describe 'configuration' do
+    before do
+      described_class.configure do |config|
         config.token = 'test-key'
       end
-      CircleCi.config.token.should eql 'test-key'
     end
 
-    it 'can be accessed after being set' do
-      CircleCi.configure do |config|
-        config.token = 'test-key'
-      end
-      CircleCi.config.token.should eql 'test-key'
-      CircleCi.config.token = 'new-key'
-      CircleCi.config.token.should eql 'new-key'
+    it 'takes block to set config' do
+      expect(described_class.config.token).to eql 'test-key'
+    end
+
+    it 'token can be updated after being configured' do
+      described_class.config.token = 'new-key'
+      expect(described_class.config.token).to eql 'new-key'
     end
   end
 end

@@ -1,116 +1,135 @@
+# frozen_string_literal: true
 require 'spec_helper'
 
-describe CircleCi::Build do
+RSpec.describe CircleCi::Build, :vcr do
   describe 'artifacts' do
-    context 'successfully', vcr: { cassette_name: 'build/artifacts/success', record: :none } do
-      let(:res) { CircleCi::Build.artifacts 'janstenpickle', 'logback-flume', 2 }
+    context 'successfully' do
+      let(:res) { described_class.artifacts 'mtchavez', 'circleci', 140 }
 
-      it 'returns a response object' do
-        res.should be_an_instance_of(CircleCi::Response)
-        res.should be_success
+      it 'is verified by response' do
+        expect(res).to be_instance_of(CircleCi::Response)
+        expect(res).to be_success
       end
 
-      it 'returns all artifacts for build' do
-        res.body.should be_an_instance_of(Array)
+      describe 'artifacts' do
+        subject(:artifacts) { res.body }
 
-        artifacts = res.body
-        artifacts.size.should eql 2
-        artifacts.first.should be_an_instance_of(Hash)
+        it 'are returned' do
+          expect(subject.size).to eql 1
+          expect(subject).to be_instance_of(Array)
+        end
 
-        artifact = artifacts.first
-        artifact.should have_key 'url'
-        artifact.should have_key 'node_index'
-        artifact.should have_key 'pretty_path'
-        artifact.should have_key 'path'
+        context 'first artifact' do
+          subject { artifacts.first }
+
+          it 'has metadata' do
+            expect(subject).to be_instance_of(Hash)
+            expect(subject).to have_key 'url'
+            expect(subject).to have_key 'node_index'
+            expect(subject).to have_key 'pretty_path'
+            expect(subject).to have_key 'path'
+          end
+        end
       end
     end
   end
 
   describe 'cancel' do
-    context 'successfully', vcr: { cassette_name: 'build/cancel/success', record: :none } do
-      let(:res) do
-        CircleCi::Build.cancel 'Shopify', 'spy', 572
+    context 'successfully' do
+      let(:res) { described_class.cancel 'mtchavez', 'circleci', 145 }
+
+      it 'is verified by response' do
+        expect(res).to be_instance_of(CircleCi::Response)
+        expect(res).to be_success
       end
 
-      it 'returns a response object' do
-        res.should be_an_instance_of(CircleCi::Response)
-        res.should be_success
-      end
+      describe 'canceled build' do
+        subject { res.body }
 
-      it 'returns a canceled build' do
-        res.body.should be_an_instance_of(Hash)
-        build = res.body
-        build['status'].should eql 'canceled'
-        build['outcome'].should eql 'canceled'
-        build['canceled'].should eql true
+        it 'has metadata' do
+          expect(subject).to be_instance_of(Hash)
+          expect(subject['status']).to eql 'canceled'
+          expect(subject['outcome']).to eql 'canceled'
+          expect(subject['canceled']).to be_truthy
+        end
       end
     end
   end
 
   describe 'get' do
-    context 'successfully', vcr: { cassette_name: 'build/get/success', record: :none } do
-      let(:res) { CircleCi::Build.get 'mtchavez', 'rb-array-sorting', 1 }
+    context 'successfully' do
+      let(:res) { described_class.get 'mtchavez', 'circleci', 140 }
 
-      it 'returns a response object' do
-        res.should be_an_instance_of(CircleCi::Response)
-        res.should be_success
+      it 'is verified by response' do
+        expect(res).to be_instance_of(CircleCi::Response)
+        expect(res).to be_success
       end
 
-      it 'returns all projects' do
-        res.body.should be_an_instance_of(Hash)
-        build = res.body
-        build.should have_key 'committer_name'
-        build.should have_key 'messages'
-        build.should have_key 'start_time'
-        build.should have_key 'stop_time'
-        build.should have_key 'status'
-        build.should have_key 'subject'
+      describe 'build' do
+        subject { res.body }
+
+        it 'has metadata' do
+          expect(subject).to be_instance_of(Hash)
+
+          expect(subject).to have_key 'committer_name'
+          expect(subject).to have_key 'messages'
+          expect(subject).to have_key 'start_time'
+          expect(subject).to have_key 'stop_time'
+          expect(subject).to have_key 'status'
+          expect(subject).to have_key 'subject'
+        end
       end
     end
   end
 
   describe 'retry' do
-    context 'successfully', vcr: { cassette_name: 'build/retry/success', record: :none } do
-      let(:res) { CircleCi::Build.retry 'mtchavez', 'rb-array-sorting', 1 }
+    context 'successfully' do
+      let(:res) { described_class.retry 'mtchavez', 'circleci', 140 }
 
-      it 'returns a response object' do
-        res.should be_an_instance_of(CircleCi::Response)
-        res.should be_success
+      it 'is verified by response' do
+        expect(res).to be_instance_of(CircleCi::Response)
+        expect(res).to be_success
       end
 
-      it 'returns all projects' do
-        res.body.should be_an_instance_of(Hash)
-        build = res.body
-        build['status'].should eql 'queued'
-        build.should have_key 'committer_name'
-        build.should have_key 'messages'
-        build.should have_key 'start_time'
-        build.should have_key 'stop_time'
-        build.should have_key 'subject'
+      describe 'build' do
+        subject { res.body }
+
+        it 'has metadata' do
+          expect(subject).to be_instance_of(Hash)
+          expect(subject['status']).to eql 'scheduled'
+          expect(subject).to have_key 'committer_name'
+          expect(subject).to have_key 'messages'
+          expect(subject).to have_key 'start_time'
+          expect(subject).to have_key 'stop_time'
+          expect(subject).to have_key 'status'
+          expect(subject).to have_key 'subject'
+        end
       end
     end
   end
 
   describe 'tests' do
-    context 'successfully', vcr: { cassette_name: 'build/tests/success', record: :none } do
-      let(:res) { CircleCi::Build.tests 'mtchavez', 'circleci', 29 }
+    context 'successfully' do
+      let(:res) { described_class.tests 'mtchavez', 'circleci', 140 }
 
-      it 'returns a response object' do
-        res.should be_an_instance_of(CircleCi::Response)
-        res.should be_success
+      it 'is verified by response' do
+        expect(res).to be_instance_of(CircleCi::Response)
+        expect(res).to be_success
       end
 
-      it 'returns all artifacts for build' do
-        res.body.should be_an_instance_of(Hash)
+      describe 'for build' do
+        subject { res.body['tests'] }
 
-        tests = res.body['tests']
-        tests.size.should eql 39
-        tests.first.should be_an_instance_of(Hash)
+        it { expect(subject.size).to equal 78 }
 
-        test = tests.first
-        test.should have_key 'file'
-        test.should have_key 'source'
-        test.should have_key 'result'
+        describe 'a test' do
+          subject { res.body['tests'].first }
+
+          it { expect(subject).to be_instance_of(Hash) }
+          it { expect(subject).to have_key 'file' }
+          it { expect(subject).to have_key 'source' }
+          it { expect(subject).to have_key 'result' }
+        end
       end
     end
   end

@@ -2,59 +2,68 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/me?circle-token=d121d128bf0b9d185cbad163fa410d958a30d37d
+    uri: https://circleci.com/api/v1/me?circle-token=<TOKEN>
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      accept:
-      - application/json
-      accept-encoding:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
       - gzip, deflate
-      content-type:
-      - application/json
-      user-agent:
+      User-Agent:
       - Ruby
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "Y29udGVudC1lbmNvZGluZw==":
-      - !binary |-
-        Z3ppcA==
-      !binary "Y29udGVudC10eXBl":
-      - !binary |-
-        YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA==
-      !binary "ZGF0ZQ==":
-      - !binary |-
-        V2VkLCAxNyBBcHIgMjAxMyAwNDoxNjo0OSBHTVQ=
-      !binary "c2VydmVy":
-      - !binary |-
-        bmdpbngvMS4xLjE5
-      !binary "c2V0LWNvb2tpZQ==":
-      - !binary |-
-        cmluZy1zZXNzaW9uPTJkZTFkNjZiLTZiNWMtNDU4Ni04NzBlLWMxMTdkOWVj
-        ZjBhNDtQYXRoPS87SHR0cE9ubHk7RXhwaXJlcz1XZWQsIDE2IEFwciAyMDE0
-        IDE0OjU2OjM2ICswMDAwO01heC1BZ2U9MzE1MzYwMDA7U2VjdXJl
-      !binary "Y29udGVudC1sZW5ndGg=":
-      - !binary |-
-        Mjc2
-      !binary "Y29ubmVjdGlvbg==":
-      - !binary |-
-        a2VlcC1hbGl2ZQ==
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 25 Jul 2016 22:30:20 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:30:20 +0000;Path=/;Secure
+      - ring-session=j2AN3Q%2BzGpBfiHlpK%2B1XIZfJZ2OwzhqYTmJX701B9tZ4JXUhAlSMMWm2fPir9WOaEb9kikdjzSQBgNaGqWZWaoBmkDBIhFeQlACAtXynm%2BoVcn7UVSZRCQcfvsvnPUFIRWFuqv7J775HOFjPWVn3yXRXti2eODnolaBO5YSZcQSXeffzkeerBUa4tJeNzDH6PZ3m7bBZDI1JmK6wJ7CmVkQBirIn62sEHKc%2BHoxGE4k%3D--JT%2FSWjdOfkBpQGGsIxwU6HGCp0qjH0mqu6ptuBeYWeM%3D;Path=/;HttpOnly;Expires=Tue,
+        25 Jul 2017 20:24:33 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-c6cc0859
+      X-Circleci-Request-Id:
+      - fa4c472e-e0dd-4b83-a10b-28e0ca87705e
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/me"
+      Content-Length:
+      - '663'
+      Connection:
+      - keep-alive
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAH2PTW7CMBCF7zLrUNlOYkhWHKIrqsqaOJPUYuxEdqhEEXev
-        DaLL7ubvvffNDVbGAH24MFfAy+xyA36zX/hNP1DBiNdkmKbNuGC26JChl3UF
-        OPpyOiEnquCSKJozXc3kwkxxjS5sL9OHyFAYs7ESst6Jdifku1B9K3t5OOUQ
-        5Hzg0XGC/gNCKYa4nAnDOBHzcS67N7t4+KwguTkUGLtcSojME2KyG41Pjxzz
-        n0MGyvNQkm7AOFARnJ1bX5vcHkSnRS10R+2+HbXCuqWmxk43w0EJq6bGdlp3
-        ukicp7/Hmp3cPx5Tvdqf4J5pV4z5O2KX/IN1wOTsE9SskabMAclj3OD+Cyee
-        D1KMAQAA
-    http_version: !binary |-
-      MS4x
-  recorded_at: Wed, 17 Apr 2013 04:16:49 GMT
-recorded_with: VCR 2.4.0
+        H4sIAAAAAAAAAKxU246bMBB936+IeA4J1wCRqq7UX+hTqwoNZgjuGhvZJm12
+        tf9eX8iFNPu2PCA0xzNz5swxb0+rVYBcCsawrRvUoILVfvVz9WttEcpdrB6l
+        OEgYLNQBU+hAhQyJNmk4AGUWCwbQusc/z8hC0sMRXzcDBu4wHEGDrCfpD/Za
+        j2q/3fqw2hyo7qdmUiiJ4Bq53hAxbKdtlu3K6uvxS+qraEmB1chbVySJ4jSM
+        8jCKv0fJPo/3cbmJsvTH3LEdKF8ybkBR4umakbBzswZqAKl9jqIHXpuhiZi4
+        tmAau7inVwuYdF8rIkacZQos5b0XYL0KJI4imLUDDuykKVE19XTjKMvKLinC
+        Isl3YVa1GFZRVYU7UlZtVJEmSXNPg4ORzaZ8cyL6oFmA19CX4xNjLt7CSdUM
+        O22JO4EsHMZx6bmPIMFsl1Hl9ueDDdXNRF5Q13YkIekrtkut5pF9M7eGZeKS
+        Ax7rB3qbvl7ts1p2uUD0nT/swOZMI8ULAm87ZOz5YNOsCSzszz53oLQLdy76
+        0Gyz+EQiWGuCvnFKFsbFI6eMDPhinB4NlamGkdYveHIV/s5P+OBln64g8/Jo
+        a+xLNfUWeTOhi5rXwAdLdoC5bEdTRN5r78BWGAUc27mm1+gM69OIN+AV6I2w
+        zEODJncdP+VyukpU3RlKywlvUVvlHHfhd/N+92uQ4rf5odzKdmZyHXV7Zr8l
+        VBLzA6ILUQWvW1B9I0D+3/5qRWPYDiamA09h/WE3MU6KQaPcxyd0ugzLxGFe
+        42IdgZAH4PQVNDUNLv+otznL3R/KUarrVTbE+otZgi7vUgLlLomruGhaaBCT
+        PCkBSVLl0Oy6tKgSQorg6f0fAAAA//8DAHG1a1D8BQAA
+    http_version: 
+  recorded_at: Mon, 25 Jul 2016 22:30:03 GMT
+recorded_with: VCR 3.0.3

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 Gem::Specification.new do |s|
   s.name             = 'circleci'
   s.version          = '0.2.3'
@@ -13,6 +14,8 @@ Gem::Specification.new do |s|
   s.rdoc_options     = %w[--charset=UTF-8 --main=README.md]
   s.extra_rdoc_files = %w[README.md]
 
+  s.metadata['yard.run'] = 'yri' # use "yard" to build full HTML docs.
+
   # Gem Dependencies
   s.add_dependency 'rest-client', '~> 1.8'
 
@@ -24,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry',           '~> 0.10.4', '>=  0.10.4'
   s.add_development_dependency 'rake',          '~> 11.2.2', '>= 11.2.2'
   s.add_development_dependency 'redcarpet',     '~> 3.3.4', '>= 3.3.4'
-  s.add_development_dependency 'rspec',         '~> 2.14.1', '>= 2.14.1'
+  s.add_development_dependency 'rspec',         '~> 3.5.0', '>= 3.5.0'
   s.add_development_dependency 'rubocop',       '~> 0.42.0', '>= 0.42.0'
   s.add_development_dependency 'simplecov',     '~> 0.12.0', '>= 0.12.0'
   s.add_development_dependency 'typhoeus',      '~> 1.1.0', '>= 1.1.0'

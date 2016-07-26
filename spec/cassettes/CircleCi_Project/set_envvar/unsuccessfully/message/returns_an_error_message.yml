@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/asdf-bogus/envvar?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: name=TESTENV&value=testvalue
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '28'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 25 Jul 2016 23:26:59 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:26:59 +0000;Path=/;Secure
+      - ring-session=r0WICai9K6qVnrqgNsuFG7z5SBVygk1EHKhEUvgAeV4zxKraYnvXmcJccxgqPRafsjG1BtGcTggE9FeHPJoxQG8UZRa3vk02G2BSVPV0UxpeWoBW8LuWEYnA9oGffKcN58SY7cSIWViElRwRBbbjVO8XPlZIG63MoPt72CtxKgD3CsTdTJHzASNj71q0G1pzIE6g%2BYlhQaTQ%2FX1oeY8k0jpUnew1vydt0ahuCM4akNE%3D--n%2BBloUkP%2B5AG2VVswtYPja8WSmMklwg6jjhZUNcFISk%3D;Path=/;HttpOnly;Expires=Tue,
+        25 Jul 2017 21:02:32 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-e4aff962
+      X-Circleci-Request-Id:
+      - 7aaaa4e6-bb91-4f17-8d6f-b5ab125421ae
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/envvar"
+      Content-Length:
+      - '105'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message" : "{\"message\":\"Not Found\",\"documentation_url\":\"https://developer.github.com/v3\"}"
+        }
+    http_version: 
+  recorded_at: Mon, 25 Jul 2016 23:27:16 GMT
+recorded_with: VCR 3.0.3
