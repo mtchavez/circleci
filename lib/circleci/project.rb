@@ -34,11 +34,15 @@ module CircleCi
     # @param project  [String] - Name of project
     # @param branch   [String] - Name of branch
     # @param build_parameters   [Hash] - Optional Build Parameters
+    # @param revision   [String] - Optional Revision SHA
+    # @param parallel   [Int] - Optional Number of containers to use for the build
     # @return         [CircleCi::Response] - Response object
 
-    def self.build_branch(username, project, branch, build_parameters = {})
+    def self.build_branch(username, project, branch, build_parameters = {}, revision = nil, parallel = nil)
       body = {}
       body['build_parameters'] = build_parameters unless build_parameters.empty?
+      body['revision'] = revision unless revision.nil?
+      body['parallel'] = parallel unless parallel.nil?
       CircleCi.http.post "/project/#{username}/#{project}/tree/#{branch}", {}, body
     end
 
