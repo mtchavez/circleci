@@ -28,10 +28,6 @@ module CircleCi
       request 'delete', "#{path}?#{RestClient::Payload.generate(build_params(params))}"
     end
 
-    def headers
-      { 'accept' => 'application/json', 'content-type' => 'application/json' }
-    end
-
     def build_params(params = {})
       params.merge('circle-token' => @config.token)
     end
