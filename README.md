@@ -7,7 +7,7 @@ circleci
 [![Coverage Status](https://coveralls.io/repos/mtchavez/circleci/badge.png)](https://coveralls.io/r/mtchavez/circleci)
 [![Dependency Status](https://gemnasium.com/mtchavez/circleci.svg)](https://gemnasium.com/mtchavez/circleci)
 
-Circle CI API Wrapper
+Circle CI API Wrapper. Requires ruby `>= 2.0.0`.
 
 ## Install
 
