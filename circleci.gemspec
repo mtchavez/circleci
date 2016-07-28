@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 Gem::Specification.new do |s|
-  s.name             = 'circleci'
-  s.version          = '0.2.3'
-  s.date             = '2016-03-12'
-  s.summary          = 'Circle CI REST API gem'
-  s.description      = 'Ruby gem for Circle CI REST API'
-  s.licenses         = %w[MIT]
-  s.authors          = %w[Chavez]
-  s.email            = 'contact@el-chavez.me'
-  s.files            = Dir.glob('{bin,lib}/**/*') + %w[README.md]
-  s.require_paths    = %w[lib]
-  s.homepage         = 'http://github.com/mtchavez/circleci'
-  s.rdoc_options     = %w[--charset=UTF-8 --main=README.md]
-  s.extra_rdoc_files = %w[README.md]
-
-  s.metadata['yard.run'] = 'yri' # use "yard" to build full HTML docs.
+  s.name                  = 'circleci'
+  s.version               = '0.2.3'
+  s.date                  = '2016-03-12'
+  s.summary               = 'Circle CI REST API gem'
+  s.description           = 'Ruby gem for Circle CI REST API'
+  s.licenses              = %w[MIT]
+  s.authors               = %w[Chavez]
+  s.email                 = 'contact@el-chavez.me'
+  s.files                 = Dir.glob('{bin,lib}/**/*') + %w[README.md]
+  s.require_paths         = %w[lib]
+  s.homepage              = 'http://github.com/mtchavez/circleci'
+  s.rdoc_options          = %w[--charset=UTF-8 --main=README.md]
+  s.extra_rdoc_files      = %w[README.md]
+  s.required_ruby_version = '>= 2.0.0'
+  s.metadata['yard.run']  = 'yri' # use "yard" to build full HTML docs.
 
   # Gem Dependencies
   s.add_dependency 'rest-client', '~> 1.8'
