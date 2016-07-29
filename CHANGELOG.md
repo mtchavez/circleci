@@ -4,6 +4,8 @@
 * Deprecated CircleCi::Project#envvars
 * Upgrade rspec to 3.5
 * Require minimum ruby version `>= 2.0.0`
+* Remove `RestClient` as a dependency and replace with stdlib `Net::HTTP`
+* Add params and body as inputs to `CircleCi::Project#build_branch`
 
 # Version 0.2.3 - (2016-03-12)
 
