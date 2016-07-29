@@ -193,6 +193,18 @@ Build a specific branch of a project
 res = CircleCi::Project.build_branch 'username', 'reponame', 'branch'
 res.body['status'] # Not running
 res.body['build_url'] # Get url of build
+
+# Passing build parameters in the post body
+build_params = { build_parameters: { 'MY_TOKEN' => '123asd123asd' } }
+res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', {}, build_params
+res.body['status'] # Not running
+res.body['build_url'] # Get url of build
+
+# Adding URL params for revision or parallel
+params = { revision: 'fda12345asdf', parallel: 2 }
+res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', params
+res.body['status'] # Not running
+res.body['build_url'] # Get url of build
 ```
 
 Example response
