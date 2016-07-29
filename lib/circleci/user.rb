@@ -9,9 +9,8 @@ module CircleCi
     # Get user account details
     #
     # @return [CircleCi::Response] - Response object
-
     def self.me
-      CircleCi.http.get '/me'
+      CircleCi.request('/me').get
     end
 
     ##
@@ -21,8 +20,7 @@ module CircleCi
     # @param apikey   [String] - The Heroku API key
     # @return         [CircleCi::Response] - Response object
     def self.heroku_key(apikey)
-      body = { apikey: apikey }
-      CircleCi.http.post '/user/heroku-key', {}, body
+      CircleCi.request('/user/heroku-key').post(apikey: apikey)
     end
   end
 end

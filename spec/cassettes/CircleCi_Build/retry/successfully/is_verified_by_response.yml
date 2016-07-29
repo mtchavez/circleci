@@ -4,42 +4,40 @@ http_interactions:
     method: post
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/140/retry?circle-token=<TOKEN>
     body:
-      encoding: ASCII-8BIT
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '0'
+      - application/json
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
       message: OK
     headers:
-      Content-Encoding:
-      - gzip
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 22:33:56 GMT
+      - Fri, 29 Jul 2016 00:08:11 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:33:56 +0000;Path=/;Secure
-      - ring-session=8tia4satzHM1CBr6DrnXLIWvtNw0G6ARNAUFzPjJgWo5F55%2BmOxQJeSgLJ01NXIMUuJxb%2FMAk0DkfMOrleMwRKDH3xQVxEgd0CmX7MrxelMLKDuPaCV0nH2IrV2rnR5cbQ0C2O7OBo5nvmsrjLFjH3%2FkuU2cU2FMl%2B%2FYaLHIB2HF7A2sYsvhxFXLIS0Kd%2FnHdecsnpkxMVom7%2Bl28Dx8lqmCKlPfysqVoWmHOhr8uLM%3D--cfGwjhKPhOEqy6uKhdT66dDtD8YTPytB4m2iW4%2B6Qyw%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 21:53:18 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:08:11 +0000;Path=/;Secure
+      - ring-session=ywrk5pEZSuRPDiWZLlBvw%2Bl4AxdwM5qpHO3OKJWI0EmRH6%2BAZSP4PN4Cf6gEVDEsLkX53nn%2F95zexOmABKcLLT5Vh1sMTaetNyB7Tm5SmO738Mm%2F9YLCTT8YUEy5URJxjVrthFB3sovzvJDlvUntmwc%2FSsohZB0VWhBotpZxzML5c7CRZ3yAp7pvgYr7Qna%2BMOEEwKGZUy5usiDZfvz2m4E3U9Q5gckaqDSRA%2FKsbm0%3D--0FG0Niw1WYtwpRjf1YSLjdIAVRtIighr8NoN82ctwWU%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 22:38:29 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-4fc206d0
+      - i-4bc206d4
       X-Circleci-Request-Id:
-      - 7883ea98-815f-4159-826e-58ccb8da17fa
+      - 91366994-6408-437a-993e-552cfdc17027
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -55,32 +53,18 @@ http_interactions:
       - ":build_num"
       - "\\d+"
       Content-Length:
-      - '860'
+      - '807'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAAMRWy27bOhDd368g1F2RxLLk+AUUbVHgAneXRVe9LQiaHFks
-        KFLlw6lb9N87ImXZSpw27qY7e2Y4jzNzjv39H0IybpqWWcjImmS1961bTyZb
-        6euwuUHXpPG8Zjv4NuHScgVcTtDaSD8RK3bLinwB07zIrrpMrYWdNMFRFzgH
-        56qg6CZIJbrc3zECY+J3qkPT2aar/CqZnWc+uNhD/zi7On3gZQO0kUrJGHS7
-        mJcr9P+IdVMIDsEa8GBjhA5KRadx8bu3Aa76cbF7DKOC+TR1kU/n1/niurh9
-        P83XebmerfDrOs/TWBsj9jHuJflXfiWVNQ1pVbBMEdC7HbPEm/6TI5WxhBvt
-        pPOg+Z7cI5Lk7d1/GCBaI7X/qF+SOwsO7A6IUYJUQXMvjWZK+n2qGBzbAv0S
-        IICgzD9ssijWZbm+nd/MyuWH9KJiUlELzBk9mt6Ct3tqqoj2LO9tLVZr0uyH
-        raY0ztU0uB7C/8mnE3iDVaMTOTyMR7Ktz9zJdFX2d4GbUQri++nQLohRpxvL
-        NK9jCb9vzQEIsEOrhwrJxYKvzfOXeF+nHUZAjslPLlM6erAcjgWtymylfly+
-        a2DHPLOPcElmd5Mo1GXEc8Bb8BGoMJnN5svV692r8pBnmO/dKP2OO4pAJFdK
-        dnDJiFxMNHCgC+/o52S6gOyUnvkKgEO1BJEXxXK1LGZsOS9zEPOFyIbnnm3H
-        GxlTtYxGqSvLHALEfbBAu0V27oop95Bf0PTOrGHe13D/BtR1wvAGRx5JxpMK
-        MftDhSiKcr6YDfCcvuY1iNCd34N+zy0i3ouEsaS4sPkMPNHyzpru84teCVCA
-        aiMIppJ6Syr59QTeM8vMuq6FCX6MocCLOSrnUFfJCvgeyXVuDm2ogBZVppMd
-        yhl6x0mdN21EaTwLMl5IxzY9H4/xZ2Ed3iWW032jRuYG94LaNdIPJFYlrfN0
-        awH0ca5jqc9mM6B/7Axp5B83zFEmQCWeDkaUF5oWiSB4PLu+gf6kLtb8v6H6
-        T2jgxVJ3KQeH+MtlY1TqaaX8NcX+hFBD0kfye+k/l+fM2OP/i5+CFPDEdL33
-        N6vopKonDOoBdjo++05BLpl19CN5Vtm0EWeZ9YCbz+z+x08AAAD//wMA+GgF
-        NkwKAAA=
+      string: '{"compare":"https://github.com/mtchavez/circleci/commit/d9a5a207e102","previous_successful_build":{"build_num":194,"status":"success","build_time_millis":322526},"build_parameters":null,"oss":true,"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","usage_queued_at":"2016-07-29T00:08:11.658Z","fail_reason":null,"retry_of":140,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/225","parallel":1,"failed":null,"branch":"typo","username":"mtchavez","author_date":"2016-07-25T10:03:49-07:00","why":"retry","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars.githubusercontent.com/u/44689?v=3","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"d9a5a207e10209eecef8ed02289824a8630ed67d","vcs_tag":null,"build_num":225,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":140,"status":"success","build_time_millis":223674},"status":"scheduled","committer_name":"Chavez","retries":null,"subject":"Project#envvar
+        method naming fix","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"scheduled","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","branch":"typo","author_date":"2016-07-25T10:03:49-07:00","committer_email":"matthew@el-chavez.me","commit":"d9a5a207e10209eecef8ed02289824a8630ed67d","committer_login":"mtchavez","committer_name":"Chavez","subject":"Project#envvar
+        method naming fix","commit_url":"https://github.com/mtchavez/circleci/commit/d9a5a207e10209eecef8ed02289824a8630ed67d","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 22:33:38 GMT
+  recorded_at: Fri, 29 Jul 2016 00:07:49 GMT
 recorded_with: VCR 3.0.3

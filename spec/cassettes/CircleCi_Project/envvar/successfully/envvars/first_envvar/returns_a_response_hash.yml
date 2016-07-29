@@ -4,15 +4,19 @@ http_interactions:
     method: get
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/envvar?circle-token=<TOKEN>
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
@@ -21,21 +25,21 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 23:43:00 GMT
+      - Fri, 29 Jul 2016 00:23:09 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:43:00 +0000;Path=/;Secure
-      - ring-session=g8lYqJrG%2BgaRawGI%2FuYScwHrEGB4IBs84uC7KCnckTog210ZkRMb0VFtusqvQdJcIek%2F8%2BKHBobC6xSvaKMzspUtr5X9HaUnVFol8cNVZWsZzrhRWIjNG5Dla9gy0VkNu69VTgmrfwESa3U7TR6I2%2FZQIvu%2FbkTBKBXop%2B%2Fa%2FwUWABv9y%2BIwHE%2BX3RYnkNLnfUD%2BErck9SESIsSgQDmvf89OJBm0ImptT2C43FWf9z4%3D--WxdZ1AoF%2BLm8ac%2BwmoSqioE5QE%2F0XBEYJbFCyEh1O%2FQ%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 22:47:42 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:23:09 +0000;Path=/;Secure
+      - ring-session=Z1xfHLkpHoFQ17qT9VmBaeIR%2FO0ic%2FdwadqwfFQWDrJbDnnMSeEo5OeVo%2B7qw7GrWWnIhAgv4QqEXPr3hyL52NY8OTS%2Fhnby4%2B2pW6b%2FqXsCZFc%2FLwpt0ntzwa%2BJ1eOxypL2ummSS2Ezk8xxApOJa5hV8GsEqosdpJeCmoYtvI5xUEXpRXxJq6JXlJFfZNg1vgG4jIAaGpLbdSTtPGqyQilEibtQsrF6LuSauSF5yfk%3D--4EDEx%2B4DCzgo%2BxVepZjz49Foe%2BWtyOCDRix1yC1hLIM%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 23:21:05 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-9ffb4567
+      - i-d6a5f350
       X-Circleci-Request-Id:
-      - 41e7bc17-82d1-4546-b289-259cafddb459
+      - 914ab913-f810-4c0f-b570-9c563dbdefb0
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -49,19 +53,12 @@ http_interactions:
       X-Route:
       - "/envvar"
       Content-Length:
-      - '115'
+      - '90'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |-
-        [ {
-          "name" : "COVERALLS_REPO_TOKEN",
-          "value" : "xxxxskJS"
-        }, {
-          "name" : "TESTENV",
-          "value" : "xxxxalue"
-        } ]
+      string: '[{"name":"COVERALLS_REPO_TOKEN","value":"xxxxskJS"},{"name":"TESTENV","value":"xxxxalue"}]'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:43:08 GMT
+  recorded_at: Fri, 29 Jul 2016 00:22:54 GMT
 recorded_with: VCR 3.0.3

@@ -2,17 +2,21 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/96:08:ec:3c:fd:df:1f:6a:09:ad:e0:0f:83:ae:17:0a?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/56:c8:49:a4:55:b8:2a:ec:9b:0f:b8:69:33:54:32:0b?circle-token=<TOKEN>
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 404
@@ -21,48 +25,49 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 22:52:42 GMT
+      - Fri, 29 Jul 2016 00:29:37 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:52:42 +0000;Path=/;Secure
-      - ring-session=Q1hqNOfTFi5gHVkjJ9WUgAIxAQJM%2BsNic%2FHDNgz7UXuqsZuweFGQHQD4iD%2B4LmdVHn3mhbzulRFlFsjDdL5vH4EYkvpZAR1354Q0bROrohSlyw7GDzCdp3qxBmccIfIMgL%2Fo8dUP6%2F2RuA6rPb0inre5hhgYc45x3oqV%2B9vpQN3iL0neFvDazGVy4ADDGYtQXxleXe3va5heI1naXESdzLMKTBZok4jhyYqH%2BLJke4Q%3D--nEXQCYyaEzQzsOSa%2Fi6hYyQvn5ADeKNWr1uvAzudgwY%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 22:25:55 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:29:37 +0000;Path=/;Secure
+      - ring-session=HmgqPKwuchTm%2BLtUrh33hC7OCndSoCnI2jtTavHHtBQXYQXDMpZyAYTqHzfw1uHBYZ%2Bf0wufKON%2FRpcBNPxfydoIdI1uWncx5zfLOOQqOddGzj3V3%2BOpQS5msVGnHwZykngVMtYvHUncY2BYLy4FGHvZ6leVaW9fHtb48NHnZzVzoJHJI2dr1wpWr4keQXM9y%2BGCCHsy6k%2BmTtb3bFHSuQMaDfx6rzO1vVZA2SndgU4%3D--5PgtSLO%2FtcRloi7TBZ1Z%2BkqcXYI1wVuKeMiudxR%2BV%2Bg%3D;Path=/;HttpOnly;Expires=Sat,
+        29 Jul 2017 00:24:37 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-89a7f10f
+      - i-d6ce0a49
       X-Circleci-Request-Id:
-      - 3ecc2cfb-961a-4fb1-9d9b-9672e192ddd1
+      - d83cd176-3305-4be6-881e-1f9dc89618d9
       X-Frame-Options:
       - DENY
       X-Route:
       - "/checkout-key/:fingerprint"
       Content-Length:
-      - '42'
+      - '36'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "message" : "checkout key not found"
-        }
+      string: '{"message":"checkout key not found"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 22:52:51 GMT
+  recorded_at: Fri, 29 Jul 2016 00:29:47 GMT
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/56:c8:49:a4:55:b8:2a:ec:9b:0f:b8:69:33:54:32:0b?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/3e:35:e0:96:f7:c8:23:9c:b8:2f:50:9e:d0:16:f7:05?circle-token=<TOKEN>
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
@@ -70,24 +75,22 @@ http_interactions:
     headers:
       Access-Control-Allow-Origin:
       - "*"
-      Content-Encoding:
-      - gzip
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 23:10:43 GMT
+      - Fri, 29 Jul 2016 00:34:11 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:10:43 +0000;Path=/;Secure
-      - ring-session=H%2B5y3EDeHSocOfTNWG5VtGsizT00aaBf5GAEu05WXSRKHL08WePS0h0CbXtQGzVk7clr699XZAl55QobqTRTp08573aHWNamp26x2wq0SUSif0tNCDwEZZiDWMwv0BQ%2Fa2LUjWuNe3%2BBU6%2F9rQaokdJ8g4yMlcMSoG7YC6TVPQmEUnzT5pkUWCjwVRGfaa5kNLo4EBgGlQFgcXp6maqn7wDeJfmolgKTrwwOuCIWj%2FQ%3D--tAHU%2FJzpAPLe0lqFB86VEizgbGUUlOtkvC5%2FUxdWvPg%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 20:13:21 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:34:11 +0000;Path=/;Secure
+      - ring-session=Q5rEVYI2nkdsz9Wj7FuT%2FH0E23O%2BAaMKnuCA%2FsaOVWsYx0ZkZfMJxUzjtUlZdRHP6%2FRKt2PaJV3DCDOXjvclNPwx5yeI2%2B5%2BYHVc8%2BfJQb8vX98%2BCj2%2FcsSZjN55aZNvvhy8xqcG0FkmXJ3st9SMKtI3WcZD%2BVvVCKwTNGj4qYzW5EGlcu1L7AJ1cbMaXa2FNOysrMidkJ0q7TWXdJhXBV0B%2FutbOdDY8wodiPpFEoU%3D--eDyfKd5waW3aFkFaEa0sY7puvm4f8Ue03RkyrMtFm0M%3D;Path=/;HttpOnly;Expires=Sat,
+        29 Jul 2017 00:21:31 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-9efb4566
+      - i-4dfa44b5
       X-Circleci-Request-Id:
-      - 6e982352-ac32-4130-af9d-d841c2b3825a
+      - 349e0b6f-3f90-455b-b603-c4a75713bef5
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -101,23 +104,13 @@ http_interactions:
       X-Route:
       - "/checkout-key/:fingerprint"
       Content-Length:
-      - '488'
+      - '475'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAACSRW4+iQBSE3+dXEF933cFubvabAgKDoKhcxmyy6cbm4nAX
-        ENzsf99Bz1t9lVOppP6+Mcys6kiWhn++6DhjEDO73ZJ5c8PM6vvW0H5geTGG
-        QJ2ksnJW6wmvHPkAP79K0+ZLa7w2wsfQBmSf+v3dqEBFoA+G7r0WuSTQbtXO
-        9e5UWpOa5/RH8anvXL2HhiCnx97pqtbZsqRdqDQhSo0lW9DcyErqwNgkWM2C
-        weyPm6ssysd8GVg5p2c/Dn58sE1L8DuoBGfOXOXGuQ4Wp9OuF4M487SNCp3G
-        KKLC35u83y42YlauR0i1D6fxovyo7fziI7N0YIWKxrpgf2hvh118N7YZVM1Y
-        Y6He3T28PvblpoMllkvelbY0zTExVwO9hbp3WNtJ9BisjQJYsbdtB9tG834f
-        sIJHp9W20jkOr71bk4uDd3F5UgziJHcvt+U6ybYVaP2aACyDMPRo78KL5Yq+
-        2jO/i9nPaZN2rOhzjQutsnKcT+M8jSgtYtpUTVq0T58XUCghbokwh3geEQkB
-        jGiIlgSx0SSFJYIQ8RyCALHkFZKVcVpM70WXZU9SNTSiTUMvE22bjr5apPmr
-        BWAXwpwV54A/AYjY70j2Fw/gefb27z8AAAD//wMA41D1XEMCAAA=
+      string: '{"public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCKLz/1WWYe+rWooGGwkmm7P19KKIe8hYbJDdc+hLlbyW/kx0geT5iWjb/4e+kCrFBw4K2qq2ScqUX9/Spo+AzYcDSGbB0fmKhRcq2aPVJZsWgoRa7iZ1FNV32EZSxMxIxpGzZb3gmslXVRaP7fQWsOaydRr31ETJgX3pE1rI8LPT8rYsG3et4398UGcfXJ22FQgrKtr/mPi8gRR+T7AXOoaM1HtBash3SvyjBKvm/WSdhdABK0Y9G1q5iu92ulh0Vo/ia+Kt952Vi1nQf2/PxIquqdOVa6G1RpLDmpx2MN8PN7lnXl0g8FnSwnNj+dRaAuenTdgBqQIhcAEY4io6Nf
+        \n","type":"deploy-key","fingerprint":"3e:35:e0:96:f7:c8:23:9c:b8:2f:50:9e:d0:16:f7:05","login":null,"preferred":false,"time":"2016-07-29T00:28:24.797Z"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:10:27 GMT
+  recorded_at: Fri, 29 Jul 2016 00:33:41 GMT
 recorded_with: VCR 3.0.3

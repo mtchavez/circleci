@@ -12,9 +12,8 @@ module CircleCi
     # @param project  [String] - Name of project
     # @param build    [String] - Build ID
     # @return         [CircleCi::Response] - Response object
-
     def self.artifacts(username, project, build)
-      CircleCi.http.get "/project/#{username}/#{project}/#{build}/artifacts"
+      CircleCi.request("/project/#{username}/#{project}/#{build}/artifacts").get
     end
 
     ##
@@ -25,9 +24,8 @@ module CircleCi
     # @param project  [String] - Name of project
     # @param build    [String] - Build ID
     # @return         [CircleCi::Response] - Response object
-
     def self.cancel(username, project, build)
-      CircleCi.http.post "/project/#{username}/#{project}/#{build}/cancel"
+      CircleCi.request("/project/#{username}/#{project}/#{build}/cancel").post
     end
 
     ##
@@ -38,9 +36,8 @@ module CircleCi
     # @param project  [String] - Name of project
     # @param build    [String] - Build ID
     # @return         [CircleCi::Response] - Response object
-
     def self.get(username, project, build)
-      CircleCi.http.get "/project/#{username}/#{project}/#{build}"
+      CircleCi.request("/project/#{username}/#{project}/#{build}").get
     end
 
     ##
@@ -51,9 +48,8 @@ module CircleCi
     # @param project  [String] - Name of project
     # @param build    [String] - Build ID
     # @return         [CircleCi::Response] - Response object
-
     def self.retry(username, project, build)
-      CircleCi.http.post "/project/#{username}/#{project}/#{build}/retry"
+      CircleCi.request("/project/#{username}/#{project}/#{build}/retry").post
     end
 
     ##
@@ -66,7 +62,7 @@ module CircleCi
     # @return [CircleCi::Response] - Response object
 
     def self.tests(username, project, build)
-      CircleCi.http.get "/project/#{username}/#{project}/#{build}/tests"
+      CircleCi.request("/project/#{username}/#{project}/#{build}/tests").get
     end
   end
 end

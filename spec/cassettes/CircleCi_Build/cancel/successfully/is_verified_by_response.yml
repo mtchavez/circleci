@@ -4,42 +4,40 @@ http_interactions:
     method: post
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/145/cancel?circle-token=<TOKEN>
     body:
-      encoding: ASCII-8BIT
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '0'
+      - application/json
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
       message: OK
     headers:
-      Content-Encoding:
-      - gzip
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 22:33:50 GMT
+      - Fri, 29 Jul 2016 00:08:06 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:33:50 +0000;Path=/;Secure
-      - ring-session=u0BjltrXoa6FXCD4z4cLNbrNcoGb9m%2BYw02wrdLdOt%2Br9MnmAUn3UsfO74eoJpW%2F8JRIDeYpIwvAS%2FVrEbblLVSO2WfEa29RisQRHVRthkRq2WBcm1tM0AQZwcClUquqxVP84FX6CsvAppJYuEj0tzIkIby3IDrE0RS5nX89Jnm3BBlt08aH5KH4%2BC5%2F3qTBwM%2BChmZ2c%2F0BDrd5IEljUg0YicZ8D4FXZ0t1hd0TOLM%3D--3lEGTrpKoepje%2FivwJ7aT70zoOrt8QqFliTvh9aAhow%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 18:41:52 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:08:06 +0000;Path=/;Secure
+      - ring-session=HuoAbAKi3JHGtMz7EeGQxA4THtmlGWplz8jk3EPXdHFMiJtLDtpmjopjHr9sPFKijRI4u%2BNlV6Lh6otMRg072xWUVQyZ2yOgRzyGVNS6Nbxfr21pHY%2FT8xJeDR8B3AYz7J3R8Ex9v6v5GVyHdy0xKs5PunfzXVTSPS0akJ7KWowtQSSZNcKC1XQ6MufG7aq%2Fr6PKjp8tKeKFr9E%2FfjtFFFqTfndm0gMmnQsWIassli4%3D--l34kUwuWmmZz1%2BXtlQBk1afsL%2FJOZ%2FhoFD41UynCbbQ%3D;Path=/;HttpOnly;Expires=Sat,
+        29 Jul 2017 00:04:58 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-60fb4598
+      - i-52fa44aa
       X-Circleci-Request-Id:
-      - 6c657031-1ee0-497e-8d5f-fc586868147c
+      - 915b0b10-b455-45fa-a831-1503bed80eb1
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -55,36 +53,19 @@ http_interactions:
       - ":build_num"
       - "\\d+"
       Content-Length:
-      - '1049'
+      - '981'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAAMRWW6/jNBB+51dE4QVWp2mTJulFQqwEAp7R8nI4KHLsSeNV
-        4gRferas9r8zdu6nPewWCfEQqR3PjMffzPfZH7/yPJ82dUsk+N7R80utW3Vc
-        r09clyYPcGlda1qSM/y1plzSCihf9wFrkidFAQWjRV4EQUBpCPvdLk4gKvwH
-        m7mVcOaNUZkylIJShamy3PCK2b0+ogf6uP+ZMLW1hXH80JmVJtooV1Mf7D/M
-        AzSvIat5VXHntNvGSYLrn9y+nQvWSGrQIJ2HMFXlFhvl/mtp4KE/fs01umWM
-        6A6FaBOmq81uFSXvws0x2h6jEP8eN5vuWHnDLs7vjfdba4M8Bmf8WhAMBOWg
-        nuSTsN8b71eom7N1QCwoujJPmryhTevhN7n9xD94JVElWhl4Sl8qLk4eV8pA
-        t6dR5ATZnwYMsIzoqzL3xyg9hnFwiDaPXURBeJVJIKoRi/NL0PKSNcUMb7S1
-        jUCwXNqhz10apcrMqB7E370/ZgAbWS2GZgh0Y3Mqb0xOGCf9ZGBvqgpcfDiW
-        C2xRaS6JoKXboiYKOzRAAXIsdtijWyJGl82XN/K57ProIJmSz6aTq2ywDAOD
-        1qo5cXG9vS3gTDSRV8h0ZhV0tLIZaSM0CO2gMus4TveH78/fbYc84/l+WKQ/
-        U5XpS9stdcmGJe6wc4lGHlh3S0HFuxnw5xQtaJGwaMOAxjsa57TYMpZATrdF
-        kvpjuCanZU+WdE2ckYtCYoOkodpIyGwr7XJBKvWSY1D3i75ocOqqy9tJapai
-        8R9rxCyY4piBHb4XtY5N+JnrX3qk3awgwzs2hHHaM0KZ/D3Qjpc/vlAD75uv
-        d9G3M0xvdNC3xbLG6CVwDMdkksyxCxUvgF6QUy5NwQVX5VC/aLJx80tGCS1h
-        mVPppnXY3BIRJMcuOISHx4n9jCuS99ycstyEOE7S3aZD0VE+u9TVrI84Iihr
-        PaFpyQUcn4RnFfHifnjeGYUGh/XoRUEUbJ+EP/arxvaiBC5kCNlZcKl0dpIA
-        YsJpqvJ9k49tHNHD1kv9KgLpMcLN4wGBfjjmovA6/V/SdqwexS7rBgubo5EC
-        /Tn6jHffQf/PLfSqJt8tvfdpwuh9v4gtNpoa9wz5qqia52ufW6T/cn6Pqa6u
-        gM+9qDBmfe/Jesz/4TrqHF65TfrVCf4h/K278IO+G8GsG3age/KhVqEFbiio
-        1bh7jr+4u2/VinPBYEGY1uQVpxlvM8KY46afxEF42AdRuA/CcDecsW2ka1oa
-        p9G+ty0eEHgdC23GW7S2z6zuLvXVFguvPtCVs6q+XhSPVbiLwxWlyT5d2Tnf
-        xFH8LtpGaZQ+jgODygliFE4rPjPwPvOQswoUxUsFYotX67/p3ae/AQAA//8A
-        AAD//wMAVIbiqu8LAAA=
+      string: '{"compare":"https://github.com/mtchavez/circleci/compare/ab5ffefdcfbf...cc1e87745e2f","previous_successful_build":{"build_num":144,"status":"success","build_time_millis":73455},"build_parameters":null,"oss":true,"committer_date":"2016-07-25T10:23:21-07:00","body":"*
+        Update dev dependencies\r\n\r\n* Remove deprecated rubocop cop\r\n\r\n* Fix
+        hash code styling issue","usage_queued_at":"2016-07-25T18:26:14.920Z","fail_reason":null,"retry_of":144,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/145","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":"2016-07-25T10:23:21-07:00","why":"retry","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars.githubusercontent.com/u/44689?v=3","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"cc1e87745e2ffcf5d20dec47c4bcf3dd5ebc3f56","vcs_tag":null,"build_num":145,"infrastructure_fail":false,"committer_email":"noreply@github.com","previous":{"build_num":144,"status":"success","build_time_millis":73455},"status":"canceled","committer_name":"GitHub","retries":[146],"subject":"Dev
+        dependencies (#72)","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2016-07-25T18:27:07.919Z","ssh_disabled":false,"build_time_millis":45670,"circle_yml":{"string":"machine:\n  ruby:\n    version:
+        2.2.3\n"},"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2016-07-25T18:26:22.249Z","canceler":{"login":"mtchavez","name":"Chavez"},"all_commit_details":[{"committer_date":"2016-07-25T10:23:21-07:00","body":"*
+        Update dev dependencies\r\n\r\n* Remove deprecated rubocop cop\r\n\r\n* Fix
+        hash code styling issue","branch":"master","author_date":"2016-07-25T10:23:21-07:00","committer_email":"noreply@github.com","commit":"cc1e87745e2ffcf5d20dec47c4bcf3dd5ebc3f56","committer_login":"web-flow","committer_name":"GitHub","subject":"Dev
+        dependencies (#72)","commit_url":"https://github.com/mtchavez/circleci/commit/cc1e87745e2ffcf5d20dec47c4bcf3dd5ebc3f56","author_login":"mtchavez","author_name":"Chavez","author_email":"mtchavez@users.noreply.github.com"}],"outcome":"canceled","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":[{"public_ip_addr":"54.198.218.117","port":64628,"username":"ubuntu","image_id":"s3://lxc-images/circletar-1741-cc586-20160424T232626Z","ssh_enabled":null}],"queued_at":"2016-07-25T18:26:22.224Z","canceled":true,"author_email":"mtchavez@users.noreply.github.com"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 22:33:36 GMT
+  recorded_at: Fri, 29 Jul 2016 00:07:47 GMT
 recorded_with: VCR 3.0.3

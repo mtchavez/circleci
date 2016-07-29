@@ -16,7 +16,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
         it 'has metadata' do
           expect(subject).to be_instance_of(Array)
-          expect(subject.size).to eql 2
+          expect(subject.size).to eql 1
           subject.each do |project|
             expect(project).to have_key('default_branch')
             expect(project).to have_key('vcs_url')
@@ -33,8 +33,6 @@ RSpec.describe CircleCi::Project, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-        # NOTE: Check deprecated method
-        expect(res.body).to eql res.parsed_body
       end
 
       describe 'build' do
@@ -42,7 +40,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
         it 'has metadata' do
           expect(subject).to be_instance_of(Hash)
-          expect(subject['committer_name']).to eql 'GitHub'
+          expect(subject['committer_name']).to eql 'Chavez'
           expect(subject['branch']).to eql 'master'
 
           expect(subject).to have_key 'messages'
@@ -69,7 +67,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
         it 'returns newly created build' do
           expect(subject).to be_instance_of(Hash)
-          expect(subject['committer_name']).to eql 'GitHub'
+          expect(subject['committer_name']).to eql 'Chavez'
           expect(subject['branch']).to eql 'master'
 
           expect(subject).to have_key 'messages'
@@ -189,7 +187,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
         it 'are returned' do
           expect(subject).to be_instance_of(Array)
-          expect(subject.size).to eql 5
+          expect(subject.size).to eql 1
         end
 
         context 'first key' do
@@ -268,7 +266,7 @@ RSpec.describe CircleCi::Project, :vcr do
           subject { projects.first }
 
           it 'has metadata' do
-            expect(subject['committer_name']).to eql 'GitHub'
+            expect(subject['committer_name']).to eql 'Chavez'
             expect(subject).to have_key 'messages'
             expect(subject).to have_key 'start_time'
             expect(subject).to have_key 'stop_time'
@@ -303,7 +301,8 @@ RSpec.describe CircleCi::Project, :vcr do
           it 'returns builds filtered by status' do
             builds = res.body
             statuses = builds.map { |build| build['status'] }
-            statuses.each { |status| expect(status).to eql('failed') }
+            failed_statuses = %w[failed no_tests]
+            statuses.each { |status| expect(failed_statuses).to include(status) }
           end
         end
       end
@@ -331,7 +330,7 @@ RSpec.describe CircleCi::Project, :vcr do
           subject { projects.first }
 
           it 'has metadata' do
-            expect(subject['committer_name']).to eql 'GitHub'
+            expect(subject['committer_name']).to eql 'Chavez'
             expect(subject).to have_key 'messages'
             expect(subject).to have_key 'start_time'
             expect(subject).to have_key 'stop_time'
@@ -406,7 +405,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
         it 'returns the circleci project settings' do
           expect(subject).to be_instance_of(Hash)
-          expect(subject['has_usable_key']).to be_truthy
+          expect(subject['ssh_keys']).not_to be_empty
           expect(subject).to have_key 'branches'
         end
       end
@@ -433,25 +432,25 @@ RSpec.describe CircleCi::Project, :vcr do
     end
   end
 
-  describe 'unfollow' do
-    context 'successfully' do
-      let(:res) { described_class.unfollow 'mtchavez', 'circleci' }
-
-      it 'is verified by response' do
-        expect(res).to be_instance_of(CircleCi::Response)
-        expect(res).to be_success
-      end
-
-      describe 'message' do
-        subject { res.body }
-
-        it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['followed']).to be_falsy
-        end
-      end
-    end
-  end
+  # describe 'unfollow' do
+  #   context 'successfully' do
+  #     let(:res) { described_class.unfollow 'mtchavez', 'circleci' }
+  #
+  #     it 'is verified by response' do
+  #       expect(res).to be_instance_of(CircleCi::Response)
+  #       expect(res).to be_success
+  #     end
+  #
+  #     describe 'message' do
+  #       subject { res.body }
+  #
+  #       it 'has metadata' do
+  #         expect(subject).to be_instance_of(Hash)
+  #         expect(subject['followed']).to be_falsy
+  #       end
+  #     end
+  #   end
+  # end
 
   describe 'settings' do
     context 'successfully' do

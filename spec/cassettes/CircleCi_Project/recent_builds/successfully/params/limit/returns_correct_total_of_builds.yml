@@ -4,15 +4,19 @@ http_interactions:
     method: get
     uri: https://circleci.com/api/v1/project/mtchavez/circleci?circle-token=<TOKEN>&limit=5
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
@@ -20,24 +24,22 @@ http_interactions:
     headers:
       Access-Control-Allow-Origin:
       - "*"
-      Content-Encoding:
-      - gzip
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Tue, 26 Jul 2016 00:06:08 GMT
+      - Fri, 29 Jul 2016 00:22:24 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Wed, 26 Jul 2017 00:06:08 +0000;Path=/;Secure
-      - ring-session=a2MduNTAGUTWZ7w7GWLwWRSo56kY7RAoVBEQoLZAoQI1wBxtk5%2Fvl5nS0S75FCZEcEAncO5Kd90hMILIxsLVy618ihlw%2FhAtsEe%2FL3nhpdra%2Bk4SUiji6XgvPcugAm3lFJSh8uXY3PE%2Frs5Sd10ZfpKWPp4mvshi6jBT1JuQCJBPx%2F6iZB8xSGfvMMC9208LK2MUlB0MyfvHOjMfZ3NAi3GTZejQDn%2BeJU15OqplCBU%3D--RJgmoWW0IL8wYqQbKTBXjU8ZSBR189Q70at3q8ZhJGo%3D;Path=/;HttpOnly;Expires=Wed,
-        26 Jul 2017 00:02:46 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:22:24 +0000;Path=/;Secure
+      - ring-session=yRVCi%2BhJTHidLOjXaRFNI6dNnParQyibQqt8uv7STm9oEo1j6tfeL5HO7FlTZuaTQ9BUW%2FlcNrDhWiLTPeHlknFRdYI86Z9V7j4ilUeLAsCI8ThHKPgdSOxUAi2QJ7UzwZaK1ZD%2BYZhsRym%2BuZlfNfP%2FGoaoEwbzmtPOCXQrzZZdlM2kUM0BgXNBuVZ07SGXqSUsH%2FKNDH%2Fb55elVRiHKOufjvQ%2BHEHnhLfGHqfll8A%3D--GvyD5hRZt5ztRGHV5w%2B0L23Rs0%2B7JkPu00Hr7XkPMj0%3D;Path=/;HttpOnly;Expires=Sat,
+        29 Jul 2017 00:20:22 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-59c004c6
+      - i-e4aff962
       X-Circleci-Request-Id:
-      - f2d75d0f-967c-4b0d-8f75-c474359c9d84
+      - 8b71948a-25fb-4d44-859d-e80fab8059d5
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -51,39 +53,27 @@ http_interactions:
       X-Route:
       - "/"
       Content-Length:
-      - '1182'
+      - '839'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAAOyZXY+jNhSG7/srEL1pVzMEDMTA1Vb9vKkqbT8udmdlOcYE
-        rwyk2GQ2rfa/1xgCIZNsN6jTJpUvkBL72D4+57yHZyZvrD8/syybVMUG19S2
-        EqtsOL9rxzY13bKqEUg0hFAhsoajVcN4OrHSI0gtxgWVtBbtZLulmvr5px+/
-        Rb999aodsj3g22r4g15UCW0n64bq75hzpFwomEQplZhxgdRcSbCk+rQMc9FZ
-        dlbqIJSqSb0zcL3lvQvvQfiLBxPgJ8B7bXe+VelOm7ywft209lZKt+rZ0DKl
-        JWFUPNQPZfu8sF7Rotq2Bura+lyrblYVqTaWekaz79h7K8ciV6MptYTccVau
-        LSZEQ7szG4HXFP3e0IamCMtjDwFI/DgJAseLYe9lpu6LaopFVU4iW1NZ71CV
-        HQ1uqlKFWu9LWE04JazbR4gcNaJPwRvr7UF6mprrBbmUG5EsFvuFjgrnYp0v
-        CklyvKV/DBMLL467XdvMck71em/wlx4VQY1LkusjCixUdvaxoPXg7P6Mbgo3
-        Mq8+KYmPeZdDvGHjrgdVxgTajwxlooZ5tWY6nnZZlXQsvS0RqC1swbpw24R4
-        NIIwCCnIMpKFKXBTSgJIghXJ/DQN6Yr4Wbi0h+USr09IoGwKHaM41oOszGoV
-        irohsqkpaoN2rpJp0U8qV1V++e7lmsm8WbXZ6U5VFYdwLVmGiZwqZy/Sg4Ac
-        uRP1ARESy87O7gVt3x0ukKygqGCcM20URm4cDVE7s/jgEkOev2fyh2ZlDyWs
-        VDaJlmhW7yjphPHNkRytLz6H4MuDSO823aZdQLqJ1tG0auQ0nGlVyhPtibOM
-        kp2qab1NxkomclW8eq6s0HD4DhFMcjrdU8hqo+NyQsWBm4SuE0f+61F9KRN4
-        xY9b1unwhn4EuxBqyaFdwQ9yqApH9ZVeUCRnJU0eSqttSTv9wbK2SuiqhBML
-        OMDxH8qxwguVHdWDJm1AiSRjtZBoXVNajnEavXxXrYYcjrmSqurORUD1sTB0
-        wnjZR4CoHkB5p8Rhh6edvXOrv+cl7fy/aeiX9KrLVD1YX96GJgeNne6Rru4z
-        Xj0+tTmlzk/X4rDVkxfJeKUT75BuzeLSm/XhHq81eXOMBsOdvj41O4Z/v/yl
-        fjk6fTacg2y00umFovqKGqFPO13bji65/eQ1d8pVVRbpVG1/Aw2t2GA4FduR
-        iOfc/cPdsyCgIT2VtCgBoRMH0XWTXmRIbx7pRddFenAe6UXLKIKG9M6Snmq9
-        QCGW680kvRakb5z0VB8LHOD6hvQM6RnSe2bS02LzYGRI77ZITyXNv/L/6UFD
-        evNID14X6S3nkV7o+55rSO9jpOdDx/WCeaSnQfrmSc9zHQ9AQ3qG9AzpPTvp
-        tWLzDOndEunBJIgd142vm/SWhvTmkd7yukgvnEl60AtiQ3rnSa/7e205k/Q0
-        SN846cHEd50oDAzpGdIzpPfMpNeJLQCG9G6K9ELPgcsr//U2NKQ3j/TC6yI9
-        MJf0AASG9D5KetAJgrm/3rYg/X8gPRADQ3qG9Azp/RukByL3nyc96+1fAAAA
-        //8DAEgBYDmtMQAA
+      string: '[{"compare":null,"previous_successful_build":null,"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-07-28T16:12:10Z","body":"","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/237","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":"2016-07-28T16:07:56Z","why":"api","user":{"is_user":false,"login":"none"},"vcs_revision":"b601b390c86a917d6615f160f2dc1de11b62b7c8","vcs_tag":null,"build_num":237,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":236,"status":"not_run","build_time_millis":0},"status":"not_run","committer_name":"Chavez","retries":null,"subject":"Add
+        note for minimum ruby version","vcs_type":"github","timedout":false,"dont_build":"no-followers","lifecycle":"not_run","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":null,"messages":[{"type":"error","message":"We
+        did not test this push because nobody is following the project"}],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2016-07-28T16:12:10Z","body":"","author_date":"2016-07-28T16:07:56Z","committer_email":"matthew@el-chavez.me","commit":"b601b390c86a917d6615f160f2dc1de11b62b7c8","committer_login":"mtchavez","committer_name":"Chavez","subject":"Add
+        note for minimum ruby version","commit_url":"https://github.com/mtchavez/circleci/commit/b601b390c86a917d6615f160f2dc1de11b62b7c8","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"},{"compare":null,"previous_successful_build":null,"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-07-28T16:12:10Z","body":"","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/236","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":"2016-07-28T16:07:56Z","why":"api","user":{"is_user":false,"login":"none"},"vcs_revision":"b601b390c86a917d6615f160f2dc1de11b62b7c8","vcs_tag":null,"build_num":236,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":235,"status":"not_run","build_time_millis":0},"status":"not_run","committer_name":"Chavez","retries":null,"subject":"Add
+        note for minimum ruby version","vcs_type":"github","timedout":false,"dont_build":"no-followers","lifecycle":"not_run","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":null,"messages":[{"type":"error","message":"We
+        did not test this push because nobody is following the project"}],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2016-07-28T16:12:10Z","body":"","author_date":"2016-07-28T16:07:56Z","committer_email":"matthew@el-chavez.me","commit":"b601b390c86a917d6615f160f2dc1de11b62b7c8","committer_login":"mtchavez","committer_name":"Chavez","subject":"Add
+        note for minimum ruby version","commit_url":"https://github.com/mtchavez/circleci/commit/b601b390c86a917d6615f160f2dc1de11b62b7c8","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"},{"compare":null,"previous_successful_build":null,"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-07-28T16:12:10Z","body":"","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/235","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":"2016-07-28T16:07:56Z","why":"api","user":{"is_user":false,"login":"none"},"vcs_revision":"b601b390c86a917d6615f160f2dc1de11b62b7c8","vcs_tag":null,"build_num":235,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":234,"status":"not_run","build_time_millis":0},"status":"not_run","committer_name":"Chavez","retries":null,"subject":"Add
+        note for minimum ruby version","vcs_type":"github","timedout":false,"dont_build":"no-followers","lifecycle":"not_run","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":null,"messages":[{"type":"error","message":"We
+        did not test this push because nobody is following the project"}],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2016-07-28T16:12:10Z","body":"","author_date":"2016-07-28T16:07:56Z","committer_email":"matthew@el-chavez.me","commit":"b601b390c86a917d6615f160f2dc1de11b62b7c8","committer_login":"mtchavez","committer_name":"Chavez","subject":"Add
+        note for minimum ruby version","commit_url":"https://github.com/mtchavez/circleci/commit/b601b390c86a917d6615f160f2dc1de11b62b7c8","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"},{"compare":null,"previous_successful_build":null,"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-07-28T16:12:10Z","body":"","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/234","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":"2016-07-28T16:07:56Z","why":"api","user":{"is_user":false,"login":"none"},"vcs_revision":"b601b390c86a917d6615f160f2dc1de11b62b7c8","vcs_tag":null,"build_num":234,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":233,"status":"not_run","build_time_millis":0},"status":"not_run","committer_name":"Chavez","retries":null,"subject":"Add
+        note for minimum ruby version","vcs_type":"github","timedout":false,"dont_build":"no-followers","lifecycle":"not_run","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":null,"messages":[{"type":"error","message":"We
+        did not test this push because nobody is following the project"}],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2016-07-28T16:12:10Z","body":"","author_date":"2016-07-28T16:07:56Z","committer_email":"matthew@el-chavez.me","commit":"b601b390c86a917d6615f160f2dc1de11b62b7c8","committer_login":"mtchavez","committer_name":"Chavez","subject":"Add
+        note for minimum ruby version","commit_url":"https://github.com/mtchavez/circleci/commit/b601b390c86a917d6615f160f2dc1de11b62b7c8","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"},{"compare":null,"previous_successful_build":null,"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-07-28T16:12:10Z","body":"","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/233","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":"2016-07-28T16:07:56Z","why":"api","user":{"is_user":false,"login":"none"},"vcs_revision":"b601b390c86a917d6615f160f2dc1de11b62b7c8","vcs_tag":null,"build_num":233,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":232,"status":"no_tests","build_time_millis":22515},"status":"not_run","committer_name":"Chavez","retries":null,"subject":"Add
+        note for minimum ruby version","vcs_type":"github","timedout":false,"dont_build":"no-followers","lifecycle":"not_run","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":null,"messages":[{"type":"error","message":"We
+        did not test this push because nobody is following the project"}],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2016-07-28T16:12:10Z","body":"","author_date":"2016-07-28T16:07:56Z","committer_email":"matthew@el-chavez.me","commit":"b601b390c86a917d6615f160f2dc1de11b62b7c8","committer_login":"mtchavez","committer_name":"Chavez","subject":"Add
+        note for minimum ruby version","commit_url":"https://github.com/mtchavez/circleci/commit/b601b390c86a917d6615f160f2dc1de11b62b7c8","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"}]'
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 00:05:54 GMT
+  recorded_at: Fri, 29 Jul 2016 00:22:46 GMT
 recorded_with: VCR 3.0.3

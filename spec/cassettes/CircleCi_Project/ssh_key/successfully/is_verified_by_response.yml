@@ -5,39 +5,40 @@ http_interactions:
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/ssh-key?circle-token=<TOKEN>
     body:
       encoding: UTF-8
-      string: hostname=hostname&private_key=-----BEGIN%20RSA%20PRIVATE%20KEY-----%0AMIIEowIBAAKCAQEAwwuwmtxV5vZwAuZKSEPrgdmu0oSZI%2BD74zSUrCNa5s9mfHlw%0AzCzhFtPKhlwYxVpQ7WZBrQMNlPFJmhyj3Cd2DPkrObMNLEVEVt6T6ahdCcyrw2jY%0APFMQywZPAhcW9mC440qTNhuQTGOcN%2FAH%2F1P%2FB4W9vOJYO7HW7TPa0S5Q3mFRMfk%2F%0A51TlrB%2Fo90gCAmX6Sm%2Bxgs9Tgmx9pYRF0KjzIp%2FtFGMOHj6wdDb7Qv8eeX0PnCtS%0At428lZGSF0cNSmQIVIxBgi7twmLKpFgqS1LAAAb9%2BlXW%2Byh%2Ff5Fl4VBirEvC3olS%0A6yUAxWhDQ27waOK7ptTkYYGw%2B9g7QWSjjeK%2BvwIDAQABAoIBAG%2Boa4vcA1lbTzh5%0AuaCxMUt%2B4PQncLv3envRiCMbgliL9vHfW9GnB5zX1iMg6hVg5N9jIMn463eOwkH1%0Aj2DjPlOi%2BTno5OupI7xPY4HqHokToGkXxmKScxSnIefibATTzkRgVvIsyWjRxYbI%0AZOuonGEkEUDmmvhhkNbuTqBd0XHcZxG8EJaeGsTLiJG4fG9x3ib%2Fo4w7Lrfh2usb%0ACjQt52L5Hg3JHXNokpwFOvhTN4uXUmjZKTQGmJceRz0Rqcemwn0ulcTYrQwQGyw%2F%0AzncwkaNbiWRLJZJtRbMoTd3Mhr8ZvKp91vZGGLhn%2FBE2s7D5d%2FOXgz5N11T8iyN8%0ASCW5YaECgYEA%2BRlrlhui%2Btan9vo39VXh7wqJujrxlNTLP70ImpAfIoVVhAuPg%2BpL%0AaEPs%2FHIzSJOYppyI3fv6Bz8lKK46gO5VouokxmNQFNz2bxHn2FaXt37k%2Fye4tbqQ%0ACuou%2BUvAlR%2Fr4OT0Yj9wla0P5wo7IWRrdwWiAhj1DSkvkyGL3VLxF8kCgYEAyHLt%0Ao43wRg50l63gectGCSRfyXuml3o38BLwQhToqbqPQFVncur%2BlNar9Xh5FRO9T%2Bam%0Ad8ET%2BGLdCUXxfpu6eytEUgG3yndsHgXJz5Ta2hQdQT4lkkOlirO4ozYrBIilSrZh%0Ar8CQP2GKrDZ0QZkZRsBYKUZ0OnNPQXyboCfa9kcCgYB79mCJ9ProZYZ07BSI7NJg%0AyRe9K7QpYrQ65fGwKWS1IzFpYu9qsGASZSs8fgBzb7AZyfB6t%2Fi3Pn9ZfUrz%2Bqd3%0ASZo%2FeBDUMRoaMAj2qjEaSfXf3H6ZQVyJcf0qZr5R9%2B7EnmvXsMZwVg2B5p%2BCgJzS%0AQGVdMdpRUFuylpEp9SqxsQKBgDkuB7obOEpTv1CxahJ0ORNMjAKGwlv9ok1aqazA%0AGCqqrEiW1D7E6EB%2FCGiqqCeqDNvpGN2ad17onNMTX7NVKxoNmpymHs6jyHS8A%2Fiy%0AJsgE6t98oe0aXPO3FtmADz9o13X7ltwy2zMpWQyNMBayXLKBFeUYUvmFgTtWF3LV%0AS7HrAoGBANhxhjIHYrsAy008UAHHebsyoteIPv2i%2F5uaRqgkEAVA%2B6lgTGBxK%2FHq%0AJ0WRSY%2B9eJAJn29Br0TO6pCbXS9PUwilFxfEs2iUvDkjYjpR%2Fp3FMNfuzHf0eqoz%0ACbCL2YiGWojMIyPkfhOn%2FvGeE8O7qAJ2xsNFARXes5tYY8h%2BMmR2%0A-----END%20RSA%20PRIVATE%20KEY-----%0A
+      string: '{"hostname":"hostname","private_key":"-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAwwuwmtxV5vZwAuZKSEPrgdmu0oSZI+D74zSUrCNa5s9mfHlw\nzCzhFtPKhlwYxVpQ7WZBrQMNlPFJmhyj3Cd2DPkrObMNLEVEVt6T6ahdCcyrw2jY\nPFMQywZPAhcW9mC440qTNhuQTGOcN/AH/1P/B4W9vOJYO7HW7TPa0S5Q3mFRMfk/\n51TlrB/o90gCAmX6Sm+xgs9Tgmx9pYRF0KjzIp/tFGMOHj6wdDb7Qv8eeX0PnCtS\nt428lZGSF0cNSmQIVIxBgi7twmLKpFgqS1LAAAb9+lXW+yh/f5Fl4VBirEvC3olS\n6yUAxWhDQ27waOK7ptTkYYGw+9g7QWSjjeK+vwIDAQABAoIBAG+oa4vcA1lbTzh5\nuaCxMUt+4PQncLv3envRiCMbgliL9vHfW9GnB5zX1iMg6hVg5N9jIMn463eOwkH1\nj2DjPlOi+Tno5OupI7xPY4HqHokToGkXxmKScxSnIefibATTzkRgVvIsyWjRxYbI\nZOuonGEkEUDmmvhhkNbuTqBd0XHcZxG8EJaeGsTLiJG4fG9x3ib/o4w7Lrfh2usb\nCjQt52L5Hg3JHXNokpwFOvhTN4uXUmjZKTQGmJceRz0Rqcemwn0ulcTYrQwQGyw/\nzncwkaNbiWRLJZJtRbMoTd3Mhr8ZvKp91vZGGLhn/BE2s7D5d/OXgz5N11T8iyN8\nSCW5YaECgYEA+Rlrlhui+tan9vo39VXh7wqJujrxlNTLP70ImpAfIoVVhAuPg+pL\naEPs/HIzSJOYppyI3fv6Bz8lKK46gO5VouokxmNQFNz2bxHn2FaXt37k/ye4tbqQ\nCuou+UvAlR/r4OT0Yj9wla0P5wo7IWRrdwWiAhj1DSkvkyGL3VLxF8kCgYEAyHLt\no43wRg50l63gectGCSRfyXuml3o38BLwQhToqbqPQFVncur+lNar9Xh5FRO9T+am\nd8ET+GLdCUXxfpu6eytEUgG3yndsHgXJz5Ta2hQdQT4lkkOlirO4ozYrBIilSrZh\nr8CQP2GKrDZ0QZkZRsBYKUZ0OnNPQXyboCfa9kcCgYB79mCJ9ProZYZ07BSI7NJg\nyRe9K7QpYrQ65fGwKWS1IzFpYu9qsGASZSs8fgBzb7AZyfB6t/i3Pn9ZfUrz+qd3\nSZo/eBDUMRoaMAj2qjEaSfXf3H6ZQVyJcf0qZr5R9+7EnmvXsMZwVg2B5p+CgJzS\nQGVdMdpRUFuylpEp9SqxsQKBgDkuB7obOEpTv1CxahJ0ORNMjAKGwlv9ok1aqazA\nGCqqrEiW1D7E6EB/CGiqqCeqDNvpGN2ad17onNMTX7NVKxoNmpymHs6jyHS8A/iy\nJsgE6t98oe0aXPO3FtmADz9o13X7ltwy2zMpWQyNMBayXLKBFeUYUvmFgTtWF3LV\nS7HrAoGBANhxhjIHYrsAy008UAHHebsyoteIPv2i/5uaRqgkEAVA+6lgTGBxK/Hq\nJ0WRSY+9eJAJn29Br0TO6pCbXS9PUwilFxfEs2iUvDkjYjpR/p3FMNfuzHf0eqoz\nCbCL2YiGWojMIyPkfhOn/vGeE8O7qAJ2xsNFARXes5tYY8h+MmR2\n-----END
+        RSA PRIVATE KEY-----\n"}'
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '1859'
+      - application/json
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
       message: OK
     headers:
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 23:56:38 GMT
+      - Fri, 29 Jul 2016 00:23:09 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:56:38 +0000;Path=/;Secure
-      - ring-session=FWpIHUb27%2BRJRQeaLWQ09298i%2BgvmIWuvodPWa%2B7ntmgS93Aip%2B9qae%2FA3dTo5jv%2FddgkUDcZbP2rZCTAH2aQd84ZU%2FTfiMHOIkgDQLBJ5z7StYYzw7hR3sJAZOeVnlySeqIKy8I7y9SP1BZjW0UPaev59F8NjIpMHM%2FfgxJOs%2F18mezAi5WUBqVzxedYY9dCmPdyoqRqvOh7vsC33XKcDsdZHXQLd9Ua%2FFeZqtGZFI%3D--WReQpkEssoTFbkM1SEhBSaMECw7%2FdgmyShVhpeSs7lM%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 18:45:09 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:23:09 +0000;Path=/;Secure
+      - ring-session=IsLRr6fk%2Bix3scrWImqjugcT0s%2FrtnOZfvTaHEn7p42BFsONWsw9oMKF%2FmneO2Z%2BaCyRK4cvOvaHfQE%2B7RHlBew82K%2Frvb6iAJBAhX1Jjsff8rAG2zIebC1J9Nb0UkYt1IQQfolshFY1yCCxP0pJwC2m5VOP9tAgd%2BNgFwbuWK0HGQVtKZWIXFdW7UNsEZJ5%2F1EQ%2BrzF6HFyuiGO%2BUsKQGGd9wnhQZI3fEMtL%2BDG1eY%3D--0KJutyZ6om63KzAGGfzZCu38vYC9sDc4Ix7AhhFaym4%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 23:18:19 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-4ac206d5
+      - i-5bc004c4
       X-Circleci-Request-Id:
-      - 052e8ab6-6ec7-4acb-baa1-0f5771d4b861
+      - b15e2e57-a1bf-4494-a555-9f9b0bbc7c87
       X-Frame-Options:
       - DENY
       X-Route:
@@ -50,5 +51,5 @@ http_interactions:
       encoding: UTF-8
       string: '""'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:56:30 GMT
+  recorded_at: Fri, 29 Jul 2016 00:22:49 GMT
 recorded_with: VCR 3.0.3

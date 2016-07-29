@@ -49,7 +49,10 @@ Overriding request settings such as not verifying SSL
 ```ruby
 CircleCi.configure do |config|
   config.token = ENV['CIRCLECI_TOKEN']
+  config.host = 'http://ci.mycompany.com'
+  config.port = 80
   config.request_overrides = {
+    use_ssl: false,
     verify_ssl: false
   }
 end

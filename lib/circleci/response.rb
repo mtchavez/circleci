@@ -4,18 +4,19 @@ module CircleCi
   #
   # Response class is used to get access to raw HTTP request info
   class Response
-    attr_reader :success, :body, :errors, :code, :path
+    extend Forwardable
+
+    def_delegators :@resp, :code, :message, :uri
+
+    attr_reader :body
 
     ##
     # Initializing response object to be returned from API calls, used internally.
     #
     # @private
-    def initialize(http, resp_code, resp_path) # @private
-      @success = http.success
-      @body = http.response
-      @errors = http.errors
-      @code = resp_code
-      @path = resp_path
+    def initialize(resp) # @private
+      @resp = resp
+      @body = parsed_body
     end
 
     ##
@@ -23,15 +24,24 @@ module CircleCi
     # Convenience method to determine if request was successfull or not
     # @return [Boolean]
     def success?
-      @success == true
+      case @resp.code.to_i
+      when (200..299) then true
+      else
+        false
+      end
     end
 
+    private
+
     ##
+    # Attempts to parse the response as JSON. Will rescue and return original
+    # if unable to parse.
     #
-    # @return [@body]
-    # @deprecated No longer requires hashie to wrap response body
+    # @return [Hash,Array,String] A parsed JSON object or the original response body
     def parsed_body
-      @body
+      JSON.parse @resp.body
+    rescue JSON::ParserError
+      @resp.body
     end
   end
 end

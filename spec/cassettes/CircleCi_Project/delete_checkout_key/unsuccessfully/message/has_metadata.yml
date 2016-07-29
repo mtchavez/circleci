@@ -4,48 +4,49 @@ http_interactions:
     method: delete
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/asdf-bogus?circle-token=<TOKEN>
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 404
       message: Not Found
     headers:
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 23:23:32 GMT
+      - Fri, 29 Jul 2016 00:29:27 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:23:32 +0000;Path=/;Secure
-      - ring-session=MtP1EKe4oC8Y0%2B%2FFKRC5fDWLXJWCjM3HHGm2u2vV0niLzqgPxXmEGOD7DIh9gIAzjKGiqW5kXglIhItvcVrBe76tKcAF4M%2Bb%2FAJouw58vYutWoEY3yH66gYQTQs1j02DzIIWZVKLH2gdxKFSy3tprAXeQ7%2Be%2BrztIazKubaGEcg7sjrmuUmIOzOKZagSlcOY5NVqCkWSH1Z34e6nyKBiRzdw5I4DxEr%2B%2FsDPCHO6VmI%3D--hhZJb4u6yEC6GKb6N3MDQLn1AnXAZyma%2BibnZc0PGZQ%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 22:04:17 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:29:27 +0000;Path=/;Secure
+      - ring-session=lYpgzPPxoSmGhJxbe5FPAnX1ROX7uJAeK2W3t5YmxLSDyADJD93TEb0QgRXt20qXh4djNjhjpGRd8Gj1OGjY6S8zIMS5BvE5MYGoFbD2uPOvRZX9tUTWRopxkuNGC3izULkqidpL2aI0I20VyKJ3Ip8%2BwYE9p5%2FHjPBiIq8Ebj9E%2F7vqtlfb0wpuonMk8k1j82V4VKaULf1ityIHsSYAWWajFTNFbdfqEPMcKliP45A%3D--Sw%2FIBAyy2Urw4QreH0b4cUx8eC0zMyq6oViyVh3anYk%3D;Path=/;HttpOnly;Expires=Sat,
+        29 Jul 2017 00:17:38 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-e7aff961
+      - i-b1f84649
       X-Circleci-Request-Id:
-      - f961638d-7f2e-48e6-b33e-fef8f10a840c
+      - 9dceead5-9097-43ea-b762-064033348b5c
       X-Frame-Options:
       - DENY
       X-Route:
       - "/checkout-key/:fingerprint"
       Content-Length:
-      - '42'
+      - '36'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "message" : "checkout key not found"
-        }
+      string: '{"message":"checkout key not found"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:23:54 GMT
+  recorded_at: Fri, 29 Jul 2016 00:29:46 GMT
 recorded_with: VCR 3.0.3

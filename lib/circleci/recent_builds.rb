@@ -10,9 +10,8 @@ module CircleCi
     #
     # @param params [Hash] - Params to send for recent builds (limit, offset)
     # @return         [CircleCi::Response] - Response object
-
     def self.get(params = {})
-      CircleCi.http.get '/recent-builds', params
+      CircleCi.request('/recent-builds', params).get
     end
   end
 end

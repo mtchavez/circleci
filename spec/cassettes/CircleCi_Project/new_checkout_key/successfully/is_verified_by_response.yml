@@ -5,41 +5,41 @@ http_interactions:
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key?circle-token=<TOKEN>
     body:
       encoding: UTF-8
-      string: type=deploy-key
+      string: '{"type":"deploy-key"}'
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '15'
+      - application/json
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 201
       message: Created
     headers:
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 23:09:23 GMT
+      - Fri, 29 Jul 2016 00:30:25 GMT
       Location:
-      - https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/46:0f:2a:f3:ed:58:b6:dd:60:27:bb:94:d4:04:84:a6
+      - https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/29:15:12:e8:f7:f4:17:7a:8f:cc:db:de:43:53:f4:73
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:09:23 +0000;Path=/;Secure
-      - ring-session=xsrvl2qUqzGH1wQv8oY6lK%2B5IY%2BZ%2BChdNFA%2BZYeeGSSlp8FTAZPtXWsdFx5M3FUH7eCaFpzS%2BrWvnbgiDw%2FiiOg%2FY%2FLX7mQ7VF4sZdI6B%2BiuZEmpbT1COkhDgXktOPugdh%2FWDKThPa3JKe3g0%2FFjgjAMn6lG0WkXxkyijbvagxtnv2cM9d%2FY3xtweyFi%2F4r5aU1zqN3d6wGx4ZIF9mOOZ8zmtFtqyzGf5XVIiR5itWg%3D--7vdmm2s5w62PxBTIJKNBh41SQBv0jmRHZemsk5bzMxU%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 18:46:44 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:30:25 +0000;Path=/;Secure
+      - ring-session=HBdqhr8a9jI6L6PzAMmyWeoICP3I3RqFtsRt4JQcY3Bw7pcNWhI2FL6MdBleOMkJ5Q%2BOJ9MHlFhXFseux7Q9LjH0NYXOmg%2FO2EK%2BCeIwRPY%2BTurJFSNB%2FrFzZUFChrL5P2HKG9d3IAl7wKHm2UcbNHt0fVX1RzeW1rlBtZp8FVYUBG8GfpZoXhwla74l9i4NigVZDtPWs6bIIJewQ2cYLgA0xNDkTN5hCO2SWm6Ra28%3D--QWtJOXsAVAU5W6PUbWk91wCEQ9C%2Ffonm%2BPtXu9xCV5s%3D;Path=/;HttpOnly;Expires=Sat,
+        29 Jul 2017 00:21:35 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-d7a5f351
+      - i-88a7f10e
       X-Circleci-Request-Id:
-      - b35c7896-310f-4ac1-aa05-b7019ca0a567
+      - 20f84056-0bbf-4df9-8e71-1d32414c8614
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -53,20 +53,13 @@ http_interactions:
       X-Route:
       - "/checkout-key"
       Content-Length:
-      - '579'
+      - '548'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "public_key" : "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEoPJViHgx4aMO5Xhcku4tTvXDdsePiZYqPsZFsnfZUmyfcdQea7oTK52gkic8lqzWxZTqcV92jytx5W8F2B/7P2iDUmM/haId73HDB4IdXWyN8AFCtiywhXIoeUurpHoVWphBD30Bafe5vDquaC9sxndKnNgFRXM42Y4wI6rfPhrJ3cdGh49E5keGq+w81Dn2yazuw7nvu8xno9+a6xLENI1q2LmBKR8XjD0MpvPmGIsvu73HuFbfCaIfB0omnpeJq5pOeScPO0aXyZlvjPCpF43e4C+EkfugpeqnSa5pxNqkWCZFy7tV3yfAIy4PTb7dTyxqHT3IMrRU7tJrlTEJ \n",
-          "type" : "deploy-key",
-          "fingerprint" : "46:0f:2a:f3:ed:58:b6:dd:60:27:bb:94:d4:04:84:a6",
-          "login" : null,
-          "preferred" : true,
-          "time" : "2016-07-25T23:09:23.881Z"
-        }
+      string: '{"public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC52TeyRMc0Adb+9FcP/PIYV2S6Vbd6nl+eO4+2JnDrhmQZsvkJEnR4ol3LWKosqT+Z34ve9Wo9PsWGQ9Bq7NAIuR9RfCB+/5omAOUKotHM/XXwQ2gdAYKOy1jX5HB75H4V+/Rzj0Q6jNQYuqg30lfQlE6f7QUq2/xwdy62/C0vxwuJexO7ERgamiAwnOAUeC09lWv30Y/MPUhPnPedhTYfoefqXummWNvmjHdz3cChrs6Mh6m3YMmlNBYmR23/5q7BoCg2LWISiVSoLGRbeq7nxUpi9YM9OSgQbtcdGmj035r1XNgEWCQipdRV3Jix26baaDd8JUJS/tmAITViO4j9
+        \n","type":"deploy-key","fingerprint":"29:15:12:e8:f7:f4:17:7a:8f:cc:db:de:43:53:f4:73","login":null,"preferred":true,"time":"2016-07-29T00:30:25.914Z"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:09:17 GMT
+  recorded_at: Fri, 29 Jul 2016 00:29:50 GMT
 recorded_with: VCR 3.0.3

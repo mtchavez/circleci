@@ -4,36 +4,40 @@ http_interactions:
     method: delete
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/build-cache?circle-token=<TOKEN>
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
       message: OK
     headers:
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 23:53:55 GMT
+      - Fri, 29 Jul 2016 00:23:48 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:53:54 +0000;Path=/;Secure
-      - ring-session=6fiasLybX4xjdACU2kjyTobvRnyEtAxYEkVvbRd2SfxlqLgvmt0c6qhGzcZWrrdg9V%2BJ2d9O6nERK50aykmjYhcaTVnVrUYe5zxckg0yUqm07iWG%2FtexGRAJ71kbIh4Uy2O68HzwXSAszFGcBbklYqeHY4pCoTHX0dqr6785RKmZ1fMFMFXuXq6lRfFPbKZ%2Btshuhm9h2rXsMs4Xs4bV8srVCdTOyGQSaKMrIKbLh9M%3D--FyiloJuNWleSSrr66FeDahAQMu16y4g4TxldGn5S4qs%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 22:47:42 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:23:47 +0000;Path=/;Secure
+      - ring-session=3ecECWDE55dPOqrgf0ven%2BYYzl%2BUbT8COXWRIC4O3RrDC5ImgzVwDoeN3eq3GR7pnTVhRlAS18SfwT%2Fme44g5vk9ylqE9nLMsVHM%2BbCphGHvU3v8Chz96I6WgH1jCxtNnH4FAUmT7wMrvfUlQhAm2zW5P6B3PQABuBVmB85K%2FZR2LvMd%2FVPpCthohd4IQr5ULpfnizY5XwpzkPa84qfczpbWVdeVzZZQmsviRKY4B9o%3D--n2Jou0ierZGKqPQCZRWC5V7ZgnvP1J3KDBniBo0BHLs%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 23:25:35 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-9ffb4567
+      - i-9dbee81b
       X-Circleci-Request-Id:
-      - 5eb61b2d-a2be-43ea-b329-5927a0a0c63d
+      - fc25755e-12c4-4660-ab04-9188ac8401eb
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -47,15 +51,12 @@ http_interactions:
       X-Route:
       - "/build-cache"
       Content-Length:
-      - '50'
+      - '44'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "status" : "build dependency caches deleted"
-        }
+      string: '{"status":"build dependency caches deleted"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:54:03 GMT
+  recorded_at: Fri, 29 Jul 2016 00:23:38 GMT
 recorded_with: VCR 3.0.3

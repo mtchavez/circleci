@@ -5,51 +5,48 @@ http_interactions:
     uri: https://circleci.com/api/v1/project/mtchavez/asdf-bogus/envvar?circle-token=<TOKEN>
     body:
       encoding: UTF-8
-      string: name=TESTENV&value=testvalue
+      string: '{"name":"TESTENV","value":"testvalue"}'
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '28'
+      - application/json
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 404
       message: Not Found
     headers:
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 23:26:59 GMT
+      - Fri, 29 Jul 2016 00:22:59 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:26:59 +0000;Path=/;Secure
-      - ring-session=r0WICai9K6qVnrqgNsuFG7z5SBVygk1EHKhEUvgAeV4zxKraYnvXmcJccxgqPRafsjG1BtGcTggE9FeHPJoxQG8UZRa3vk02G2BSVPV0UxpeWoBW8LuWEYnA9oGffKcN58SY7cSIWViElRwRBbbjVO8XPlZIG63MoPt72CtxKgD3CsTdTJHzASNj71q0G1pzIE6g%2BYlhQaTQ%2FX1oeY8k0jpUnew1vydt0ahuCM4akNE%3D--n%2BBloUkP%2B5AG2VVswtYPja8WSmMklwg6jjhZUNcFISk%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 21:02:32 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:22:59 +0000;Path=/;Secure
+      - ring-session=2re%2BVdcOi6ZfU2ljne9TrdNFeYCXrn1HscvCyOmlm05lV8oAnrtEB7kGO162zNDUInw7V0hPq7dN%2B%2BcMaBIRfj80IjGjyKPYqVSzV1USR7Bc9Iqvc3QKeZ22DuGANQIj6kQtFmmYZfkOE3BMBG4D%2B7Q0ae6fwjLfQH7vN9D9TiT47eKDcl%2F43m4RrchEGul1LiIknNRwGN6fbABIoEEMLt%2BjAF4BWT0igYKUMSGUhkg%3D--TRNshBHplPmWrK6DLkYYsRByRbVlFlajzTtTdUhHLu4%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 23:29:01 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-e4aff962
+      - i-e4c3077b
       X-Circleci-Request-Id:
-      - 7aaaa4e6-bb91-4f17-8d6f-b5ab125421ae
+      - 2fb84666-d5be-49bd-ad33-9afdeb9e9adb
       X-Frame-Options:
       - DENY
       X-Route:
       - "/envvar"
       Content-Length:
-      - '105'
+      - '99'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "message" : "{\"message\":\"Not Found\",\"documentation_url\":\"https://developer.github.com/v3\"}"
-        }
+      string: '{"message":"{\"message\":\"Not Found\",\"documentation_url\":\"https://developer.github.com/v3\"}"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:27:16 GMT
+  recorded_at: Fri, 29 Jul 2016 00:22:57 GMT
 recorded_with: VCR 3.0.3

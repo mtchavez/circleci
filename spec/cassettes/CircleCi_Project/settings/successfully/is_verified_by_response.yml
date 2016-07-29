@@ -2,67 +2,21 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/Shopify/google_auth/settings?circle-token=<TOKEN>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 403
-      message: Forbidden
-    headers:
-      Access-Control-Allow-Origin:
-      - "*"
-      Content-Type:
-      - text/plain; charset=utf-8
-      Date:
-      - Mon, 25 Jul 2016 23:45:23 GMT
-      Server:
-      - nginx
-      Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:45:23 +0000;Path=/;Secure
-      - ring-session=CMjri1KzZxsfkMiYKLIxqNAsh5RlRCoD8cBg91qnM3NsCVz0KGR7RblCBM%2FieG5dymO10PkdBFe0Os6YO3XWnBoE%2FGyis9kxri38JE6qPPPVGT7xI8ZLkTWCCaDJP0aidU8f10xRHZXavmSHlsKqf8Okf7dP05JMn721g%2BpulKZgvq0qMZN0%2BQs9QsO6fWFr7BcJXtDOL98O8GyphFRF5qS7DQw9%2B3ERutrSWsEuDEY%3D--4oA4Vz9TalYbsd9WFBzen5XI0P2H3ahMB5SXvwtQpwA%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 20:13:19 +0000;Max-Age=31536000;Secure
-      X-Circleci-Identity:
-      - i-9fbee819
-      X-Circleci-Request-Id:
-      - 88217dcf-ea24-4b6d-a513-eff64b5a2f0b
-      X-Frame-Options:
-      - DENY
-      X-Route:
-      - "/settings"
-      Content-Length:
-      - '37'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-          "message" : "Permission denied"
-        }
-    http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:45:09 GMT
-- request:
-    method: get
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/settings?circle-token=<TOKEN>
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
@@ -70,24 +24,22 @@ http_interactions:
     headers:
       Access-Control-Allow-Origin:
       - "*"
-      Content-Encoding:
-      - gzip
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 23:45:36 GMT
+      - Fri, 29 Jul 2016 00:22:55 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:45:36 +0000;Path=/;Secure
-      - ring-session=gAA1II86ob2Ywu4iIRg1EDu0FRFy8e5%2F71b%2FKofgJ%2FVKXKqcF4TuCWU5utgAdaQXxK1sunYQ9RGQYn8JTDC2ueri7F8JY1gAMOGZW7uqT1Iu3oo77fa%2FmuHYrVZrbEuudU9xUw9QpJUBhkCN4DUj1WJSnHx0aM0xfgHtJDY88k8Va7UqYuD0aNu9yu7sKfa%2BgklUPvc%2F5b4JA44%2FAN7xvK%2BVUWWQD5diBgIOMz5q72s%3D--CBTsA1SI%2Fx5Y0BX9Oq7Op57y1BAlDLho3F92MY6te0U%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 20:36:51 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:22:55 +0000;Path=/;Secure
+      - ring-session=6%2FbYDAP%2F%2FKK5BC3BiMvfCT%2BX4WSwXLbqRDQjOb%2BQfuaQwdIpnjK4sjEfQADtSf8g832pcyCAz4aOvti5pEC%2F6hK3%2F8MoYwZjEUM3IYeTyHs42r2BLWDj5Ea%2BoJWPfPObeZJHH%2FSEDMonr%2B5ftak4HiUrmuBYCKQyz18X4wf5JpZfFp0lHCzlCkbQhpFYn1av4hLhGuBsxDj0LEX1pxU%2Bo%2BiH96VTofPWiPb0Gotg0WI%3D--A%2BCLOeLFzZ8P7Z%2BIlv%2FMF4hDVb1WRMRNYmNg9MAEtj4%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 23:29:01 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-56c004c9
+      - i-e4c3077b
       X-Circleci-Request-Id:
-      - 8d73d744-b5f8-4063-b099-69b4547782e5
+      - f17b35e3-f28f-442b-bbd2-290fc76e41a2
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -101,44 +53,18 @@ http_interactions:
       X-Route:
       - "/settings"
       Content-Length:
-      - '1437'
+      - '1370'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        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
+      string: '{"irc_server":null,"scopes":["write-settings","view-builds","read-settings","trigger-builds","all","status","none"],"irc_keyword":null,"followed":false,"vcs-type":"github","aws":{"keypair":null},"slack_webhook_url":null,"flowdock_api_token":null,"parallel":1,"username":"mtchavez","campfire_room":null,"extra":"","branches":{"master":{"running_builds":[],"recent_builds":[{"build_num":230,"status":"failed","outcome":"failed","added-at":"2016-07-29T00:17:53.302Z"},{"build_num":232,"status":"failed","outcome":"failed","added-at":"2016-07-29T00:18:13.703Z"},{"build_num":228,"status":"failed","outcome":"failed","added-at":"2016-07-29T00:17:51.151Z"},{"build_num":229,"status":"failed","outcome":"failed","added-at":"2016-07-29T00:18:01.106Z"},{"build_num":231,"status":"failed","outcome":"failed","added-at":"2016-07-29T00:17:52.096Z"}],"pusher_logins":["mtchavez"]},"min-ruby-ver":{"running_builds":[],"recent_builds":[{"build_num":220,"status":"success","outcome":"success","added-at":"2016-07-28T03:57:42.973Z"},{"build_num":219,"status":"success","outcome":"success","added-at":"2016-07-28T03:58:37.895Z"}],"pusher_logins":["mtchavez"]},"pull%2F46":{"running_builds":[],"recent_builds":[{"build_num":91,"status":"success","outcome":"success","added-at":"2016-01-17T20:51:00.048Z"}],"pusher_logins":[]},"pull%2F66":{"running_builds":[],"recent_builds":[{"build_num":134,"status":"failed","outcome":"failed","added-at":"2016-03-14T16:57:59.459Z"}],"pusher_logins":[]},"pull%2F69":{"running_builds":[],"recent_builds":[{"build_num":139,"status":"success","outcome":"success","added-at":"2016-04-25T20:50:46.002Z"}],"pusher_logins":[]},"typo":{"running_builds":[],"recent_builds":[{"build_num":227,"status":"success","outcome":"success","added-at":"2016-07-29T00:13:47.745Z"},{"build_num":226,"status":"success","outcome":"success","added-at":"2016-07-29T00:10:45.273Z"},{"build_num":225,"status":"success","outcome":"success","added-at":"2016-07-29T00:09:01.773Z"}],"pusher_logins":["mtchavez"]}},"slack_subdomain":null,"setup":"","campfire_subdomain":null,"slack_notify_prefs":null,"irc_password":null,"vcs_url":"https://github.com/mtchavez/circleci","default_branch":"master","hipchat_api_token":null,"irc_username":null,"language":"Ruby","slack_channel_override":null,"hipchat_notify":null,"slack_api_token":null,"has_usable_key":false,"irc_notify_prefs":null,"campfire_token":null,"slack_channel":null,"feature_flags":{"trusty-beta":false,"osx":false,"set-github-status":true,"build-prs-only":false,"fleet":null,"build-fork-prs":false,"autocancel-builds":false,"junit":true,"oss":true},"campfire_notify_prefs":null,"hipchat_room":null,"post_dependencies":"","heroku_deploy_user":null,"irc_channel":null,"oss":true,"reponame":"circleci","hipchat_notify_prefs":null,"compile":"","dependencies":"","test":"bundle
+        exec rake rubocop && bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter
+        -o $CIRCLE_TEST_REPORTS/rspec/junit.xml","ssh_keys":[{"hostname":"hostname","public_key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"},{"hostname":"hostname","public_key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"},{"hostname":"hostname","public_key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"},{"hostname":"hostname","public_key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"}]}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:45:23 GMT
+  recorded_at: Fri, 29 Jul 2016 00:22:52 GMT
 recorded_with: VCR 3.0.3

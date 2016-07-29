@@ -2,7 +2,8 @@
 require 'spec_helper'
 
 RSpec.describe CircleCi::Config do
-  let(:test_host) { 'https://mycircle.com:1234' }
+  let(:test_host) { 'https://mycircle.com' }
+  let(:test_port) { 1234 }
 
   describe 'initialize' do
     it { expect(subject.host).to eql described_class::DEFAULT_HOST }
@@ -13,7 +14,7 @@ RSpec.describe CircleCi::Config do
   describe 'uri' do
     it 'includes port if not 80' do
       subject.port = 1234
-      expect(subject.uri).to match(/:1234/)
+      expect(subject.uri.port).to eql(subject.port)
     end
 
     it 'does not include default port' do
@@ -24,7 +25,10 @@ RSpec.describe CircleCi::Config do
 
     it 'includes port if set on host' do
       subject.host = test_host
-      expect(subject.uri).to match(test_host)
+      subject.port = test_port
+      uri = subject.uri.to_s
+      expect(uri).to match(test_host)
+      expect(uri).to match(/#{test_port}/)
     end
   end
 end

@@ -5,51 +5,48 @@ http_interactions:
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/ssh-key?circle-token=<TOKEN>
     body:
       encoding: UTF-8
-      string: hostname=hostname&private_key=RSA%20Private%20Key
+      string: '{"hostname":"hostname","private_key":"RSA Private Key"}'
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '49'
+      - application/json
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 400
       message: Bad Request
     headers:
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 23:56:28 GMT
+      - Fri, 29 Jul 2016 00:22:23 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:56:28 +0000;Path=/;Secure
-      - ring-session=7bNXdkauy5ys3PPTAGw9i%2FuZT5mjNYl0VTiMUg10cEBQRh%2FmrYAlvn39q%2F1L1pqekrIspQMjexxs5y86ytNF042rqtJrmDVh%2FeEifFWdDt%2B%2Frw2OiK3afbrHQ1phOm2HlfwtmhwVWEzokvzlEjtRrL2xB1ZmLVJrxE5PPtZzccNS0C26btgkl2IAVq%2FhsmMxYWBIxJhAxgqI7fL4F0FDE%2FwjSgl2REgH5lAPdaRfdgQ%3D--gd2f1AVwwihFTuKPoXD3NBhy7MmH71Z8qsx3m%2BuqZBY%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 19:04:48 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:22:23 +0000;Path=/;Secure
+      - ring-session=fpwQtY7wYf%2B04vJP50mvYdaGxNHmv3e318Y1%2FZr73KeHYhofyMQKpWRKlsNwNbhLxCJW4WPg1EZmrxJTR89d6G75zvjas7AROCIJFlibq2YktEbYIRbF1%2B%2BaqcC6v9jWUQIwXRZiskYDtROq%2FaCkJ0BRUC7Et%2BhZQA%2FhpHc72%2BtYoC%2FpVmJ9YeP15LQi4XP2vjHgGh%2BAOvslGqallpFQ4do7gmVAqcXYDUu3gR27g%2F8%3D--linCGJOl2A%2BV6OLk5q9xXHTeRrVrYkgVrRjgpHRw%2FBM%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 23:00:02 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-a9f84651
+      - i-56fa44ae
       X-Circleci-Request-Id:
-      - 56dd96b3-0fe8-4a4a-a74d-8b87a3dc6de6
+      - bd1aa44c-2b4b-4ab6-8eae-f2a1517c960d
       X-Frame-Options:
       - DENY
       X-Route:
       - "/ssh-key"
       Content-Length:
-      - '75'
+      - '69'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "message" : "it looks like private key is invalid key.  Double check"
-        }
+      string: '{"message":"it looks like private key is invalid key.  Double check"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:56:31 GMT
+  recorded_at: Fri, 29 Jul 2016 00:22:50 GMT
 recorded_with: VCR 3.0.3

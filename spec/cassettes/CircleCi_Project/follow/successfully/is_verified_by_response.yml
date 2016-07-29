@@ -4,40 +4,40 @@ http_interactions:
     method: post
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/follow?circle-token=<TOKEN>
     body:
-      encoding: ASCII-8BIT
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '0'
+      - application/json
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
       message: OK
     headers:
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 23:49:43 GMT
+      - Fri, 29 Jul 2016 00:23:17 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:49:43 +0000;Path=/;Secure
-      - ring-session=EhSuLrJc1gQv7kfxWAeLrKxZXkaKvLcfGgHVpJmzcNDEXEV67fUBr60hFOX7qZLoSzWJmTtMh6SsX16j2HsvOTE4rjCD886KgHZDgDmVZ%2FfgnbQXU%2BdYiZXjPKNrMpgQeZtaguEjB53uQKnJujanlGJhMnETv1UATuavxw890HUCFLiYoC%2BQTJilqqACzAbGt3xYRRnacMXf2plZCGSEK9NWs2NpV%2BtX5HEbDGbw6II%3D--oVyjy0mADTw5cH%2BtBbbxlp0P3w%2BBCCVo%2FtQH4Z%2BU14Q%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 18:06:06 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:23:17 +0000;Path=/;Secure
+      - ring-session=1IwYaK9z%2FBupzH1YFSlZuG%2Bzun0konaVrCsKTK%2B0Qp7tat%2BpKge4A3WkG36VQqlhiowqcNCmsqLFmYRGup2sr%2BwkJkE5J7XXKtiJsL%2F0Qr2ao6TyQe7s%2BRZfo960nn472bzAJdkln7%2B5m0Z1cFEYm6iTed%2BoaGSpSZtmxWUEwrkBd9F6fvs%2BVtux4EZHLDRuetN4x5qFOjgO%2Freu%2BNuPdgHzX7XkRlrxHrR%2F8z5VqhQ%3D--72V2VHlsLaWWbqTPFZlhNilpK5avRxBVz3Wyq%2FXoXRc%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 23:32:07 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-81b8ee07
+      - i-4cfa44b4
       X-Circleci-Request-Id:
-      - 75168460-5680-43de-bb33-ed979d3366f9
+      - fbe968aa-a66d-4d91-98b2-271b7478a923
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -51,16 +51,12 @@ http_interactions:
       X-Route:
       - "/follow"
       Content-Length:
-      - '47'
+      - '36'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "followed" : true,
-          "first_build" : null
-        }
+      string: '{"followed":true,"first_build":null}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:49:33 GMT
+  recorded_at: Fri, 29 Jul 2016 00:22:50 GMT
 recorded_with: VCR 3.0.3
