@@ -80,7 +80,7 @@ RSpec.describe CircleCi::Project, :vcr do
     end
 
     context 'experimental api' do
-      let(:res) { described_class.build_branch 'mtchavez', 'circleci', 'master', 'SOME_VAR' => '123' }
+      let(:res) { described_class.build_branch 'mtchavez', 'circleci', 'master', {}, 'SOME_VAR' => '123' }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
