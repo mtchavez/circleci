@@ -4,15 +4,19 @@ http_interactions:
     method: get
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/140?circle-token=<TOKEN>
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
@@ -20,24 +24,22 @@ http_interactions:
     headers:
       Access-Control-Allow-Origin:
       - "*"
-      Content-Encoding:
-      - gzip
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 22:33:32 GMT
+      - Fri, 29 Jul 2016 00:08:24 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:33:32 +0000;Path=/;Secure
-      - ring-session=O5%2FjuADGTZQlotghrKXKzFPE8ICRDkgNFTP1ZiRz0beoeZojXpurH6nTu0%2BSoPngAs07EjhlnjEPLz8dVNrBMPayzk9pVIpcokSs7RdmPdWZzkD18dsrJxBsLknp1%2FbcKfGVFGajA6LcGl9CoQ1CkCK84Tbo4Is8XAz%2FMbP2xBuVAT6YqT5xqyHwHpxN1zdbbNKS%2BivzUz%2BRTtV39HkWUI6wV0THp%2FyRMyiDyeuLlbU%3D--4E0Phjwpd8B17aizONbh5raiaXrNVqZ%2FQD5whV6c7Yw%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 21:35:57 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:08:24 +0000;Path=/;Secure
+      - ring-session=L0YCdX%2Bg0mfpLs28PzNAUa3vIFfbe6%2BZOgoN6Rk85rJ0RuBYTaXVGUMiiALbD3SflqRyzDz%2Bf1xSUKR05D34VmbVyawz4VylVQOPCqxMtXTmT4qLIeHD8%2BuWhI%2FK900N5Qc8j%2ByvOnVpLS9IWDyW5eIVWXjieGp40JRx73X4pVgEB83glBsHOZNRiek3f6mP2wLRJnMRUcB%2BmceiwGsLrsp5BPYlyqJBg81N0PyRqW0%3D--1%2BxMRFiP7kz%2Fv9nKkoFPVglh7d5sl3UWW3ost%2FvrJxw%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 23:27:32 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-d7ce0a48
+      - i-52c004cd
       X-Circleci-Request-Id:
-      - 6daa5d16-d530-483a-91a3-569887801284
+      - 3d161348-ac53-43eb-94f2-9f30d1ec5683
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -53,76 +55,56 @@ http_interactions:
       - ":build_num"
       - "\\d+"
       Content-Length:
-      - '2845'
+      - '2693'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        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
-        AwDU8NguJUAAAA==
+      string: '{"compare":"https://github.com/mtchavez/circleci/commit/d9a5a207e102","previous_successful_build":{"build_num":139,"status":"success","build_time_millis":83094},"build_parameters":null,"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-07-25T10:03:49-07:00","steps":[{"name":"Starting
+        the build","actions":[{"truncated":false,"index":0,"parallel":false,"failed":null,"infrastructure_fail":null,"name":"Starting
+        the build","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:04:37.043Z","type":"infrastructure","output_url":"https://circle-production-action-output.s3.amazonaws.com/80e57358127a0e2208646975-mtchavez-circleci-0-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517304&Signature=wblAwwGmbHG43OmltrnGdxOige8%3D","start_time":"2016-07-25T17:04:00.267Z","exit_code":null,"canceled":null,"step":0,"run_time_millis":36776,"has_output":true}]},{"name":"Start
+        container","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Start
+        container","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:08.003Z","source":"config","type":"infrastructure","output_url":"https://circle-production-action-output.s3.amazonaws.com/f0e57358127a0e225a646975-mtchavez-circleci-1-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517304&Signature=ViLL0MWD0AIAO8x2yd8tdvaBVNw%3D","start_time":"2016-07-25T17:04:37.077Z","exit_code":0,"canceled":null,"step":1,"run_time_millis":30926,"has_output":true}]},{"name":"Enable
+        SSH","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Enable
+        SSH","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:14.958Z","type":"infrastructure","output_url":"https://circle-production-action-output.s3.amazonaws.com/a1e57358127a0e224c646975-mtchavez-circleci-2-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517304&Signature=N2ohlbfkBKb55fATqjHEqbq4yBU%3D","start_time":"2016-07-25T17:05:08.038Z","exit_code":null,"canceled":null,"step":2,"run_time_millis":6920,"has_output":true}]},{"name":"Restore
+        source cache","actions":[{"truncated":false,"index":0,"parallel":false,"failed":null,"infrastructure_fail":null,"name":"Restore
+        source cache","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:15.214Z","source":"cache","type":"checkout","start_time":"2016-07-25T17:05:14.984Z","exit_code":null,"canceled":null,"step":3,"run_time_millis":230,"has_output":false}]},{"name":"Checkout
+        using deploy key: 81:49:b8:ae:b5:94:db:7a:5b:8a:91:c6:2e:df:f8:b6","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Checkout
+        using deploy key: 81:49:b8:ae:b5:94:db:7a:5b:8a:91:c6:2e:df:f8:b6","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:29.951Z","source":"config","type":"checkout","output_url":"https://circle-production-action-output.s3.amazonaws.com/f1e57358127a0e22bc646975-mtchavez-circleci-4-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517304&Signature=WDWzxdvx5b9hrjLWydWtjTL2%2Bgk%3D","start_time":"2016-07-25T17:05:15.238Z","exit_code":0,"canceled":null,"step":4,"run_time_millis":14713,"has_output":true}]},{"name":"Configure
+        the build","actions":[{"truncated":false,"index":0,"parallel":false,"failed":null,"infrastructure_fail":null,"name":"Configure
+        the build","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:49.908Z","source":"cache","type":"machine","start_time":"2016-07-25T17:05:29.989Z","exit_code":null,"canceled":null,"step":5,"run_time_millis":19919,"has_output":false}]},{"name":"Exporting
+        env vars from project settings","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Exporting
+        env vars from project settings","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:55.178Z","source":"db","type":"machine","output_url":"https://circle-production-action-output.s3.amazonaws.com/63e57358127a0e22de646975-mtchavez-circleci-6-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517304&Signature=W1rFi8D9NBBj4WucbA344GVZ2o0%3D","start_time":"2016-07-25T17:05:49.955Z","exit_code":0,"canceled":null,"step":6,"run_time_millis":5223,"has_output":true}]},{"name":"set
+        ruby version to 2.2.3","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"set
+        ruby version to 2.2.3","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:06:01.992Z","source":"inference","type":"machine","output_url":"https://circle-production-action-output.s3.amazonaws.com/83e57358127a0e223f646975-mtchavez-circleci-7-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517304&Signature=bdb2cw%2BqHDQaBm5v%2FUIJ%2BD4y%2FPU%3D","start_time":"2016-07-25T17:05:55.253Z","exit_code":0,"canceled":null,"step":7,"run_time_millis":6739,"has_output":true}]},{"name":"Restore
+        cache","actions":[{"truncated":false,"index":0,"parallel":false,"failed":null,"infrastructure_fail":null,"name":"Restore
+        cache","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:06:02.776Z","source":"cache","type":"machine","start_time":"2016-07-25T17:06:02.040Z","exit_code":null,"canceled":null,"step":8,"run_time_millis":736,"has_output":false}]},{"name":"Exporting
+        RAILS_ENV, RACK_ENV","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Exporting
+        RAILS_ENV, RACK_ENV","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:06:08.526Z","source":"inference","type":"dependencies","output_url":"https://circle-production-action-output.s3.amazonaws.com/44e57358127a0e22af646975-mtchavez-circleci-9-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517304&Signature=wHrjmcBybMl9tqWGKe%2Bhl%2BrvL%2Fw%3D","start_time":"2016-07-25T17:06:02.789Z","exit_code":0,"canceled":null,"step":9,"run_time_millis":5737,"has_output":true}]},{"name":"bundle
+        install","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"bundle
+        install","bash_command":"bundle check --path=vendor/bundle || bundle install
+        --path=vendor/bundle --jobs=4 --retry=3 ","status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:06:28.254Z","source":"inference","type":"dependencies","output_url":"https://circle-production-action-output.s3.amazonaws.com/64e57358127a0e2200746975-mtchavez-circleci-10-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517304&Signature=741m7hnOfHqmClW4OtZw0%2FnByV4%3D","start_time":"2016-07-25T17:06:08.573Z","exit_code":0,"canceled":null,"step":10,"run_time_millis":19681,"has_output":true}]},{"name":"Save
+        cache","actions":[{"truncated":false,"index":0,"parallel":false,"failed":null,"infrastructure_fail":null,"name":"Save
+        cache","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:06:46.323Z","source":"cache","type":"database","output_url":"https://circle-production-action-output.s3.amazonaws.com/d4e57358127a0e2241746975-mtchavez-circleci-11-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517304&Signature=buiHGmJCkAdQHoOgnMoW8sFldvc%3D","start_time":"2016-07-25T17:06:28.275Z","exit_code":null,"canceled":null,"step":11,"run_time_millis":18048,"has_output":true}]},{"name":"bundle
+        exec rake rubocop && bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter
+        -o $CIRCLE_TEST_REPORTS/rspec/junit.xml","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"bundle
+        exec rake rubocop && bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter
+        -o $CIRCLE_TEST_REPORTS/rspec/junit.xml","bash_command":"bundle exec rake
+        rubocop && bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter
+        -o $CIRCLE_TEST_REPORTS/rspec/junit.xml","status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:06:53.152Z","source":"db","type":"test","output_url":"https://circle-production-action-output.s3.amazonaws.com/35e57358127a0e2262746975-mtchavez-circleci-12-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517304&Signature=zYfS0QArKqFTeM5dfeOV73ogeR8%3D","start_time":"2016-07-25T17:06:46.358Z","exit_code":0,"canceled":null,"step":12,"run_time_millis":6794,"has_output":true}]},{"name":"Collect
+        test metadata","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Collect
+        test metadata","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:07:10.747Z","type":"teardown","output_url":"https://circle-production-action-output.s3.amazonaws.com/65e57358127a0e22d2746975-mtchavez-circleci-13-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517304&Signature=2gXaOXRLZkZyzWKjyah0%2F8%2FvEcQ%3D","start_time":"2016-07-25T17:06:53.187Z","exit_code":null,"canceled":null,"step":13,"run_time_millis":17560,"has_output":true}]},{"name":"Collect
+        artifacts","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Collect
+        artifacts","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:07:24.883Z","type":"teardown","output_url":"https://circle-production-action-output.s3.amazonaws.com/66e57358127a0e22e3746975-mtchavez-circleci-14-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517304&Signature=zpglekpRCXbYo0sdZhGgS2a7Bjw%3D","start_time":"2016-07-25T17:07:10.779Z","exit_code":null,"canceled":null,"step":14,"run_time_millis":14104,"has_output":true}]},{"name":"Disable
+        SSH","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Disable
+        SSH","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:07:24.902Z","type":"teardown","start_time":"2016-07-25T17:07:24.898Z","exit_code":null,"canceled":null,"step":17,"run_time_millis":4,"has_output":false}]}],"body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","usage_queued_at":"2016-07-25T17:03:26.930Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/140","parallel":1,"failed":null,"branch":"typo","username":"mtchavez","author_date":"2016-07-25T10:03:49-07:00","why":"github","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars.githubusercontent.com/u/44689?v=3","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"d9a5a207e10209eecef8ed02289824a8630ed67d","owners":["mtchavez"],"vcs_tag":null,"build_num":140,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":null,"status":"success","committer_name":"Chavez","pull_request_urls":["https://github.com/mtchavez/circleci/pull/71"],"retries":[150,156,149,147,151,155,154,153,148,152,162,157,160,166,164,158,165,169,163,168,159,161,171,175,176,174,170,167,172,173,178,177,183,184,185,186,190,189,194,193],"subject":"Project#envvar
+        method naming fix","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2016-07-25T17:07:31.761Z","ssh_disabled":false,"build_time_millis":223674,"circle_yml":{"string":"machine:\n  ruby:\n    version:
+        2.2.3\n"},"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2016-07-25T17:03:48.087Z","canceler":null,"all_commit_details":[{"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","branch":"typo","author_date":"2016-07-25T10:03:49-07:00","committer_email":"matthew@el-chavez.me","commit":"d9a5a207e10209eecef8ed02289824a8630ed67d","committer_login":"mtchavez","committer_name":"Chavez","subject":"Project#envvar
+        method naming fix","commit_url":"https://github.com/mtchavez/circleci/commit/d9a5a207e10209eecef8ed02289824a8630ed67d","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":"success","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":[{"public_ip_addr":"54.191.221.156","port":64561,"username":"ubuntu","image_id":"s3://lxc-images-us-west-2/circletar-1741-cc586-20160424T232626Z","ssh_enabled":null}],"queued_at":"2016-07-25T17:03:48.067Z","canceled":false,"author_email":"matthew@el-chavez.me"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 22:33:37 GMT
+  recorded_at: Fri, 29 Jul 2016 00:07:48 GMT
 recorded_with: VCR 3.0.3

@@ -4,15 +4,19 @@ http_interactions:
     method: get
     uri: https://circleci.com/api/v1/recent-builds?circle-token=<TOKEN>&limit=3
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
@@ -20,63 +24,51 @@ http_interactions:
     headers:
       Access-Control-Allow-Origin:
       - "*"
-      Content-Encoding:
-      - gzip
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 22:25:55 GMT
+      - Fri, 29 Jul 2016 00:10:07 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:25:55 +0000;Path=/;Secure
-      - ring-session=NqoeiKT9DU9TqhIcAzvW0SeWcG4hEhn1D6DykonpJtrvMaKeRE9tq0iHGhbNN%2FjHwnvdVQmUz9vBip7bFozPLxPAUyt0xQMFu%2Fl%2Fzq3glyqI%2FXjK7J5Uaaxfk7YF1uhoj%2FyZVEU8aMPAsuXU9pD1EED82%2BaU36EpLxnfbS86IsOMo8PkOyTUqY2H8WxADpot4fSOzCwxBrCM2motqqUCU8DmQ2jVO0Q1JCWNUejM1so%3D--F3leHfH3%2FP8SFt0A00iwg0f6CM5r%2FqqqwG3mBEm1wmQ%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 18:32:56 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:10:07 +0000;Path=/;Secure
+      - ring-session=35Eq03wBXtTv37BSk1rAYvTr07X2Wx8i952VT0DP6ui3AZsHu9za71NlAXAvlBSeUZiL0%2F%2F%2Bx%2FdGj4TGoaB3TXByVNu5Zq7P%2FlJHfduOdvPPzgR1wBWNQgeEMZ2EgWxZpqTo%2FbCpr6EVA1ZaUUg9AZi49o9XckOSJdIAYU%2FzI%2BjUCEjz%2FaCDeAWZfkOXKoMMFgpOOc0KiUHtxmsRPD5yhHwSXnEVElXXPCgLWVZ7%2B7w%3D--0Pb%2BSytecC9i5rYa9czwczpe5FyMMypISLQCiDFH4ak%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 23:25:56 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-e6c30779
+      - i-89a7f10f
       X-Circleci-Request-Id:
-      - 357fb9da-030d-4a91-96e0-7eda539ec16e
+      - 3d34c38c-6da0-4bad-a2f5-46003f12a908
       X-Frame-Options:
       - DENY
       X-Route:
       - "/recent-builds"
       Content-Length:
-      - '1257'
+      - '1207'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAAOxY2W7jNhR971cQnpc2SBRJ1mL5KUWLLm9B0b5kUgg0dWVx
-        IJEqSTnjGcy/92rxIsdOIqeZNK2BBLDJy8u7ncMDvyefvyFkxGRRUgUjMiWj
-        zJhSTy8v59xk1czCrcvCsIwu4NMl44rlwPglrhbcXCYR9alrh+DY7ui89lQq
-        WHBZ6VhXjIHWaZXHs4rnSe1bVHneWDUrMV5JCzCgdG9T6ua7URWcd8HhXWgW
-        J9S0Mbq2E1zY4YXr/+7YU3s89SL8OrXtNoiZTJaN3Rn5iX8kqZIFKfNK0ZyA
-        WCyoIkZ2nzRJpSJMCs21AcGW5A7zJt9f/4oGSSm5MLfijFwr0KAWQGSekLQS
-        zHApaM7Nsr2x0nQO8V8VVJDE1OwG6brT+s+z3DC4aU+klOexAqql6GWvwKhl
-        LNN60fHsbq3E24o291UPWjdaZ3GluxK+J39ulbdSea+hq4NNS+fZnq46k6jr
-        InYmz6E576zDhZ0mKipY1lxhlqVcFQLUOtTVDe0WrUwmn97Eu6ztYVOQjfN6
-        rZ5Z/Mp1vFpJaa6bacHlXM65uH8/7iyYjjHU9vp2vke486VxXm/Ww6t525HR
-        9nDbEQCDdAKJ7bqTaOJ6dBKMbUiCMBmtjxs63zPmoiqaOk6iZpGLVFGN081M
-        pSCuC9vLYGveoeg2RwU1JoO7K8gv2pQsLHFjnVEdU2V4Spnp42YFxa2K9QNq
-        p6seIkNNazfqYLuqWHvA8ALiguc5b4xcdxyE3rpwB05v5bEeiB+2xqHuK4c+
-        9HU1+wCshc+1kvXndx1ikSgymRB0xcWcpPzjVtl3Wtps1DEnsjL92iZSmD18
-        lPMU2BJB0LhJueA6g66xQsYJlEgGNTvEjLIM+j61kWVTov2o9wPLD+2bDVwT
-        rumsA9PGy95K+57vtxTQYjReFvlWO3GKsBjdgLCMC5jeCkJUNVs2HwhZIDPg
-        PGPPLNca34rNuBfYJ+SsHm8goFKutInnCkBs6rSJ8oOcrbu56ZrBAXygArZr
-        IYK6CjAkDchb1K49INnE7bhgrQ0OfRdWl+fgF+A13oADjDiY+IYywNp+OGn1
-        rjpMmw8D+RjYrp3ee6SGqo6n5NjV/3CCncGB7LrdR1pRA6uDEbIORgr3GbEm
-        qyEJ997NvSQqZNLH4iMSpIaiE/ShuAPxJ6b75fwkHb+edHQ8ywvCf7N0jOyT
-        dHwx6RjZJ+n4v5OOY5xny/WCI6VjGIyj/4J0DOzwJB1P0vEkHV9fOvqB+0LS
-        cR3E8SLwc8dOuxrwPkHEuCcYQmon/Ee4Iqwp2XVu7gnFP8raniSwIGu6x+fp
-        Vt2K+v+M/AaFXNQGmF1zb82zkskSmaPcmNVkg29yhqsJEG2WeT34XOsKBkhF
-        27ci3x4gFbcWv5ZWXCn+gVqxQPGD9P8ctdhv4koo0pIfJxOFFPCADmTMgUkY
-        ej64acpSP3HtBJgXMm/G0nGS+DBj49QPnqwD3eN1oJDY33x5tWGNZ6vAyDlO
-        BfqhbfvHiMCfufllpdIeE4E/7sCRfPsudL97M9LPt+zo2F8NQzd03770C62J
-        M3k56ddjgtch9CFcNQzVfWU3iIYOKLs7mF2kubx7QNltofPpWHyenhua2T+u
-        57rjV83jaHXdsLa68UbEHYLNdgaKu8dzx8z/BgAA//8DAEwtbj9iHgAA
+      string: '[{"compare":"https://github.com/mtchavez/circleci/commit/d9a5a207e102","previous_successful_build":null,"build_parameters":null,"oss":true,"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","usage_queued_at":"2016-07-29T00:08:11.658Z","fail_reason":null,"retry_of":140,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/225","parallel":1,"failed":null,"branch":"typo","username":"mtchavez","author_date":"2016-07-25T10:03:49-07:00","why":"retry","user":{"is_user":false,"login":"mtchavez","vcs_type":"github"},"vcs_revision":"d9a5a207e10209eecef8ed02289824a8630ed67d","vcs_tag":null,"build_num":225,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":{"build_num":140,"status":"success","build_time_millis":223674},"status":"success","committer_name":"Chavez","retries":null,"subject":"Project#envvar
+        method naming fix","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2016-07-29T00:09:01.739Z","ssh_disabled":false,"build_time_millis":72458,"circle_yml":{"string":"machine:\n  ruby:\n    version:
+        2.2.3\n"},"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2016-07-29T00:07:49.281Z","canceler":null,"all_commit_details":[{"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","branch":"typo","author_date":"2016-07-25T10:03:49-07:00","committer_email":"matthew@el-chavez.me","commit":"d9a5a207e10209eecef8ed02289824a8630ed67d","committer_login":"mtchavez","committer_name":"Chavez","subject":"Project#envvar
+        method naming fix","commit_url":"https://github.com/mtchavez/circleci/commit/d9a5a207e10209eecef8ed02289824a8630ed67d","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":"success","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"queued_at":"2016-07-29T00:07:49.259Z","canceled":false,"author_email":"matthew@el-chavez.me"},{"compare":"https://github.com/mtchavez/circleci/commit/d9a5a207e102","previous_successful_build":null,"build_parameters":null,"oss":true,"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","usage_queued_at":"2016-07-29T00:07:49.807Z","fail_reason":null,"retry_of":140,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/226","parallel":1,"failed":null,"branch":"typo","username":"mtchavez","author_date":"2016-07-25T10:03:49-07:00","why":"retry","user":{"is_user":false,"login":"mtchavez","vcs_type":"github"},"vcs_revision":"d9a5a207e10209eecef8ed02289824a8630ed67d","vcs_tag":null,"build_num":226,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":140,"status":"success","build_time_millis":223674},"status":"running","committer_name":"Chavez","retries":null,"subject":"Project#envvar
+        method naming fix","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"running","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":{"string":"machine:\n  ruby:\n    version:
+        2.2.3\n"},"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2016-07-29T00:07:49.876Z","canceler":null,"all_commit_details":[{"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","branch":"typo","author_date":"2016-07-25T10:03:49-07:00","committer_email":"matthew@el-chavez.me","commit":"d9a5a207e10209eecef8ed02289824a8630ed67d","committer_login":"mtchavez","committer_name":"Chavez","subject":"Project#envvar
+        method naming fix","commit_url":"https://github.com/mtchavez/circleci/commit/d9a5a207e10209eecef8ed02289824a8630ed67d","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"queued_at":"2016-07-29T00:07:49.851Z","canceled":false,"author_email":"matthew@el-chavez.me"},{"compare":"https://github.com/mtchavez/circleci/compare/591fc5529341...b601b390c86a","previous_successful_build":null,"build_parameters":null,"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-07-28T09:12:10-07:00","body":"","usage_queued_at":"2016-07-28T16:12:26.808Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/224","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":"2016-07-28T09:12:10-07:00","why":"github","user":{"is_user":false,"login":"mtchavez","vcs_type":"github"},"vcs_revision":"b601b390c86a917d6615f160f2dc1de11b62b7c8","vcs_tag":null,"build_num":224,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":{"build_num":222,"status":"success","build_time_millis":55521},"status":"success","committer_name":"Chavez","retries":null,"subject":"Add
+        note for minimum ruby version","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2016-07-28T16:13:55.558Z","ssh_disabled":false,"build_time_millis":98256,"circle_yml":{"string":"machine:\n  ruby:\n    version:
+        2.2.3\n"},"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2016-07-28T16:12:17.302Z","canceler":null,"all_commit_details":[{"committer_date":"2016-07-28T09:12:10-07:00","body":"","branch":"master","author_date":"2016-07-28T09:12:10-07:00","committer_email":"matthew@el-chavez.me","commit":"741eaa82e7067e6b4b58d6a221e1c39934a89828","committer_login":"mtchavez","committer_name":"Chavez","subject":"Update
+        CHANGELOG","commit_url":"https://github.com/mtchavez/circleci/commit/741eaa82e7067e6b4b58d6a221e1c39934a89828","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"},{"committer_date":"2016-07-28T09:12:10-07:00","body":"","branch":"master","author_date":"2016-07-28T09:12:10-07:00","committer_email":"matthew@el-chavez.me","commit":"b601b390c86a917d6615f160f2dc1de11b62b7c8","committer_login":"mtchavez","committer_name":"Chavez","subject":"Add
+        note for minimum ruby version","commit_url":"https://github.com/mtchavez/circleci/commit/b601b390c86a917d6615f160f2dc1de11b62b7c8","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":"success","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"queued_at":"2016-07-28T16:12:17.232Z","canceled":false,"author_email":"matthew@el-chavez.me"}]'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 22:26:08 GMT
+  recorded_at: Fri, 29 Jul 2016 00:10:19 GMT
 recorded_with: VCR 3.0.3

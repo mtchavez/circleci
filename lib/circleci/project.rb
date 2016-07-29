@@ -9,9 +9,8 @@ module CircleCi
     # Return all projects for your API key
     #
     # @return [CircleCi::Response] - Response object
-
     def self.all
-      CircleCi.http.get '/projects'
+      CircleCi.request('/projects').get
     end
 
     ##
@@ -21,9 +20,8 @@ module CircleCi
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @return         [CircleCi::Response] - Response object
-
     def self.build(username, project)
-      CircleCi.http.post "/project/#{username}/#{project}"
+      CircleCi.request("/project/#{username}/#{project}").post
     end
 
     ##
@@ -33,13 +31,10 @@ module CircleCi
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @param branch   [String] - Name of branch
-    # @param build_parameters   [Hash] - Optional Build Parameters
+    # @param body     [Hash] - Optional post body with build parameters
     # @return         [CircleCi::Response] - Response object
-
-    def self.build_branch(username, project, branch, build_parameters = {})
-      body = {}
-      body['build_parameters'] = build_parameters unless build_parameters.empty?
-      CircleCi.http.post "/project/#{username}/#{project}/tree/#{branch}", {}, body
+    def self.build_branch(username, project, branch, body = {})
+      CircleCi.request("/project/#{username}/#{project}/tree/#{branch}").post(body)
     end
 
     ##
@@ -54,7 +49,7 @@ module CircleCi
     # @return         [CircleCi::Response] - Response object
     def self.build_ssh_key(username, project, build, key, hostname)
       body = { hostname: hostname, private_key: key }
-      CircleCi.http.post "/project/#{username}/#{project}/#{build}/ssh-users", {}, body
+      CircleCi.request("/project/#{username}/#{project}/#{build}/ssh-users").post(body)
     end
 
     ##
@@ -64,9 +59,8 @@ module CircleCi
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @return         [CircleCi::Response] - Response object
-
     def self.clear_cache(username, project)
-      CircleCi.http.delete "/project/#{username}/#{project}/build-cache"
+      CircleCi.request("/project/#{username}/#{project}/build-cache").delete
     end
 
     ##
@@ -77,9 +71,8 @@ module CircleCi
     # @param project      [String] - Name of project
     # @param fingerprint  [String] - Fingerprint of a checkout key
     # @return             [CircleCi::Response] - Response object
-
     def self.delete_checkout_key(username, project, fingerprint)
-      CircleCi.http.delete "/project/#{username}/#{project}/checkout-key/#{fingerprint}"
+      CircleCi.request("/project/#{username}/#{project}/checkout-key/#{fingerprint}").delete
     end
 
     ##
@@ -90,9 +83,8 @@ module CircleCi
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @return         [CircleCi::Response] - Response object
-
     def self.enable(username, project)
-      CircleCi.http.post "/project/#{username}/#{project}/enable"
+      CircleCi.request("/project/#{username}/#{project}/enable").delete
     end
 
     ##
@@ -102,9 +94,8 @@ module CircleCi
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @return         [CircleCi::Response] - Response object
-
     def self.envvar(username, project)
-      CircleCi.http.get "/project/#{username}/#{project}/envvar"
+      CircleCi.request("/project/#{username}/#{project}/envvar").get
     end
 
     ##
@@ -125,10 +116,8 @@ module CircleCi
     # @param project  [String] - Name of project
     # @param envvar   [Hash] - {name: 'foo', value: 'bar'}
     # @return         [CircleCi::Response] - Response object
-
     def self.set_envvar(username, project, envvar)
-      body = envvar
-      CircleCi.http.post "/project/#{username}/#{project}/envvar", {}, body
+      CircleCi.request("/project/#{username}/#{project}/envvar").post(envvar)
     end
 
     ##
@@ -138,9 +127,8 @@ module CircleCi
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @return         [CircleCi::Response] - Response object
-
     def self.follow(username, project)
-      CircleCi.http.post "/project/#{username}/#{project}/follow"
+      CircleCi.request("/project/#{username}/#{project}/follow").post
     end
 
     ##
@@ -151,9 +139,8 @@ module CircleCi
     # @param project      [String] - Name of project
     # @param fingerprint  [String] - Fingerprint of a checkout key
     # @return             [CircleCi::Response] - Response object
-
     def self.get_checkout_key(username, project, fingerprint)
-      CircleCi.http.get "/project/#{username}/#{project}/checkout-key/#{fingerprint}"
+      CircleCi.request("/project/#{username}/#{project}/checkout-key/#{fingerprint}").get
     end
 
     ##
@@ -163,9 +150,8 @@ module CircleCi
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @return         [CircleCi::Response] - Response object
-
     def self.list_checkout_keys(username, project)
-      CircleCi.http.get "/project/#{username}/#{project}/checkout-key"
+      CircleCi.request("/project/#{username}/#{project}/checkout-key").get
     end
 
     ##
@@ -178,8 +164,7 @@ module CircleCi
     # @return         [CircleCi::Response] - Response object
 
     def self.new_checkout_key(username, project, type)
-      body = { type: type }
-      CircleCi.http.post "/project/#{username}/#{project}/checkout-key", {}, body
+      CircleCi.request("/project/#{username}/#{project}/checkout-key").post(type: type)
     end
 
     ##
@@ -192,7 +177,7 @@ module CircleCi
     # @return         [CircleCi::Response] - Response object
 
     def self.recent_builds(username, project, params = {})
-      CircleCi.http.get "/project/#{username}/#{project}", params
+      CircleCi.request("/project/#{username}/#{project}", params).get
     end
 
     ##
@@ -203,9 +188,8 @@ module CircleCi
     # @param project  [String] - Name of project
     # @param branch   [String] - Name of branch
     # @return         [CircleCi::Response] - Response object
-
     def self.recent_builds_branch(username, project, branch)
-      CircleCi.http.get "/project/#{username}/#{project}/tree/#{branch}"
+      CircleCi.request("/project/#{username}/#{project}/tree/#{branch}").get
     end
 
     ##
@@ -215,9 +199,8 @@ module CircleCi
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @return         [CircleCi::Response] - Response object
-
     def self.settings(username, project)
-      CircleCi.http.get "/project/#{username}/#{project}/settings"
+      CircleCi.request("/project/#{username}/#{project}/settings").get
     end
 
     ##
@@ -229,10 +212,9 @@ module CircleCi
     # @param key      [String] - The ssh private key
     # @param hostname [String] - The hostname identified by the key
     # @return         [CircleCi::Response] - Response object
-
     def self.ssh_key(username, project, key, hostname)
       body = { hostname: hostname, private_key: key }
-      CircleCi.http.post "/project/#{username}/#{project}/ssh-key", {}, body
+      CircleCi.request("/project/#{username}/#{project}/ssh-key").post(body)
     end
 
     ##
@@ -242,9 +224,8 @@ module CircleCi
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @return         [CircleCi::Response] - Response object
-
     def self.unfollow(username, project)
-      CircleCi.http.post "/project/#{username}/#{project}/unfollow"
+      CircleCi.request("/project/#{username}/#{project}/unfollow").post
     end
   end
 end

@@ -5,51 +5,48 @@ http_interactions:
     uri: https://circleci.com/api/v1/project/github/hub/checkout-key?circle-token=<TOKEN>
     body:
       encoding: UTF-8
-      string: type=deploy-key
+      string: '{"type":"deploy-key"}'
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '15'
+      - application/json
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 403
       message: Forbidden
     headers:
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 23:09:33 GMT
+      - Fri, 29 Jul 2016 00:30:22 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:09:33 +0000;Path=/;Secure
-      - ring-session=0Je4hDj10jlntT0Oj0WZ3RnOnqRw08whosIBiuemNTmLJv07m%2Fek7IGl6eQBFvGW%2FIhkPWCr3OpKx%2FT%2FP%2FiWlspIw4ilLUdLd0UC%2BnWIg8C5wFJnlzyLrstzEVqCTqk6ecVueD1sSi2lYYP6nOb9wmOo6I5%2FXTU4oQDM1DNlAJkaqvvGn7aO14AwOjdaUVl1u8dOuBHu9BXJUYctediDzMdDTQdpVDEYj3lOBx9%2Bxxw%3D--yVqM9KCSZ15rwfSZh9eeNO64jAYtB9sCACFXyI44I98%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 18:41:52 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:30:22 +0000;Path=/;Secure
+      - ring-session=kfSkPtPevg5NGe%2BoNSLrVrHG87LIDw%2F01kX472zb3cKHS9hp5uzjVaBREQeRIn7mbqWnpHWM3hDIgpXztwqVuxlgItbrWSKtiHw0g1N5dJ%2Fm0tNTZFQ3FPrBwiQ3DUKoqjrn6RnKOAb5IEwziMvXiSsrHA8ribeZNKnrDIC3htoKbTCbhg%2FkH28%2BVdEc6Z%2Fy2ZY6VDekRBSQHM6wTm83wOwj5VbetkuUIMQdWna2mRo%3D--n6YD6xJu8YtH52Gyo4SGw%2BOtKZ%2FJm1KJT7yjdWeoRzM%3D;Path=/;HttpOnly;Expires=Sat,
+        29 Jul 2017 00:18:39 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-60fb4598
+      - i-8fa7f109
       X-Circleci-Request-Id:
-      - e42e4165-4942-44ec-8e0f-1678a847a97c
+      - ab4d4766-53ac-48f1-bf40-9d5baf557793
       X-Frame-Options:
       - DENY
       X-Route:
       - "/checkout-key"
       Content-Length:
-      - '37'
+      - '31'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "message" : "Permission denied"
-        }
+      string: '{"message":"Permission denied"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:09:19 GMT
+  recorded_at: Fri, 29 Jul 2016 00:29:52 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     circleci (0.2.3)
-      rest-client (~> 1.8)
 
 GEM
   remote: https://rubygems.org/
@@ -21,21 +20,15 @@ GEM
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    domain_name (0.5.20160615)
-      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.1.1)
     ethon (0.9.0)
       ffi (>= 1.3.0)
     ffi (1.9.14)
     gemcutter (0.7.1)
     hashdiff (0.3.0)
-    http-cookie (1.0.2)
-      domain_name (~> 0.5)
     json (2.0.1)
     method_source (0.8.2)
-    mime-types (2.99.2)
     multi_json (1.12.1)
-    netrc (0.11.0)
     parser (2.3.1.2)
       ast (~> 2.2)
     powerpack (0.1.1)
@@ -46,10 +39,6 @@ GEM
     rainbow (2.1.0)
     rake (11.2.2)
     redcarpet (3.3.4)
-    rest-client (1.8.0)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 3.0)
-      netrc (~> 0.7)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -86,9 +75,6 @@ GEM
     tins (1.6.0)
     typhoeus (1.1.0)
       ethon (>= 0.9.0)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.7.2)
     unicode-display_width (1.1.0)
     vcr (3.0.3)
     webmock (2.1.0)
@@ -119,4 +105,4 @@ DEPENDENCIES
   yard (~> 0.9.5, >= 0.9.5)
 
 BUNDLED WITH
-   1.11.2
+   1.12.5

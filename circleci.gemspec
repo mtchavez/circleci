@@ -16,9 +16,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.0.0'
   s.metadata['yard.run']  = 'yri' # use "yard" to build full HTML docs.
 
-  # Gem Dependencies
-  s.add_dependency 'rest-client', '~> 1.8'
-
   # Dev Dependencies
   s.add_development_dependency 'coveralls',     '~> 0.8.14', '>= 0.8.14'
   s.add_development_dependency 'dotenv',        '~> 2.1.1', '>= 2.1.1'

@@ -4,15 +4,19 @@ http_interactions:
     method: get
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/140/artifacts?circle-token=<TOKEN>
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
@@ -20,24 +24,22 @@ http_interactions:
     headers:
       Access-Control-Allow-Origin:
       - "*"
-      Content-Encoding:
-      - gzip
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 22:33:31 GMT
+      - Fri, 29 Jul 2016 00:08:07 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:33:31 +0000;Path=/;Secure
-      - ring-session=7l%2Fh%2BjBNvfiIOeCdBhsWdmp1tA9%2FB6mTm4qIF5SL5wAFKDaJ0MXHgGk1QGu%2FbHJcUODDBBYyno8Ww9FTevSW8UVVLSnH8XiS3G9OeRFoDjm6zpUoEP%2FhwIr7i2UTcOERC8TEf2NL1b4opn1DtPJ3dv%2Btq5U30aQwfaiDW%2FbP2lhSKHpLIHiTKN%2BKq%2FjUAM8MGjTNMCyN8TGRxCf%2B53bLaDn1WS86oPSe9CTs8UbzNp4%3D--Q5ww3lilxruyBjI%2FN5DcBkb9tMnzCppm2QJ2j9EHnfk%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 19:04:48 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:08:07 +0000;Path=/;Secure
+      - ring-session=iVPahiRapjwO2C4RrvAtyClsghPXV3M3fJuGkHADrd2JGHI2L5GtDlkbuqMSt1pkr5xI3uSc5UFT6CRL83WyJ7zyfdgzux4Yh7pq7FK0JuJbIzOKYu69NumAPKq71bsxqGpeevNDNEe0No%2FtMPuNIV7V1aJM8e7xrsTchAUr%2F89XArEs2FkOfdCLCsyFVRzo%2BR1Pio6qX7oxOik8JbgwlGabnFgeY2bROghT7T9qRBU%3D--xtnTNpubTtvwIR0O78IQMo7UW%2F0g9H%2Fxe4%2FV3fHIYws%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 23:43:29 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-a9f84651
+      - i-b6f8464e
       X-Circleci-Request-Id:
-      - f054548a-7469-417a-8e94-13a129bf0eb8
+      - 9f4345fe-a426-45d7-882e-7b4124020ec9
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -53,17 +55,12 @@ http_interactions:
       - ":build_num"
       - "\\d+"
       Content-Length:
-      - '181'
+      - '171'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAAIpWqOZSUFAqSCzJUFKwUlDSL8kt0E/OLErOSdXNKs3LLNEr
-        c3bz8Sgw1y8qLkhN1oeIVeTmKOmA9RWllpRUxsO1qzh7Bjn7uMaHuAaHxAe5
-        BvgHhQRj15mXn5Ian5mXkloB0mgAFistygGbklFSUlBspa9vaGKga2liYWpu
-        ZqKbnqEHdVZiUUlmWmJySbFecn6uvoE+8U7mqlWIBQAAAP//AwDzNVaW8QAA
-        AA==
+      string: '[{"path":"/tmp/circle-junit.vCFLHp7/rspec/junit.xml","pretty_path":"$CIRCLE_TEST_REPORTS/rspec/junit.xml","node_index":0,"url":"https://140-9485764-gh.circle-artifacts.com/0//tmp/circle-junit.vCFLHp7/rspec/junit.xml"}]'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 22:33:34 GMT
+  recorded_at: Fri, 29 Jul 2016 00:07:46 GMT
 recorded_with: VCR 3.0.3

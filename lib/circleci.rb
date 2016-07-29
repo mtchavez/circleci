@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 require 'json'
-require 'rest-client'
 require 'net/http'
+require 'uri'
 
 files = %w[
   build
   config
-  http
   project
   recent_builds
-  request_error
+  request
   response
   user
 ]
@@ -28,7 +27,6 @@ module CircleCi
   #   CircleCi.configure do |config|
   #     config.token = 'my-token'
   #   end
-
   def configure
     yield config
   end
@@ -36,12 +34,11 @@ module CircleCi
   ##
   #
   # @return [CircleCi::Config]
-
   def config
     @config ||= Config.new
   end
 
-  def http # @private
-    Http.new(config)
+  def request(path, params = {})
+    Request.new config, path, params
   end
 end

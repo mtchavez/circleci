@@ -2,98 +2,44 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/ad2games/soapy_cake/tree/master?circle-token=<TOKEN>
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '0'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 403
-      message: Forbidden
-    headers:
-      Content-Type:
-      - text/plain; charset=utf-8
-      Date:
-      - Mon, 25 Jul 2016 22:37:20 GMT
-      Server:
-      - nginx
-      Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:37:20 +0000;Path=/;Secure
-      - ring-session=2pUzyuokRkp66%2FHkUOGa8gCpqB8PcyQXQ%2FfWR9b%2BAQIKy15%2BxvkZKzYULQXesu1M7BhvnU6iKm8UYQFzmmYdo1%2BqCWxVJuDr32etTZHBEmTXQvFjBOPmaY339wclUCy3cfFGecN5deMTn6j%2BVu%2FwzyguxsFXPDb07mI%2FLZVwi%2B2TDOFBZlERw6QN9sAi60uKdbhiYDLtg5IC8MncQBYQBWw7NwNFhBwqXnj94esPEw0%3D--orDXt59Q03hEN4bUkZT9wEw39%2BCwtOQ4kFaJlEyepdQ%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 19:49:33 +0000;Max-Age=31536000;Secure
-      X-Circleci-Identity:
-      - i-57c004c8
-      X-Circleci-Request-Id:
-      - 9c2ba197-3b77-40ea-aabf-73d869621491
-      X-Frame-Options:
-      - DENY
-      X-Route:
-      - "/tree/:branch"
-      - ":branch"
-      - "[^,;?]+"
-      Content-Length:
-      - '37'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-          "message" : "Permission denied"
-        }
-    http_version: 
-  recorded_at: Mon, 25 Jul 2016 22:37:40 GMT
-- request:
-    method: post
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/tree/master?circle-token=<TOKEN>
     body:
-      encoding: ASCII-8BIT
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '0'
+      - application/json
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 201
       message: Created
     headers:
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 22:38:24 GMT
+      - Fri, 29 Jul 2016 00:22:55 GMT
       Location:
-      - https://circleci.com/api/v1/project/mtchavez/circleci/197
+      - https://circleci.com/api/v1/project/mtchavez/circleci/235
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:38:23 +0000;Path=/;Secure
-      - ring-session=Tfd%2FyFuFuDP%2BcQ1KJryWFBej7pIdTNzAC%2FQYfswJVMytjp07Pni3FPaiHG2EDCloSnn9na0tqXPjMbuGL%2Fs4HSP27w1WvrW1oNJKaBHdYefHdnGGDy0LGfMyFzOkaeeXBozOBkBvPvALQZtX1b%2BD78fHGkUnq14VKpZwVvBGaoElPpHq6mICCf1pcj3gp2v8qzmwZfkMDOwbk4XuGLVKlThzx%2Fg6TQSO1Vk4pep1hXQ%3D--9DG18NcjTy1OnvnVldnDY3csSkvT0Ioc3e8mX83RKSo%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 22:16:22 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:22:55 +0000;Path=/;Secure
+      - ring-session=EnWm0kgiDXgRw2Y2YRlbOF2fwpD8IJmlfFlKvont57tdyoV5VntsPy%2FcVijrCNl2Wi6JBpNBP2wRO6bdQCLKUyqSmUQUKjMt0YAK3YGd6eGIQ%2FxjwVtb1m5EA2G9xTU%2FSEuZx01dme6R%2BbfNd1IuHIoWTXrDZGws0B9seXHnK2iZybeL%2Friq6JTHm%2FKn0mNpli7wf%2FqmhGaH8awk2D7iqlB0J0ooBz%2Fk76QBEqrtt6k%3D--6qkhwT3I4AIYHzs0s3evcv1OQs2b%2BxZ6U4XopwLiL%2FU%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 23:14:30 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-d9ce0a46
+      - i-9efb4566
       X-Circleci-Request-Id:
-      - aa4f95ad-b326-4d23-bab6-3be8b2bd203f
+      - 20f07850-3021-4c03-88e2-fdfec708c941
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -109,93 +55,15 @@ http_interactions:
       - ":branch"
       - "[^,;?]+"
       Content-Length:
-      - '2586'
+      - '1994'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "compare" : null,
-          "previous_successful_build" : {
-            "build_num" : 192,
-            "status" : "success",
-            "build_time_millis" : 57272
-          },
-          "build_parameters" : { },
-          "oss" : true,
-          "all_commit_details_truncated" : false,
-          "committer_date" : "2016-07-25T17:23:21Z",
-          "body" : "* Update dev dependencies\r\n\r\n* Remove deprecated rubocop cop\r\n\r\n* Fix hash code styling issue",
-          "usage_queued_at" : "2016-07-25T22:38:24.137Z",
-          "fail_reason" : null,
-          "retry_of" : null,
-          "reponame" : "circleci",
-          "ssh_users" : [ ],
-          "build_url" : "https://circleci.com/gh/mtchavez/circleci/197",
-          "parallel" : 1,
-          "failed" : null,
-          "branch" : "master",
-          "username" : "mtchavez",
-          "author_date" : "2016-07-25T17:23:21Z",
-          "why" : "api",
-          "user" : {
-            "is_user" : true,
-            "login" : "mtchavez",
-            "avatar_url" : "https://avatars.githubusercontent.com/u/44689?v=3",
-            "name" : "Chavez",
-            "vcs_type" : "github",
-            "id" : 44689
-          },
-          "vcs_revision" : "cc1e87745e2ffcf5d20dec47c4bcf3dd5ebc3f56",
-          "vcs_tag" : null,
-          "build_num" : 197,
-          "infrastructure_fail" : false,
-          "committer_email" : "noreply@github.com",
-          "previous" : {
-            "build_num" : 196,
-            "status" : "running",
-            "build_time_millis" : 0
-          },
-          "status" : "not_running",
-          "committer_name" : "GitHub",
-          "retries" : null,
-          "subject" : "Dev dependencies (#72)",
-          "vcs_type" : "github",
-          "timedout" : false,
-          "dont_build" : null,
-          "lifecycle" : "not_running",
-          "no_dependency_cache" : false,
-          "stop_time" : null,
-          "ssh_disabled" : false,
-          "build_time_millis" : null,
-          "circle_yml" : null,
-          "messages" : [ ],
-          "is_first_green_build" : false,
-          "job_name" : null,
-          "start_time" : null,
-          "canceler" : null,
-          "all_commit_details" : [ {
-            "committer_date" : "2016-07-25T17:23:21Z",
-            "body" : "* Update dev dependencies\r\n\r\n* Remove deprecated rubocop cop\r\n\r\n* Fix hash code styling issue",
-            "author_date" : "2016-07-25T17:23:21Z",
-            "committer_email" : "noreply@github.com",
-            "commit" : "cc1e87745e2ffcf5d20dec47c4bcf3dd5ebc3f56",
-            "committer_login" : "web-flow",
-            "committer_name" : "GitHub",
-            "subject" : "Dev dependencies (#72)",
-            "commit_url" : "https://github.com/mtchavez/circleci/commit/cc1e87745e2ffcf5d20dec47c4bcf3dd5ebc3f56",
-            "author_login" : "mtchavez",
-            "author_name" : "Chavez",
-            "author_email" : "mtchavez@users.noreply.github.com"
-          } ],
-          "outcome" : null,
-          "vcs_url" : "https://github.com/mtchavez/circleci",
-          "author_name" : "Chavez",
-          "node" : null,
-          "canceled" : false,
-          "author_email" : "mtchavez@users.noreply.github.com"
-        }
+      string: '{"compare":null,"previous_successful_build":{"build_num":224,"status":"success","build_time_millis":98256},"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-07-28T16:12:10Z","body":"","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/235","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":"2016-07-28T16:07:56Z","why":"api","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars.githubusercontent.com/u/44689?v=3","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"b601b390c86a917d6615f160f2dc1de11b62b7c8","vcs_tag":null,"build_num":235,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":234,"status":"not_run","build_time_millis":0},"status":"not_run","committer_name":"Chavez","retries":null,"subject":"Add
+        note for minimum ruby version","vcs_type":"github","timedout":false,"dont_build":"no-followers","lifecycle":"not_run","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":null,"messages":[{"type":"error","message":"We
+        did not test this push because nobody is following the project"}],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2016-07-28T16:12:10Z","body":"","author_date":"2016-07-28T16:07:56Z","committer_email":"matthew@el-chavez.me","commit":"b601b390c86a917d6615f160f2dc1de11b62b7c8","committer_login":"mtchavez","committer_name":"Chavez","subject":"Add
+        note for minimum ruby version","commit_url":"https://github.com/mtchavez/circleci/commit/b601b390c86a917d6615f160f2dc1de11b62b7c8","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 22:38:10 GMT
+  recorded_at: Fri, 29 Jul 2016 00:22:35 GMT
 recorded_with: VCR 3.0.3

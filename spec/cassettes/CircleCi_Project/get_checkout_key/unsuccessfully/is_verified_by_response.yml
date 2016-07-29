@@ -4,15 +4,19 @@ http_interactions:
     method: get
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/asdf-bogus?circle-token=<TOKEN>
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 404
@@ -21,33 +25,30 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 22:53:14 GMT
+      - Fri, 29 Jul 2016 00:29:36 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:53:14 +0000;Path=/;Secure
-      - ring-session=cpohNHWcmxAQqAWSgEDm0MfCeWamVMR7I4R8pcP14KGic2bJOqg25snBYPh9PDdrYtETYhxRvl9IWVVi5hOvC%2Bos510vXNCK1nxzUpzAwBaLY0%2F3sropGnYRcMfegjedyN%2FaSoLcGJudU4g0uA92xiwmZ4T1e4nmyuWM%2FQgy%2F2MK7SJuEYMdE1Hgnxb%2B7Na1l%2BbsclSF3PDixKgUE8BiG%2B%2BevuS%2B7Na9x2cDw1rb%2FzQ%3D--ScsejCIvxrUDk%2Bs1Hqgijw%2Fio31jomfjDo8xc4LiHKQ%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 19:12:11 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:29:36 +0000;Path=/;Secure
+      - ring-session=kVP%2Bdsc9zsRWdW63dAcbKGcSDuZQlmmYKBdEoNO%2FfjWnCY5H%2FRjFcHg12k0hp%2BlP6lFaN6T11Fz%2Fo%2BB%2BG5Bem9TLF8RCBJuhk4nagE%2FLVKFVEBSRcScL1dX1Ymh2Dkuu6wWVDVpD6%2BwD0cf%2FhBsRJv%2BCRM4QL9QYtTEYBwhKHTE3uE%2Fy%2FDGXazG%2FVB4NdPMzZdl5GL0PqcF2aY7hpuSwIoS6MkJzmrr787nCnikasFM%3D--AbxfdWHfswbqKjneKkxvtAxMaN57YW%2BqNGW%2Bx9E9ljQ%3D;Path=/;HttpOnly;Expires=Sat,
+        29 Jul 2017 00:22:16 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-7dadfbfb
+      - i-9ffb4567
       X-Circleci-Request-Id:
-      - b4373e7c-559f-4769-93e4-952077ed5c4e
+      - 8c4d71c5-0ba6-4df6-8abc-f6bd2d9dd611
       X-Frame-Options:
       - DENY
       X-Route:
       - "/checkout-key/:fingerprint"
       Content-Length:
-      - '42'
+      - '36'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "message" : "checkout key not found"
-        }
+      string: '{"message":"checkout key not found"}'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 22:52:52 GMT
+  recorded_at: Fri, 29 Jul 2016 00:29:48 GMT
 recorded_with: VCR 3.0.3

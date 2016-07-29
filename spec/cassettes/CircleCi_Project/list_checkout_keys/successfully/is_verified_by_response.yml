@@ -4,15 +4,19 @@ http_interactions:
     method: get
     uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key?circle-token=<TOKEN>
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
@@ -20,24 +24,22 @@ http_interactions:
     headers:
       Access-Control-Allow-Origin:
       - "*"
-      Content-Encoding:
-      - gzip
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 22:52:23 GMT
+      - Fri, 29 Jul 2016 00:29:31 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:52:23 +0000;Path=/;Secure
-      - ring-session=1Nb%2BZLBzGBxUhH6vYKhu4idJ9VSJNWH9A9onUofahjQ%2F8QRp3o6wZiI6IJjxIOzTs8DyhiRUoz1bu284can587t3Ck08dsQgDZFjafgGD0IUXQQnbhnBaasRZgrYQpmTQoHcXSPBzsxxVc6fR5fQFH%2BxIvPr0MZr52Tgs2V2s%2ByKDSrxE7aDEOLvqTQgxWIB%2BHT1r5noHHraVl3YVTz2llWHL2YlD4uzLsm7L%2FXTQSU%3D--FiXL%2F8fRjwmBovkX%2FlVQOXr%2BK0Z3SdbYEl6UbYcIpz8%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 17:32:09 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:29:31 +0000;Path=/;Secure
+      - ring-session=%2B0oK1sTcDvXL6%2B%2BsssrfGM4aoSNV2s1RnTpLbCGjV519KgKsrFdOGWd4DhmaaGz5PmY91sVCC2YMPivPIlAlA8YAWifDT%2Fs9LkvGBQ210bAUA6WJ39DMugybkG5LW%2FjMc7XyZ%2B8LshW7vSfHq2Hq9HSYE4mTXqhY%2B9HlMKi99Ay3wAlldFnjl6PZKkGgcZr4rTKppqLUCof%2Fxdbk6PqTINRrjbhaAzgn4J1DXkRVCww%3D--kUMjZTaKU%2F5%2B%2FN%2FFuf18IVCzonTv360BMT7thCIam4k%3D;Path=/;HttpOnly;Expires=Sat,
+        29 Jul 2017 00:25:22 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-9010d10f
+      - i-e6c30779
       X-Circleci-Request-Id:
-      - 5b51d5b5-4072-43ce-9a91-2b8de1f6c82a
+      - 45581d05-ceb7-4ead-945c-13fd9241a7e2
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -51,49 +53,13 @@ http_interactions:
       X-Route:
       - "/checkout-key"
       Content-Length:
-      - '1633'
+      - '476'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        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
-        AP//AwA0AslitwoAAA==
+      string: '[{"public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCKLz/1WWYe+rWooGGwkmm7P19KKIe8hYbJDdc+hLlbyW/kx0geT5iWjb/4e+kCrFBw4K2qq2ScqUX9/Spo+AzYcDSGbB0fmKhRcq2aPVJZsWgoRa7iZ1FNV32EZSxMxIxpGzZb3gmslXVRaP7fQWsOaydRr31ETJgX3pE1rI8LPT8rYsG3et4398UGcfXJ22FQgrKtr/mPi8gRR+T7AXOoaM1HtBash3SvyjBKvm/WSdhdABK0Y9G1q5iu92ulh0Vo/ia+Kt952Vi1nQf2/PxIquqdOVa6G1RpLDmpx2MN8PN7lnXl0g8FnSwnNj+dRaAuenTdgBqQIhcAEY4io6Nf
+        \n","type":"deploy-key","fingerprint":"3e:35:e0:96:f7:c8:23:9c:b8:2f:50:9e:d0:16:f7:05","login":null,"preferred":true,"time":"2016-07-29T00:28:24.797Z"}]'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 22:52:33 GMT
+  recorded_at: Fri, 29 Jul 2016 00:29:48 GMT
 recorded_with: VCR 3.0.3

@@ -4,15 +4,19 @@ http_interactions:
     method: get
     uri: https://circleci.com/api/v1/me?circle-token=<TOKEN>
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
@@ -20,50 +24,33 @@ http_interactions:
     headers:
       Access-Control-Allow-Origin:
       - "*"
-      Content-Encoding:
-      - gzip
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 23:00:44 GMT
+      - Fri, 29 Jul 2016 00:00:02 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 23:00:44 +0000;Path=/;Secure
-      - ring-session=onuygHiHp4kxApYdn0e39%2Fd%2FImx6eTVCq1Psd4T1C1HbrKl32yTTVJXYqUWRy1NtGn4LIeW0BIyqzLoYUYiJRMZ55yjBirmYA8gw3EMSBajgTOohPFbda9CI2MqOUd92%2BQ04wX7YIeU3SUH8RVryPJR2nUjGP8QaRhgzjGdPjWZgR2j01BiO56sMWQ8uut9yQSPDOnenCF%2F7LARZ4TdN0eS6Lkze2jt7s4cZcrmuDGg%3D--LHlznDfu5iSsEVOAwwSB45aC9ghhmJokucLaT0gUaMo%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 21:45:29 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:00:02 +0000;Path=/;Secure
+      - ring-session=GxK%2BToaPEcEx62INQSIg6FpUjcVpX177P1qBPtdLvlBgCDdfQEOFWtl%2F%2BfiDY87iiMmn%2FGri9tUQu5euKL7nr7efhfIimehBmkmYAPCSboM%2F1l1uSywB%2FoR9hqbMjl%2FoRvRTmDsflmTFb77hwI7zbtQ9ZvWELqNDe5D0cdpAyOobSlTHlXenKOtB%2FydHr1mlge7sN7FuCqSy3p5vUqADKn8EH6829n89iOAZ8IS4tAI%3D--Fz0yKuST9Oy1fB614pFYB%2BMjX4CrMyKxr0B5XWxOfuM%3D;Path=/;HttpOnly;Expires=Fri,
+        28 Jul 2017 22:36:30 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-98fb4560
+      - i-d6ce0a49
       X-Circleci-Request-Id:
-      - b71e6598-ee91-40e3-9a99-5ff49ebb722e
+      - 72d47a4e-a4cf-4cee-993c-4c6cfcd62bfb
       X-Frame-Options:
       - DENY
       X-Route:
       - "/me"
       Content-Length:
-      - '663'
+      - '624'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAAKxU246bMBB936+IeA4J1wCRqq7UX+hTqwoNZgjuGhvZJm12
-        tf9eX8iFNPu2PCA0xzNz5swxb0+rVYBcCsawrRvUoILVfvVz9WttEcpdrB6l
-        OEgYLNQBU+hAhQyJNmk4AGUWCwbQusc/z8hC0sMRXzcDBu4wHEGDrCfpD/Za
-        j2q/3fqw2hyo7qdmUiiJ4Bq53hAxbKdtlu3K6uvxS+qraEmB1chbVySJ4jSM
-        8jCKv0fJPo/3cbmJsvTH3LEdKF8ybkBR4umakbBzswZqAKl9jqIHXpuhiZi4
-        tmAau7inVwuYdF8rIkacZQos5b0XYL0KJI4imLUDDuykKVE19XTjKMvKLinC
-        Isl3YVa1GFZRVYU7UlZtVJEmSXNPg4ORzaZ8cyL6oFmA19CX4xNjLt7CSdUM
-        O22JO4EsHMZx6bmPIMFsl1Hl9ueDDdXNRF5Q13YkIekrtkut5pF9M7eGZeKS
-        Ax7rB3qbvl7ts1p2uUD0nT/swOZMI8ULAm87ZOz5YNOsCSzszz53oLQLdy76
-        0Gyz+EQiWGuCvnFKFsbFI6eMDPhinB4NlamGkdYveHIV/s5P+OBln64g8/Jo
-        a+xLNfUWeTOhi5rXwAdLdoC5bEdTRN5r78BWGAUc27mm1+gM69OIN+AV6I2w
-        zEODJncdP+VyukpU3RlKywlvUVvlHHfhd/N+92uQ4rf5odzKdmZyHXV7Zr8l
-        VBLzA6ILUQWvW1B9I0D+3/5qRWPYDiamA09h/WE3MU6KQaPcxyd0ugzLxGFe
-        42IdgZAH4PQVNDUNLv+otznL3R/KUarrVTbE+otZgi7vUgLlLomruGhaaBCT
-        PCkBSVLl0Oy6tKgSQorg6f0fAAAA//8DAHG1a1D8BQAA
-    http_version: 
-  recorded_at: Mon, 25 Jul 2016 23:01:30 GMT
+      string: '{"enrolled_betas":[],"in_beta_program":false,"selected_email":"matthew@el-chavez.me","avatar_url":"https://avatars.githubusercontent.com/u/44689?v=3","trial_end":"2013-05-01T02:51:18.043Z","admin":false,"basic_email_prefs":"smart","sign_in_count":31,"github_oauth_scopes":["user:email","repo"],"analytics_id":"10448f27-7256-49de-9099-6c89d09cb235","name":"Chavez","gravatar_id":null,"days_left_in_trial":-1184,"parallelism":1,"bitbucket_authorized":false,"github_id":44689,"bitbucket":null,"dev_admin":false,"all_emails":["contact@el-chavez.me","nailsbrokeandfell@gmail.com","chavez@fastmail.fm","matthew@el-chavez.me"],"created_at":"2013-04-17T02:51:18.043Z","plan":null,"heroku_api_key":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxf7c5","identities":{"github":{"name":"Chavez","provider_id":44689,"domain":"github.com","type":"github","handle":"mtchavez","avatar_url":"https://avatars.githubusercontent.com/u/44689?v=3","is_authorized":true,"is_user":true}},"projects":{"https://github.com/mtchavez/circleci":{"on_dashboard":true,"emails":"default"},"https://github.com/opuslabs/opus":{"on_dashboard":true,"emails":"default"}},"login":"mtchavez","organization_prefs":{},"containers":1,"pusher_id":"f5f3ca8621917bdabee2528aec295ab6f3792cc7"}'
+    http_version:
+  recorded_at: Fri, 29 Jul 2016 00:00:12 GMT
 recorded_with: VCR 3.0.3

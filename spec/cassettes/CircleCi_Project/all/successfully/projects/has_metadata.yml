@@ -4,15 +4,19 @@ http_interactions:
     method: get
     uri: https://circleci.com/api/v1/projects?circle-token=<TOKEN>
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
+      Content-Type:
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
       - Ruby
+      Host:
+      - circleci.com
   response:
     status:
       code: 200
@@ -20,92 +24,33 @@ http_interactions:
     headers:
       Access-Control-Allow-Origin:
       - "*"
-      Content-Encoding:
-      - gzip
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jul 2016 22:36:50 GMT
+      - Fri, 29 Jul 2016 00:23:02 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Tue, 25 Jul 2017 22:36:50 +0000;Path=/;Secure
-      - ring-session=0nFJwl8T2df33WbNS2pcO4qQxcnLJ%2BT%2F3B9i34dj4kETnAfxtskcfKp%2BKRPL3%2FHsE9nPijNYKd6ihRPmzSpkvw%2FcC4K0xPlo7T2amibzd7LIx%2BocBS9Jpfsmh70OVB2tevBsTU7TbFAOCFTKC7HVl7v1%2FtxnCa2vy2wKcNAo06zZ11xVE4QcU59crCHhPz2%2BWXWBoLeCDd42tPwcPNmYFNr9TijYDkWG02w1Vd5AXbU%3D--IPMG46OGosWcKhgckOYosIGlwtsChde5pNGsZu8nfcY%3D;Path=/;HttpOnly;Expires=Tue,
-        25 Jul 2017 21:32:05 +0000;Max-Age=31536000;Secure
+      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:23:01 +0000;Path=/;Secure
+      - ring-session=Fjpf3gF6xECss%2BRHfmTzER8w%2Bhoy8k7it8QXnafPGZUHA%2F8pKq35IF67Zrn0cdO95PCE67B3Sk4SgmhXjmKUrMreapxPd3vb9Ua8gWtVGsV0vqhEzGZFBCNnXlpAazGs501qXWKc7aesf%2BKzNrgR%2B4o%2F7QZ1pSoZVWyFvIfCrnfLdJrZ%2BgJUNxBY3i0nCzmbEiUOtqZQ6vHAOYDG1jvcxr0obS0qrfFY614yj9XhcXI%3D--dubQNQEdKi%2FkYiAeCpBdiAy1ovTOkdwNJOFnGGwkeOM%3D;Path=/;HttpOnly;Expires=Sat,
+        29 Jul 2017 00:20:29 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-55c004ca
+      - i-7dadfbfb
       X-Circleci-Request-Id:
-      - d78a0759-a405-416e-93d7-42ee05a4362d
+      - 1e59c129-e2ba-4db7-83c0-c93e0463b348
       X-Frame-Options:
       - DENY
       X-Route:
       - "/projects"
       Content-Length:
-      - '2565'
+      - '1188'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        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
+      string: '[{"irc_server":null,"ssh_keys":[],"branches":{"analytics":{"last_success":{"added_at":"2015-05-05T22:23:17.502Z","pushed_at":"2015-05-05T22:22:28.000Z","vcs_revision":"a65c5c8545e494f6477fffd26692a40a3f84b8bb","build_num":144,"status":"success","outcome":"success"},"recent_builds":[{"added_at":"2015-05-05T22:23:17.502Z","pushed_at":"2015-05-05T22:22:28.000Z","vcs_revision":"a65c5c8545e494f6477fffd26692a40a3f84b8bb","build_num":144,"status":"success","outcome":"success"}],"pusher_logins":["ptbrodie"],"running_builds":[]},"company-data":{"last_success":{"added_at":"2015-04-22T03:24:35.553Z","pushed_at":"2015-04-22T03:23:37.000Z","vcs_revision":"0fc47b7bc84131efb487ad3dda05809d058e98a2","build_num":85,"status":"fixed","outcome":"success"},"last_non_success":{"added_at":"2015-04-22T03:18:29.386Z","pushed_at":"2015-04-22T03:17:45.000Z","vcs_revision":"9e633b9ef0985ecf6eb5fca599ac5184002f7ac5","build_num":84,"status":"failed","outcome":"failed"},"pusher_logins":["zachwopus","ptbrodie"],"recent_builds":[{"added_at":"2015-04-22T03:24:35.553Z","pushed_at":"2015-04-22T03:23:37.000Z","vcs_revision":"0fc47b7bc84131efb487ad3dda05809d058e98a2","build_num":85,"status":"fixed","outcome":"success"},{"added_at":"2015-04-22T03:18:29.386Z","pushed_at":"2015-04-22T03:17:45.000Z","vcs_revision":"9e633b9ef0985ecf6eb5fca599ac5184002f7ac5","build_num":84,"status":"failed","outcome":"failed"}],"running_builds":[]},"master":{"last_non_success":{"added_at":"2015-04-09T19:09:49.217Z","pushed_at":"2015-04-09T19:09:08.000Z","vcs_revision":"063599058e89bac02c0fd0f174eb195f620f2fd5","build_num":2,"status":"failed","outcome":"failed"},"last_success":{"added_at":"2015-05-09T03:28:51.790Z","pushed_at":"2015-05-09T03:27:40.000Z","vcs_revision":"9f61f2b0a314c50d7e482b479b503d6aad50db81","build_num":153,"status":"success","outcome":"success"},"pusher_logins":["mtchavez","ptbrodie"],"recent_builds":[{"added_at":"2015-05-09T03:28:51.790Z","pushed_at":"2015-05-09T03:27:40.000Z","vcs_revision":"9f61f2b0a314c50d7e482b479b503d6aad50db81","build_num":153,"status":"success","outcome":"success"},{"added_at":"2015-05-09T03:16:59.196Z","pushed_at":"2015-05-09T03:16:01.000Z","vcs_revision":"97024cb298368461794bf029e69a284343d5f14a","build_num":151,"status":"success","outcome":"success"},{"added_at":"2015-05-09T01:11:30.199Z","pushed_at":"2015-05-09T01:10:35.000Z","vcs_revision":"c23b65597f725022bf435ab64d360daa611fbe25","build_num":149,"status":"success","outcome":"success"},{"added_at":"2015-05-08T23:07:25.319Z","pushed_at":"2015-05-08T23:06:24.000Z","vcs_revision":"a35efaae86b45cf43b8470ba934081bc7aca22fc","build_num":147,"status":"success","outcome":"success"},{"added_at":"2015-05-04T19:44:07.686Z","pushed_at":"2015-05-04T19:43:01.000Z","vcs_revision":"a020262919005ec3d3998c32b6fb7f5e707326de","build_num":143,"status":"success","outcome":"success"}],"running_builds":[]}},"irc_keyword":null,"oss":false,"slack_channel":null,"hipchat_notify_prefs":null,"reponame":"opus","dependencies":"","aws":{"keypair":null},"slack_webhook_url":null,"irc_channel":null,"parallel":1,"campfire_subdomain":null,"followed":true,"username":"opuslabs","campfire_notify_prefs":null,"hipchat_notify":null,"heroku_deploy_user":null,"irc_username":null,"slack_notify_prefs":null,"scopes":["write-settings","view-builds","read-settings","trigger-builds","all","status","none"],"campfire_room":null,"hipchat_api_token":null,"campfire_token":null,"slack_subdomain":null,"has_usable_key":true,"setup":"","vcs_type":"github","feature_flags":{"trusty-beta":false,"osx":false,"set-github-status":true,"build-prs-only":false,"fleet":null,"build-fork-prs":false,"autocancel-builds":false,"junit":true},"irc_password":null,"compile":"","irc_notify_prefs":null,"extra":"","language":"Python","hipchat_room":null,"flowdock_api_token":null,"slack_channel_override":null,"vcs_url":"https://github.com/opuslabs/opus","default_branch":"master","slack_api_token":null,"test":""}]'
     http_version: 
-  recorded_at: Mon, 25 Jul 2016 22:37:20 GMT
+  recorded_at: Fri, 29 Jul 2016 00:22:33 GMT
 recorded_with: VCR 3.0.3
