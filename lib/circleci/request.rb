@@ -19,7 +19,7 @@ module CircleCi
     def initialize(config, path, params = {})
       @config = config
       @uri = build_uri(path, params)
-      @net = Net::HTTP.new(@uri.hostname, @uri.port)
+      @net = net_http
       setup_http(@net)
     end
 
@@ -63,6 +63,16 @@ module CircleCi
       params['circle-token'] = @config.token
       uri.query = URI.encode_www_form(params)
       uri
+    end
+
+    def net_http
+      proxy_uri = @config.proxy_uri
+      if @config.proxy && proxy_uri
+        Net::HTTP.new(@uri.hostname, @uri.port,
+                      proxy_uri.host, proxy_uri.port, proxy_uri.user, proxy_uri.password)
+      else
+        Net::HTTP.new(@uri.hostname, @uri.port, nil, nil, nil, nil)
+      end
     end
 
     def transmit(req)
