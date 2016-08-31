@@ -1,4 +1,6 @@
-# Unreleased
+# Version 1.0 - (2016-08-31)
+
+*Breaking Changes*
 
 * CircleCi::Project#envvars renamed to envvar for consistency with API endpoint
 * Deprecated CircleCi::Project#envvars
@@ -6,6 +8,7 @@
 * Require minimum ruby version `>= 2.0.0`
 * Remove `RestClient` as a dependency and replace with stdlib `Net::HTTP`
 * Add params and body as inputs to `CircleCi::Project#build_branch`
+* Add configuration for proxy hosts
 
 # Version 0.2.3 - (2016-03-12)
 
