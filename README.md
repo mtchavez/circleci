@@ -58,6 +58,20 @@ CircleCi.configure do |config|
 end
 ```
 
+Setup for proxying requests
+```ruby
+require 'circleci'
+
+CircleCi.configure do |config|
+  config.token = ENV['CIRCLECI_TOKEN']
+  config.proxy_host = 'http://ciproxy.mycompany.com'
+  config.proxy_port = 8000
+  config.proxy_user = 'myci'
+  config.proxy_pass = 'supersecret'
+  config.proxy = true
+end
+```
+
 ## API Endpoints
 
 * [User](#user)
