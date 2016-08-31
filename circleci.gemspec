@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 Gem::Specification.new do |s|
   s.name                  = 'circleci'
-  s.version               = '0.2.3'
-  s.date                  = '2016-03-12'
+  s.version               = '1.0.0'
+  s.date                  = '2016-08-31'
   s.summary               = 'Circle CI REST API gem'
   s.description           = 'Ruby gem for Circle CI REST API'
   s.licenses              = %w[MIT]
@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.rdoc_options          = %w[--charset=UTF-8 --main=README.md]
   s.extra_rdoc_files      = %w[README.md]
   s.required_ruby_version = '>= 2.0.0'
-  s.metadata['yard.run']  = 'yri' # use "yard" to build full HTML docs.
 
   # Dev Dependencies
   s.add_development_dependency 'coveralls',     '~> 0.8.14', '>= 0.8.14'
