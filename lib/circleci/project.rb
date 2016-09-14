@@ -84,7 +84,7 @@ module CircleCi
     # @param project  [String] - Name of project
     # @return         [CircleCi::Response] - Response object
     def self.enable(username, project)
-      CircleCi.request("/project/#{username}/#{project}/enable").delete
+      CircleCi.request("/project/#{username}/#{project}/enable").post
     end
 
     ##
