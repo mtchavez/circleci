@@ -65,4 +65,114 @@ http_interactions:
         AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"}]}'
     http_version: 
   recorded_at: Fri, 29 Jul 2016 00:23:38 GMT
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/enable?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 14 Sep 2016 19:23:57 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.33017790522954604;Expires=Thu, 14 Sep 2017 19:23:57 +0000;Path=/;Secure
+      - ring-session=Wj%2FnkDJP69u1zoLlY8onTgRDaxYSs6GImvx%2Bo%2FjQhwDslQQEUuAUGaeRrjpdpyqQV9NzHa8OUITMNitbH5H2DQl0bdv1XHLbaLbsSg2pk3urc4Du2nm5VO3GaDPVxMiZvR84sn3AXXUP6hyB8%2FYfubu6r3H4%2BidOv%2F77brjejOyo9XcqWzPDJToLfy2WsqATmK48N3zdICNKBBFE2kCxSc6I%2BEbUSoOznZ85Iuyr66E%3D--QOvFXm%2FxpbIGhbeKgc6x3gyB4jzHBvfdoSdJXCLNtqk%3D;Path=/;HttpOnly;Expires=Thu,
+        14 Sep 2017 18:05:54 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-e1aff967
+      X-Circleci-Request-Id:
+      - 75a1e232-7d2e-4a5c-85aa-6f1206e88ebd
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/enable"
+      Content-Length:
+      - '268'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"{\"message\":\"API rate limit exceeded for 54.210.21.22.
+        (But here''s the good news: Authenticated requests get a higher rate limit.
+        Check out the documentation for more details.)\",\"documentation_url\":\"https://developer.github.com/v3/#rate-limiting\"}"}'
+    http_version: 
+  recorded_at: Wed, 14 Sep 2016 19:24:55 GMT
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/dotfiles/enable?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 14 Sep 2016 19:27:56 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ab_test_user_seed=0.3396850799247606;Expires=Thu, 14 Sep 2017 19:27:55 +0000;Path=/;Secure
+      - ring-session=614bb2qcC7RQhoHxyBXJy%2F1VkAwMr94dmU%2Fgj8AZGVW3u7LI4G8Qm0V34haqYPrjoOLhEyBI1QaqRLA3m%2B6LqMnM9sPASwKfzk07d3wEaDx5MMuZtVNVq2L1uVCmBaXGMjSzKIJ96aZzKALmjSDpuX2xrBbCZ9%2B4s15Ssksn9Fc%2F8KXmgsbTp2GYFJ%2FAG5rXyWp9FvtSEdvpnw1IGgKb91xowXpbLKQTwngydhEkW4Q%3D--VM1aJyDVVUU88uDZXPdvonw8v%2BcPiTrKF4%2FDFFY45bg%3D;Path=/;HttpOnly;Expires=Thu,
+        14 Sep 2017 17:17:56 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-e5c3077a
+      X-Circleci-Request-Id:
+      - 77fb6407-c4f5-4892-a0c3-c5931bfa3345
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/enable"
+      Content-Length:
+      - '509'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"irc_server":null,"scopes":["write-settings","view-builds","read-settings","trigger-builds","all","status","none"],"irc_keyword":null,"followed":false,"vcs-type":"github","aws":{"keypair":null},"slack_webhook_url":null,"flowdock_api_token":null,"parallel":1,"username":"mtchavez","campfire_room":null,"extra":"","branches":{},"slack_subdomain":null,"setup":"","campfire_subdomain":null,"slack_notify_prefs":null,"irc_password":null,"vcs_url":"https://github.com/mtchavez/dotfiles","default_branch":"master","hipchat_api_token":null,"irc_username":null,"language":null,"slack_channel_override":null,"hipchat_notify":null,"slack_api_token":null,"has_usable_key":true,"irc_notify_prefs":null,"campfire_token":null,"slack_channel":null,"feature_flags":{"trusty-beta":false,"osx":false,"set-github-status":true,"build-prs-only":false,"fleet":null,"build-fork-prs":false,"autocancel-builds":false,"junit":true,"oss":true},"campfire_notify_prefs":null,"hipchat_room":null,"heroku_deploy_user":null,"irc_channel":null,"oss":true,"reponame":"dotfiles","hipchat_notify_prefs":null,"compile":"","dependencies":"","test":"","ssh_keys":[]}'
+    http_version: 
+  recorded_at: Wed, 14 Sep 2016 19:28:37 GMT
 recorded_with: VCR 3.0.3

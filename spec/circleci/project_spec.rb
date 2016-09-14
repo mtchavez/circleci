@@ -393,7 +393,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
   describe 'enable' do
     context 'successfully' do
-      let(:res) { described_class.enable 'mtchavez', 'circleci' }
+      let(:res) { described_class.enable 'mtchavez', 'dotfiles' }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -401,12 +401,13 @@ RSpec.describe CircleCi::Project, :vcr do
       end
 
       describe 'project' do
+        let(:res) { described_class.list_checkout_keys 'mtchavez', 'dotfiles' }
         subject { res.body }
 
         it 'returns the circleci project settings' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['ssh_keys']).not_to be_empty
-          expect(subject).to have_key 'branches'
+          expect(subject).to be_instance_of(Array)
+          expect(subject.first).to have_key('public_key')
+          expect(subject.first['type']).to eql('deploy-key')
         end
       end
     end
