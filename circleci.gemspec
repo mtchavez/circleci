@@ -14,6 +14,8 @@ Gem::Specification.new do |s|
   s.rdoc_options          = %w[--charset=UTF-8 --main=README.md]
   s.extra_rdoc_files      = %w[README.md]
   s.required_ruby_version = '>= 2.0.0'
+  s.cert_chain            = %w[certs/yourhandle.pem]
+  s.signing_key           = File.expand_path('$HOME/.ssh/gem-private_key.pem') if $PROGRAM_NAME.end_with?('gem')
 
   # Dev Dependencies
   s.add_development_dependency 'coveralls',     '~> 0.8.14', '>= 0.8.14'
