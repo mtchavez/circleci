@@ -1,3 +1,7 @@
+# Version 1.0.1 - (2016-09-14)
+
+* Fix regression of `CircleCi::Project.enable` HTTP method changing incorrectly to a `delete`
+
 # Version 1.0 - (2016-08-31)
 
 *Breaking Changes*
