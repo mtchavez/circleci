@@ -16,6 +16,18 @@ task :rubocop do
   RuboCop::RakeTask.new
 end
 
+desc 'Gem checksum'
+task :checksum do
+  gem_name = ENV.fetch('GEM_NAME', nil)
+  break unless gem_name
+  require 'digest/sha2'
+  built_gem_path = "pkg/#{gem_name}gem"
+  checksum = Digest::SHA512.new.hexdigest(File.read(built_gem_path))
+  checksum_path = "checksum/#{gem_name}.gem.sha512"
+  File.open(checksum_path, 'w') { |f| f.write(checksum) }
+  puts "Wrote #{checksum_path}"
+end
+
 desc 'Run specs'
 RSpec::Core::RakeTask.new('spec') do |task|
   task.pattern = 'spec/**/*_spec.rb'
