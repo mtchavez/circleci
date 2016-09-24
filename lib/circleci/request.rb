@@ -1,3 +1,5 @@
+require 'openssl'
+
 # frozen_string_literal: true
 module CircleCi
   ##
