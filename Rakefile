@@ -21,9 +21,10 @@ task :checksum do
   gem_name = ENV.fetch('GEM_NAME', nil)
   break unless gem_name
   require 'digest/sha2'
-  built_gem_path = "pkg/#{gem_name}gem"
+  cur_dir = File.expand_path File.dirname(__FILE__)
+  built_gem_path = File.join(cur_dir, "pkg/#{gem_name}.gem")
   checksum = Digest::SHA512.new.hexdigest(File.read(built_gem_path))
-  checksum_path = "checksum/#{gem_name}.gem.sha512"
+  checksum_path = File.join(cur_dir, "checksum/#{gem_name}.gem.sha512")
   File.open(checksum_path, 'w') { |f| f.write(checksum) }
   puts "Wrote #{checksum_path}"
 end

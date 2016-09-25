@@ -1,3 +1,7 @@
+# Version 1.0.2 - (2016-09-24)
+
+* Fix requiring of `openssl` - fixed in [#81](https://github.com/mtchavez/circleci/pull/81)
+
 # Version 1.0.1 - (2016-09-14)
 
 * Fix regression of `CircleCi::Project.enable` HTTP method changing incorrectly to a `delete`
