@@ -1,3 +1,5 @@
+require 'forwardable'
+
 # frozen_string_literal: true
 module CircleCi
   ##
