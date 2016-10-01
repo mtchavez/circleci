@@ -1,3 +1,7 @@
+# Version 1.0.3 - (2016-09-30)
+
+* Fix requiring of `forwardable`
+
 # Version 1.0.2 - (2016-09-24)
 
 * Fix requiring of `openssl` - fixed in [#81](https://github.com/mtchavez/circleci/pull/81)
