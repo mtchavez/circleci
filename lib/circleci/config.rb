@@ -5,13 +5,13 @@ module CircleCi
   # Config class used internally.
   # Configure API calls using CircleCi.configure
   class Config
-    DEFAULT_VERSION = 'v1'.freeze
+    DEFAULT_VERSION = 'v1.1'.freeze
     DEFAULT_HOST = 'https://circleci.com'.freeze
     DEFAULT_URI = "#{DEFAULT_HOST}/api/#{DEFAULT_VERSION}".freeze
     DEFAULT_PORT = 443
 
     attr_accessor :token, :host, :port, :request_overrides, :version, :proxy,
-                  :proxy_host, :proxy_port, :proxy_user, :proxy_pass
+                  :proxy_host, :proxy_port, :proxy_user, :proxy_pass, :vcs_type
 
     ##
     #
