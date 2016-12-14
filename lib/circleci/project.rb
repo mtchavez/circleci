@@ -197,7 +197,7 @@ module CircleCi
 
   private 
     def base_path
-      "/project/#{vcs_type}/#{username}/#{name}"
+      @base_path ||= "/project/#{vcs_type}/#{username}/#{name}"
     end
   end
 end
