@@ -27,22 +27,14 @@ module CircleCi
     end
 
     ##
-    # Build the latest master push for this project
-    #
-    # @return         [CircleCi::Response] - Response object
-    def build
-      CircleCi.request(base_path).post
-    end
-
-    ##
     # Build the latest push for this branch of a specific project
     #
     # @param branch   [String] - Name of branch
     # @param body     [Hash] - Optional post body with build parameters
     #
     # @return         [CircleCi::Response] - Response object
-    def build_branch(branch, params = {}, body = {})
-      CircleCi.request("#{base_path}/tree/#{branch}", params).post(body) 
+    def build(branch, body = {})
+      CircleCi.request("#{base_path}/tree/#{branch}").post(body) 
     end
 
     ##
