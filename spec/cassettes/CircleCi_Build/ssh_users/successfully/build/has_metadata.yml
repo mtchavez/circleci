@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/140/ssh-users?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 20 Dec 2016 20:39:28 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=mI8HeSVVVMQjIHfXNreySTx7hGmo9CjJQoakJgl6kpOiP48PnDW%2BQNCQzifaw6r%2B5WPxypDNc7TC4Wo5kKWIZ%2FBubSuZKMvmqkGOQQOAZmUJ%2BaFLnIgBlsrBr9ypPOLd1A7ZLmSNVetfhEs5LWIDnEE6tzkGkRyamBQ4cF%2B3Pe0nBcZiWhMWj01O5ATSAJpHv8Knh8d5KkKDOuPYqImhw0oFij2nymzw0IkZSFZDLt8%3D--mARFodKsePJFV8DNY1RXYC6gvq9bv%2B1nqcVhX2vi%2BHg%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 19:20:40 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-02009f0c
+      X-Circleci-Request-Id:
+      - 7899489a-6601-48eb-8ef7-f32818d00e3b
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/ssh-users"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '1083'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"compare":"https://github.com/mtchavez/circleci/commit/d9a5a207e102","previous_successful_build":{"build_num":139,"status":"success","build_time_millis":83094},"build_parameters":null,"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","usage_queued_at":"2016-07-25T17:03:26.930Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/140","parallel":1,"failed":null,"branch":"typo","username":"mtchavez","author_date":"2016-07-25T10:03:49-07:00","why":"github","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars.githubusercontent.com/u/44689?v=3","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"d9a5a207e10209eecef8ed02289824a8630ed67d","vcs_tag":null,"build_num":140,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":null,"status":"success","committer_name":"Chavez","retries":[150,156,149,147,151,155,154,153,148,152,162,157,160,166,164,158,165,169,163,168,159,161,171,175,176,174,170,167,172,173,178,177,183,184,185,186,190,189,194,193,226,225,287,288,289,290],"subject":"Project#envvar
+        method naming fix","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2016-07-25T17:07:31.761Z","ssh_disabled":false,"build_time_millis":223674,"circle_yml":{"string":"machine:\n  ruby:\n    version:
+        2.2.3\n"},"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2016-07-25T17:03:48.087Z","canceler":null,"all_commit_details":[{"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","branch":"typo","author_date":"2016-07-25T10:03:49-07:00","committer_email":"matthew@el-chavez.me","commit":"d9a5a207e10209eecef8ed02289824a8630ed67d","committer_login":"mtchavez","committer_name":"Chavez","subject":"Project#envvar
+        method naming fix","commit_url":"https://github.com/mtchavez/circleci/commit/d9a5a207e10209eecef8ed02289824a8630ed67d","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":"success","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":[{"public_ip_addr":"54.191.221.156","port":64561,"username":"ubuntu","image_id":"s3://lxc-images-us-west-2/circletar-1741-cc586-20160424T232626Z","ssh_enabled":null}],"queued_at":"2016-07-25T17:03:48.067Z","canceled":false,"author_email":"matthew@el-chavez.me"}'
+    http_version: 
+  recorded_at: Tue, 20 Dec 2016 20:38:27 GMT
+recorded_with: VCR 3.0.3

@@ -49,11 +49,12 @@ module CircleCi
     end
 
     ##
-    # Get tests for a specific build of a project
+    # Only available when using a user API token. Allows user to ssh into
+    # build container.
     #
-    # @return [CircleCi::Response] - Response object
-    def tests
-      CircleCi.request("/project/#{username}/#{project}/#{build}/tests").get
+    # @return         [CircleCi::Response] - Response object
+    def ssh_users
+      CircleCi.request("#{base_path}/ssh-users").post
     end
 
   private 

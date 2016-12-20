@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/140/artifacts?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/140/artifacts?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -27,19 +27,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:07:18 GMT
+      - Tue, 20 Dec 2016 20:30:45 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:07:18 +0000;Path=/;Secure
-      - ring-session=7Dxp21tU3m7LHyyhjRy2zfkOM%2Fc4jFFaJ5RuQGi%2F5tOd%2BzjiuFCtQ9opWtjsRw3mHbKIVO0YDz2n8ghhXESqxV%2FL1H%2FRcfAAsN3XcF4j44VHpbYPewvgtF128vc0ci2Wl%2FM684lQHSbK%2BbOVhfXjx%2FQ%2Fas6hN6PrLMOvHqUWR3VsjUXADkQO7aT2qYDIzlJr6KkGhGCnM2bV2mxXSXyfj9Wq3LoCuT0eIu59Hzcp8to%3D--Z3jLv%2FLmQTyxvm6ASZsI6lvjwSUhJXx%2BCIHBHBZRiqw%3D;Path=/;HttpOnly;Expires=Fri,
-        28 Jul 2017 23:51:50 +0000;Max-Age=31536000;Secure
+      - ring-session=L%2FnpUnPGz88oc7OUp1onDK4EULcgp0ZrB9cWuUZVcw%2B%2BUYLS1gbNbFDw9fGjCNVE%2BKTmiBFEC9bJz1ilKaL%2BKzZoqOZdcPrJntKYLKETTRLOoge9XvHokWgx9ub4PZVthoSL96A%2Ft9ISAJ3aj5udBfG3xBTQW%2BLXKMOF0BcH%2FFOzICjkLx39uAYbxI9wf%2BEGjsux3EbqPa1ypqdBGXJkzIOFn54VZLy94HpHN3oJS9Y%3D--sW5sVok7aPkFQ2T9JmPrtZt9z7sB8tpUxXHqYkoUvw8%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 19:22:10 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-e7aff961
+      - i-a8bbd93b
       X-Circleci-Request-Id:
-      - 74e217f4-9298-42f5-b019-17335cc06730
+      - 35f82030-66a3-475a-9c7a-c7efcb69f02b
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -55,12 +54,12 @@ http_interactions:
       - ":build_num"
       - "\\d+"
       Content-Length:
-      - '171'
+      - '170'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '[{"path":"/tmp/circle-junit.vCFLHp7/rspec/junit.xml","pretty_path":"$CIRCLE_TEST_REPORTS/rspec/junit.xml","node_index":0,"url":"https://140-9485764-gh.circle-artifacts.com/0//tmp/circle-junit.vCFLHp7/rspec/junit.xml"}]'
+      string: '[{"path":"/tmp/circle-junit.vCFLHp7/rspec/junit.xml","pretty_path":"$CIRCLE_TEST_REPORTS/rspec/junit.xml","node_index":0,"url":"https://140-9485764-gh.circle-artifacts.com/0/tmp/circle-junit.vCFLHp7/rspec/junit.xml"}]'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:07:46 GMT
+  recorded_at: Tue, 20 Dec 2016 20:29:08 GMT
 recorded_with: VCR 3.0.3
