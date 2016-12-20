@@ -11,7 +11,7 @@ module CircleCi
     DEFAULT_PORT = 443
 
     attr_accessor :token, :host, :port, :request_overrides, :version, :proxy,
-                  :proxy_host, :proxy_port, :proxy_user, :proxy_pass, :vcs_type
+                  :proxy_host, :proxy_port, :proxy_user, :proxy_pass
 
     ##
     #
