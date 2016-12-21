@@ -38,34 +38,11 @@ module CircleCi
     end
 
     ##
-    # Add a ssh key to a build
-    #
-    # @param build    [String] - Build number
-    # @param key      [String] - The ssh private key
-    # @param hostname [String] - The hostname identified by the key
-    #
-    # @return         [CircleCi::Response] - Response object
-    def build_ssh_key(build, key, hostname)
-      body = { hostname: hostname, private_key: key }
-      CircleCi.request("#{base_path}/#{build}/ssh-users").post(body)
-    end
-
-    ##
     # Clear the build cache for a specific project
     #
     # @return         [CircleCi::Response] - Response object
-    def clear_cache()
+    def clear_cache
       CircleCi.request("#{base_path}/build-cache").delete
-    end
-
-    ##
-    # Delete a checkout key for a project
-    #
-    # @param fingerprint  [String] - Fingerprint of a checkout key
-    #
-    # @return             [CircleCi::Response] - Response object
-    def delete_checkout_key(fingerprint)
-      CircleCi.request("#{base_path}/checkout-key/#{fingerprint}").delete
     end
 
     ##
@@ -108,6 +85,17 @@ module CircleCi
     end
 
     ##
+    # Get a list of checkout keys for project
+    #
+    # @param username [String] - User or org name who owns project
+    # @param project  [String] - Name of project
+    #
+    # @return         [CircleCi::Response] - Response object
+    def list_checkout_keys
+      CircleCi.request("#{base_path}/checkout-key").get
+    end
+
+    ##
     # Get a checkout key for a project
     #
     # @param username     [String] - User or org name who owns project
@@ -120,24 +108,23 @@ module CircleCi
     end
 
     ##
-    # Get a list of checkout keys for project
-    #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    #
-    # @return         [CircleCi::Response] - Response object
-    def list_checkout_keys
-      CircleCi.request("#{base_path}/checkout-key").get
-    end
-
-    ##
     # Create a checkout key for a project
     #
     # @param type     [String] - The type of key to create. Can be 'deploy-key' or 'github-user-key'.
     # @return         [CircleCi::Response] - Response object
 
-    def new_checkout_key(username, project, type)
+    def new_checkout_key(type)
       CircleCi.request("#{base_path}/checkout-key").post(type: type)
+    end
+
+    ##
+    # Delete a checkout key for a project
+    #
+    # @param fingerprint  [String] - Fingerprint of a checkout key
+    #
+    # @return             [CircleCi::Response] - Response object
+    def delete_checkout_key(fingerprint)
+      CircleCi.request("#{base_path}/checkout-key/#{fingerprint}").delete
     end
 
     ##
@@ -185,6 +172,39 @@ module CircleCi
     # @return         [CircleCi::Response] - Response object
     def unfollow
       CircleCi.request("#{base_path}/unfollow").post
+    end
+
+    ##
+    # Add project envvars
+    # @param envvars [CircleCi::Envvar] - Envvar object
+    #
+    # @return         [CircleCi::Response] - Response object
+    def set_envvar(envvar)
+      CircleCi.request("#{base_path}/envvar").post(envvar.to_h)
+    end
+
+    ##
+    # List project envvars
+    #
+    # @return         [CircleCi::Response] - Response object
+    def list_envvars
+      CircleCi.request("#{base_path}/envvar").get
+    end
+
+    ##
+    # Get a single envvar
+    #
+    # @return         [CircleCi::Response] - Response object
+    def get_envvar(name)
+      CircleCi.request("#{base_path}/envvar/#{name}").get
+    end
+
+    ##
+    # Delete a single envvar
+    #
+    # @return         [CircleCi::Response] - Response object
+    def delete_envvar(name)
+      CircleCi.request("#{base_path}/envvar/#{name}").delete
     end
 
   private 

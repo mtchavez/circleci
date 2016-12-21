@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/asdf-bogus?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/checkout-key/asdf-bogus?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -27,17 +27,16 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:29:36 GMT
+      - Tue, 20 Dec 2016 23:31:43 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:29:36 +0000;Path=/;Secure
-      - ring-session=kVP%2Bdsc9zsRWdW63dAcbKGcSDuZQlmmYKBdEoNO%2FfjWnCY5H%2FRjFcHg12k0hp%2BlP6lFaN6T11Fz%2Fo%2BB%2BG5Bem9TLF8RCBJuhk4nagE%2FLVKFVEBSRcScL1dX1Ymh2Dkuu6wWVDVpD6%2BwD0cf%2FhBsRJv%2BCRM4QL9QYtTEYBwhKHTE3uE%2Fy%2FDGXazG%2FVB4NdPMzZdl5GL0PqcF2aY7hpuSwIoS6MkJzmrr787nCnikasFM%3D--AbxfdWHfswbqKjneKkxvtAxMaN57YW%2BqNGW%2Bx9E9ljQ%3D;Path=/;HttpOnly;Expires=Sat,
-        29 Jul 2017 00:22:16 +0000;Max-Age=31536000;Secure
+      - ring-session=ALIh%2FTKlbQ9eeXKPEnHZvVQ10gbDLcl8jeDUgdQCTU9b9ca306ICGKG1yYiXiqqPPVm2V%2FSGZlBoR%2FLNBEV39hdkWk09PBHBoCmYmGRkIG6EbGez6pcgcryw%2B%2B4sz39YKAkJ9z6CM6vitcGtgZ5XHAFwwV01liFiI85on9BzcdPDSD2X%2FelsewiFu2PYFvgT%2B%2BdjtvZY4JFqCBv1GpmypgfGtEgZegDt1r%2BdmBnINyU%3D--u9v4%2Fc2G04OTnSRZgdqSCwGh5clEuJH0UiotPvC1cNA%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:04:50 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-9ffb4567
+      - i-e3a8c6ed
       X-Circleci-Request-Id:
-      - 8c4d71c5-0ba6-4df6-8abc-f6bd2d9dd611
+      - e3ad8442-48d7-4fe1-ac15-0696a818c3da
       X-Frame-Options:
       - DENY
       X-Route:
@@ -50,5 +49,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"message":"checkout key not found"}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:29:48 GMT
+  recorded_at: Tue, 20 Dec 2016 23:31:45 GMT
 recorded_with: VCR 3.0.3

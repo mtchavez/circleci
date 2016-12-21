@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/settings?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/settings?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -27,19 +27,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:22:55 GMT
+      - Tue, 20 Dec 2016 23:31:39 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:22:55 +0000;Path=/;Secure
-      - ring-session=6%2FbYDAP%2F%2FKK5BC3BiMvfCT%2BX4WSwXLbqRDQjOb%2BQfuaQwdIpnjK4sjEfQADtSf8g832pcyCAz4aOvti5pEC%2F6hK3%2F8MoYwZjEUM3IYeTyHs42r2BLWDj5Ea%2BoJWPfPObeZJHH%2FSEDMonr%2B5ftak4HiUrmuBYCKQyz18X4wf5JpZfFp0lHCzlCkbQhpFYn1av4hLhGuBsxDj0LEX1pxU%2Bo%2BiH96VTofPWiPb0Gotg0WI%3D--A%2BCLOeLFzZ8P7Z%2BIlv%2FMF4hDVb1WRMRNYmNg9MAEtj4%3D;Path=/;HttpOnly;Expires=Fri,
-        28 Jul 2017 23:29:01 +0000;Max-Age=31536000;Secure
+      - ring-session=R5XKVZTn4GreqyV3SNwb4X98pJ7es99ZwRnrDf%2B%2FCFNdFSotObWJ99OD5oKOkU6T1lR0%2F4Q%2BnLA2DiNZx6rHE5IHak%2B%2B0niK2Ja7dfUKNJ8309SOGv3OV9Ln7GesKHUyJjpuQtAtaxUmjq8P9auKv5kSU450%2FUTY7K6zZlmVc0ouwCeInMI%2BloogTJZlvW07DwjUKhq5S8qHDnuCOHaUUNhZFwyW9YMIV68sqpUhKIA%3D--l5qR5J9WNJaSzOXjFwlrejp5UTDADItQr3cj6nxJfQI%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:05:07 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-e4c3077b
+      - i-29422c27
       X-Circleci-Request-Id:
-      - f17b35e3-f28f-442b-bbd2-290fc76e41a2
+      - 20e5eba7-f47b-417d-8d0f-8ffbd81fe60b
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -53,12 +52,12 @@ http_interactions:
       X-Route:
       - "/settings"
       Content-Length:
-      - '1370'
+      - '1330'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '{"irc_server":null,"scopes":["write-settings","view-builds","read-settings","trigger-builds","all","status","none"],"irc_keyword":null,"followed":false,"vcs-type":"github","aws":{"keypair":null},"slack_webhook_url":null,"flowdock_api_token":null,"parallel":1,"username":"mtchavez","campfire_room":null,"extra":"","branches":{"master":{"running_builds":[],"recent_builds":[{"build_num":230,"status":"failed","outcome":"failed","added-at":"2016-07-29T00:17:53.302Z"},{"build_num":232,"status":"failed","outcome":"failed","added-at":"2016-07-29T00:18:13.703Z"},{"build_num":228,"status":"failed","outcome":"failed","added-at":"2016-07-29T00:17:51.151Z"},{"build_num":229,"status":"failed","outcome":"failed","added-at":"2016-07-29T00:18:01.106Z"},{"build_num":231,"status":"failed","outcome":"failed","added-at":"2016-07-29T00:17:52.096Z"}],"pusher_logins":["mtchavez"]},"min-ruby-ver":{"running_builds":[],"recent_builds":[{"build_num":220,"status":"success","outcome":"success","added-at":"2016-07-28T03:57:42.973Z"},{"build_num":219,"status":"success","outcome":"success","added-at":"2016-07-28T03:58:37.895Z"}],"pusher_logins":["mtchavez"]},"pull%2F46":{"running_builds":[],"recent_builds":[{"build_num":91,"status":"success","outcome":"success","added-at":"2016-01-17T20:51:00.048Z"}],"pusher_logins":[]},"pull%2F66":{"running_builds":[],"recent_builds":[{"build_num":134,"status":"failed","outcome":"failed","added-at":"2016-03-14T16:57:59.459Z"}],"pusher_logins":[]},"pull%2F69":{"running_builds":[],"recent_builds":[{"build_num":139,"status":"success","outcome":"success","added-at":"2016-04-25T20:50:46.002Z"}],"pusher_logins":[]},"typo":{"running_builds":[],"recent_builds":[{"build_num":227,"status":"success","outcome":"success","added-at":"2016-07-29T00:13:47.745Z"},{"build_num":226,"status":"success","outcome":"success","added-at":"2016-07-29T00:10:45.273Z"},{"build_num":225,"status":"success","outcome":"success","added-at":"2016-07-29T00:09:01.773Z"}],"pusher_logins":["mtchavez"]}},"slack_subdomain":null,"setup":"","campfire_subdomain":null,"slack_notify_prefs":null,"irc_password":null,"vcs_url":"https://github.com/mtchavez/circleci","default_branch":"master","hipchat_api_token":null,"irc_username":null,"language":"Ruby","slack_channel_override":null,"hipchat_notify":null,"slack_api_token":null,"has_usable_key":false,"irc_notify_prefs":null,"campfire_token":null,"slack_channel":null,"feature_flags":{"trusty-beta":false,"osx":false,"set-github-status":true,"build-prs-only":false,"fleet":null,"build-fork-prs":false,"autocancel-builds":false,"junit":true,"oss":true},"campfire_notify_prefs":null,"hipchat_room":null,"post_dependencies":"","heroku_deploy_user":null,"irc_channel":null,"oss":true,"reponame":"circleci","hipchat_notify_prefs":null,"compile":"","dependencies":"","test":"bundle
+      string: '{"irc_server":null,"scopes":["write-settings","view-builds","read-settings","trigger-builds","all","status","none"],"irc_keyword":null,"vcs-type":"github","aws":{"keypair":null},"slack_webhook_url":null,"flowdock_api_token":null,"parallel":1,"username":"mtchavez","campfire_room":null,"extra":"","branches":{"master":{"running_builds":[{"build_num":310,"status":"running","outcome":null,"added-at":"2016-12-20T23:31:44.057Z"},{"build_num":307,"status":"running","outcome":null,"added-at":"2016-12-20T23:31:43.349Z"},{"build_num":308,"status":"running","outcome":null,"added-at":"2016-12-20T23:31:43.992Z"},{"build_num":309,"status":"running","outcome":null,"added-at":"2016-12-20T23:31:43.948Z"}],"recent_builds":[{"build_num":306,"status":"success","outcome":"success","added-at":"2016-12-20T23:26:10.301Z"},{"build_num":305,"status":"success","outcome":"success","added-at":"2016-12-20T23:25:48.582Z"},{"build_num":304,"status":"success","outcome":"success","added-at":"2016-12-20T23:25:48.120Z"},{"build_num":303,"status":"success","outcome":"success","added-at":"2016-12-20T23:25:50.857Z"},{"build_num":302,"status":"success","outcome":"success","added-at":"2016-12-20T23:21:22.590Z"}],"pusher_logins":[]},"typo":{"running_builds":[],"recent_builds":[{"build_num":290,"status":"failed","outcome":"failed","added-at":"2016-12-20T20:29:33.097Z"},{"build_num":289,"status":"failed","outcome":"failed","added-at":"2016-12-20T20:29:31.470Z"},{"build_num":288,"status":"failed","outcome":"failed","added-at":"2016-12-20T20:04:58.448Z"},{"build_num":287,"status":"failed","outcome":"failed","added-at":"2016-12-20T20:04:58.653Z"}],"pusher_logins":[]}},"jira":null,"slack_subdomain":null,"following":false,"setup":"","campfire_subdomain":null,"slack_notify_prefs":null,"irc_password":null,"vcs_url":"https://github.com/mtchavez/circleci","default_branch":"master","hipchat_api_token":null,"irc_username":null,"language":"Ruby","slack_channel_override":null,"hipchat_notify":null,"slack_api_token":null,"has_usable_key":true,"irc_notify_prefs":null,"campfire_token":null,"slack_channel":null,"feature_flags":{"trusty-beta":false,"osx":false,"set-github-status":true,"build-prs-only":false,"forks-receive-secret-env-vars":false,"fleet":null,"build-fork-prs":false,"autocancel-builds":false,"junit":true,"oss":true},"campfire_notify_prefs":null,"hipchat_room":null,"post_dependencies":"","heroku_deploy_user":null,"irc_channel":null,"oss":true,"reponame":"circleci","hipchat_notify_prefs":null,"compile":"","dependencies":"","test":"bundle
         exec rake rubocop && bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter
         -o $CIRCLE_TEST_REPORTS/rspec/junit.xml","ssh_keys":[{"hostname":"hostname","public_key":"ssh-rsa
         AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"},{"hostname":"hostname","public_key":"ssh-rsa
@@ -66,5 +65,5 @@ http_interactions:
         AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"},{"hostname":"hostname","public_key":"ssh-rsa
         AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"}]}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:22:52 GMT
+  recorded_at: Tue, 20 Dec 2016 23:31:51 GMT
 recorded_with: VCR 3.0.3

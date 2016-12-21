@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/follow?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/follow?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -19,44 +19,35 @@ http_interactions:
       - circleci.com
   response:
     status:
-      code: 200
-      message: OK
+      code: 403
+      message: Forbidden
     headers:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:22:55 GMT
+      - Tue, 20 Dec 2016 23:51:00 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:22:55 +0000;Path=/;Secure
-      - ring-session=QfNZiqGYXSkI5yFcYhTKkALTDpyLK1uH2u1SG66snBxoNWnkvC5%2B%2FdDLbUiowJPht1P9fRqzxO0DrnQ%2B05DJjXj3JyVOdmqQCL%2BddqXBVFuRRfybW%2F%2FIA%2BNC34DC5KTKQXW11RlENqAl2vVnvK4sd4PUh%2FGbmiRv6b4E6qRPL0wkVrbijES091L%2BR31n%2Bv054VAfCRsNthd1fcrkRk8o4oW7xeScMwEysa4jpxw8VNM%3D--LXdX7NoR%2BK%2BQjwhdqRoMGfoh%2FoZARnEXFs0y0aVOOYI%3D;Path=/;HttpOnly;Expires=Sat,
-        29 Jul 2017 00:18:14 +0000;Max-Age=31536000;Secure
-      Strict-Transport-Security:
-      - max-age=15724800
+      - ring-session=ewpVSBls2zhQY4wD9o38c3%2FdVkhP3ClOl%2FcQ1%2F4C6me3RYBCaCZOdQNFl3lU%2FnJ00l0Szzs3xMSnPrkC7OMnUd3cJscH4j8nM1BV44U7kX%2F0KJi2ZgUxWkgy9esYLhCsL78nXn9oAXou9%2Bgq3ALQBljxnRwQ%2FoFyxGLmhfxIDUeOTWDWk9J%2ByfI0%2BHFYUaryouLhed51ZoVdBctEWAL7SiKhkEdBp2BNsjmg8v9wzIU%3D--F6KQXx8iU3wlxJV0Ini0PExjtcLDKh3Uw4eABPjCu5s%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:34:10 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-e6aff960
+      - i-c0ceabce
       X-Circleci-Request-Id:
-      - dffdbcf0-9b3b-4ffc-88dd-3bd7b8c6c401
-      X-Circleci-Scopes:
-      - ":all"
-      - ":none"
-      - ":read-settings"
-      - ":status"
-      - ":trigger-builds"
-      - ":view-builds"
-      - ":write-settings"
+      - 0393be30-08f1-43d3-9d68-2ed1bf650061
       X-Frame-Options:
       - DENY
       X-Route:
       - "/follow"
       Content-Length:
-      - '36'
+      - '269'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"followed":true,"first_build":null}'
+      string: '{"message":"{\"message\":\"API rate limit exceeded for 54.175.168.39.
+        (But here''s the good news: Authenticated requests get a higher rate limit.
+        Check out the documentation for more details.)\",\"documentation_url\":\"https://developer.github.com/v3/#rate-limiting\"}"}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:22:51 GMT
+  recorded_at: Tue, 20 Dec 2016 23:49:32 GMT
 recorded_with: VCR 3.0.3

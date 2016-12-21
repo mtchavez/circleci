@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/unfollow?circle-token=<TOKEN>
+    method: get
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/envvar?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -22,22 +22,23 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Access-Control-Allow-Origin:
+      - "*"
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:23:19 GMT
+      - Tue, 20 Dec 2016 23:31:52 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:23:19 +0000;Path=/;Secure
-      - ring-session=pqVBSV1cF9yxlw7A%2FQZb0taPNZUZLKuNcA%2FJ6Zl07zCbDSpPw7gDo2eFBR6zM%2FZ8A%2BH0oyur1WZBee42df54d6Aqno%2FQmpJYOwDCzP6qdl1c03ZDXCP3DFYDtbDnrbi4GBUad8td7f4%2BPAL6uC%2F%2FF5St0njsYccOy%2FxStmIYjOOCG0dkZt%2Bw9IzMegfkDqNATJmlr2%2FM3GVcI2SV6ma9ZZT1340hTidhQSCWA8hDGHw%3D--BAv0QizcefeBWfi55G1UZO27OpVgaPf0whoxP7BZNsc%3D;Path=/;HttpOnly;Expires=Fri,
-        28 Jul 2017 23:36:06 +0000;Max-Age=31536000;Secure
+      - ring-session=DZ3OzumZ%2FJTEDg4iwhDTXS3AHMXom2XJSjzA%2BZcTYWc4Ygcm3U14%2BSTI6G6kVc93SgSLCHzJDHnta2S%2F60z%2BnzvbIsceB5GkDLLexazS6awCI%2BvF3vt92z%2Fvvf9Id%2FlkIGlOipLXsjfYUN%2BmoqxUNswC4eYt%2F8gXNvpdym5tkYqm82FxQuhgQzeFc6gNSuMCl230xE0hnT%2BhGEvRtLLaPB8HRNSrHW1Kh8z1K4QHRL0%3D--xeB%2B3XrYp6A2TxuOKEgRiL0FqDmAxODfemFIf5hlADE%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:06:21 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-51fa44a9
+      - i-9e3e710d
       X-Circleci-Request-Id:
-      - 0e0e7599-7990-48ec-87ec-7f80fac72b9d
+      - b5ce737a-e8ab-47ab-932a-46f5f9ef7a34
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -49,14 +50,14 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Route:
-      - "/unfollow"
+      - "/envvar"
       Content-Length:
-      - '18'
+      - '90'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"followed":false}'
+      string: '[{"name":"COVERALLS_REPO_TOKEN","value":"xxxxskJS"},{"name":"TESTENV","value":"xxxxalue"}]'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:22:52 GMT
+  recorded_at: Tue, 20 Dec 2016 23:31:51 GMT
 recorded_with: VCR 3.0.3

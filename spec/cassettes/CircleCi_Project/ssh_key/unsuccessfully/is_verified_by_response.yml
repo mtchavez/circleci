@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/ssh-key?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/ssh-key?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: '{"hostname":"hostname","private_key":"RSA Private Key"}'
@@ -25,17 +25,16 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:22:23 GMT
+      - Tue, 20 Dec 2016 23:53:38 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:22:23 +0000;Path=/;Secure
-      - ring-session=CVTgrmfqWtqEVlbaM%2Fhp8xUY4IOsqNkDLZAcbeBV%2Bny3jjH8cTLzB0j%2F1a3GH%2FiqEm3kFMBpstnjjEzsE%2BEcmv7%2FfbMKDfgX%2BpDjPQZDCLsYz4%2FH9dy4HhJXHrcqzfiLs9kS4rPt4x1rFr3%2BzLyP5B78xrlaroeAzdH%2Bey8%2Fd%2Fb1Vz1Mnp2DJEs3uP%2F%2BjtpqCw9u3Vtm9Wv5m9trIoZqOeVeSguPzcUP9h4VnLIFUtw%3D--53aVX0SCflWifJIJAXEmWpDr7HjV7j4Ug7rpoPbatZw%3D;Path=/;HttpOnly;Expires=Sat,
-        29 Jul 2017 00:17:48 +0000;Max-Age=31536000;Secure
+      - ring-session=BoyINT8YmpNChXruWTvXe2KcjHVdSiJBBRGPdpr42qCbvu2LfzOsJSIzVdByYIw33FmE9GnRB%2BbLAsracxQ8Lbwu%2BA6bfgPXwbGHSU0JKyhGqUxU4fYiYpgCbGuTor8h9dH%2Bp37wO5OD2T9XPk0OVP%2FRPF1HfKPt%2FDG9rV9ybb2O831dhJ2r90YVPXHOlEOVrCWoJtOMT6I5JAo88v9WJxa%2FnCVwNebyNsLVh4pwdHg%3D--oJlAQ%2BA0vJOwlr476BQwXQZt6bpb4QsHGwlniKsjdmM%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:05:07 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-57c004c8
+      - i-29422c27
       X-Circleci-Request-Id:
-      - bf48caeb-0354-4ff5-9998-8e308e8ca6e4
+      - b238b3b5-5fb1-43d1-badd-01c89b47556b
       X-Frame-Options:
       - DENY
       X-Route:
@@ -48,5 +47,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"message":"it looks like private key is invalid key.  Double check"}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:22:49 GMT
+  recorded_at: Tue, 20 Dec 2016 23:53:49 GMT
 recorded_with: VCR 3.0.3

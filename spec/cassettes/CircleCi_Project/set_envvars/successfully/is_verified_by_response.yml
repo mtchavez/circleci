@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/envvar?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/envvar?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: '{"name":"TESTENV","value":"testvalue"}'
@@ -25,21 +25,20 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:23:15 GMT
+      - Tue, 20 Dec 2016 23:51:15 GMT
       Location:
-      - https://circleci.com/api/v1/project/mtchavez/circleci/envvar/TESTENV
+      - https://circleci.com/api/v1.1/project/github/mtchavez/circleci/envvar/TESTENV
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:23:15 +0000;Path=/;Secure
-      - ring-session=BdIAFA3MFseoWdf2JbeQ3rR%2FoauFkr3fcVFV%2B5SEkgMC2XhQT3UJmOF97xnW2ZJnncXkf840htOOpvfKc%2BfnSp31lhIga%2BeuPPkpQPcGbuxqOLP%2FQ%2F8bvLBxcFMKFMI%2FOT%2F%2B4CWNTbCy8NTxXfOz1bEnCQ2A%2B3%2BQP4MYuLKMozDJHV8DUt4JuYMCzpZ8QiIi7XtFaAv7e1CuG3VVtQjhtOE%2FdYTjY0EYSbve38vEgEk%3D--OakbhBiZHQdnTDX2NUzOn7x65NLTBfwRCRi5HIoS4J0%3D;Path=/;HttpOnly;Expires=Fri,
-        28 Jul 2017 23:34:10 +0000;Max-Age=31536000;Secure
+      - ring-session=%2FowBL649i266Lv%2F9WP69TBaJIWa5C%2BNCndrh3QyCe7%2FbSsIry%2BaZeBP95sLQLXBTOUfdXmKjVjRLG8gVy8TovKKGU0aNlVV%2BVuDkYU9pQQ4iSLacL7KBrORLvzJlvEprsI%2F7f5GmXsDkU5VFWdoX3LjpwHPGKMOXkZhSMqlgiy2ORZxTv2avYu1hVUt3N1vfnwLlUozEN2ToFOR2Fk9L7gNyZv8orV5V9kf0O4Om7bA%3D--1Q19y3EO9jbQ8dkLVLEf1t2JThtmlgfnoouuAtfXOZs%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:09:33 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-bda5f33b
+      - i-47bbd9d4
       X-Circleci-Request-Id:
-      - 59da045a-18e1-42e2-9fe2-a603908a34d8
+      - 878d0397-ee5b-41d4-adca-146362537115
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -60,5 +59,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"name":"TESTENV","value":"xxxxalue"}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:22:56 GMT
+  recorded_at: Tue, 20 Dec 2016 23:49:01 GMT
 recorded_with: VCR 3.0.3

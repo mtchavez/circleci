@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/ssh-key?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/ssh-key?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: '{"hostname":"hostname","private_key":"-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAwwuwmtxV5vZwAuZKSEPrgdmu0oSZI+D74zSUrCNa5s9mfHlw\nzCzhFtPKhlwYxVpQ7WZBrQMNlPFJmhyj3Cd2DPkrObMNLEVEVt6T6ahdCcyrw2jY\nPFMQywZPAhcW9mC440qTNhuQTGOcN/AH/1P/B4W9vOJYO7HW7TPa0S5Q3mFRMfk/\n51TlrB/o90gCAmX6Sm+xgs9Tgmx9pYRF0KjzIp/tFGMOHj6wdDb7Qv8eeX0PnCtS\nt428lZGSF0cNSmQIVIxBgi7twmLKpFgqS1LAAAb9+lXW+yh/f5Fl4VBirEvC3olS\n6yUAxWhDQ27waOK7ptTkYYGw+9g7QWSjjeK+vwIDAQABAoIBAG+oa4vcA1lbTzh5\nuaCxMUt+4PQncLv3envRiCMbgliL9vHfW9GnB5zX1iMg6hVg5N9jIMn463eOwkH1\nj2DjPlOi+Tno5OupI7xPY4HqHokToGkXxmKScxSnIefibATTzkRgVvIsyWjRxYbI\nZOuonGEkEUDmmvhhkNbuTqBd0XHcZxG8EJaeGsTLiJG4fG9x3ib/o4w7Lrfh2usb\nCjQt52L5Hg3JHXNokpwFOvhTN4uXUmjZKTQGmJceRz0Rqcemwn0ulcTYrQwQGyw/\nzncwkaNbiWRLJZJtRbMoTd3Mhr8ZvKp91vZGGLhn/BE2s7D5d/OXgz5N11T8iyN8\nSCW5YaECgYEA+Rlrlhui+tan9vo39VXh7wqJujrxlNTLP70ImpAfIoVVhAuPg+pL\naEPs/HIzSJOYppyI3fv6Bz8lKK46gO5VouokxmNQFNz2bxHn2FaXt37k/ye4tbqQ\nCuou+UvAlR/r4OT0Yj9wla0P5wo7IWRrdwWiAhj1DSkvkyGL3VLxF8kCgYEAyHLt\no43wRg50l63gectGCSRfyXuml3o38BLwQhToqbqPQFVncur+lNar9Xh5FRO9T+am\nd8ET+GLdCUXxfpu6eytEUgG3yndsHgXJz5Ta2hQdQT4lkkOlirO4ozYrBIilSrZh\nr8CQP2GKrDZ0QZkZRsBYKUZ0OnNPQXyboCfa9kcCgYB79mCJ9ProZYZ07BSI7NJg\nyRe9K7QpYrQ65fGwKWS1IzFpYu9qsGASZSs8fgBzb7AZyfB6t/i3Pn9ZfUrz+qd3\nSZo/eBDUMRoaMAj2qjEaSfXf3H6ZQVyJcf0qZr5R9+7EnmvXsMZwVg2B5p+CgJzS\nQGVdMdpRUFuylpEp9SqxsQKBgDkuB7obOEpTv1CxahJ0ORNMjAKGwlv9ok1aqazA\nGCqqrEiW1D7E6EB/CGiqqCeqDNvpGN2ad17onNMTX7NVKxoNmpymHs6jyHS8A/iy\nJsgE6t98oe0aXPO3FtmADz9o13X7ltwy2zMpWQyNMBayXLKBFeUYUvmFgTtWF3LV\nS7HrAoGBANhxhjIHYrsAy008UAHHebsyoteIPv2i/5uaRqgkEAVA+6lgTGBxK/Hq\nJ0WRSY+9eJAJn29Br0TO6pCbXS9PUwilFxfEs2iUvDkjYjpR/p3FMNfuzHf0eqoz\nCbCL2YiGWojMIyPkfhOn/vGeE8O7qAJ2xsNFARXes5tYY8h+MmR2\n-----END
@@ -26,19 +26,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:23:09 GMT
+      - Tue, 20 Dec 2016 23:53:05 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:23:09 +0000;Path=/;Secure
-      - ring-session=IsLRr6fk%2Bix3scrWImqjugcT0s%2FrtnOZfvTaHEn7p42BFsONWsw9oMKF%2FmneO2Z%2BaCyRK4cvOvaHfQE%2B7RHlBew82K%2Frvb6iAJBAhX1Jjsff8rAG2zIebC1J9Nb0UkYt1IQQfolshFY1yCCxP0pJwC2m5VOP9tAgd%2BNgFwbuWK0HGQVtKZWIXFdW7UNsEZJ5%2F1EQ%2BrzF6HFyuiGO%2BUsKQGGd9wnhQZI3fEMtL%2BDG1eY%3D--0KJutyZ6om63KzAGGfzZCu38vYC9sDc4Ix7AhhFaym4%3D;Path=/;HttpOnly;Expires=Fri,
-        28 Jul 2017 23:18:19 +0000;Max-Age=31536000;Secure
+      - ring-session=ZG2uYIXWUlg%2B5NZ7IRpI%2F%2FIyR5HQz321S%2FX0YtNd7tC1plA97mlAeCP0wDmycyf8jE7vLqUyFBYWCsFXgrr0zOSTchQa9TzSwXv8fuOSzSx%2BaMHE3Q6V5HTwWozRFIKxulIOM1ynZwtyA4ojBEUhavxupsIJPjB2J%2BN7DeQnFIAH8Nu8cSb%2BAe9Ei20TyjF2rgEG60iz7ndQMJQ53%2Bjo1FL5%2FeMP6I4ixw5qFdsJGUo%3D--x8crwk7MG9hWN%2Bp1OeG30vR%2FGU5VZbqR%2BamTx8qMla4%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 22:58:27 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-5bc004c4
+      - i-e58c01eb
       X-Circleci-Request-Id:
-      - b15e2e57-a1bf-4494-a555-9f9b0bbc7c87
+      - 40351ca9-4fc5-475a-83c0-f5e86830d07f
       X-Frame-Options:
       - DENY
       X-Route:
@@ -51,5 +50,5 @@ http_interactions:
       encoding: UTF-8
       string: '""'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:22:49 GMT
+  recorded_at: Tue, 20 Dec 2016 23:53:49 GMT
 recorded_with: VCR 3.0.3

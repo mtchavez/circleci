@@ -2,11 +2,13 @@
 require 'spec_helper'
 
 RSpec.describe CircleCi::Project, :vcr do
-  describe 'all' do
+  let(:project) { described_class.new 'github', 'mtchavez', 'circleci' }
+
+  xdescribe 'all' do
     context 'successfully' do
       let(:res) { described_class.all }
 
-      it 'is verified by response' do
+      xit 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
       end
@@ -28,34 +30,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
   describe 'build' do
     context 'successfully' do
-      let(:res) { described_class.build 'mtchavez', 'circleci' }
-
-      it 'is verified by response' do
-        expect(res).to be_instance_of(CircleCi::Response)
-        expect(res).to be_success
-      end
-
-      describe 'build' do
-        subject { res.body }
-
-        it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['committer_name']).to eql 'Chavez'
-          expect(subject['branch']).to eql 'master'
-
-          expect(subject).to have_key 'messages'
-          expect(subject).to have_key 'start_time'
-          expect(subject).to have_key 'stop_time'
-          expect(subject).to have_key 'status'
-          expect(subject).to have_key 'subject'
-        end
-      end
-    end
-  end
-
-  describe 'build_branch' do
-    context 'successfully' do
-      let(:res) { described_class.build_branch 'mtchavez', 'circleci', 'master' }
+      let(:res) { project.build 'master' }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -67,7 +42,6 @@ RSpec.describe CircleCi::Project, :vcr do
 
         it 'returns newly created build' do
           expect(subject).to be_instance_of(Hash)
-          expect(subject['committer_name']).to eql 'Chavez'
           expect(subject['branch']).to eql 'master'
 
           expect(subject).to have_key 'messages'
@@ -79,30 +53,51 @@ RSpec.describe CircleCi::Project, :vcr do
       end
     end
 
-    context 'experimental api' do
-      let(:res) { described_class.build_branch 'mtchavez', 'circleci', 'master', {}, 'SOME_VAR' => '123' }
+    context 'with build parameters' do
+      let(:params) { { 'ABC' => '123'} }
+      let(:res) { project.build 'master', 'build_parameters' => params }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
       end
+
+      describe 'build' do
+        subject { res.body }
+
+        it 'returns newly created build' do
+          expect(subject).to be_instance_of(Hash)
+          expect(subject['branch']).to eql 'master'
+          expect(subject).to have_key 'build_parameters'
+          expect(subject['build_parameters']).to eq params
+        end
+      end
     end
   end
 
-  describe 'build_ssh_key' do
+  describe 'clear_cache' do
     context 'successfully' do
-      let(:res) { described_class.build_ssh_key 'mtchavez', 'circleci', '65', 'RSA Private Key', 'hostname' }
+      let(:res) { project.clear_cache }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
       end
+
+      describe 'message' do
+        subject { res.body }
+
+        it 'has metadata' do
+          expect(subject).to be_instance_of(Hash)
+          expect(subject['status']).to eql 'build dependency caches deleted'
+        end
+      end
     end
   end
 
-  describe 'delete_checkout_key' do
+  xdescribe 'delete_checkout_key' do
     context 'successfully' do
-      let(:res) { described_class.delete_checkout_key 'mtchavez', 'circleci', test_delete_checkout_key_fingerprint }
+      let(:res) { project.delete_checkout_key(test_delete_checkout_key_fingerprint) }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -113,7 +108,7 @@ RSpec.describe CircleCi::Project, :vcr do
     end
 
     context 'unsuccessfully' do
-      let(:res) { described_class.delete_checkout_key 'mtchavez', 'circleci', 'asdf-bogus' }
+      let(:res) { project.delete_checkout_key 'asdf-bogus' }
       let(:message) { 'checkout key not found' }
 
       it 'is verified by response' do
@@ -134,7 +129,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
   describe 'get_checkout_key' do
     context 'successfully' do
-      let(:res) { described_class.get_checkout_key 'mtchavez', 'circleci', test_checkout_key_fingerprint }
+      let(:res) { project.get_checkout_key test_checkout_key_fingerprint }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -154,7 +149,7 @@ RSpec.describe CircleCi::Project, :vcr do
     end
 
     context 'unsuccessfully' do
-      let(:res) { described_class.get_checkout_key 'mtchavez', 'circleci', 'asdf-bogus' }
+      let(:res) { project.get_checkout_key 'asdf-bogus' }
       let(:message) { 'checkout key not found' }
 
       it 'is verified by response' do
@@ -175,7 +170,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
   describe 'list_checkout_keys' do
     context 'successfully' do
-      let(:res) { described_class.list_checkout_keys 'mtchavez', 'circleci' }
+      let(:res) { project.list_checkout_keys }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -187,7 +182,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
         it 'are returned' do
           expect(subject).to be_instance_of(Array)
-          expect(subject.size).to eql 1
+          expect(subject.size).to eql 2
         end
 
         context 'first key' do
@@ -205,8 +200,8 @@ RSpec.describe CircleCi::Project, :vcr do
   end
 
   describe 'new_checkout_key' do
-    context 'successfully' do
-      let(:res) { described_class.new_checkout_key 'mtchavez', 'circleci', 'deploy-key' }
+    xcontext 'successfully' do
+      let(:res) { project.new_checkout_key 'deploy-key' }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -226,8 +221,9 @@ RSpec.describe CircleCi::Project, :vcr do
     end
 
     context 'unsuccessfully' do
-      let(:res) { described_class.new_checkout_key 'github', 'hub', 'deploy-key' }
-      let(:message) { 'Permission denied' }
+      let(:project) { described_class.new('github', 'github', 'hub') }
+      let(:res) { project.new_checkout_key 'deploy-key' }
+      let(:message) { 'Project not found' }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -247,7 +243,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
   describe 'recent_builds' do
     context 'successfully' do
-      let(:res) { described_class.recent_builds 'mtchavez', 'circleci' }
+      let(:res) { project.recent_builds }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -278,7 +274,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
       describe 'params' do
         context 'limit' do
-          let(:res) { described_class.recent_builds 'mtchavez', 'circleci', limit: 5 }
+          let(:res) { project.recent_builds limit: 5 }
 
           it 'is verified by response' do
             expect(res).to be_instance_of(CircleCi::Response)
@@ -291,7 +287,7 @@ RSpec.describe CircleCi::Project, :vcr do
         end
 
         context 'filter' do
-          let(:res) { described_class.recent_builds 'mtchavez', 'circleci', limit: 5, filter: 'failed' }
+          let(:res) { project.recent_builds limit: 5, filter: 'failed' }
 
           it 'is verified by response' do
             expect(res).to be_instance_of(CircleCi::Response)
@@ -311,7 +307,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
   describe 'recent_builds_branch' do
     context 'successfully' do
-      let(:res) { described_class.recent_builds_branch 'mtchavez', 'circleci', 'master' }
+      let(:res) { project.recent_builds_branch 'master' }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -344,7 +340,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
   describe 'ssh_key' do
     context 'successfully' do
-      let(:res) { described_class.ssh_key 'mtchavez', 'circleci', test_rsa_private_key, 'hostname' }
+      let(:res) { project.add_ssh_key test_rsa_private_key, 'hostname' }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -353,7 +349,7 @@ RSpec.describe CircleCi::Project, :vcr do
     end
 
     context 'unsuccessfully' do
-      let(:res) { described_class.ssh_key 'mtchavez', 'circleci', 'RSA Private Key', 'hostname' }
+      let(:res) { project.add_ssh_key 'RSA Private Key', 'hostname' }
       let(:message) { 'it looks like private key is invalid key.  Double check' }
 
       it 'is verified by response' do
@@ -371,29 +367,11 @@ RSpec.describe CircleCi::Project, :vcr do
     end
   end
 
-  describe 'clear_cache' do
+  xdescribe 'enable' do
     context 'successfully' do
-      let(:res) { described_class.clear_cache 'mtchavez', 'circleci' }
-
-      it 'is verified by response' do
-        expect(res).to be_instance_of(CircleCi::Response)
-        expect(res).to be_success
-      end
-
-      describe 'message' do
-        subject { res.body }
-
-        it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['status']).to eql 'build dependency caches deleted'
-        end
-      end
-    end
-  end
-
-  describe 'enable' do
-    context 'successfully' do
-      let(:res) { described_class.enable 'mtchavez', 'dotfiles' }
+      # note the change in project
+      let(:project) { described_class.new('github', 'mtchavez', 'dotfiles') }
+      let(:res) { project.enable }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -401,7 +379,7 @@ RSpec.describe CircleCi::Project, :vcr do
       end
 
       describe 'project' do
-        let(:res) { described_class.list_checkout_keys 'mtchavez', 'dotfiles' }
+        let(:res) { project.list_checkout_keys }
         subject { res.body }
 
         it 'returns the circleci project settings' do
@@ -413,9 +391,9 @@ RSpec.describe CircleCi::Project, :vcr do
     end
   end
 
-  describe 'follow' do
+  xdescribe 'follow' do
     context 'successfully' do
-      let(:res) { described_class.follow 'mtchavez', 'circleci' }
+      let(:res) { project.follow }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -435,7 +413,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
   # describe 'unfollow' do
   #   context 'successfully' do
-  #     let(:res) { described_class.unfollow 'mtchavez', 'circleci' }
+  #     let(:res) { project.unfollow }
   #
   #     it 'is verified by response' do
   #       expect(res).to be_instance_of(CircleCi::Response)
@@ -455,7 +433,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
   describe 'settings' do
     context 'successfully' do
-      let(:res) { described_class.settings 'mtchavez', 'circleci' }
+      let(:res) { project.settings}
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -475,9 +453,9 @@ RSpec.describe CircleCi::Project, :vcr do
     end
   end
 
-  describe 'envvar' do
+  describe 'list_envvars' do
     context 'successfully' do
-      let(:res) { described_class.envvar 'mtchavez', 'circleci' }
+      let(:res) { project.list_envvars }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -502,43 +480,12 @@ RSpec.describe CircleCi::Project, :vcr do
         end
       end
     end
-
-    context 'unsuccessfully' do
-      let(:res) { described_class.envvar 'mtchavez', 'asdf-bogus' }
-      let(:message) { 'Project not found' }
-
-      it 'is verified by response' do
-        expect(res).to be_instance_of(CircleCi::Response)
-        expect(res).not_to be_success
-      end
-
-      describe 'message' do
-        subject { res.body }
-
-        it 'returns an error message' do
-          # NOTE: Appears to be a bug with this response returning a message
-          #       that is a JSON string of a github API response
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['message']).to match(/Not Found/)
-        end
-      end
-    end
-
-    context 'envvars deprecation' do
-      let(:res) { described_class.envvars 'mtchavez', 'circleci' }
-      let(:deprecated_message) do
-        '\[Deprecated\] Project#envvars is deprecated please use Project#envvar'
-      end
-
-      it 'logs warning' do
-        expect { res }.to output(/#{deprecated_message}/).to_stdout_from_any_process
-      end
-    end
   end
 
-  describe 'set_envvar' do
+  describe 'set_envvars' do
     context 'successfully' do
-      let(:res) { described_class.set_envvar 'mtchavez', 'circleci', name: 'TESTENV', value: 'testvalue' }
+      let(:testvar) { CircleCi::Envvar.new(name: 'TESTENV', value: 'testvalue') }
+      let(:res) { project.set_envvar(testvar) }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -552,27 +499,6 @@ RSpec.describe CircleCi::Project, :vcr do
           expect(subject['name']).to eq 'TESTENV'
           # obfuscated value
           expect(subject['value']).to eq 'xxxxalue'
-        end
-      end
-    end
-
-    context 'unsuccessfully' do
-      let(:res) { described_class.set_envvar 'mtchavez', 'asdf-bogus', name: 'TESTENV', value: 'testvalue' }
-      let(:message) { 'Project not found' }
-
-      it 'is verified by response' do
-        expect(res).to be_instance_of(CircleCi::Response)
-        expect(res).not_to be_success
-      end
-
-      describe 'message' do
-        subject { res.body }
-
-        it 'returns an error message' do
-          # NOTE: Appears to be a bug with this response returning a message
-          #       that is a JSON string of a github API response
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['message']).to match(/Not Found/)
         end
       end
     end

@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/unfollow?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/envvar?circle-token=<TOKEN>
     body:
       encoding: UTF-8
-      string: "{}"
+      string: '{"name":"TESTENV","value":"testvalue"}'
     headers:
       Accept:
       - application/json
@@ -19,25 +19,26 @@ http_interactions:
       - circleci.com
   response:
     status:
-      code: 200
-      message: OK
+      code: 201
+      message: Created
     headers:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:23:14 GMT
+      - Tue, 20 Dec 2016 23:50:10 GMT
+      Location:
+      - https://circleci.com/api/v1.1/project/github/mtchavez/circleci/envvar/TESTENV
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:23:14 +0000;Path=/;Secure
-      - ring-session=xx5lMn5thfEKw2xIJX3GO7TE1%2BSPbz9xBsgq8UWWQMkdMsYOGYaz6i9bWSZ63Hk3MESLpMNX5MIv1ddZ%2F4ig5cA5XMXtg99si5NB4xYwwOejFZ%2BYo6OLnIa7BbUUxmhgjFOmsQ%2F1MT1mc3v54H07ZVAw0Ra14kPHDTAqzELLI%2BEtwXOKpuy7B3P9ETl9DHOGgrU7rWOpOmjIshCW%2F07U15%2BuFGu85a%2BENlytpMlYTO4%3D--FJS91oyDrRXm3lzwyV05ZnsjYtaN72uCnLgDbo1sKpA%3D;Path=/;HttpOnly;Expires=Sat,
-        29 Jul 2017 00:20:21 +0000;Max-Age=31536000;Secure
+      - ring-session=HPWtYoqNdBwfLnOoV6p2rI%2FEE0tdQdlY%2FM69tQBEVWl5OcWj1UOLWq2cd4Vcxy8JluvemKC0HrJxcXbvlNDpb%2Bna7jseyMhnuOlwU89NpHjkpNQ6gxR35kxDUPDuV2ct%2B4qQeoagxo2XOiAuu%2FudUeUr6tCkctXUPExIsSWWzqj8nejN9LUIFZLXi7TeDwsk2YzaqpGXWy24cw%2BzYRYkqGbpBg5U042wZviSo34a%2BOw%3D--hoO0Jyc0zZtDj4doZ4kheTCBAVaz0qbR9VOJPAu9cVQ%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:03:36 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-4bc206d4
+      - i-b4bbd927
       X-Circleci-Request-Id:
-      - 28177355-fd0e-41ab-84d8-f361f61b62bc
+      - df894273-e7ec-49a1-800f-e1976e0fa8bb
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -49,14 +50,14 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Route:
-      - "/unfollow"
+      - "/envvar"
       Content-Length:
-      - '18'
+      - '37'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"followed":false}'
+      string: '{"name":"TESTENV","value":"xxxxalue"}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:22:51 GMT
+  recorded_at: Tue, 20 Dec 2016 23:48:34 GMT
 recorded_with: VCR 3.0.3

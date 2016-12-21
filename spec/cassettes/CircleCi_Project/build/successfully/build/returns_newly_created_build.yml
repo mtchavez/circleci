@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/tree/master?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 20 Dec 2016 23:32:36 GMT
+      Location:
+      - https://circleci.com/api/v1.1/project/github/mtchavez/circleci/308
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=DzZ4PHlXC3jcimW72zdgJikq4nYuUIgYGt8IFBaFDkoHYm38GH56NEfyIv7q%2FOF2eIPWbJd7jzQZSkQKes8m6mZkB2wo3%2BDch1W71rcxGmoJ4m6%2F91OlX%2B%2FT9JMxCwhd9seAddlHmqiQucQfqI8BYygG9T2klCGiyOONM6AzszKQUYcRbSt5wNDdw4CmWjMYdoabMcJZ6nAOeJHsjvs1ErwiQaDIvZAoIfUrB%2FX9boA%3D--Pkf4NkZDHT4vBl8AO0XDeMKC5a%2Bd0X598rasocyw0dM%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:00:04 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-b9bad82a
+      X-Circleci-Request-Id:
+      - 1fb4f08f-40be-419d-8526-c57ca5c5554a
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/tree/:branch"
+      - ":branch"
+      - "[^,;?]+"
+      Content-Length:
+      - '1875'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"compare":null,"previous_successful_build":{"build_num":306,"status":"success","build_time_millis":88531},"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-10-01T04:15:11Z","body":"-
+        Fix require of forwardable issue","usage_queued_at":"2016-12-20T23:32:36.296Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/308","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":"2016-10-01T04:15:11Z","why":"api","user":{"is_user":false,"login":"none"},"vcs_revision":"17689466091d0399bf86751d5a560179f0758a8b","vcs_tag":null,"build_num":308,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":307,"status":"queued","build_time_millis":0},"status":"not_running","committer_name":"Chavez","retries":null,"subject":"Update
+        to version 1.0.3","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"not_running","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2016-10-01T04:15:11Z","body":"-
+        Fix require of forwardable issue","author_date":"2016-10-01T04:15:11Z","committer_email":"matthew@el-chavez.me","commit":"17689466091d0399bf86751d5a560179f0758a8b","committer_login":"mtchavez","committer_name":"Chavez","subject":"Update
+        to version 1.0.3","commit_url":"https://github.com/mtchavez/circleci/commit/17689466091d0399bf86751d5a560179f0758a8b","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"}'
+    http_version: 
+  recorded_at: Tue, 20 Dec 2016 23:31:44 GMT
+recorded_with: VCR 3.0.3
