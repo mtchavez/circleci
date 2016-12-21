@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 RSpec.describe CircleCi::User, :vcr do
-  describe 'me' do
+  xdescribe 'me' do
     context 'successfully' do
       let(:res) { described_class.me }
 
@@ -22,7 +22,7 @@ RSpec.describe CircleCi::User, :vcr do
     end
   end
 
-  describe 'heroku-key' do
+  xdescribe 'heroku-key' do
     context 'successfully' do
       let(:res) { described_class.heroku_key test_heroku_key }
 
