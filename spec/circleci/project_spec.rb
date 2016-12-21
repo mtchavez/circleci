@@ -28,6 +28,15 @@ RSpec.describe CircleCi::Project, :vcr do
     end
   end
 
+  describe 'get_build' do
+    subject { project.get_build 140 }
+    it 'returns a build object' do
+      expect(subject).to be_instance_of(CircleCi::Build)
+      expect(subject.project).to eq project
+      expect(subject.build_num).to eq 140
+    end
+  end
+
   describe 'build' do
     context 'successfully' do
       let(:res) { project.build 'master' }

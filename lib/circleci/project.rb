@@ -27,6 +27,16 @@ module CircleCi
     end
 
     ##
+    # Helper to get project build object
+    #
+    # @param build_num [Integer] - The build number
+    #
+    # @return          [CircleCi::Build] - Build object 
+    def get_build(build_num)
+      Build.new(self, build_num)
+    end
+
+    ##
     # Build the latest push for this branch of a specific project
     #
     # @param branch   [String] - Name of branch
