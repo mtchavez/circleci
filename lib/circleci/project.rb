@@ -72,17 +72,6 @@ module CircleCi
       CircleCi.request("#{base_path}/envvar").get
     end
 
-
-    ##
-    # Sets an envvar for a project
-    #
-    # @param envvar   [Hash] - {name: 'foo', value: 'bar'}
-    #
-    # @return         [CircleCi::Response] - Response object
-    def set_envvar(envvar)
-      CircleCi.request("#{base_path}/envvar").post(envvar)
-    end
-
     ##
     # Follow the project
     #
@@ -185,7 +174,7 @@ module CircleCi
     end
 
     ##
-    # Add project envvars
+    # Set project envvar
     # @param envvars [CircleCi::Envvar] - Envvar object
     #
     # @return         [CircleCi::Response] - Response object
