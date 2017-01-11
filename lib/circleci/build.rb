@@ -4,65 +4,62 @@ module CircleCi
   #
   # Class for interacting with and managing builds
   class Build
+    attr_reader :project, :build_num
+
     ##
+    # Initialize build
     #
+    # @param project [CircleCI::Project] - The project which this build belongs to
+    # @param build_num [int] - The build number
+    def initialize(project, build_num)
+      @project = project
+      @build_num = build_num
+    end
+
+    ##
     # Get artifacts for a specific build of a project
     #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @param build    [String] - Build ID
     # @return         [CircleCi::Response] - Response object
-    def self.artifacts(username, project, build)
-      CircleCi.request("/project/#{username}/#{project}/#{build}/artifacts").get
+    def artifacts
+      CircleCi.request("#{base_path}/artifacts").get
     end
 
     ##
-    #
     # Cancel a specific build
     #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @param build    [String] - Build ID
     # @return         [CircleCi::Response] - Response object
-    def self.cancel(username, project, build)
-      CircleCi.request("/project/#{username}/#{project}/#{build}/cancel").post
+    def cancel
+      CircleCi.request("#{base_path}/cancel").post
     end
 
     ##
-    #
     # Get a specific build for a project
     #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @param build    [String] - Build ID
     # @return         [CircleCi::Response] - Response object
-    def self.get(username, project, build)
-      CircleCi.request("/project/#{username}/#{project}/#{build}").get
+    def get
+      CircleCi.request("#{base_path}").get
     end
 
     ##
-    #
     # Kick off a retry of a specific build
     #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @param build    [String] - Build ID
     # @return         [CircleCi::Response] - Response object
-    def self.retry(username, project, build)
-      CircleCi.request("/project/#{username}/#{project}/#{build}/retry").post
+    def retry
+      CircleCi.request("#{base_path}/retry").post
     end
 
     ##
+    # Only available when using a user API token. Allows user to ssh into
+    # build container.
     #
-    # Get tests for a specific build of a project
-    #
-    # @param username [String] - User or org name who owns project
-    # @param project [String] - Name of project
-    # @param build [String] - Build ID
-    # @return [CircleCi::Response] - Response object
+    # @return         [CircleCi::Response] - Response object
+    def ssh_users
+      CircleCi.request("#{base_path}/ssh-users").post
+    end
 
-    def self.tests(username, project, build)
-      CircleCi.request("/project/#{username}/#{project}/#{build}/tests").get
+  private 
+    def base_path
+      @base_path ||= "/project/#{project.vcs_type}/#{project.username}/#{project.name}/#{build_num}"
     end
   end
 end

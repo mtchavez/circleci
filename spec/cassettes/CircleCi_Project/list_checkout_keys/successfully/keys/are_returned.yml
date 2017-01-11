@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/checkout-key?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -27,19 +27,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:30:39 GMT
+      - Tue, 20 Dec 2016 23:31:47 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:30:39 +0000;Path=/;Secure
-      - ring-session=4ua%2FldQVILY0NM%2F4XhQgxpAUpPvfz8SsNbd58YADkkXSdT%2FKIj2NauKlUUPRxjqnKuuwRHN03Dlt5kuXtszJziBbgIoVXkAX6tiMoArS%2FYUo9szMndpdpIwLalEFrW3Yrq2pdB8SgXpk1VeVHnUgrMvLHJUB5ZktGf0NZ8lS3qzGOho897NHSuKyq4SmubaECA2xiL%2BY7aZCKGApkH5od2wNXIaMPMPHbs%2BPwTOMI04%3D--IvanAipvkJ21pIe04Vq5Y3ZFWW648vkdqQkegIfsoAE%3D;Path=/;HttpOnly;Expires=Sat,
-        29 Jul 2017 00:24:20 +0000;Max-Age=31536000;Secure
+      - ring-session=pyXSw%2FZLkE%2BXxGLg9GyPow74WT6InZG0OVAfesrprWWEX4Tvgv9SI72LKVPv6SpbURX0VgGhIdIvbRL%2BiedH%2FC2yvHb5B%2FM0XQzyUW8Em8y9LjX4dxyJQmb%2FgKblNERnUh%2FE8IkiWPbqfV6xpH9E2FJCN1O49wfdgL2czYVPGVt8Lj2M2alLhFYWzPizQ37HhsehOkrK%2BVxtItHGqRoub9yLacW1LtbIrzsHsIGlJyw%3D--ps5ADQOCdIxo1jvuaWG23cMgFTE9w2Inh91MchyneGI%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:06:21 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-b2a5f334
+      - i-9e3e710d
       X-Circleci-Request-Id:
-      - bbc66c3f-80c6-4cb1-af1e-3e35467daada
+      - 6b8ddaa2-72ce-4d69-b268-254ed523b46f
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -53,13 +52,15 @@ http_interactions:
       X-Route:
       - "/checkout-key"
       Content-Length:
-      - '476'
+      - '804'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '[{"public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCKLz/1WWYe+rWooGGwkmm7P19KKIe8hYbJDdc+hLlbyW/kx0geT5iWjb/4e+kCrFBw4K2qq2ScqUX9/Spo+AzYcDSGbB0fmKhRcq2aPVJZsWgoRa7iZ1FNV32EZSxMxIxpGzZb3gmslXVRaP7fQWsOaydRr31ETJgX3pE1rI8LPT8rYsG3et4398UGcfXJ22FQgrKtr/mPi8gRR+T7AXOoaM1HtBash3SvyjBKvm/WSdhdABK0Y9G1q5iu92ulh0Vo/ia+Kt952Vi1nQf2/PxIquqdOVa6G1RpLDmpx2MN8PN7lnXl0g8FnSwnNj+dRaAuenTdgBqQIhcAEY4io6Nf
-        \n","type":"deploy-key","fingerprint":"3e:35:e0:96:f7:c8:23:9c:b8:2f:50:9e:d0:16:f7:05","login":null,"preferred":true,"time":"2016-07-29T00:28:24.797Z"}]'
+      string: '[{"public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDu8NsfUmESuKsG9CdHMWKTJAeyKVW9WhNV688e2ehrkgDwbXQfXxnDIOoS1BsWydBTvbIqwOUNMYbFa7GqZG66xSOSgWU//KObpxbF4wrUwMXTyf74WyHNINr9Xye6PfdL/Ffa0PdPbp2KNUuQassGLwD6YMkQWC5pJoavIx+YrMaSy4KoydjIjBtt0MZtDa00eEBAMttw+N8wSMyHy1PeJu1ukFcrTizt5evz6A7bf1VeJVuL4s4sxYvpGIFMVO7wHJzViaELap2WbFl8S4n0jT0L/YhkvkAti6RsrxPeszJyndbm9iVZc1CJcfIDUpziqXKY7gyxZI4j1jMwKnph
+        \n","type":"deploy-key","fingerprint":"51:95:3d:9a:8d:fc:94:1d:6d:3e:14:d4:37:51:ec:ec","login":null,"preferred":true,"time":"2016-07-29T00:30:10.226Z"},{"public_key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQCKLz/1WWYe+rWooGGwkmm7P19KKIe8hYbJDdc+hLlbyW/kx0geT5iWjb/4e+kCrFBw4K2qq2ScqUX9/Spo+AzYcDSGbB0fmKhRcq2aPVJZsWgoRa7iZ1FNV32EZSxMxIxpGzZb3gmslXVRaP7fQWsOaydRr31ETJgX3pE1rI8LPT8rYsG3et4398UGcfXJ22FQgrKtr/mPi8gRR+T7AXOoaM1HtBash3SvyjBKvm/WSdhdABK0Y9G1q5iu92ulh0Vo/ia+Kt952Vi1nQf2/PxIquqdOVa6G1RpLDmpx2MN8PN7lnXl0g8FnSwnNj+dRaAuenTdgBqQIhcAEY4io6Nf
+        \n","type":"deploy-key","fingerprint":"3e:35:e0:96:f7:c8:23:9c:b8:2f:50:9e:d0:16:f7:05","login":null,"preferred":false,"time":"2016-07-29T00:28:24.797Z"}]'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:29:49 GMT
+  recorded_at: Tue, 20 Dec 2016 23:31:46 GMT
 recorded_with: VCR 3.0.3

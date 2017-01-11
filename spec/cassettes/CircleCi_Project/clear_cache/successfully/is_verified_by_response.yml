@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/build-cache?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/build-cache?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -25,19 +25,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:24:05 GMT
+      - Tue, 20 Dec 2016 23:31:18 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:24:04 +0000;Path=/;Secure
-      - ring-session=egvgPqMXsKK0bQaesx1mFtxIClLpPaUCrsqNORy%2F%2F5%2BfRBobAvZ0ZKCXWwMa2fBCM0gNU%2F0cOZimT0uUsqDwzmW%2BBvT8auoc5vhtZDwkAPEyL10nnTh6O4R2hrydIXmjr7XlOA0cTqYuavT4qdzAmPwrz%2BNAGONIiKEsoguKxGcJQg6fMQrZusUWZV0SvDNs%2B4n8L0czeEXr%2Busk3Cz2xD%2Fs64GkPe%2BZQLDkNYqMJIg%3D--Dpmh%2FOtVoVQZeYI9vrfZ14xX%2Fl%2FiksFfMgNuBjeWDMI%3D;Path=/;HttpOnly;Expires=Sat,
-        29 Jul 2017 00:18:38 +0000;Max-Age=31536000;Secure
+      - ring-session=3QJIDLGZhwJIvMZtqPqVme%2B5nlMBLB3qNqEiDLYE2FMum7M%2BuOhlTkIw1OJXS0mNy7D%2FD%2F9sefjmTegCg390KuuPwRVpSwyPlnWJi48KR3SSRzPer2BLE3i8rTUFDllWvxTEsAlZuH%2Fke3F5RThec1s%2FA3Dr8cK9ccJK4i1IoD9BQXuY%2F0AqP1sXLJZ2V7m2a931kGqdeJbrrLT07sTbaOJ5pqEyTu%2FJAn4tY%2BJYdpc%3D--jDLompThqngnXXyOmC3Y4XB%2BQiQ3SQmltkPUWdArP4k%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:04:03 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-b3f8464b
+      - i-195669e1
       X-Circleci-Request-Id:
-      - a7edc7c2-6f2b-46fb-858f-e45027327cd3
+      - 08806a5c-926b-458f-ad3a-ad04c5710328
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -58,5 +57,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status":"build dependency caches deleted"}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:23:37 GMT
+  recorded_at: Tue, 20 Dec 2016 23:31:45 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/ssh-key?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/ssh-key?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: '{"hostname":"hostname","private_key":"RSA Private Key"}'
@@ -25,17 +25,16 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:22:23 GMT
+      - Tue, 20 Dec 2016 23:55:52 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:22:23 +0000;Path=/;Secure
-      - ring-session=fpwQtY7wYf%2B04vJP50mvYdaGxNHmv3e318Y1%2FZr73KeHYhofyMQKpWRKlsNwNbhLxCJW4WPg1EZmrxJTR89d6G75zvjas7AROCIJFlibq2YktEbYIRbF1%2B%2BaqcC6v9jWUQIwXRZiskYDtROq%2FaCkJ0BRUC7Et%2BhZQA%2FhpHc72%2BtYoC%2FpVmJ9YeP15LQi4XP2vjHgGh%2BAOvslGqallpFQ4do7gmVAqcXYDUu3gR27g%2F8%3D--linCGJOl2A%2BV6OLk5q9xXHTeRrVrYkgVrRjgpHRw%2FBM%3D;Path=/;HttpOnly;Expires=Fri,
-        28 Jul 2017 23:00:02 +0000;Max-Age=31536000;Secure
+      - ring-session=Lu14c6EefAHKzo0uxTu%2F88LlXNBeIbZne1t0orgo5RRW1oabAEcUXJNYyDgIkxJIr7L0T%2Bior4VF%2FwJh%2BhEqtkh0ScLEgLgE2SwFFdJOdCs%2BCVXLt0RTUt3L%2FEn3pyEeXO0mln9S6NrfrQ6JM5pXnaDaY%2FxglY6z47WR0%2FaNUrwteP5VuPPqHO63Ln1P4g%2B63o0%2BAewWtCBNHRdQUyCRk%2FdeqcHfcisAf2SX%2BEmtAtE%3D--PE3wzK4lOXDVICniY6AO4mK4fFl9LmYYXiBW1ruyAck%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:01:30 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-56fa44ae
+      - i-8d486414
       X-Circleci-Request-Id:
-      - bd1aa44c-2b4b-4ab6-8eae-f2a1517c960d
+      - f3207cf2-4966-4cf9-9eb6-f0ade32b2412
       X-Frame-Options:
       - DENY
       X-Route:
@@ -48,5 +47,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"message":"it looks like private key is invalid key.  Double check"}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:22:50 GMT
+  recorded_at: Tue, 20 Dec 2016 23:53:49 GMT
 recorded_with: VCR 3.0.3

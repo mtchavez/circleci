@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/build-cache?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/build-cache?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -25,19 +25,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:23:48 GMT
+      - Tue, 20 Dec 2016 23:33:58 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:23:47 +0000;Path=/;Secure
-      - ring-session=3ecECWDE55dPOqrgf0ven%2BYYzl%2BUbT8COXWRIC4O3RrDC5ImgzVwDoeN3eq3GR7pnTVhRlAS18SfwT%2Fme44g5vk9ylqE9nLMsVHM%2BbCphGHvU3v8Chz96I6WgH1jCxtNnH4FAUmT7wMrvfUlQhAm2zW5P6B3PQABuBVmB85K%2FZR2LvMd%2FVPpCthohd4IQr5ULpfnizY5XwpzkPa84qfczpbWVdeVzZZQmsviRKY4B9o%3D--n2Jou0ierZGKqPQCZRWC5V7ZgnvP1J3KDBniBo0BHLs%3D;Path=/;HttpOnly;Expires=Fri,
-        28 Jul 2017 23:25:35 +0000;Max-Age=31536000;Secure
+      - ring-session=nehFzN6ylmnwiygWv38Mz3ytsrG7kSAZeINWBLghzLa4jWUFjDj7fDFI2Rgn%2B1v6broQUwAPpi6xsQ%2B8wVEdvoAOzafKrcTNpG6qYuKBUZLUm%2FiEzvfsTFoQ4ezifRo01gjBtHyN2uJxJpBbqcsMmo9v%2BSyDGH%2B7LGkzdA%2BI9L5%2FF5FC7nxNi%2FEuH3iq89G%2BRYhGWrsrR%2Fr%2FJkJ%2F%2B0ahGos3DQA4yoJIRPPex9TJ2fI%3D--sFsbUbXBMU7fXzhRYZYwKWW83T0vj3GjIH1a9Q0%2BxIo%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:09:33 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-9dbee81b
+      - i-47bbd9d4
       X-Circleci-Request-Id:
-      - fc25755e-12c4-4660-ab04-9188ac8401eb
+      - 16f2d0a3-5aed-4852-95e4-bb36a6e4f052
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -58,5 +57,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status":"build dependency caches deleted"}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:23:38 GMT
+  recorded_at: Tue, 20 Dec 2016 23:31:45 GMT
 recorded_with: VCR 3.0.3

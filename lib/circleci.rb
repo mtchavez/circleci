@@ -2,6 +2,7 @@
 require 'json'
 require 'net/http'
 require 'uri'
+require 'immutable-struct'
 
 files = %w[
   build
@@ -19,8 +20,11 @@ files.each { |path| require_relative "./circleci/#{path}" }
 #
 # CircleCi module configured to for endpoint interactions
 module CircleCi
-  module_function
 
+  # Define the CircleCi::Envvar struct
+  Envvar = ImmutableStruct.new(:name, :value)
+
+  module_function
   ##
   #
   # @example Configure CircleCi with your token

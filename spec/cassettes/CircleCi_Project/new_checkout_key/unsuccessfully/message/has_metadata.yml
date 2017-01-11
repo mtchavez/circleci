@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/github/hub/checkout-key?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/github/hub/checkout-key?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: '{"type":"deploy-key"}'
@@ -19,23 +19,22 @@ http_interactions:
       - circleci.com
   response:
     status:
-      code: 403
-      message: Forbidden
+      code: 404
+      message: Not Found
     headers:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jul 2016 00:30:22 GMT
+      - Tue, 20 Dec 2016 23:52:02 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:30:22 +0000;Path=/;Secure
-      - ring-session=kfSkPtPevg5NGe%2BoNSLrVrHG87LIDw%2F01kX472zb3cKHS9hp5uzjVaBREQeRIn7mbqWnpHWM3hDIgpXztwqVuxlgItbrWSKtiHw0g1N5dJ%2Fm0tNTZFQ3FPrBwiQ3DUKoqjrn6RnKOAb5IEwziMvXiSsrHA8ribeZNKnrDIC3htoKbTCbhg%2FkH28%2BVdEc6Z%2Fy2ZY6VDekRBSQHM6wTm83wOwj5VbetkuUIMQdWna2mRo%3D--n6YD6xJu8YtH52Gyo4SGw%2BOtKZ%2FJm1KJT7yjdWeoRzM%3D;Path=/;HttpOnly;Expires=Sat,
-        29 Jul 2017 00:18:39 +0000;Max-Age=31536000;Secure
+      - ring-session=yhMxdmT908qy5xeInfIeVbilEB5Y%2BXCHYA46vyNDu57hVm3jJSw83FD2%2BpCSv2kfmgh9y6SlQ061ZgtEwAfMsyukUIafb%2B38U8PoIjRcCD49v8xtwODuLsk8Ytv%2FkGVBObkodNbimDY47fIELKkyRTwJwvVypHlBmmG6NXVVKRvQ4fXujVGt6Wb3PZeZryOb6B%2BqhTfJGSA3k5DImQXoI1xZkm%2Flws0GQSdUj1DxY%2BI%3D--0%2FQeGwsNXHvBvau2tvjT6APjCYsbVQ7Qy9eQ9adi4jw%3D;Path=/;HttpOnly;Expires=Wed,
+        20 Dec 2017 23:03:07 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-8fa7f109
+      - i-55b387ad
       X-Circleci-Request-Id:
-      - ab4d4766-53ac-48f1-bf40-9d5baf557793
+      - f8f83c81-c1bd-4049-9a66-c0a33b2e1154
       X-Frame-Options:
       - DENY
       X-Route:
@@ -46,7 +45,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"message":"Permission denied"}'
+      string: '{"message":"Project not found"}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 00:29:52 GMT
+  recorded_at: Tue, 20 Dec 2016 23:50:55 GMT
 recorded_with: VCR 3.0.3
