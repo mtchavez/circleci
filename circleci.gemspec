@@ -32,5 +32,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'vcr',              '~> 3.0.3', '>= 3.0.3'
   s.add_development_dependency 'webmock',          '~> 2.1.0', '>= 2.1.0'
   s.add_development_dependency 'yard',             '~> 0.9.5', '>= 0.9.5'
-  s.add_development_dependency 'immutable-struct', '~> 2.2.2', '>= 2.2.2'
+  s.add_dependency             'immutable-struct', '~> 2.2.2', '>= 2.2.2'
 end
