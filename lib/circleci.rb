@@ -4,6 +4,7 @@ require 'net/http'
 require 'uri'
 
 files = %w[
+  api_resource
   build
   config
   project
