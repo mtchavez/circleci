@@ -12,7 +12,7 @@ module CircleCi
     # @return [CircleCi::Response] - Response object
     def self.me
       CircleCi.config.logger.warn('[Deprecated] Use instance method CircleCi::User#me instead')
-      new(CircleCi.config).me
+      new(nil, nil, CircleCi.config).me
     end
 
     ##
@@ -24,7 +24,7 @@ module CircleCi
     # @return         [CircleCi::Response] - Response object
     def self.heroku_key(apikey)
       CircleCi.config.logger.warn('[Deprecated] Use instance method CircleCi::User#heroku_key instead')
-      new(CircleCi.config).heroku_key(apikey)
+      new(nil, nil, CircleCi.config).heroku_key(apikey)
     end
 
     ##

@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/140/artifacts?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Feb 2017 19:40:51 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=4UPfrNu1NjBCe6QP0PXxH9wTcjlKFGNL9TzxGVZuw3ZHPivT9uCTV0CdHIEVWvWZVpltWEggADEZIHNQB0%2Ft6yfM0nQnC4NxMInap3%2FUF5tE991RPjxpUoRtPF6DnRox9z2N1ucH1xD48Fpdy6d3QDmr5X8TbBxLNBQ4s8ll8Vt6n6Y2uDO8AtN5yT35ZXvCmdXqTnGiT8xYfkIN4l1Z6yw5m3akeQcr9Mf1jepCqH4%3D--DQ042MtGi1rDUkLZdSKb%2B%2FzOktHvs3hKLKTTgdc16VU%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:49:04 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-9d4e6204
+      X-Circleci-Request-Id:
+      - 7735101b-6bc1-4410-9d7a-3c48f3f70ba1
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/artifacts"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '170'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"path":"/tmp/circle-junit.vCFLHp7/rspec/junit.xml","pretty_path":"$CIRCLE_TEST_REPORTS/rspec/junit.xml","node_index":0,"url":"https://140-9485764-gh.circle-artifacts.com/0/tmp/circle-junit.vCFLHp7/rspec/junit.xml"}]'
+    http_version: 
+  recorded_at: Sat, 18 Feb 2017 19:36:47 GMT
+recorded_with: VCR 3.0.3

@@ -7,9 +7,11 @@ module CircleCi
   # set per request if needed, otherwise the default global
   # CircleCi.config is used
   class ApiResource
-    attr_reader :conf
+    attr_reader :conf, :project, :username
 
-    def initialize(conf = nil)
+    def initialize(username = nil, project = nil, conf = nil)
+      @username = username
+      @project = project
       @conf = conf ? conf : CircleCi.config
     end
   end
