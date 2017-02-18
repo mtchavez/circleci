@@ -11,17 +11,18 @@ module CircleCi
     DEFAULT_PORT = 443
 
     attr_accessor :token, :host, :port, :request_overrides, :version, :proxy,
-                  :proxy_host, :proxy_port, :proxy_user, :proxy_pass
+                  :proxy_host, :proxy_port, :proxy_user, :proxy_pass, :logger
 
     ##
     #
     # @private
-    def initialize
-      @host = DEFAULT_HOST
-      @port = DEFAULT_PORT
-      @proxy = false
-      @version = DEFAULT_VERSION
-      @request_overrides = {}
+    def initialize(host: DEFAULT_HOST, port: DEFAULT_PORT, proxy: nil, version: DEFAULT_VERSION, request_overrides: {}, logger: nil)
+      @host = host
+      @port = port
+      @proxy = proxy.nil? ? false : proxy
+      @version = version
+      @request_overrides = request_overrides
+      @logger = logger ? logger : Logger.new(STDOUT)
     end
 
     def uri

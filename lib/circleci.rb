@@ -39,7 +39,7 @@ module CircleCi
     @config ||= Config.new
   end
 
-  def request(path, params = {})
-    Request.new config, path, params
+  def request(conf, path, params = {})
+    Request.new conf, path, params
   end
 end

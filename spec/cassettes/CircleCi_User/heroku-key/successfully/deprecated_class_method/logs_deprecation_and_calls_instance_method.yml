@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/user/heroku-key?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: '{"apikey":"<HEROKU_TOKEN>"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Feb 2017 18:51:44 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=7javFWkP3oc74A%2FTN3DX40AKawjX%2FhONCRok252C0fkqwfJiPItNOpMh6GdtIw42dF%2B8yDSgbQAD8mbCFy%2B943Dr1TD4%2B6DiSganD6m4v6C2IBG9afsHSrgf0yRKLgVFj71PgG07ewxEYffKtgYDNpEHKMgaSfOAlfCfGrfsKDMr3HhHrHEE9ezNBWN0VrGGz4vMyq04QZd6X3OYm4I0PQCQznAR70FnqYOKbyqxS2A%3D--Ndg0LjUFtIJev7UVJJNpIkHO7sbT19UyqJqEQtbyrFQ%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:49:27 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-99bc8861
+      X-Circleci-Request-Id:
+      - f3ec6891-a768-489c-bb48-b15d89d1c114
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/user/heroku-key"
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"You must log in first."}'
+    http_version: 
+  recorded_at: Sat, 18 Feb 2017 18:47:16 GMT
+recorded_with: VCR 3.0.3
