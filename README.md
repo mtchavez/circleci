@@ -731,7 +731,7 @@ Creates a new environment variable for a project
 
 ```ruby
 environment = { name: 'foo', value: 'bar' }
-res = CircleCi::Project.envvar 'username', 'repo', environment
+res = CircleCi::Project.set_envvar 'username', 'repo', environment
 res.success?
 ```
 
