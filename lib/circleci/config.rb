@@ -16,11 +16,12 @@ module CircleCi
     ##
     #
     # @private
-    def initialize(host: DEFAULT_HOST, port: DEFAULT_PORT, proxy: nil, version: DEFAULT_VERSION, request_overrides: {}, logger: nil)
+    def initialize(host: DEFAULT_HOST, port: DEFAULT_PORT, proxy: nil, version: DEFAULT_VERSION, token: nil, request_overrides: {}, logger: nil)
       @host = host
       @port = port
       @proxy = proxy.nil? ? false : proxy
       @version = version
+      @token = token
       @request_overrides = request_overrides
       @logger = logger ? logger : Logger.new(STDOUT)
     end
