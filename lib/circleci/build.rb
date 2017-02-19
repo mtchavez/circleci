@@ -9,7 +9,7 @@ module CircleCi
     #
     # Initialize a Build object to interact with the Build API
     #
-    # @param config   [CircleCi::Config] - Defaults to [CircleCi.config] if not provided
+    # @param config   [CircleCi::Config] - Defaults to [default_config] if not provided
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @param build    [String] - Build ID
@@ -33,8 +33,8 @@ module CircleCi
       # @param build    [String] - Build ID
       # @return         [CircleCi::Response] - Response object
       def artifacts(username, project, build)
-        CircleCi.config.logger.warn('[Deprecated] Use instance method CircleCi::Build#artifacts instead')
-        new(username, project, build, CircleCi.config).artifacts
+        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Build#artifacts instead')
+        new(username, project, build, default_config).artifacts
       end
 
       ##
@@ -47,8 +47,8 @@ module CircleCi
       # @param build    [String] - Build ID
       # @return         [CircleCi::Response] - Response object
       def cancel(username, project, build)
-        CircleCi.config.logger.warn('[Deprecated] Use instance method CircleCi::Build#cancel instead')
-        new(username, project, build, CircleCi.config).cancel
+        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Build#cancel instead')
+        new(username, project, build, default_config).cancel
       end
 
       ##
@@ -61,8 +61,8 @@ module CircleCi
       # @param build    [String] - Build ID
       # @return         [CircleCi::Response] - Response object
       def get(username, project, build)
-        CircleCi.config.logger.warn('[Deprecated] Use instance method CircleCi::Build#get instead')
-        new(username, project, build, CircleCi.config).get
+        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Build#get instead')
+        new(username, project, build, default_config).get
       end
 
       ##
@@ -75,8 +75,8 @@ module CircleCi
       # @param build    [String] - Build ID
       # @return         [CircleCi::Response] - Response object
       def retry(username, project, build)
-        CircleCi.config.logger.warn('[Deprecated] Use instance method CircleCi::Build#retry instead')
-        new(username, project, build, CircleCi.config).retry
+        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Build#retry instead')
+        new(username, project, build, default_config).retry
       end
 
       ##
@@ -89,8 +89,8 @@ module CircleCi
       # @param build    [String] - Build ID
       # @return         [CircleCi::Response] - Response object
       def tests(username, project, build)
-        CircleCi.config.logger.warn('[Deprecated] Use instance method CircleCi::Build#tests instead')
-        new(username, project, build, CircleCi.config).tests
+        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Build#tests instead')
+        new(username, project, build, default_config).tests
       end
     end
 
@@ -98,10 +98,7 @@ module CircleCi
     #
     # Get artifacts for a specific build of a project
     #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @param build    [String] - Build ID
-    # @return         [CircleCi::Response] - Response object
+    # @return [CircleCi::Response] - Response object
     def artifacts
       CircleCi.request(@conf, "/project/#{username}/#{project}/#{build}/artifacts").get
     end
@@ -110,10 +107,7 @@ module CircleCi
     #
     # Cancel a specific build
     #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @param build    [String] - Build ID
-    # @return         [CircleCi::Response] - Response object
+    # @return [CircleCi::Response] - Response object
     def cancel
       CircleCi.request(@conf, "/project/#{username}/#{project}/#{build}/cancel").post
     end
@@ -122,10 +116,7 @@ module CircleCi
     #
     # Get a specific build for a project
     #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @param build    [String] - Build ID
-    # @return         [CircleCi::Response] - Response object
+    # @return [CircleCi::Response] - Response object
     def get
       CircleCi.request(@conf, "/project/#{username}/#{project}/#{build}").get
     end
@@ -134,10 +125,7 @@ module CircleCi
     #
     # Kick off a retry of a specific build
     #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @param build    [String] - Build ID
-    # @return         [CircleCi::Response] - Response object
+    # @return [CircleCi::Response] - Response object
     def retry
       CircleCi.request(@conf, "/project/#{username}/#{project}/#{build}/retry").post
     end
@@ -146,10 +134,7 @@ module CircleCi
     #
     # Get tests for a specific build of a project
     #
-    # @param username [String] - User or org name who owns project
-    # @param project  [String] - Name of project
-    # @param build    [String] - Build ID
-    # @return         [CircleCi::Response] - Response object
+    # @return [CircleCi::Response] - Response object
     def tests
       CircleCi.request(@conf, "/project/#{username}/#{project}/#{build}/tests").get
     end

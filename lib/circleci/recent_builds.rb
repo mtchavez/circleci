@@ -4,7 +4,6 @@ module CircleCi
   #
   # Class for interacting with recent builds
   class RecentBuilds < ApiResource
-
     ##
     #
     # Initialize a new RecentBuilds API interaction
@@ -27,8 +26,8 @@ module CircleCi
       # @param params [Hash] - Params to send for recent builds (limit, offset)
       # @return         [CircleCi::Response] - Response object
       def get(params = {})
-        CircleCi.config.logger.warn('[Deprecated] Use instance method CircleCi::RecentBuilds#get instead')
-        new(CircleCi.config).get(params)
+        default_config.logger.warn('[Deprecated] Use instance method CircleCi::RecentBuilds#get instead')
+        new(default_config).get(params)
       end
     end
 

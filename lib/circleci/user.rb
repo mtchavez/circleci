@@ -22,8 +22,8 @@ module CircleCi
       # @deprecated Please use instance method of [CircleCi::User] instead
       # @return [CircleCi::Response] - Response object
       def me
-        CircleCi.config.logger.warn('[Deprecated] Use instance method CircleCi::User#me instead')
-        new(CircleCi.config).me
+        default_config.logger.warn('[Deprecated] Use instance method CircleCi::User#me instead')
+        new(default_config).me
       end
 
       ##
@@ -34,8 +34,8 @@ module CircleCi
       # @param apikey   [String] - The Heroku API key
       # @return         [CircleCi::Response] - Response object
       def heroku_key(apikey)
-        CircleCi.config.logger.warn('[Deprecated] Use instance method CircleCi::User#heroku_key instead')
-        new(CircleCi.config).heroku_key(apikey)
+        default_config.logger.warn('[Deprecated] Use instance method CircleCi::User#heroku_key instead')
+        new(default_config).heroku_key(apikey)
       end
     end
 
