@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/3e:35:e0:96:f7:c8:23:9c:b8:2f:50:9e:d0:16:f7:05?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Feb 2017 23:25:57 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=YzML1pRMqwUfjy6EchKYBgcf6Ch71KkoWqMF%2F3kjq0FI8tmUbYJTZhf5jk6XAuYNxPU61vHsbf2YB5C5MhybcL9ZYpkq07txZC6kvFhUZyagTCpr22m21LgWbSsY8g2ZGtR8cvLKtf0bjUdc9c1h%2BVSL7s3EZGUJ3u9osnpRtHuATMqkP4S515rVwKcAvj8sp7%2Fs%2FyB%2FSRQ1fuR8s7NBRBXEahse%2BUh7QPUrhj4Cd6I%3D--he01i09bESlxQNzCaBBcoOFG3UyCDNSKBbdlYpt%2F0V8%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:47:08 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-08b7733599888484c
+      X-Circleci-Request-Id:
+      - e92db974-31f2-49b4-80e1-c1b0cd1185fe
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/checkout-key/:fingerprint"
+      Content-Length:
+      - '475'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCKLz/1WWYe+rWooGGwkmm7P19KKIe8hYbJDdc+hLlbyW/kx0geT5iWjb/4e+kCrFBw4K2qq2ScqUX9/Spo+AzYcDSGbB0fmKhRcq2aPVJZsWgoRa7iZ1FNV32EZSxMxIxpGzZb3gmslXVRaP7fQWsOaydRr31ETJgX3pE1rI8LPT8rYsG3et4398UGcfXJ22FQgrKtr/mPi8gRR+T7AXOoaM1HtBash3SvyjBKvm/WSdhdABK0Y9G1q5iu92ulh0Vo/ia+Kt952Vi1nQf2/PxIquqdOVa6G1RpLDmpx2MN8PN7lnXl0g8FnSwnNj+dRaAuenTdgBqQIhcAEY4io6Nf
+        \n","type":"deploy-key","fingerprint":"3e:35:e0:96:f7:c8:23:9c:b8:2f:50:9e:d0:16:f7:05","login":null,"preferred":false,"time":"2016-07-29T00:28:24.797Z"}'
+    http_version: 
+  recorded_at: Sat, 18 Feb 2017 23:26:20 GMT
+recorded_with: VCR 3.0.3

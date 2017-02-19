@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/unfollow?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 19 Feb 2017 00:04:05 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=ncbrbn%2BAOvvGeHANnjdioKCWmbI3208GakyP1833ylP8Psx7WhMCeNbuZUJ1EFep0ZzdHBJgYG7IrbE4%2F576evClDF99K626NdbD8Lxv3E5dW%2F1nGCrOCtw22jsHgsDkzuS%2FI9wSX3f%2FWMjedzjRXsoF2MkC6UwbmQZaPDktKDNN1P3waBBYdYursje3Y2Zdg5WY5%2ByRLPBaCiphEafP3oG8T4Ax2QkGSfhVWTWTFjo%3D--S6ST42HBoC06HxwG3dBqRUEnKe8ngrRfRjnhqyLfs9w%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:42:55 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-ac4f6335
+      X-Circleci-Request-Id:
+      - e736bf37-6e4a-42e8-bf29-0fe776b20a31
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/unfollow"
+      Content-Length:
+      - '18'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"followed":false}'
+    http_version: 
+  recorded_at: Sun, 19 Feb 2017 00:02:07 GMT
+recorded_with: VCR 3.0.3

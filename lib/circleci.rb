@@ -4,6 +4,7 @@ require 'net/http'
 require 'uri'
 
 files = %w[
+  api_resource
   build
   config
   project
@@ -38,7 +39,7 @@ module CircleCi
     @config ||= Config.new
   end
 
-  def request(path, params = {})
-    Request.new config, path, params
+  def request(conf, path, params = {})
+    Request.new conf, path, params
   end
 end

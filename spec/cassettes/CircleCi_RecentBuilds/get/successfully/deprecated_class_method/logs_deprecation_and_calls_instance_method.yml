@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/recent-builds?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Feb 2017 19:48:56 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=qxs4GlMlAm8rctS2iVLzx84bqc1VBRsLB8uI6dKtq%2B7aqdgcd05CJ9VfEo5h%2BiWQDL6zW7EzxdbTz6AelmdueQBl5IVSmNke34b3rB%2BcTPMXP75dXnAD6gjyB0gs%2FzuKDjrVTnYnWswuzD7gL0BD2e0dscYpst7Ovby5ceLBQ4WTwgozWb8oEKIz1r%2BuFJx21BxQgQeaDnkNWQaK1Pq8UepSTK80REO%2FgybuUk7gFEo%3D--CXkieqCL6r8XspFVhWc9LQe1LS3yVNrJTv92k08GOKM%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:43:28 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-f7f1f70f
+      X-Circleci-Request-Id:
+      - 68e6007c-eb33-4a65-b4e0-0cdcf7b6f0a7
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/recent-builds"
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"You must log in first."}'
+    http_version: 
+  recorded_at: Sat, 18 Feb 2017 19:46:24 GMT
+recorded_with: VCR 3.0.3

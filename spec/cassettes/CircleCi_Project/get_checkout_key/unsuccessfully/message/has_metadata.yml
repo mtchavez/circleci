@@ -51,4 +51,62 @@ http_interactions:
       string: '{"message":"checkout key not found"}'
     http_version: 
   recorded_at: Fri, 29 Jul 2016 00:29:48 GMT
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/follow?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Feb 2017 23:22:30 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=RyY5o8CJMXRDQSmHG1kzJjjDNGsM0OJ%2Fcda%2BJiJaeFGohoAoj7nJ%2FFOFZmTgsGWvpBKIpwQv0TM6BS6cgQBH0oni%2FUH7uPSbnZYwY3ZVPNI%2FwVC3ZkQTNtsIsmJffBFi9MOCT5AT6r0TPJK6D2z0rOhnClcUolfT%2FaXTqTA99fyRGZuQ7IGXVI1yh%2FyAMJMBX2YdcZuiKDZgbeX%2FLdSL8wDNpEsIrPWb60TOI8zktuM%3D--%2BQQqXIPQGXt8M4ogzqupyy8ZV%2FxH77RHz3J7E6gFr%2BQ%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:42:28 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-14bad887
+      X-Circleci-Request-Id:
+      - b9dbba08-c2f1-47cf-86a4-d98cf411b485
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/follow"
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"first_build":null,"followed":true}'
+    http_version: 
+  recorded_at: Sat, 18 Feb 2017 23:24:59 GMT
 recorded_with: VCR 3.0.3

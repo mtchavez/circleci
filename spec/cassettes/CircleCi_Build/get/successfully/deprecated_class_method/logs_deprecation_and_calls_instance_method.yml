@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/140?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Feb 2017 19:35:01 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=cXq59sQZMOUeNr5Pq9eVTxjADMLO1B3VS7Gd1%2B%2F46a8YoLX40pB0lN0RXFo7tyvG1rCXTLrC%2B%2BftgPJhhkVzACV4gp2wZSUjSml50VuuEGVFwG%2FLvFt4IVqJbvGaUrAQ6ab7fDkz8axDcdZHTuKTpInb8IbHNs%2BAB%2BROVIUrkYHrt7sgoxwffupVXttux2meA87K%2FIAuuq8ZeKwVZpVG7HpDuW0zFU8Bu91L409lXVo%3D--VF7NPveSDmIAuIEgbW6uOsctvDlnxfBhNZjHbTBeR%2Bc%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:48:38 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-d5cca9db
+      X-Circleci-Request-Id:
+      - 2e8c447e-e19f-456f-a7b3-26260a37a293
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '3018'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"compare":"https://github.com/mtchavez/circleci/commit/d9a5a207e102","previous_successful_build":{"build_num":139,"status":"success","build_time_millis":83094},"build_parameters":null,"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-07-25T10:03:49-07:00","steps":[{"name":"Starting
+        the build","actions":[{"truncated":false,"index":0,"parallel":false,"failed":null,"infrastructure_fail":null,"name":"Starting
+        the build","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:04:37.043Z","type":"infrastructure","truncation_len":null,"output_url":"https://circle-production-action-output.s3.amazonaws.com/80e57358127a0e2208646975-mtchavez-circleci-0-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20170218T193501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=431999&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20170218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=6cfe1936d9f47d9d8f86997590a7b7fa885a04cb2b7d3db8db7d7d08bb8de201","start_time":"2016-07-25T17:04:00.267Z","exit_code":null,"canceled":null,"step":0,"run_time_millis":36776,"has_output":true}]},{"name":"Start
+        container","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Start
+        container","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:08.003Z","source":"config","type":"infrastructure","truncation_len":null,"output_url":"https://circle-production-action-output.s3.amazonaws.com/f0e57358127a0e225a646975-mtchavez-circleci-1-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20170218T193501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=431999&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20170218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=db8249579d723c439621c0f1afe9d5dfaba72309de5bce94fef0dc6b9ae9a0dc","start_time":"2016-07-25T17:04:37.077Z","exit_code":0,"canceled":null,"step":1,"run_time_millis":30926,"has_output":true}]},{"name":"Enable
+        SSH","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Enable
+        SSH","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:14.958Z","type":"infrastructure","truncation_len":null,"output_url":"https://circle-production-action-output.s3.amazonaws.com/a1e57358127a0e224c646975-mtchavez-circleci-2-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20170218T193501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=431999&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20170218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=db4bea995da8afbd378cfae451ce808420e7c185422257fcdf7900348b95e484","start_time":"2016-07-25T17:05:08.038Z","exit_code":null,"canceled":null,"step":2,"run_time_millis":6920,"has_output":true}]},{"name":"Restore
+        source cache","actions":[{"truncated":false,"index":0,"parallel":false,"failed":null,"infrastructure_fail":null,"name":"Restore
+        source cache","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:15.214Z","source":"cache","type":"checkout","truncation_len":null,"start_time":"2016-07-25T17:05:14.984Z","exit_code":null,"canceled":null,"step":3,"run_time_millis":230,"has_output":false}]},{"name":"Checkout
+        using deploy key: 81:49:b8:ae:b5:94:db:7a:5b:8a:91:c6:2e:df:f8:b6","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Checkout
+        using deploy key: 81:49:b8:ae:b5:94:db:7a:5b:8a:91:c6:2e:df:f8:b6","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:29.951Z","source":"config","type":"checkout","truncation_len":null,"output_url":"https://circle-production-action-output.s3.amazonaws.com/f1e57358127a0e22bc646975-mtchavez-circleci-4-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20170218T193501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=431999&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20170218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ba7f9cf41f48758af3cc16b57eeeba816d3e4f2d669763b62bbbeb4aff974334","start_time":"2016-07-25T17:05:15.238Z","exit_code":0,"canceled":null,"step":4,"run_time_millis":14713,"has_output":true}]},{"name":"Configure
+        the build","actions":[{"truncated":false,"index":0,"parallel":false,"failed":null,"infrastructure_fail":null,"name":"Configure
+        the build","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:49.908Z","source":"cache","type":"machine","truncation_len":null,"start_time":"2016-07-25T17:05:29.989Z","exit_code":null,"canceled":null,"step":5,"run_time_millis":19919,"has_output":false}]},{"name":"Exporting
+        env vars from project settings","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Exporting
+        env vars from project settings","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:55.178Z","source":"db","type":"machine","truncation_len":null,"output_url":"https://circle-production-action-output.s3.amazonaws.com/63e57358127a0e22de646975-mtchavez-circleci-6-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20170218T193501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=431999&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20170218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=1b13584dc030e6f6bead06f569a0f047316e8e37d796b6cf84db00c7a4a053e6","start_time":"2016-07-25T17:05:49.955Z","exit_code":0,"canceled":null,"step":6,"run_time_millis":5223,"has_output":true}]},{"name":"set
+        ruby version to 2.2.3","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"set
+        ruby version to 2.2.3","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:06:01.992Z","source":"inference","type":"machine","truncation_len":null,"output_url":"https://circle-production-action-output.s3.amazonaws.com/83e57358127a0e223f646975-mtchavez-circleci-7-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20170218T193501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=431999&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20170218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=bf0e92c2c6b8b6ab1ad6ff889dbe08c426313f213ec98495c1cf45118ececa1e","start_time":"2016-07-25T17:05:55.253Z","exit_code":0,"canceled":null,"step":7,"run_time_millis":6739,"has_output":true}]},{"name":"Restore
+        cache","actions":[{"truncated":false,"index":0,"parallel":false,"failed":null,"infrastructure_fail":null,"name":"Restore
+        cache","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:06:02.776Z","source":"cache","type":"machine","truncation_len":null,"start_time":"2016-07-25T17:06:02.040Z","exit_code":null,"canceled":null,"step":8,"run_time_millis":736,"has_output":false}]},{"name":"Exporting
+        RAILS_ENV, RACK_ENV","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Exporting
+        RAILS_ENV, RACK_ENV","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:06:08.526Z","source":"inference","type":"dependencies","truncation_len":null,"output_url":"https://circle-production-action-output.s3.amazonaws.com/44e57358127a0e22af646975-mtchavez-circleci-9-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20170218T193501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=431999&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20170218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=1df056bf69f3251722a05d71454cc71fed3f93e251eddb0f66d490b68db4ce5f","start_time":"2016-07-25T17:06:02.789Z","exit_code":0,"canceled":null,"step":9,"run_time_millis":5737,"has_output":true}]},{"name":"bundle
+        install","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"bundle
+        install","bash_command":"bundle check --path=vendor/bundle || bundle install
+        --path=vendor/bundle --jobs=4 --retry=3 ","status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:06:28.254Z","source":"inference","type":"dependencies","truncation_len":null,"output_url":"https://circle-production-action-output.s3.amazonaws.com/64e57358127a0e2200746975-mtchavez-circleci-10-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20170218T193501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=431999&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20170218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=3532bdd67dc1f460363717bbe313197fb4f3881edf886e02aad9f70a1f03a5aa","start_time":"2016-07-25T17:06:08.573Z","exit_code":0,"canceled":null,"step":10,"run_time_millis":19681,"has_output":true}]},{"name":"Save
+        cache","actions":[{"truncated":false,"index":0,"parallel":false,"failed":null,"infrastructure_fail":null,"name":"Save
+        cache","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:06:46.323Z","source":"cache","type":"database","truncation_len":null,"output_url":"https://circle-production-action-output.s3.amazonaws.com/d4e57358127a0e2241746975-mtchavez-circleci-11-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20170218T193501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=431999&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20170218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=6b96522cf08c3bd7cafd33468b66ccf59adc750e7ab9db314600127d8ba7f2c9","start_time":"2016-07-25T17:06:28.275Z","exit_code":null,"canceled":null,"step":11,"run_time_millis":18048,"has_output":true}]},{"name":"bundle
+        exec rake rubocop && bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter
+        -o $CIRCLE_TEST_REPORTS/rspec/junit.xml","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"bundle
+        exec rake rubocop && bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter
+        -o $CIRCLE_TEST_REPORTS/rspec/junit.xml","bash_command":"bundle exec rake
+        rubocop && bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter
+        -o $CIRCLE_TEST_REPORTS/rspec/junit.xml","status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:06:53.152Z","source":"db","type":"test","truncation_len":null,"output_url":"https://circle-production-action-output.s3.amazonaws.com/35e57358127a0e2262746975-mtchavez-circleci-12-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20170218T193501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=431999&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20170218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=27a8d6f2af30d7ad7238400f574fe7974b0da8185c80d0b4ef57f62b8b461548","start_time":"2016-07-25T17:06:46.358Z","exit_code":0,"canceled":null,"step":12,"run_time_millis":6794,"has_output":true}]},{"name":"Collect
+        test metadata","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Collect
+        test metadata","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:07:10.747Z","type":"teardown","truncation_len":null,"output_url":"https://circle-production-action-output.s3.amazonaws.com/65e57358127a0e22d2746975-mtchavez-circleci-13-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20170218T193501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=431999&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20170218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=05fe49c52781dfbcd3301f8fc65d3f883ff5e799368667477e8ddf02ff8e1fa3","start_time":"2016-07-25T17:06:53.187Z","exit_code":null,"canceled":null,"step":13,"run_time_millis":17560,"has_output":true}]},{"name":"Collect
+        artifacts","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Collect
+        artifacts","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:07:24.883Z","type":"teardown","truncation_len":null,"output_url":"https://circle-production-action-output.s3.amazonaws.com/66e57358127a0e22e3746975-mtchavez-circleci-14-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20170218T193501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=431999&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20170218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=571a149210dca1b91a0618a9a4f232a7020983c658acb4a548c69cc609e6362b","start_time":"2016-07-25T17:07:10.779Z","exit_code":null,"canceled":null,"step":14,"run_time_millis":14104,"has_output":true}]},{"name":"Disable
+        SSH","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Disable
+        SSH","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:07:24.902Z","type":"teardown","truncation_len":null,"start_time":"2016-07-25T17:07:24.898Z","exit_code":null,"canceled":null,"step":17,"run_time_millis":4,"has_output":false}]}],"body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","usage_queued_at":"2016-07-25T17:03:26.930Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/140","parallel":1,"failed":null,"branch":"typo","username":"mtchavez","author_date":"2016-07-25T10:03:49-07:00","why":"github","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars.githubusercontent.com/u/44689?v=3","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"d9a5a207e10209eecef8ed02289824a8630ed67d","owners":["mtchavez"],"vcs_tag":null,"pull_requests":[{"head_sha":"d9a5a207e10209eecef8ed02289824a8630ed67d","url":"https://github.com/mtchavez/circleci/pull/71"}],"build_num":140,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":null,"status":"success","committer_name":"Chavez","retries":[150,156,149,147,151,155,154,153,148,152,162,157,160,166,164,158,165,169,163,168,159,161,171,175,176,174,170,167,172,173,178,177,183,184,185,186,190,189,194,193,226,225,317],"subject":"Project#envvar
+        method naming fix","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2016-07-25T17:07:31.761Z","ssh_disabled":false,"build_time_millis":223674,"circle_yml":{"string":"machine:\n  ruby:\n    version:
+        2.2.3\n"},"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2016-07-25T17:03:48.087Z","canceler":null,"all_commit_details":[{"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","branch":"typo","author_date":"2016-07-25T10:03:49-07:00","committer_email":"matthew@el-chavez.me","commit":"d9a5a207e10209eecef8ed02289824a8630ed67d","committer_login":"mtchavez","committer_name":"Chavez","subject":"Project#envvar
+        method naming fix","commit_url":"https://github.com/mtchavez/circleci/commit/d9a5a207e10209eecef8ed02289824a8630ed67d","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":"success","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":[{"public_ip_addr":"54.191.221.156","port":64561,"username":"ubuntu","image_id":"s3://lxc-images-us-west-2/circletar-1741-cc586-20160424T232626Z","ssh_enabled":null}],"queued_at":"2016-07-25T17:03:48.067Z","canceled":false,"author_email":"matthew@el-chavez.me"}'
+    http_version: 
+  recorded_at: Sat, 18 Feb 2017 19:31:20 GMT
+recorded_with: VCR 3.0.3

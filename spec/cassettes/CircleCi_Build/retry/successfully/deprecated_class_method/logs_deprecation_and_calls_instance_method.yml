@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/140/retry?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Feb 2017 19:31:36 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=MTS1jyWQnInGNUg3Ytsymot9qr7596YvT3k%2BAnJfEy4P1YuUqRRyodQocieWom3zv4NWknhHBI1VoNYspspqdvRMCVrX0e1UMXKabDMV5DrULbWl2vxvJWB4jwu5EUXYN22%2Fox1VSW6eelbZIcvFMfsl4oMeIJMA6w%2BSsSeOFwgZ1p6Xl3AojXr7s1%2FImJcvHKFNIi7wCVdz4EBfgPgvZi3bGGLeo9Kiw9DM%2B20Ohv0%3D--WxSiE7qVYXYBNDlzGlV7oEJLnmZoDxMHD95lYdgguio%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:49:27 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-99bc8861
+      X-Circleci-Request-Id:
+      - 9d0493c2-4d45-49ac-9614-b549918f641c
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/retry"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '814'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"compare":"https://github.com/mtchavez/circleci/commit/d9a5a207e102","previous_successful_build":{"build_num":227,"status":"success","build_time_millis":58369},"build_parameters":null,"oss":true,"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","usage_queued_at":"2017-02-18T19:31:36.836Z","fail_reason":null,"retry_of":140,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/317","parallel":1,"failed":null,"branch":"typo","username":"mtchavez","author_date":"2016-07-25T10:03:49-07:00","why":"retry","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars.githubusercontent.com/u/44689?v=3","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"d9a5a207e10209eecef8ed02289824a8630ed67d","vcs_tag":null,"build_num":317,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":140,"status":"success","build_time_millis":223674},"status":"scheduled","committer_name":"Chavez","retries":null,"subject":"Project#envvar
+        method naming fix","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"scheduled","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","branch":"typo","author_date":"2016-07-25T10:03:49-07:00","committer_email":"matthew@el-chavez.me","commit":"d9a5a207e10209eecef8ed02289824a8630ed67d","committer_login":"mtchavez","committer_name":"Chavez","subject":"Project#envvar
+        method naming fix","commit_url":"https://github.com/mtchavez/circleci/commit/d9a5a207e10209eecef8ed02289824a8630ed67d","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"}'
+    http_version: 
+  recorded_at: Sat, 18 Feb 2017 19:27:07 GMT
+recorded_with: VCR 3.0.3

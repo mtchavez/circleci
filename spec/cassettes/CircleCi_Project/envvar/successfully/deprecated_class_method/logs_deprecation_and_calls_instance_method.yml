@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/envvar?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Feb 2017 23:09:01 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=W1dSsCW6TIqRvoWV82L6wJLgMrqWsFjckL2Q%2BdUNsJ3DJsPovxQp%2BFu1Ofb69QR9SbOtGvmrPlgLdjh1mm32YYWHtoZaptD87AjOXPtD2P%2FC7Bezh5WJ%2BDS0vXfP%2BHPZ6PLrKH%2BVVphiMekyl%2BkFKiR1jcp%2BnimFx0160WXc%2Bj801eaWCDg2TggCXxxt07FGI0Ih1UtCBLO45mNcMtWicViWwQ2CxoEEpPnykT5Y0%2Fk%3D--ETnViwkLlpf2AwZhQI7ocIANI01CPMulxt24Fji2sDM%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:48:36 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-ee968377
+      X-Circleci-Request-Id:
+      - 1c893c6d-9c1a-4062-a625-8de6d5e8a1cd
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/envvar"
+      Content-Length:
+      - '90'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"name":"COVERALLS_REPO_TOKEN","value":"xxxxskJS"},{"name":"TESTENV","value":"xxxxalue"}]'
+    http_version: 
+  recorded_at: Sat, 18 Feb 2017 23:05:25 GMT
+recorded_with: VCR 3.0.3
