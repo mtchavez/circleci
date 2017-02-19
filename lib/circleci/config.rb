@@ -16,6 +16,7 @@ module CircleCi
     ##
     #
     # @private
+    # rubocop:disable Metrics/ParameterLists
     def initialize(host: DEFAULT_HOST, port: DEFAULT_PORT, proxy: nil, version: DEFAULT_VERSION, token: nil, request_overrides: {}, logger: nil)
       @host = host
       @port = port
@@ -25,6 +26,7 @@ module CircleCi
       @request_overrides = request_overrides
       @logger = logger ? logger : Logger.new(STDOUT)
     end
+    # rubocop:enable Metrics/ParameterLists
 
     def uri
       URI.parse("#{@host || DEFAULT_HOST}:#{@port || DEFAULT_PORT}/api/#{@version || DEFAULT_VERSION}")

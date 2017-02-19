@@ -3,6 +3,7 @@ module CircleCi
   ##
   #
   # Class for interacting with Projects
+  # rubocop:disable Metrics/ClassLength
   class Project < ApiResource
     class << self
       ##
@@ -439,4 +440,5 @@ module CircleCi
       CircleCi.request(@conf, "/project/#{username}/#{project}/unfollow").post
     end
   end
+  # rubocop:enable Metrics/ClassLength
 end
