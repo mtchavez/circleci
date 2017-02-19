@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/envvar?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: '{"name":"TESTENV","value":"testvalue"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Feb 2017 23:55:33 GMT
+      Location:
+      - https://circleci.com/api/v1/project/mtchavez/circleci/envvar/TESTENV
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=%2F8lh1B6h4kNk3xQimPklWdaCqefhEAR6%2B0VJGI6Skj3IvZ8393SsOUmIPKWlpFny%2FV%2FvanwnCKe5cU5MKyivA7O36LwKrlcC6ogjfN%2BHdS%2FPhw%2BidV%2FP8qmwfuFdieliXVbdhY9xhDcQD42AhU2dsV1i58zrfOLR62wt4T7jW6gaLQMTAuO6lEI2Cv7N8b9Yw8icezcI%2BsyRfYyEYTa2Cof1SpvgA%2FEusOkwrbfk7hQ%3D--LU9aB9HBqvLPsLJje5X%2B43IVtmgXyLfTQQ7NVTE2KAo%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:40:41 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-ebb4d678
+      X-Circleci-Request-Id:
+      - 330e7b87-9bbc-414e-aa54-b021e0e39b9b
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/envvar"
+      Content-Length:
+      - '37'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"name":"TESTENV","value":"xxxxalue"}'
+    http_version: 
+  recorded_at: Sat, 18 Feb 2017 23:55:50 GMT
+recorded_with: VCR 3.0.3

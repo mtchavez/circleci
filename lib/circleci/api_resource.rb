@@ -12,7 +12,15 @@ module CircleCi
     def initialize(username = nil, project = nil, conf = nil)
       @username = username
       @project = project
-      @conf = conf ? conf : CircleCi.config
+      @conf = conf ? conf : default_config
+    end
+
+    def self.default_config
+      CircleCi.config
+    end
+
+    def default_config
+      self.class.default_config
     end
   end
 end

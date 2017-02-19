@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/projects?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Feb 2017 20:06:59 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=RVzl22TDoPg4ShSm6NywRJXHW6C7AYFtQczLm5moWv7%2B0wMhlP6Gzfq%2Be2MI61ydhpiX%2FGz1YZY95ASdUcmxBz2N2a1CYvS4pjgX0FDCPNoBJVeVZzo46TNyWKPAD4IxURmcgsdytOgdMqb4%2BqbpgHGKfkTduBd2Nu8zwalts71Kb7WDVFQ%2Fzoo0SXSB%2BT4RV14h%2BcqVlsURK2va4HHKGZpImJdQ8oF0F6HSf%2BjHidI%3D--p4eg6wicqDr1SLE9P9AqpqTeu7nU4Ey%2BCqKgXGH14Cs%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:46:42 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-a5430c36
+      X-Circleci-Request-Id:
+      - 5208fd58-aa33-4ec1-848a-5e414f4a6ca2
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/projects"
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"You must log in first."}'
+    http_version: 
+  recorded_at: Sat, 18 Feb 2017 20:07:46 GMT
+- request:
+    method: post
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Feb 2017 20:10:22 GMT
+      Location:
+      - https://circleci.com/api/v1/project/mtchavez/circleci/318
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=K31MbYYSJXsCW8mCVmbsyBysainHRcoo37zwVPx%2BV5i0XLE2FVFmG5591aDgms1nBs9LfXVdMq4fh%2FPi2EfLgRUdaMB9GerCYoe8EjcnBEtnW%2BNZlrMMPOjF14Ou4ySyYsD%2Bor%2Bo%2B0mfZJDPQ7bp4VBASiVxtolb9pqjtLXj504uOhis1NTpQK%2BQBKrFM45bQqgf1PJxeLoiKiRU31m58vUp69SYctfivp4LTmlgl50%3D--ZAiuKD0CN9OP79WIY5IxHo%2B8rvXkQtj%2FVZtRAYtqRf8%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:42:55 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-999f598e
+      X-Circleci-Request-Id:
+      - 81f25486-bd41-49cd-acee-b90f98441b14
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/"
+      Content-Length:
+      - '1193'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"compare":null,"previous_successful_build":{"build_num":316,"status":"success","build_time_millis":54304},"build_parameters":{},"oss":true,"committer_date":null,"body":null,"usage_queued_at":"2017-02-18T20:10:22.353Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/318","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":null,"why":"api","user":{"is_user":false,"login":"none"},"vcs_revision":"17689466091d0399bf86751d5a560179f0758a8b","vcs_tag":null,"build_num":318,"infrastructure_fail":false,"committer_email":null,"previous":{"build_num":316,"status":"success","build_time_millis":54304},"status":"not_running","committer_name":null,"retries":null,"subject":null,"vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"not_running","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":null,"node":null,"canceled":false,"author_email":null}'
+    http_version: 
+  recorded_at: Sat, 18 Feb 2017 20:08:22 GMT
+recorded_with: VCR 3.0.3

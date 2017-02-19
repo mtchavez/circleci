@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/29:15:12:e8:f7:f4:17:7a:8f:cc:db:de:43:53:f4:73?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Feb 2017 22:46:12 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=pw0Bo7QzzWOI4WYxdTh0eLc4zQOvFErWCt9LCz65LpR1p3ot3flM7V9Btq0YYZ1GKxetynwUKZcgJQa%2Bgn8Uwvk5Wl4IJtKApNtEMp4vgn3DywHG4Qtj5GZwP6FHYXDgr4Lgo5Q2%2BxCf6eUNdx2dC%2B%2FxBw2IoYqn%2FGz2SvM0RjyYjjR0x9t9M9w9DCFeW9ewfZBnS4Zqy42p1iOpygJz66ZC%2F5TJmVuJaxYULUHxrGU%3D--cMWa2CFJhsouHDFHzem6d6llL8kW2IzFc54u5xEUGs0%3D;Path=/;HttpOnly;Expires=Sun,
+        18 Feb 2018 08:44:23 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-56b4b2cf
+      X-Circleci-Request-Id:
+      - 083cab30-a487-4ce1-8a45-c60f7f978838
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/checkout-key/:fingerprint"
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"checkout key not found"}'
+    http_version: 
+  recorded_at: Sat, 18 Feb 2017 22:42:44 GMT
+recorded_with: VCR 3.0.3
