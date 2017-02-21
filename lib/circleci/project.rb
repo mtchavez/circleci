@@ -5,6 +5,9 @@ module CircleCi
   # Class for interacting with Projects
   # rubocop:disable Metrics/ClassLength
   class Project < ApiResource
+    ##
+    #
+    # Deprecated class methods
     class << self
       ##
       #
@@ -13,8 +16,8 @@ module CircleCi
       # @deprecated Please use instance method of [CircleCi::Project] instead
       # @return [CircleCi::Response] - Response object
       def all
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#all instead')
-        new(nil, nil, default_config).all
+        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Projects#get instead')
+        CircleCi::Projects.new.get
       end
 
       ##
@@ -259,15 +262,6 @@ module CircleCi
         default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#unfollow instead')
         new(username, project, default_config).unfollow
       end
-    end
-
-    ##
-    #
-    # Return all projects for your API key
-    #
-    # @return [CircleCi::Response] - Response object
-    def all
-      CircleCi.request(@conf, '/projects').get
     end
 
     ##

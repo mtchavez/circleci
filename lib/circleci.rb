@@ -8,6 +8,7 @@ files = %w[
   build
   config
   project
+  projects
   recent_builds
   request
   response
