@@ -23,6 +23,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'gemcutter',     '~> 0.7.1', '>= 0.7.1'
   s.add_development_dependency 'multi_json',    '~> 1.12.1', '>= 1.12.1'
   s.add_development_dependency 'pry',           '~> 0.10.4', '>=  0.10.4'
+  s.add_development_dependency 'pry-byebug',    '~> 3.4.2', '>= 3.4.2'
+  s.add_development_dependency 'pry-doc',       '~> 0.10.0', '>= 0.10.0'
   s.add_development_dependency 'rake',          '~> 11.2.2', '>= 11.2.2'
   s.add_development_dependency 'redcarpet',     '~> 3.3.4', '>= 3.3.4'
   s.add_development_dependency 'rspec',         '~> 3.5.0', '>= 3.5.0'

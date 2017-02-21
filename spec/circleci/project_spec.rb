@@ -12,34 +12,15 @@ RSpec.describe CircleCi::Project, :vcr do
     let(:project)  { nil }
 
     context 'successfully' do
-      let(:res) { new_project.all }
-
-      it 'is verified by response' do
-        expect(res).to be_instance_of(CircleCi::Response)
-        expect(res).to be_success
-      end
-
       describe 'deprecated class method' do
         let(:res) { described_class.all }
 
         it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#all instead')
-          expect(described_class).to receive(:new).with(nil, nil, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:all).and_call_original
+          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Projects#get instead')
+          projects = CircleCi::Projects.new
+          expect(CircleCi::Projects).to receive(:new).and_return(projects)
+          expect(projects).to receive(:get).and_call_original
           expect(res).to be_instance_of(CircleCi::Response)
-        end
-      end
-
-      describe 'projects' do
-        subject { res.body }
-
-        it 'has metadata' do
-          expect(subject).to be_instance_of(Array)
-          expect(subject.size).to eql 1
-          subject.each do |project|
-            expect(project).to have_key('default_branch')
-            expect(project).to have_key('vcs_url')
-          end
         end
       end
     end
