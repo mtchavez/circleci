@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    circleci (1.0.3)
+    circleci (1.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -101,7 +101,7 @@ DEPENDENCIES
   multi_json (~> 1.12.1, >= 1.12.1)
   pry (~> 0.10.4, >= 0.10.4)
   pry-byebug (~> 3.4.2, >= 3.4.2)
-  pry-doc
+  pry-doc (~> 0.10.0, >= 0.10.0)
   rake (~> 11.2.2, >= 11.2.2)
   redcarpet (~> 3.3.4, >= 3.3.4)
   rspec (~> 3.5.0, >= 3.5.0)
