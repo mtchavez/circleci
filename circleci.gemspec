@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 Gem::Specification.new do |s|
   s.name                  = 'circleci'
-  s.version               = '1.0.3'
-  s.date                  = '2016-09-30'
+  s.version               = '1.1.0'
+  s.date                  = '2017-03-20'
   s.summary               = 'Circle CI REST API gem'
   s.description           = 'Ruby gem for Circle CI REST API'
   s.licenses              = %w[MIT]
