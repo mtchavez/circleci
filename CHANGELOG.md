@@ -1,3 +1,7 @@
+# Version 1.1.0 - (2017-03-20)
+
+* Deprecate all the class methods in favor of classes for object approach
+
 # Version 1.0.3 - (2016-09-30)
 
 * Fix requiring of `forwardable`
