@@ -1,3 +1,18 @@
-machine:
-  ruby:
-    version: 2.2.3
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ruby:2.4
+    steps:
+      - checkout
+      - run: bundle install
+      - run: bundle exec rake
+    working_directory: ~/app
+  build_ruby2_3:
+    docker:
+      - image: ruby:2.3
+    steps:
+      - checkout
+      - run: bundle install
+      - run: bundle exec rake
+    working_directory: ~/app
