@@ -279,6 +279,20 @@ res.body['status'] # Not running
 res.body['build_url'] # Get url of build
 ```
 
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+
+# Get recent failed builds with a filter parameter
+failed_builds = project.build_branch 'branch'
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.build_branch 'branch'
+```
+
+
 Example response
 
 ```javascript
@@ -374,6 +388,17 @@ res = CircleCi::Project.build_ssh_key 'username', 'repo', 'RSA private key', 'ho
 res.success?
 ```
 
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.build_ssh_key 'username', 'repo', 'RSA private key', 'hostname'
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.build_ssh_key 'username', 'repo', 'RSA private key', 'hostname'
+```
+
 Example response
 
 Empty response body with a `200 OK` successful response code
@@ -390,6 +415,17 @@ Clears the cache for a project
 ```ruby
 res = CircleCi::Project.clear_cache
 res.body['status']
+```
+
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.clear_cache
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.clear_cache
 ```
 
 Example response
@@ -411,6 +447,17 @@ res.success?
 res.body
 ```
 
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.delete_checkout_key 'fingerprint'
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.delete_checkout_key 'fingerprint'
+```
+
 Example response
 
 ```javascript
@@ -427,6 +474,17 @@ the GitHub. Requires admin privilege to the repository.
 ```ruby
 res = CircleCi::Project.enable 'username', 'reponame'
 res.success?
+```
+
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.enable
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.enable
 ```
 
 Example response
@@ -517,6 +575,17 @@ res = CircleCi::Project.envvar 'username', 'repo'
 res.success?
 ```
 
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.envvar
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.envvar
+```
+
 Example response
 
 ```javascript
@@ -532,6 +601,17 @@ Follow a project
 ```ruby
 res = CircleCi::Build.follow 'username', 'repo'
 res.success?
+```
+
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.follow
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.follow
 ```
 
 Example response
@@ -552,6 +632,17 @@ Get a checkout key for a project by supplying the fingerprint of the key.
 res = CircleCi::Project.get_checkout_key 'username', 'reponame', 'fingerprint'
 res.success?
 res.body
+```
+
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.get_checkout_key 'fingerprint'
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.get_checkout_key 'fingerprint
 ```
 
 Example response
@@ -575,6 +666,17 @@ List checkout keys
 ```ruby
 res = CircleCi::Project.checkout_keys 'username', 'repo'
 res.success?
+```
+
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.checkout_keys
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.checkout_keys
 ```
 
 Example response
@@ -601,6 +703,17 @@ Takes a type of key to create which an be `deploy-key` or `github-user-key`.
 res = CircleCi::Project.new_checkout_key 'username', 'reponame', 'deploy-key'
 res.success?
 res.body
+```
+
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.new_checkout_key 'deploy-key'
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.new_checkout_key 'deploy-key
 ```
 
 Example response
@@ -632,6 +745,17 @@ res = CircleCi::Project.recent_builds 'username', 'reponame'
 
 res.success?
 res.body
+```
+
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.recent_builds
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.recent_builds
 ```
 
 Example response
@@ -675,6 +799,17 @@ res.success?
 res.body
 ```
 
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.recent_builds_branch 'branch'
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.recent_builds_branch 'branch'
+```
+
 Example response
 
 ```javascript
@@ -713,6 +848,17 @@ Get project settings
 ```ruby
 res = CircleCi::Project.settings 'username', 'repo'
 res.success?
+```
+
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.settings
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.settings
 ```
 
 Example response
@@ -794,6 +940,19 @@ res = CircleCi::Project.set_envvar 'username', 'repo', environment
 res.success?
 ```
 
+Using `CircleCi::Project` instance and overriding config
+```ruby
+environment = { name: 'foo', value: 'bar' }
+
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.set_envvar environment
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.set_envvar environment
+```
+
 Example response
 
 ```javascript
@@ -812,6 +971,17 @@ res = CircleCi::Project.ssh_key 'username', 'repo', 'RSA private key', 'hostname
 res.success?
 ```
 
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.ssh_key 'RSA private key', 'hostname'
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.ssh_key 'RSA private key', 'hostname'
+```
+
 Example response
 
 Empty response body with a `200 OK` successful response code
@@ -828,6 +998,17 @@ Unfollow a project
 ```ruby
 res = CircleCi::Build.unfollow 'username', 'repo'
 res.success?
+```
+
+Using `CircleCi::Project` instance and overriding config
+```ruby
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.unfollow
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project.unfollow
 ```
 
 Example response
