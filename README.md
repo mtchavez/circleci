@@ -24,6 +24,8 @@ gem 'circleci'
 
 ### Configuring
 
+#### Global Config
+
 Configure using an API token from Circle
 
 ```ruby
@@ -69,6 +71,29 @@ CircleCi.configure do |config|
   config.proxy_pass = 'supersecret'
   config.proxy = true
 end
+```
+
+#### Config Object
+
+If you need to use custom config per request or for specific non-global cases
+you can instantiate a `CircleCi::Config` object with all the same granularity
+as a global config.
+
+```ruby
+# Using a new token
+config = CircleCi::Config.new token: ENV['SECRET_CIRCLECI_TOKEN']
+
+# Setting a new host
+config_options = { host: ENV['CIRCLECI_HOST'], port: ENV['CIRCLECI_PORT'] }
+config = CircleCi::Config.new
+
+# Proxy setup is a little more invovled right now
+# and requires setting proxy info on instantiated config
+config = CircleCi::Config.new token: ENV['CIRCLECI_TOKEN'], proxy: true
+config.proxy_host = ENV['CIRCLECI_PROXY_HOST']
+config.proxy_port = ENV['CIRCLECI_PROXY_PORT']
+config.proxy_user = ENV['CIRCLECI_PROXY_USER']
+config.proxy_pass = ENV['CIRCLECI_PROXY_PASS']
 ```
 
 ## API Endpoints
