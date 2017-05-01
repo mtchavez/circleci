@@ -6,10 +6,10 @@ module CircleCi
   class User < ApiResource
     ##
     #
-    # Initialize a new RecentBuilds API interaction
+    # Initialize a new User API interaction
     #
     # @param conf [CircleCi::Config] - Optional config to use for request
-    # @return     [CircleCi::RecentBuilds]
+    # @return     [CircleCi::User]
     def initialize(conf = nil)
       super(nil, nil, conf)
     end
