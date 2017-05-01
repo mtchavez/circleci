@@ -1033,6 +1033,17 @@ res.success?
 res.body
 ```
 
+Using `CircleCi::Build` instance and overriding config
+```ruby
+# Use global config with token for user
+build = CircleCi::Build.new 'username', 'reponame', 'build'
+res = build.artifacts
+
+# Use a different config with another user token
+build = CircleCi::Build.new 'username', 'reponame', 'build', other_build_config
+build.artifacts
+```
+
 ```javascript
 [
   {
@@ -1062,6 +1073,17 @@ res.success?
 res.body['status'] # 'canceled'
 res.body['outcome'] # 'canceled'
 res.body['canceled'] # true
+```
+
+Using `CircleCi::Build` instance and overriding config
+```ruby
+# Use global config with token for user
+build = CircleCi::Build.new 'username', 'reponame', 'build'
+res = build.cancel
+
+# Use a different config with another user token
+build = CircleCi::Build.new 'username', 'reponame', 'build', other_build_config
+build.cancel
 ```
 
 Example response
@@ -1107,6 +1129,17 @@ Full details for a single build, including the output for all actions. The respo
 res = CircleCi::Build.get 'username', 'repo', 'build #'
 res.success?
 res.body
+```
+
+Using `CircleCi::Build` instance and overriding config
+```ruby
+# Use global config with token for user
+build = CircleCi::Build.new 'username', 'reponame', 'build'
+res = build.get
+
+# Use a different config with another user token
+build = CircleCi::Build.new 'username', 'reponame', 'build', other_build_config
+build.get
 ```
 
 Example response
@@ -1199,6 +1232,17 @@ res.body['status'] # 'queued'
 res.body
 ```
 
+Using `CircleCi::Build` instance and overriding config
+```ruby
+# Use global config with token for user
+build = CircleCi::Build.new 'username', 'reponame', 'build'
+res = build.retry
+
+# Use a different config with another user token
+build = CircleCi::Build.new 'username', 'reponame', 'build', other_build_config
+build.retry
+```
+
 Example response
 
 ```javascript
@@ -1239,6 +1283,17 @@ the tests ran and some details.
 res = CircleCi::Build.tests 'username', 'repo', 'build #'
 res.success?
 res.body
+```
+
+Using `CircleCi::Build` instance and overriding config
+```ruby
+# Use global config with token for user
+build = CircleCi::Build.new 'username', 'reponame', 'build'
+res = build.tests
+
+# Use a different config with another user token
+build = CircleCi::Build.new 'username', 'reponame', 'build', other_build_config
+build.tests
 ```
 
 ```javascript
