@@ -1337,6 +1337,17 @@ res.success?
 res.body
 ```
 
+Using `CircleCi::RecentBuilds` instance and overriding config
+```ruby
+# Use global config with token for user
+recent = CircleCi::RecentBuilds.new
+res = recent.get
+
+# Use a different config with another user token
+recent = CircleCi::RecentBuilds.new other_builds_config
+recent.get
+```
+
 ```javascript
 [ {
   "vcs_url" : "https://github.com/circleci/mongofinil",
