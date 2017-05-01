@@ -141,6 +141,17 @@ res.success? # True
 res.body
 ```
 
+Using `CircleCi::User` instance and overriding config
+```ruby
+# Use global config with token for user
+user = CircleCi::User.new
+user.heroku_key 'your-api-key'
+
+# Use a different config with another user token
+user = CircleCi::User.new other_user_config
+user.heroku_key 'your-api-key'
+```
+
 Example response
 
 Empty body response with a `200 OK` response code
@@ -158,6 +169,17 @@ Provides information about the signed in user.
 res = CircleCi::User.me
 res.success? # True
 res.body
+```
+
+Using `CircleCi::User` instance and overriding config
+```ruby
+# Use global config with token for user
+user = CircleCi::User.new
+user.me
+
+# Use a different config with another user token
+user = CircleCi::User.new other_user_config
+user.me
 ```
 
 Example response
