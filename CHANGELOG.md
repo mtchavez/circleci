@@ -1,3 +1,7 @@
+# Unreleased
+
+* Document class usage of ApiResources over class methods approach
+
 # Version 1.1.0 - (2017-03-20)
 
 * Deprecate all the class methods in favor of classes for object approach
