@@ -205,6 +205,18 @@ res.success?
 res.body
 ```
 
+Using `CircleCi::Projects` instance and overriding config
+
+```ruby
+# Use global config with token for user
+projects = CircleCi::Projects.new
+projects.get
+
+# Use a different config with another projects token
+projects = CircleCi::Projects.new other_projects_config
+projects.get
+```
+
 Example response
 
 ```javascript
