@@ -4,7 +4,18 @@
 
 # Version 1.1.0 - (2017-03-20)
 
+**Breaking Changes**
+
 * Deprecate all the class methods in favor of classes for object approach
+* `Project#build_branch` build parameters changed how they are
+   passed in. You now need to pass them as the API expects them to be
+   nested under the `build_parameters` key.
+
+   ```ruby
+   # Passing build parameters in the post body
+   build_params = { build_parameters: { 'MY_TOKEN' => '123asd123asd' } }
+   res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', {}, build_params
+   ```
 
 # Version 1.0.3 - (2016-09-30)
 
@@ -20,7 +31,7 @@
 
 # Version 1.0 - (2016-08-31)
 
-*Breaking Changes*
+**Breaking Changes**
 
 * CircleCi::Project#envvars renamed to envvar for consistency with API endpoint
 * Deprecated CircleCi::Project#envvars
