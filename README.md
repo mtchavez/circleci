@@ -22,6 +22,10 @@ gem 'circleci'
 
 ## Usage
 
+### Documentation
+
+Documentation can be found on [rubydoc][docs] or in this README
+
 ### Configuring
 
 #### Global Config
@@ -1255,3 +1259,6 @@ and uses a checked in `.rubocop.yml` for this project.
 Tests are using a live CircleCi API token for this repository. Any tests
 should be using this key, which is in the `.env` file. You should not have
 to do anything outside of writing the tests against this repository.
+
+
+[docs]: http://www.rubydoc.info/gems/circleci
