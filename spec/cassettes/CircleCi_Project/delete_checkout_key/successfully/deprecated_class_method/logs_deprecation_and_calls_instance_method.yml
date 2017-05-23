@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/29:15:12:e8:f7:f4:17:7a:8f:cc:db:de:43:53:f4:73?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/checkout-key/29:15:12:e8:f7:f4:17:7a:8f:cc:db:de:43:53:f4:73?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"

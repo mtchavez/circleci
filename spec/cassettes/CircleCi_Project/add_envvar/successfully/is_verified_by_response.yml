@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/envvar?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/envvar?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: '{"name":"TESTENV","value":"testvalue"}'
@@ -27,7 +27,7 @@ http_interactions:
       Date:
       - Sat, 18 Feb 2017 23:59:04 GMT
       Location:
-      - https://circleci.com/api/v1/project/mtchavez/circleci/envvar/TESTENV
+      - https://circleci.com/api/v1.1/project/mtchavez/circleci/envvar/TESTENV
       Server:
       - nginx
       Set-Cookie:

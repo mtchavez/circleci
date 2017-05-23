@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/asdf-bogus?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/checkout-key/asdf-bogus?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -53,7 +53,7 @@ http_interactions:
   recorded_at: Fri, 29 Jul 2016 00:29:48 GMT
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/follow?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/follow?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"

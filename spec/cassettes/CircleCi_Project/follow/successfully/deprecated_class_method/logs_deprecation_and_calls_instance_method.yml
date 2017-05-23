@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/follow?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/follow?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=%2FATeVvKtNAcsbqre8%2FfNt1F%2Bw03HH66bKiuOGXSYxuieGxRvIL%2Bv1gFD%2BBZTvz1nJf2QJWf5PprtbPYPCNh0rkpxxnCtqGigrepDqDEqxUmutVYWu9GqZZNCIVgFAUa8foP%2Fy9Nw6fvClLWcT8AvHWmrBrf8%2FbKjw%2FpC0HdmMGoyNLO4Ij8P0fdFt6rbkEYLP9Mylc47fqTeYbLGjc7Cwn1ptuGd0YpgcNosayrfygs%3D--vUrjFtWUJ%2BmZUVOQRHUMF9g4DBlJHgs8rMsel1j70yY%3D;Path=/;HttpOnly;Expires=Sun,
+      - ring-session=%2FATeVvKtNAcsbqre8%2FfNt1F%2Bw03HH66bKiuOGXSYxuieGxRvIL%2Bv1.1gFD%2BBZTvz1nJf2QJWf5PprtbPYPCNh0rkpxxnCtqGigrepDqDEqxUmutVYWu9GqZZNCIVgFAUa8foP%2Fy9Nw6fvClLWcT8AvHWmrBrf8%2FbKjw%2FpC0HdmMGoyNLO4Ij8P0fdFt6rbkEYLP9Mylc47fqTeYbLGjc7Cwn1ptuGd0YpgcNosayrfygs%3D--vUrjFtWUJ%2BmZUVOQRHUMF9g4DBlJHgs8rMsel1j70yY%3D;Path=/;HttpOnly;Expires=Sun,
         18 Feb 2018 08:57:37 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
