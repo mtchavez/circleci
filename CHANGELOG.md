@@ -1,6 +1,7 @@
 # Unreleased
 
 * Document class usage of ApiResources over class methods approach
+* Update default API version to `v1.1`
 
 # Version 1.1.0 - (2017-03-20)
 
