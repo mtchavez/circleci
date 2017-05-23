@@ -113,7 +113,7 @@ config.proxy_pass = ENV['CIRCLECI_PROXY_PASS']
   * [Get Checkout Key](#get_checkout_key)
   * [List Checkout Keys](#list_checkout_keys)
   * [New Checkout Key](#new_checkout_key)
-  * [Recent Builds](#project_recent_builds)
+  * [Recent Project Builds](#recent_project_builds)
   * [Recent Builds Branch](#recent_builds_branch)
   * [Settings](#settings)
   * [Set Envvar](#set_envvar)
@@ -126,7 +126,7 @@ config.proxy_pass = ENV['CIRCLECI_PROXY_PASS']
   * [Retry](#retry)
   * [Tests](#tests)
 * [Recent Builds](#recent_builds)
-  * [Get](#recent_builds_get)
+  * [Get Recent Builds](#get_recent_builds)
 
 ### [User](#user)
 
@@ -1321,7 +1321,7 @@ build.tests
 
 ### [Recent Builds](#recent_builds)
 
-#### [get](#recent_builds_get)
+#### [get](#get_recent_builds)
 
 Endpoint: `/recent-builds`
 
