@@ -686,7 +686,7 @@ Example response
 }
 ```
 
-#### [recent_builds](#project_recent_builds)
+#### [recent_project_builds](#recent_project_builds)
 
 Endpoint: `/project/:username/:repository`
 
@@ -1199,9 +1199,9 @@ build.tests
 ]
 ```
 
-### [Recent Builds](#recent_builds)
+### [recent_builds](#recent_builds)
 
-#### [get](#get_recent_builds)
+#### [get_recent_builds](#get_recent_builds)
 
 Endpoint: `/recent-builds`
 
