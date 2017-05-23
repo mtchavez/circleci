@@ -20,7 +20,7 @@ module CircleCi
     #
     # @return [CircleCi::Response] - Response object
     def get
-      CircleCi.request(@conf, '/projects').get
+      CircleCi.request(conf, '/projects').get
     end
   end
 end

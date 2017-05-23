@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/140/cancel?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/140/cancel?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -69,7 +69,7 @@ http_interactions:
   recorded_at: Sat, 18 Feb 2017 19:33:45 GMT
 - request:
     method: post
-    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/145/cancel?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/145/cancel?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"

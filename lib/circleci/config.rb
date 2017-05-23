@@ -33,18 +33,18 @@ module CircleCi
     end
 
     def proxy_userinfo?
-      @proxy_user && @proxy_pass
+      proxy_user && proxy_pass
     end
 
-    def proxy_port
-      @proxy_port ? @proxy_port : 80
+    def proxy_to_port
+      proxy_port ? proxy_port : 80
     end
 
     def proxy_uri
-      return unless @proxy && @proxy_host
-      host_uri = URI.parse(@proxy_host)
-      userinfo = proxy_userinfo? ? "#{@proxy_user}:#{@proxy_pass}@" : ''
-      URI.parse("#{host_uri.scheme}://#{userinfo}#{host_uri.host}:#{proxy_port}#{host_uri.path}")
+      return unless @proxy && proxy_host
+      host_uri = URI.parse(proxy_host)
+      userinfo = proxy_userinfo? ? "#{proxy_user}:#{proxy_pass}@" : ''
+      URI.parse("#{host_uri.scheme}://#{userinfo}#{host_uri.host}:#{proxy_to_port}#{host_uri.path}")
     end
   end
 end

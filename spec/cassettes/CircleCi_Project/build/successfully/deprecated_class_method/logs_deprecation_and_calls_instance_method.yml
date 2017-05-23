@@ -52,7 +52,7 @@ http_interactions:
   recorded_at: Sat, 18 Feb 2017 20:07:46 GMT
 - request:
     method: post
-    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -77,7 +77,7 @@ http_interactions:
       Date:
       - Sat, 18 Feb 2017 20:10:22 GMT
       Location:
-      - https://circleci.com/api/v1.1/project/mtchavez/circleci/318
+      - https://circleci.com/api/v1.1/project/github/mtchavez/circleci/318
       Server:
       - nginx
       Set-Cookie:

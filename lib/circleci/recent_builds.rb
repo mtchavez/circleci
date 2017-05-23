@@ -16,29 +16,12 @@ module CircleCi
 
     ##
     #
-    # Deprecated class methods
-    class << self
-      ##
-      #
-      # Get get recent builds for your account
-      #
-      # @deprecated Please use instance method of [CircleCi::RecentBuilds] instead
-      # @param params [Hash] - Params to send for recent builds (limit, offset)
-      # @return         [CircleCi::Response] - Response object
-      def get(params = {})
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::RecentBuilds#get instead')
-        new(default_config).get(params)
-      end
-    end
-
-    ##
-    #
     # Get get recent builds for your account
     #
     # @param params [Hash] - Params to send for recent builds (limit, offset)
     # @return       [CircleCi::Response] - Response object
     def get(params = {})
-      CircleCi.request(@conf, '/recent-builds', params).get
+      CircleCi.request(conf, '/recent-builds', params).get
     end
   end
 end

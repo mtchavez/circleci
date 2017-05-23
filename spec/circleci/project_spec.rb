@@ -7,25 +7,6 @@ RSpec.describe CircleCi::Project, :vcr do
   let(:branch)   { 'master' }
   let(:new_project) { described_class.new username, project }
 
-  describe 'all' do
-    let(:username) { nil }
-    let(:project)  { nil }
-
-    context 'successfully' do
-      describe 'deprecated class method' do
-        let(:res) { described_class.all }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Projects#get instead')
-          projects = CircleCi::Projects.new
-          expect(CircleCi::Projects).to receive(:new).and_return(projects)
-          expect(projects).to receive(:get).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
-      end
-    end
-  end
-
   describe 'build' do
     context 'successfully' do
       let(:res) { new_project.build }
@@ -33,17 +14,6 @@ RSpec.describe CircleCi::Project, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.build username, project }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#build instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:build).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'build' do
@@ -71,17 +41,6 @@ RSpec.describe CircleCi::Project, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.build_branch username, project, branch }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#build_branch instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:build_branch).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'build' do
@@ -123,17 +82,6 @@ RSpec.describe CircleCi::Project, :vcr do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
       end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.build_ssh_key username, project, build_num, ssh_key, ssh_host }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#build_ssh_key instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:build_ssh_key).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
-      end
     end
   end
 
@@ -144,17 +92,6 @@ RSpec.describe CircleCi::Project, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.clear_cache username, project }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#clear_cache instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:clear_cache).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'message' do
@@ -177,17 +114,6 @@ RSpec.describe CircleCi::Project, :vcr do
         expect(res).to be_success
         expect(res.body).to be_instance_of(Hash)
         expect(res.body['message']).to eql 'ok'
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.delete_checkout_key username, project, test_delete_checkout_key_fingerprint }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#delete_checkout_key instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:delete_checkout_key).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
     end
 
@@ -221,17 +147,6 @@ RSpec.describe CircleCi::Project, :vcr do
         expect(res).to be_success
       end
 
-      describe 'deprecated class method' do
-        let(:res) { described_class.enable username, project }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#enable instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:enable).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
-      end
-
       describe 'project' do
         let(:res) { new_project.list_checkout_keys }
         let(:project_res) { res.body }
@@ -252,17 +167,6 @@ RSpec.describe CircleCi::Project, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.envvar username, project }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#envvar instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:envvar).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'envvars' do
@@ -305,16 +209,6 @@ RSpec.describe CircleCi::Project, :vcr do
         end
       end
     end
-
-    context 'envvars deprecation' do
-      let(:res) { described_class.envvars username, project }
-
-      it 'logs warning' do
-        expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] CircleCi::Project#envvars is deprecated please use CircleCi::Project#envvar')
-        expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#envvar instead')
-        expect(res).to be_instance_of(CircleCi::Response)
-      end
-    end
   end
 
   describe 'follow' do
@@ -324,17 +218,6 @@ RSpec.describe CircleCi::Project, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.follow username, project }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#follow instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:follow).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'message' do
@@ -355,17 +238,6 @@ RSpec.describe CircleCi::Project, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.get_checkout_key username, project, test_checkout_key_fingerprint }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#get_checkout_key instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:get_checkout_key).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'key' do
@@ -409,17 +281,6 @@ RSpec.describe CircleCi::Project, :vcr do
         expect(res).to be_success
       end
 
-      describe 'deprecated class method' do
-        let(:res) { described_class.list_checkout_keys username, project }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#list_checkout_keys instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:list_checkout_keys).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
-      end
-
       describe 'keys' do
         let(:keys) { res.body }
 
@@ -449,17 +310,6 @@ RSpec.describe CircleCi::Project, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.new_checkout_key username, project, 'deploy-key' }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#new_checkout_key instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:new_checkout_key).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'key' do
@@ -503,17 +353,6 @@ RSpec.describe CircleCi::Project, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.recent_builds username, project }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#recent_builds instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:recent_builds).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'projects' do
@@ -580,17 +419,6 @@ RSpec.describe CircleCi::Project, :vcr do
         expect(res).to be_success
       end
 
-      describe 'deprecated class method' do
-        let(:res) { described_class.recent_builds_branch username, project, branch }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#recent_builds_branch instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:recent_builds_branch).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
-      end
-
       describe 'projects' do
         let(:projects) { res.body }
 
@@ -624,17 +452,6 @@ RSpec.describe CircleCi::Project, :vcr do
         expect(res).to be_success
       end
 
-      describe 'deprecated class method' do
-        let(:res) { described_class.settings username, project }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#settings instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:settings).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
-      end
-
       describe 'project' do
         let(:project_res) { res.body }
 
@@ -655,17 +472,6 @@ RSpec.describe CircleCi::Project, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.set_envvar username, project, name: 'TESTENV', value: 'testvalue' }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#add_envvar instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:add_envvar).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'envvar' do
@@ -709,17 +515,6 @@ RSpec.describe CircleCi::Project, :vcr do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
       end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.ssh_key username, project, test_rsa_private_key, 'hostname' }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#ssh_key instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:ssh_key).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
-      end
     end
 
     context 'unsuccessfully' do
@@ -748,17 +543,6 @@ RSpec.describe CircleCi::Project, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.unfollow username, project }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Project#unfollow instead')
-          expect(described_class).to receive(:new).with(username, project, CircleCi.config).and_return(new_project)
-          expect(new_project).to receive(:unfollow).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'message' do
