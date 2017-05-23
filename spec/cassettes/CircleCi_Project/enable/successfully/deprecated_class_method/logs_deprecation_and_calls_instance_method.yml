@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/enable?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/enable?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -52,7 +52,7 @@ http_interactions:
   recorded_at: Sat, 18 Feb 2017 22:47:14 GMT
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/dotfiles/enable?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/dotfiles/enable?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"

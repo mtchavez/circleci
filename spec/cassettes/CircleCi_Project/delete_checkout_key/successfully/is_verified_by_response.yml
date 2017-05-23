@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/46:0f:2a:f3:ed:58:b6:dd:60:27:bb:94:d4:04:84:a6?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/checkout-key/46:0f:2a:f3:ed:58:b6:dd:60:27:bb:94:d4:04:84:a6?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -30,7 +30,7 @@ http_interactions:
       - nginx
       Set-Cookie:
       - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:28:46 +0000;Path=/;Secure
-      - ring-session=hj0r2Y4ByCV4rIBgdH2GoYqlUKCWD7uB7P3%2FAuOlga44eKbYhfadteCIBEq6KpnxkmCvesoP9FxdyhfhGGrbZpwB0NsBGOQ%2FHYS9zGrAS%2FIaEmYrHzs4Q5VxW16P2%2FZEf8PYNINQi0P%2FcROZ2bgqb46O%2Fr0pvtAxPyhvlrMv1U0k6jeMPZu6SPofQdSDfv6E%2FI9JA%2Bs%2F2hM62oCVFD7RfnekEH0C4OXFtvzWgUNEF4k%3D--RBW9GEku43t%2FEF9vTlV7xSaOL2zuhpUibAI69gu9gm8%3D;Path=/;HttpOnly;Expires=Sat,
+      - ring-session=hj0r2Y4ByCV4rIBgdH2GoYqlUKCWD7uB7P3%2FAuOlga44eKbYhfadteCIBEq6KpnxkmCvesoP9FxdyhfhGGrbZpwB0NsBGOQ%2FHYS9zGrAS%2FIaEmYrHzs4Q5VxW16P2%2FZEf8PYNINQi0P%2FcROZ2bgqb46O%2Fr0pvtAxPyhvlrMv1.1U0k6jeMPZu6SPofQdSDfv6E%2FI9JA%2Bs%2F2hM62oCVFD7RfnekEH0C4OXFtvzWgUNEF4k%3D--RBW9GEku43t%2FEF9vTlV7xSaOL2zuhpUibAI69gu9gm8%3D;Path=/;HttpOnly;Expires=Sat,
         29 Jul 2017 00:22:18 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
       - i-98fb4560
@@ -51,7 +51,7 @@ http_interactions:
   recorded_at: Fri, 29 Jul 2016 00:29:46 GMT
 - request:
     method: delete
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/29:15:12:e8:f7:f4:17:7a:8f:cc:db:de:43:53:f4:73?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/checkout-key/29:15:12:e8:f7:f4:17:7a:8f:cc:db:de:43:53:f4:73?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"

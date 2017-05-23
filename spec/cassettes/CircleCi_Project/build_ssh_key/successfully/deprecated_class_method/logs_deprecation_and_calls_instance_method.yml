@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/65/ssh-users?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/65/ssh-users?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: '{"hostname":"hostname","private_key":"RSA Private Key"}'

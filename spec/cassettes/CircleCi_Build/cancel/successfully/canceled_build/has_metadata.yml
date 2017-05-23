@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/145/cancel?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/145/cancel?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -70,7 +70,7 @@ http_interactions:
   recorded_at: Fri, 29 Jul 2016 00:07:47 GMT
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/140/cancel?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/140/cancel?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -97,7 +97,7 @@ http_interactions:
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=EEroT0PaAMGMO%2FGenPLiS7xBHtto3479ubMg1VYjKqGSKCpHxRJJXOShg8xDT2D5e6yOkdjvLZ8a92fzxa27l4tXXp2qKuipVy41OVml9o7s7Ln2jffHjeoQt2p2cK9Ba9wp3EApWg0e5iaV13i9vPiUBCH2ByopqH84xel8oYaRfEUNeEzvvOTVbXlLehLjDgK5ZZ672L092DGSdvu5Oh7jaDRT%2B5ojgQWgfy%2BFXoI%3D--DyU9%2BGH%2BOjkKyRMGKbKzE3sBNlDNmbGZIzzTy%2BTvt9A%3D;Path=/;HttpOnly;Expires=Sun,
+      - ring-session=EEroT0PaAMGMO%2FGenPLiS7xBHtto3479ubMg1VYjKqGSKCpHxRJJXOShg8xDT2D5e6yOkdjvLZ8a92fzxa27l4tXXp2qKuipVy41OVml9o7s7Ln2jffHjeoQt2p2cK9Ba9wp3EApWg0e5iav1.13i9vPiUBCH2ByopqH84xel8oYaRfEUNeEzvvOTVbXlLehLjDgK5ZZ672L092DGSdvu5Oh7jaDRT%2B5ojgQWgfy%2BFXoI%3D--DyU9%2BGH%2BOjkKyRMGKbKzE3sBNlDNmbGZIzzTy%2BTvt9A%3D;Path=/;HttpOnly;Expires=Sun,
         18 Feb 2018 08:48:42 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800

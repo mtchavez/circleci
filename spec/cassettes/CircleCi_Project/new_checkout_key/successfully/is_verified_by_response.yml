@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/checkout-key?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: '{"type":"deploy-key"}'
@@ -27,7 +27,7 @@ http_interactions:
       Date:
       - Fri, 29 Jul 2016 00:30:25 GMT
       Location:
-      - https://circleci.com/api/v1/project/mtchavez/circleci/checkout-key/29:15:12:e8:f7:f4:17:7a:8f:cc:db:de:43:53:f4:73
+      - https://circleci.com/api/v1.1/project/mtchavez/circleci/checkout-key/29:15:12:e8:f7:f4:17:7a:8f:cc:db:de:43:53:f4:73
       Server:
       - nginx
       Set-Cookie:

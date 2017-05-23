@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/recent-builds?circle-token=<TOKEN>&limit=3
+    uri: https://circleci.com/api/v1.1/recent-builds?circle-token=<TOKEN>&limit=3
     body:
       encoding: UTF-8
       string: "{}"

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/asdf-bogus/envvar?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/asdf-bogus/envvar?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: '{"name":"TESTENV","value":"testvalue"}'
@@ -30,7 +30,7 @@ http_interactions:
       - nginx
       Set-Cookie:
       - ab_test_user_seed=0.3396850799247606;Expires=Sat, 29 Jul 2017 00:22:59 +0000;Path=/;Secure
-      - ring-session=2re%2BVdcOi6ZfU2ljne9TrdNFeYCXrn1HscvCyOmlm05lV8oAnrtEB7kGO162zNDUInw7V0hPq7dN%2B%2BcMaBIRfj80IjGjyKPYqVSzV1USR7Bc9Iqvc3QKeZ22DuGANQIj6kQtFmmYZfkOE3BMBG4D%2B7Q0ae6fwjLfQH7vN9D9TiT47eKDcl%2F43m4RrchEGul1LiIknNRwGN6fbABIoEEMLt%2BjAF4BWT0igYKUMSGUhkg%3D--TRNshBHplPmWrK6DLkYYsRByRbVlFlajzTtTdUhHLu4%3D;Path=/;HttpOnly;Expires=Fri,
+      - ring-session=2re%2BVdcOi6ZfU2ljne9TrdNFeYCXrn1HscvCyOmlm05lV8oAnrtEB7kGO162zNDUInw7V0hPq7dN%2B%2BcMaBIRfj80IjGjyKPYqVSzv1.1USR7Bc9Iqvc3QKeZ22DuGANQIj6kQtFmmYZfkOE3BMBG4D%2B7Q0ae6fwjLfQH7vN9D9TiT47eKDcl%2F43m4RrchEGul1LiIknNRwGN6fbABIoEEMLt%2BjAF4BWT0igYKUMSGUhkg%3D--TRNshBHplPmWrK6DLkYYsRByRbVlFlajzTtTdUhHLu4%3D;Path=/;HttpOnly;Expires=Fri,
         28 Jul 2017 23:29:01 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
       - i-e4c3077b

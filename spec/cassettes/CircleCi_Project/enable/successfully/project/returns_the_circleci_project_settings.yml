@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1/project/mtchavez/dotfiles/enable?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/dotfiles/enable?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -61,7 +61,7 @@ http_interactions:
   recorded_at: Wed, 14 Sep 2016 19:31:20 GMT
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/mtchavez/dotfiles/checkout-key?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/dotfiles/checkout-key?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -117,7 +117,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '[{"public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGu+6azAexpj2cxe8v1s2L9UckUPpJahXFJMoR8VIMHjwCS7642Q+0uxaTS8Ylf4Ms3A8iyWceruWmYBWpF2X2nbK5Gxj9wSzO4HvWJ24mdrbrbsepoEHHkAjDhrAQ8FEqA0UsYyrmZTFg35ZtsJYnP5qIDP/uO4gfWZRVJa5PkdWTEiMAY4+k4VQv7mzkHzDthklVdChIJcVW7TzPfeFifkUAQLEwO3ufd2dG5hkREAP28z5EdgoLYm/zT2ZzwpuHifSMm+agzT7U2Xg7ifU/pSoaHz3vb1pkLIV3yAA6bJLYcF8SsKJrJm+sw8NGkfCPLcZ+ujTK5YsplwJzCbC3
+      string: '[{"public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGu+6azAexpj2cxe8v1.1s2L9UckUPpJahXFJMoR8VIMHjwCS7642Q+0uxaTS8Ylf4Ms3A8iyWceruWmYBWpF2X2nbK5Gxj9wSzO4HvWJ24mdrbrbsepoEHHkAjDhrAQ8FEqA0UsYyrmZTFg35ZtsJYnP5qIDP/uO4gfWZRVJa5PkdWTEiMAY4+k4VQv7mzkHzDthklVdChIJcVW7TzPfeFifkUAQLEwO3ufd2dG5hkREAP28z5EdgoLYm/zT2ZzwpuHifSMm+agzT7U2Xg7ifU/pSoaHz3vb1pkLIV3yAA6bJLYcF8SsKJrJm+sw8NGkfCPLcZ+ujTK5YsplwJzCbC3
         \n","type":"deploy-key","fingerprint":"a4:17:20:b9:02:7f:19:93:84:b8:41:be:be:d3:29:b9","login":null,"preferred":true,"time":"2016-09-14T19:29:40.055Z"}]'
     http_version: 
   recorded_at: Wed, 14 Sep 2016 19:37:14 GMT

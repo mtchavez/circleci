@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/mtchavez/circleci/140?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/140?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -70,7 +70,7 @@ http_interactions:
         source cache","actions":[{"truncated":false,"index":0,"parallel":false,"failed":null,"infrastructure_fail":null,"name":"Restore
         source cache","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:15.214Z","source":"cache","type":"checkout","start_time":"2016-07-25T17:05:14.984Z","exit_code":null,"canceled":null,"step":3,"run_time_millis":230,"has_output":false}]},{"name":"Checkout
         using deploy key: 81:49:b8:ae:b5:94:db:7a:5b:8a:91:c6:2e:df:f8:b6","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Checkout
-        using deploy key: 81:49:b8:ae:b5:94:db:7a:5b:8a:91:c6:2e:df:f8:b6","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:29.951Z","source":"config","type":"checkout","output_url":"https://circle-production-action-output.s3.amazonaws.com/f1e57358127a0e22bc646975-mtchavez-circleci-4-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517289&Signature=5pybt6LOV1%2BxkgOedYL32flzkOk%3D","start_time":"2016-07-25T17:05:15.238Z","exit_code":0,"canceled":null,"step":4,"run_time_millis":14713,"has_output":true}]},{"name":"Configure
+        using deploy key: 81:49:b8:ae:b5:94:db:7a:5b:8a:91:c6:2e:df:f8:b6","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:29.951Z","source":"config","type":"checkout","output_url":"https://circle-production-action-output.s3.amazonaws.com/f1e57358127a0e22bc646975-mtchavez-circleci-4-0?AWSAccessKeyId=AKIAIJNI6FA5RIAFFQ7Q&Expires=1627517289&Signature=5pybt6LOv1.1%2BxkgOedYL32flzkOk%3D","start_time":"2016-07-25T17:05:15.238Z","exit_code":0,"canceled":null,"step":4,"run_time_millis":14713,"has_output":true}]},{"name":"Configure
         the build","actions":[{"truncated":false,"index":0,"parallel":false,"failed":null,"infrastructure_fail":null,"name":"Configure
         the build","bash_command":null,"status":"success","timedout":null,"continue":null,"end_time":"2016-07-25T17:05:49.908Z","source":"cache","type":"machine","start_time":"2016-07-25T17:05:29.989Z","exit_code":null,"canceled":null,"step":5,"run_time_millis":19919,"has_output":false}]},{"name":"Exporting
         env vars from project settings","actions":[{"truncated":false,"index":0,"parallel":true,"failed":null,"infrastructure_fail":null,"name":"Exporting

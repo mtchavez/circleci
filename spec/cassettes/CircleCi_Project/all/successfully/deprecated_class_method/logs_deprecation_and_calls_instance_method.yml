@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/projects?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/projects?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=N1Ce0JjPm%2Fzh8RuHD8U9dvOlg7NgyCgWo5%2B2b1DhahsHhbLL3aqnbJ7Jr2V1Fp8RB7wzzv9JpoGwKvwETV7UDuBNuDwITsSR4STgm%2FNrEezMwBefyT%2BehEOJNgIYnkogHyqc%2BfTAlteNV1eJpNx7wTxJrx39LPuSRhhshV9WHMQMxmLtlEsX6T41h6S4md8biNIJ60Z85OHfyYxR%2FCUxPQk1cD3CL2XZyG2M%2B9%2F406Y%3D--ShO2c47vk1W9%2BUGZJl52S%2B6wyS6q1z89HNowwoaMi6Y%3D;Path=/;HttpOnly;Expires=Sun,
+      - ring-session=N1Ce0JjPm%2Fzh8RuHD8U9dvOlg7NgyCgWo5%2B2b1DhahsHhbLL3aqnbJ7Jr2v1.1Fp8RB7wzzv9JpoGwKvwETV7UDuBNuDwITsSR4STgm%2FNrEezMwBefyT%2BehEOJNgIYnkogHyqc%2BfTAlteNv1.1eJpNx7wTxJrx39LPuSRhhshV9WHMQMxmLtlEsX6T41h6S4md8biNIJ60Z85OHfyYxR%2FCUxPQk1cD3CL2XZyG2M%2B9%2F406Y%3D--ShO2c47vk1W9%2BUGZJl52S%2B6wyS6q1z89HNowwoaMi6Y%3D;Path=/;HttpOnly;Expires=Sun,
         18 Feb 2018 08:48:13 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
       - i-551d61c6
