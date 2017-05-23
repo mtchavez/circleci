@@ -1,7 +1,13 @@
-# Unreleased
+# Version 2.0.0 (Unreleased)
 
-* Document class usage of ApiResources over class methods approach
+**Breaking Changes***
+
+* Remove all deprecated class methods in favor of instance API resources classes
+
+## Other changes
+
 * Update default API version to `v1.1`
+* Implement `:vcs_type` API endpoints for `v1.1` i.e. `/api/project/:vcs_type/:username/:project/follow`
 
 # Version 1.1.0 - (2017-03-20)
 
