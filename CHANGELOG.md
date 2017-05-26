@@ -1,7 +1,34 @@
-# Unreleased
+# Version 2.0.0 (Unreleased)
 
-* Document class usage of ApiResources over class methods approach
+## Breaking Changes
+
+* Remove all deprecated class methods in favor of instance API resources classes
+  * Please look at the documentation in the README or rubydoc on changes. An example of a change might be:
+
+    ```ruby
+    #
+    # Old way of getting recent builds
+    #
+    builds = CircleCi::Project.recent_builds 'mtchavez', 'circleci'
+
+    #
+    # New way with a project object
+    #
+    project = CircleCi::Project.new 'mtchavez', 'circleci'
+    builds = project.recent_builds
+
+    # Can interact with other calls for the project
+    project.build # make a new build
+    project.settings # get settings
+    project.clear_cache #clear the cache
+    ```
+
+
+
+## Other changes
+
 * Update default API version to `v1.1`
+* Implement `:vcs_type` API endpoints for `v1.1` i.e. `/api/project/:vcs_type/:username/:project/follow`
 
 # Version 1.1.0 - (2017-03-20)
 

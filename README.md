@@ -8,6 +8,11 @@
 
 Circle CI API Wrapper. Requires ruby `>= 2.0.0`.
 
+**Version 2.x has breaking changes from v1.x**
+> Please use branch v-1.1.0 or tag v1.1.0 for previous 1.x version of
+> the gem until you can update to the latest version. 1.x will not be supported
+> in the longer term.
+
 ## Install
 
 ```ruby
@@ -21,6 +26,10 @@ gem 'circleci'
 ```
 
 ## Usage
+
+### Documentation
+
+Documentation can be found on [rubydoc][docs] or in this README
 
 ### Configuring
 
@@ -96,6 +105,44 @@ config.proxy_user = ENV['CIRCLECI_PROXY_USER']
 config.proxy_pass = ENV['CIRCLECI_PROXY_PASS']
 ```
 
+### API Versioning
+
+CircleCi is a versioned API. This gem attempts to stay up to date with any
+changes between versions. As of now you can change the version on the config
+you use to make requests.
+
+```ruby
+config = CircleCi::Config.new token: ENV['CIRCLECI_TOKEN'], version: 'v1.1'
+```
+
+This will change the requests to be in the format of
+
+`https://circleci.com/api/v1.1/`
+
+### VCS Type
+
+Introduced in `v1.1` of the API is interacting with projects and builds based
+on their version control system type. Currently this can be `github` or `bitbucket`.
+Please see endpoint documentation for `Project` and `Build` on usage but you can
+set a vcs type on either as so
+
+```ruby
+# A bitbucket project
+project = CircleCi::Project.new 'username', 'project', 'bitbucket'
+
+# A github build
+build = CircleCi::Build.new 'username', 'project', 'github', '1234'
+
+# Defaults to github
+build = CircleCi::Build.new 'username', 'project', nil, '1234'
+build.vcs_type # will be github
+
+# Non-valid types default to github as well
+project = CircleCi::Project.new 'username', 'project', 'gitlab'
+project.vcs_type # will be github
+```
+
+
 ## API Endpoints
 
 * [User](#user)
@@ -136,13 +183,6 @@ Endpoint: `/user/heroku-key`
 
 Adds your Heroku API key to CircleCI.
 ```ruby
-res = CircleCi::User.heroku_key 'your-api-key'
-res.success? # True
-res.body
-```
-
-Using `CircleCi::User` instance and overriding config
-```ruby
 # Use global config with token for user
 user = CircleCi::User.new
 user.heroku_key 'your-api-key'
@@ -165,13 +205,6 @@ Endpoint: `/me`
 
 Provides information about the signed in user.
 
-```ruby
-res = CircleCi::User.me
-res.success? # True
-res.body
-```
-
-Using `CircleCi::User` instance and overriding config
 ```ruby
 # Use global config with token for user
 user = CircleCi::User.new
@@ -198,14 +231,6 @@ Example response
 Endpoint: `/projects`
 
 List of all the repos you have access to on Github, with build information organized by branch.
-
-```ruby
-res = CircleCi::Project.all
-res.success?
-res.body
-```
-
-Using `CircleCi::Projects` instance and overriding config
 
 ```ruby
 # Use global config with token for user
@@ -262,30 +287,23 @@ Endpoint: `/project/:username/:repository/tree/:branch`
 Build a specific branch of a project
 
 ```ruby
-res = CircleCi::Project.build_branch 'username', 'reponame', 'branch'
-res.body['status'] # Not running
-res.body['build_url'] # Get url of build
-
-# Passing build parameters in the post body
-build_params = { build_parameters: { 'MY_TOKEN' => '123asd123asd' } }
-res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', {}, build_params
-res.body['status'] # Not running
-res.body['build_url'] # Get url of build
-
-# Adding URL params for revision or parallel
-params = { revision: 'fda12345asdf', parallel: 2 }
-res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', params
-res.body['status'] # Not running
-res.body['build_url'] # Get url of build
-```
-
-Using `CircleCi::Project` instance and overriding config
-```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
 
 # Get recent failed builds with a filter parameter
 failed_builds = project.build_branch 'branch'
+
+# Adding URL params for revision or parallel
+params = { revision: 'fda12345asdf', parallel: 2 }
+res = project.build_branch 'branch', params
+res.body['status'] # Not running
+res.body['build_url'] # Get url of build
+
+# Passing build parameters in the post body
+build_params = { build_parameters: { 'MY_TOKEN' => '123asd123asd' } }
+res = project.build_branch 'branch', {}, build_params
+res.body['status']
+res.body['build_url']
 
 # Use a different config with another user token
 project = CircleCi::Project.new 'username', 'reponame', other_project_config
@@ -384,12 +402,6 @@ Endpoint: `/project/:username/:repository/:build_num/ssh-users`
 Adds a user to the build's SSH permissions.
 
 ```ruby
-res = CircleCi::Project.build_ssh_key 'username', 'repo', 'RSA private key', 'hostname'
-res.success?
-```
-
-Using `CircleCi::Project` instance and overriding config
-```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
 res = project.build_ssh_key 'username', 'repo', 'RSA private key', 'hostname'
@@ -412,12 +424,6 @@ Endpoint: `/project/:username/:repository/build-cache`
 
 Clears the cache for a project
 
-```ruby
-res = CircleCi::Project.clear_cache
-res.body['status']
-```
-
-Using `CircleCi::Project` instance and overriding config
 ```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
@@ -442,13 +448,6 @@ Endpoint: `/project/:username/:repository/checkout-key/:fingerprint`
 
 Delete a checkout key for a project by supplying the fingerprint of the key.
 ```ruby
-res = CircleCi::Project.delete_checkout_key 'username', 'reponame', 'fingerprint'
-res.success?
-res.body
-```
-
-Using `CircleCi::Project` instance and overriding config
-```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
 res = project.delete_checkout_key 'fingerprint'
@@ -471,12 +470,6 @@ Endpoint: `/project/:username/:repository/enable`
 Enable a project in CircleCI. Causes a CircleCI SSH key to be added to
 the GitHub. Requires admin privilege to the repository.
 
-```ruby
-res = CircleCi::Project.enable 'username', 'reponame'
-res.success?
-```
-
-Using `CircleCi::Project` instance and overriding config
 ```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
@@ -571,12 +564,6 @@ Endpoint: `/project/:username/:project/envvar`
 Get a list of environment variables for a project
 
 ```ruby
-res = CircleCi::Project.envvar 'username', 'repo'
-res.success?
-```
-
-Using `CircleCi::Project` instance and overriding config
-```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
 res = project.envvar
@@ -598,12 +585,6 @@ Endpoint: `/project/:username/:repository/follow`
 
 Follow a project
 
-```ruby
-res = CircleCi::Build.follow 'username', 'repo'
-res.success?
-```
-
-Using `CircleCi::Project` instance and overriding config
 ```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
@@ -628,13 +609,7 @@ Example response
 Endpoint: `/project/:username/:repository/checkout-key/:fingerprint`
 
 Get a checkout key for a project by supplying the fingerprint of the key.
-```ruby
-res = CircleCi::Project.get_checkout_key 'username', 'reponame', 'fingerprint'
-res.success?
-res.body
-```
 
-Using `CircleCi::Project` instance and overriding config
 ```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
@@ -663,12 +638,6 @@ Endpoint: `/project/#{username}/#{project}/checkout-key`
 
 List checkout keys
 
-```ruby
-res = CircleCi::Project.checkout_keys 'username', 'repo'
-res.success?
-```
-
-Using `CircleCi::Project` instance and overriding config
 ```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
@@ -699,13 +668,7 @@ Endpoint: `/project/:username/:repository/checkout-key`
 
 Create an ssh key used to access external systems that require SSH key-based authentication.
 Takes a type of key to create which an be `deploy-key` or `github-user-key`.
-```ruby
-res = CircleCi::Project.new_checkout_key 'username', 'reponame', 'deploy-key'
-res.success?
-res.body
-```
 
-Using `CircleCi::Project` instance and overriding config
 ```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
@@ -728,30 +691,22 @@ Example response
 }
 ```
 
-#### [recent_builds](#project_recent_builds)
+#### [recent_project_builds](#recent_project_builds)
 
 Endpoint: `/project/:username/:repository`
 
 Build summary for each of the last 30 recent builds, ordered by build_num.
 
 ```ruby
-res = CircleCi::Project.recent_builds 'username', 'reponame'
-
-# Use params to filter by status
-# res = CircleCi::Project.recent_builds 'username', 'reponame', filter: 'failed'
-
-# Use params to limit and give an offset
-# res = CircleCi::Project.recent_builds 'username', 'reponame', limit: 10, offset: 50
-
-res.success?
-res.body
-```
-
-Using `CircleCi::Project` instance and overriding config
-```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
 res = project.recent_builds
+
+# Use params to filter by status
+res = project.recent_builds filter: 'failed'
+
+# Use params to limit and give an offset
+res = project.recent_builds limit: 10, offset: 50
 
 # Use a different config with another user token
 project = CircleCi::Project.new 'username', 'reponame', other_project_config
@@ -793,13 +748,6 @@ Endpoint: `/project/:username/:repository/tree/:branch`
 
 Build summary for each of the last 30 recent builds for a specific branch, ordered by build_num.
 
-```ruby
-res = CircleCi::Project.recent_builds_branch 'username', 'reponame', 'branch'
-res.success?
-res.body
-```
-
-Using `CircleCi::Project` instance and overriding config
 ```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
@@ -845,12 +793,6 @@ Endpoint: `/project/:username/:repository/settings`
 
 Get project settings
 
-```ruby
-res = CircleCi::Project.settings 'username', 'repo'
-res.success?
-```
-
-Using `CircleCi::Project` instance and overriding config
 ```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
@@ -936,13 +878,6 @@ Creates a new environment variable for a project
 
 ```ruby
 environment = { name: 'foo', value: 'bar' }
-res = CircleCi::Project.set_envvar 'username', 'repo', environment
-res.success?
-```
-
-Using `CircleCi::Project` instance and overriding config
-```ruby
-environment = { name: 'foo', value: 'bar' }
 
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
@@ -967,12 +902,6 @@ Creates an ssh key that will be used to access the external system identified
 by the hostname parameter for SSH key-based authentication.
 
 ```ruby
-res = CircleCi::Project.ssh_key 'username', 'repo', 'RSA private key', 'hostname'
-res.success?
-```
-
-Using `CircleCi::Project` instance and overriding config
-```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
 res = project.ssh_key 'RSA private key', 'hostname'
@@ -995,12 +924,6 @@ Endpoint: `/project/:username/:repository/unfollow`
 
 Unfollow a project
 
-```ruby
-res = CircleCi::Build.unfollow 'username', 'repo'
-res.success?
-```
-
-Using `CircleCi::Project` instance and overriding config
 ```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
@@ -1028,19 +951,12 @@ Endpoint: `/project/:username/:repository/:build/artifacts`
 Artifacts produced by the build, returns an array of artifact details
 
 ```ruby
-res = CircleCi::Build.artifacts 'username', 'repo', 'build #'
-res.success?
-res.body
-```
-
-Using `CircleCi::Build` instance and overriding config
-```ruby
 # Use global config with token for user
-build = CircleCi::Build.new 'username', 'reponame', 'build'
+build = CircleCi::Build.new 'username', 'reponame', nil, 'build'
 res = build.artifacts
 
 # Use a different config with another user token
-build = CircleCi::Build.new 'username', 'reponame', 'build', other_build_config
+build = CircleCi::Build.new 'username', 'reponame', nil, 'build', other_build_config
 build.artifacts
 ```
 
@@ -1068,21 +984,12 @@ Endpoint: `/project/:username/:repository/:build/cancel`
 Cancels the build, returns a summary of the build.
 
 ```ruby
-res = CircleCi::Build.cancel 'username', 'repo', 'build #'
-res.success?
-res.body['status'] # 'canceled'
-res.body['outcome'] # 'canceled'
-res.body['canceled'] # true
-```
-
-Using `CircleCi::Build` instance and overriding config
-```ruby
 # Use global config with token for user
-build = CircleCi::Build.new 'username', 'reponame', 'build'
+build = CircleCi::Build.new 'username', 'reponame', nil, 'build'
 res = build.cancel
 
 # Use a different config with another user token
-build = CircleCi::Build.new 'username', 'reponame', 'build', other_build_config
+build = CircleCi::Build.new 'username', 'reponame', nil, 'build', other_build_config
 build.cancel
 ```
 
@@ -1126,19 +1033,12 @@ Endpoint: `/project/:username/:repository/:build`
 Full details for a single build, including the output for all actions. The response includes all of the fields from the build summary.
 
 ```ruby
-res = CircleCi::Build.get 'username', 'repo', 'build #'
-res.success?
-res.body
-```
-
-Using `CircleCi::Build` instance and overriding config
-```ruby
 # Use global config with token for user
-build = CircleCi::Build.new 'username', 'reponame', 'build'
+build = CircleCi::Build.new 'username', 'reponame', nil, 'build'
 res = build.get
 
 # Use a different config with another user token
-build = CircleCi::Build.new 'username', 'reponame', 'build', other_build_config
+build = CircleCi::Build.new 'username', 'reponame', nil, 'build', other_build_config
 build.get
 ```
 
@@ -1226,20 +1126,12 @@ Endpoint: `/project/:username/:repository/:build/retry`
 Retries the build, returns a summary of the new build.
 
 ```ruby
-res = CircleCi::Build.retry 'username', 'repo', 'build #'
-res.success?
-res.body['status'] # 'queued'
-res.body
-```
-
-Using `CircleCi::Build` instance and overriding config
-```ruby
 # Use global config with token for user
-build = CircleCi::Build.new 'username', 'reponame', 'build'
+build = CircleCi::Build.new 'username', 'reponame', nil, 'build'
 res = build.retry
 
 # Use a different config with another user token
-build = CircleCi::Build.new 'username', 'reponame', 'build', other_build_config
+build = CircleCi::Build.new 'username', 'reponame', nil, 'build', other_build_config
 build.retry
 ```
 
@@ -1280,19 +1172,12 @@ Tests endpoint to get the recorded tests for a build. Will return an array of
 the tests ran and some details.
 
 ```ruby
-res = CircleCi::Build.tests 'username', 'repo', 'build #'
-res.success?
-res.body
-```
-
-Using `CircleCi::Build` instance and overriding config
-```ruby
 # Use global config with token for user
-build = CircleCi::Build.new 'username', 'reponame', 'build'
+build = CircleCi::Build.new 'username', 'reponame', nil, 'build'
 res = build.tests
 
 # Use a different config with another user token
-build = CircleCi::Build.new 'username', 'reponame', 'build', other_build_config
+build = CircleCi::Build.new 'username', 'reponame', nil, 'build', other_build_config
 build.tests
 ```
 
@@ -1319,29 +1204,21 @@ build.tests
 ]
 ```
 
-### [Recent Builds](#recent_builds)
+### [recent_builds](#recent_builds)
 
-#### [get](#get_recent_builds)
+#### [get_recent_builds](#get_recent_builds)
 
 Endpoint: `/recent-builds`
 
 Build summary for each of the last 30 recent builds, ordered by build_num.
 
 ```ruby
-res = CircleCi::RecentBuilds.get
-
-# Params of limit and offset can be passed in
-# res = CircleCi::RecentBuilds.get limit: 10, offset: 50
-
-res.success?
-res.body
-```
-
-Using `CircleCi::RecentBuilds` instance and overriding config
-```ruby
 # Use global config with token for user
 recent = CircleCi::RecentBuilds.new
 res = recent.get
+
+# Params of limit and offset can be passed in
+res = recent.get limit: 10, offset: 50
 
 # Use a different config with another user token
 recent = CircleCi::RecentBuilds.new other_builds_config
@@ -1387,3 +1264,6 @@ and uses a checked in `.rubocop.yml` for this project.
 Tests are using a live CircleCi API token for this repository. Any tests
 should be using this key, which is in the `.env` file. You should not have
 to do anything outside of writing the tests against this repository.
+
+
+[docs]: http://www.rubydoc.info/gems/circleci

@@ -3,265 +3,18 @@ module CircleCi
   ##
   #
   # Class for interacting with Projects
-  # rubocop:disable Metrics/ClassLength
-  class Project < ApiResource
+  class Project < ApiProjectResource
     ##
     #
-    # Deprecated class methods
-    class << self
-      ##
-      #
-      # Return all projects for your API key
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @return [CircleCi::Response] - Response object
-      def all
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Projects#get instead')
-        CircleCi::Projects.new.get
-      end
-
-      ##
-      #
-      # Build the latest master push for this project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @return         [CircleCi::Response] - Response object
-      def build(username, project)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#build instead')
-        new(username, project, default_config).build
-      end
-
-      ##
-      #
-      # Build the latest push for this branch of a specific project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @param branch   [String] - Name of branch
-      # @param body     [Hash] - Optional post body with build parameters
-      # @return         [CircleCi::Response] - Response object
-      def build_branch(username, project, branch, params = {}, body = {})
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#build_branch instead')
-        new(username, project, default_config).build_branch(branch, params, body)
-      end
-
-      ##
-      #
-      # Add a ssh key to a build
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @param build    [String] - Build number
-      # @param key      [String] - The ssh private key
-      # @param hostname [String] - The hostname identified by the key
-      # @return         [CircleCi::Response] - Response object
-      def build_ssh_key(username, project, build, key, hostname)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#build_ssh_key instead')
-        new(username, project, default_config).build_ssh_key(build, key, hostname)
-      end
-
-      ##
-      #
-      # Clear the build cache for a specific project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @return         [CircleCi::Response] - Response object
-      def clear_cache(username, project)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#clear_cache instead')
-        new(username, project, default_config).clear_cache
-      end
-
-      ##
-      #
-      # Delete a checkout key for a project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username     [String] - User or org name who owns project
-      # @param project      [String] - Name of project
-      # @param fingerprint  [String] - Fingerprint of a checkout key
-      # @return             [CircleCi::Response] - Response object
-      def delete_checkout_key(username, project, fingerprint)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#delete_checkout_key instead')
-        new(username, project, default_config).delete_checkout_key(fingerprint)
-      end
-
-      ##
-      #
-      # Enable a project in CircleCI. Causes a CircleCI SSH key to be added to
-      # the GitHub. Requires admin privilege to the repository.
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @return         [CircleCi::Response] - Response object
-      def enable(username, project)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#enable instead')
-        new(username, project, default_config).enable
-      end
-
-      ##
-      #
-      # Get the project envvars
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @return         [CircleCi::Response] - Response object
-      def envvar(username, project)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#envvar instead')
-        new(username, project, default_config).envvar
-      end
-
-      ##
-      #
-      # @deprecated Please use [CircleCi::Project#envvar]
-      def envvars(username, project)
-        default_config.logger.warn('[Deprecated] CircleCi::Project#envvars is deprecated please use CircleCi::Project#envvar')
-        envvar username, project
-      end
-
-      ##
-      #
-      # Follow the project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @return         [CircleCi::Response] - Response object
-      def follow(username, project)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#follow instead')
-        new(username, project, default_config).follow
-      end
-
-      ##
-      #
-      # Get a checkout key for a project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username     [String] - User or org name who owns project
-      # @param project      [String] - Name of project
-      # @param fingerprint  [String] - Fingerprint of a checkout key
-      # @return             [CircleCi::Response] - Response object
-      def get_checkout_key(username, project, fingerprint)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#get_checkout_key instead')
-        new(username, project, default_config).get_checkout_key(fingerprint)
-      end
-
-      ##
-      #
-      # Get a list of checkout keys for project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @return         [CircleCi::Response] - Response object
-      def list_checkout_keys(username, project)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#list_checkout_keys instead')
-        new(username, project, default_config).list_checkout_keys
-      end
-
-      ##
-      #
-      # Create a checkout key for a project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @param type     [String] - The type of key to create. Can be 'deploy-key' or 'github-user-key'.
-      # @return         [CircleCi::Response] - Response object
-      def new_checkout_key(username, project, type)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#new_checkout_key instead')
-        new(username, project, default_config).new_checkout_key(type)
-      end
-
-      ##
-      #
-      # Get all recent builds for a specific project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @param params   [Hash] - Parameters for builds (limit, offset, filter)
-      # @return         [CircleCi::Response] - Response object
-      def recent_builds(username, project, params = {})
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#recent_builds instead')
-        new(username, project, default_config).recent_builds(params)
-      end
-
-      ##
-      #
-      # Get all recent builds for a specific branch of a project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @param branch   [String] - Name of branch
-      # @return         [CircleCi::Response] - Response object
-      def recent_builds_branch(username, project, branch)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#recent_builds_branch instead')
-        new(username, project, default_config).recent_builds_branch(branch)
-      end
-
-      ##
-      #
-      # Get the project configuration
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @return         [CircleCi::Response] - Response object
-      def settings(username, project)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#settings instead')
-        new(username, project, default_config).settings
-      end
-
-      ##
-      #
-      # Sets an envvar for a project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @param envvar   [Hash] - {name: 'foo', value: 'bar'}
-      # @return         [CircleCi::Response] - Response object
-      def set_envvar(username, project, envvar)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#add_envvar instead')
-        new(username, project, default_config).add_envvar(envvar)
-      end
-
-      ##
-      #
-      # Add a ssh key to a project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @param key      [String] - The ssh private key
-      # @param hostname [String] - The hostname identified by the key
-      # @return         [CircleCi::Response] - Response object
-      def ssh_key(username, project, key, hostname)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#ssh_key instead')
-        new(username, project, default_config).ssh_key(key, hostname)
-      end
-
-      ##
-      #
-      # Unfollow the project
-      #
-      # @deprecated Please use instance method of [CircleCi::Project] instead
-      # @param username [String] - User or org name who owns project
-      # @param project  [String] - Name of project
-      # @return         [CircleCi::Response] - Response object
-      def unfollow(username, project)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::Project#unfollow instead')
-        new(username, project, default_config).unfollow
-      end
+    # Initialize a new Project API interaction
+    #
+    # @param username [String] - The vcs username or org name for project
+    # @param project  [String] - The project name
+    # @param vcs_type [String] - The vcs type i.e. github or bitbucket
+    # @param conf     [CircleCi::Config] - Optional config to use for request
+    # @return         [CircleCi::Project]
+    def initialize(username = nil, project = nil, vcs_type = nil, conf = nil)
+      super(username, project, vcs_type, nil, conf)
     end
 
     ##
@@ -270,7 +23,7 @@ module CircleCi
     #
     # @return [CircleCi::Response] - Response object
     def build
-      CircleCi.request(@conf, "/project/#{username}/#{project}").post
+      CircleCi.request(conf, base_path).post
     end
 
     ##
@@ -282,7 +35,7 @@ module CircleCi
     # @param body     [Hash] - Optional post body with build parameters
     # @return         [CircleCi::Response] - Response object
     def build_branch(branch, params = {}, body = {})
-      CircleCi.request(@conf, "/project/#{username}/#{project}/tree/#{branch}", params).post(body)
+      CircleCi.request(conf, "#{base_path}/tree/#{branch}", params).post(body)
     end
 
     ##
@@ -295,7 +48,7 @@ module CircleCi
     # @return         [CircleCi::Response] - Response object
     def build_ssh_key(build, key, hostname)
       body = { hostname: hostname, private_key: key }
-      CircleCi.request(@conf, "/project/#{username}/#{project}/#{build}/ssh-users").post(body)
+      CircleCi.request(conf, "#{base_path}/#{build}/ssh-users").post(body)
     end
 
     ##
@@ -304,7 +57,7 @@ module CircleCi
     #
     # @return [CircleCi::Response] - Response object
     def clear_cache
-      CircleCi.request(@conf, "/project/#{username}/#{project}/build-cache").delete
+      CircleCi.request(conf, "#{base_path}/build-cache").delete
     end
 
     ##
@@ -314,7 +67,7 @@ module CircleCi
     # @param fingerprint  [String] - Fingerprint of a checkout key
     # @return             [CircleCi::Response] - Response object
     def delete_checkout_key(fingerprint)
-      CircleCi.request(@conf, "/project/#{username}/#{project}/checkout-key/#{fingerprint}").delete
+      CircleCi.request(conf, "#{base_path}/checkout-key/#{fingerprint}").delete
     end
 
     ##
@@ -324,7 +77,7 @@ module CircleCi
     #
     # @return [CircleCi::Response] - Response object
     def enable
-      CircleCi.request(@conf, "/project/#{username}/#{project}/enable").post
+      CircleCi.request(conf, "#{base_path}/enable").post
     end
 
     ##
@@ -333,7 +86,7 @@ module CircleCi
     #
     # @return [CircleCi::Response] - Response object
     def envvar
-      CircleCi.request(@conf, "/project/#{username}/#{project}/envvar").get
+      CircleCi.request(conf, "#{base_path}/envvar").get
     end
 
     ##
@@ -342,7 +95,7 @@ module CircleCi
     #
     # @return [CircleCi::Response] - Response object
     def follow
-      CircleCi.request(@conf, "/project/#{username}/#{project}/follow").post
+      CircleCi.request(conf, "#{base_path}/follow").post
     end
 
     ##
@@ -352,7 +105,7 @@ module CircleCi
     # @param fingerprint  [String] - Fingerprint of a checkout key
     # @return             [CircleCi::Response] - Response object
     def get_checkout_key(fingerprint)
-      CircleCi.request(@conf, "/project/#{username}/#{project}/checkout-key/#{fingerprint}").get
+      CircleCi.request(conf, "#{base_path}/checkout-key/#{fingerprint}").get
     end
 
     ##
@@ -361,7 +114,7 @@ module CircleCi
     #
     # @return [CircleCi::Response] - Response object
     def list_checkout_keys
-      CircleCi.request(@conf, "/project/#{username}/#{project}/checkout-key").get
+      CircleCi.request(conf, "#{base_path}/checkout-key").get
     end
 
     ##
@@ -371,7 +124,7 @@ module CircleCi
     # @param type [String] - The type of key to create. Can be 'deploy-key' or 'github-user-key'.
     # @return     [CircleCi::Response] - Response object
     def new_checkout_key(type)
-      CircleCi.request(@conf, "/project/#{username}/#{project}/checkout-key").post(type: type)
+      CircleCi.request(conf, "#{base_path}/checkout-key").post(type: type)
     end
 
     ##
@@ -381,7 +134,7 @@ module CircleCi
     # @param params   [Hash] - Parameters for builds (limit, offset, filter)
     # @return         [CircleCi::Response] - Response object
     def recent_builds(params = {})
-      CircleCi.request(@conf, "/project/#{username}/#{project}", params).get
+      CircleCi.request(conf, base_path, params).get
     end
 
     ##
@@ -391,7 +144,7 @@ module CircleCi
     # @param branch [String] - Name of branch
     # @return       [CircleCi::Response] - Response object
     def recent_builds_branch(branch)
-      CircleCi.request(@conf, "/project/#{username}/#{project}/tree/#{branch}").get
+      CircleCi.request(conf, "#{base_path}/tree/#{branch}").get
     end
 
     ##
@@ -400,7 +153,7 @@ module CircleCi
     #
     # @return [CircleCi::Response] - Response object
     def settings
-      CircleCi.request(@conf, "/project/#{username}/#{project}/settings").get
+      CircleCi.request(conf, "#{base_path}/settings").get
     end
 
     ##
@@ -410,7 +163,7 @@ module CircleCi
     # @param envvar [Hash] - {name: 'foo', value: 'bar'}
     # @return       [CircleCi::Response] - Response object
     def add_envvar(envvar)
-      CircleCi.request(@conf, "/project/#{username}/#{project}/envvar").post(envvar)
+      CircleCi.request(conf, "#{base_path}/envvar").post(envvar)
     end
 
     ##
@@ -422,7 +175,7 @@ module CircleCi
     # @return         [CircleCi::Response] - Response object
     def ssh_key(key, hostname)
       body = { hostname: hostname, private_key: key }
-      CircleCi.request(@conf, "/project/#{username}/#{project}/ssh-key").post(body)
+      CircleCi.request(conf, "#{base_path}/ssh-key").post(body)
     end
 
     ##
@@ -431,8 +184,7 @@ module CircleCi
     #
     # @return [CircleCi::Response] - Response object
     def unfollow
-      CircleCi.request(@conf, "/project/#{username}/#{project}/unfollow").post
+      CircleCi.request(conf, "#{base_path}/unfollow").post
     end
   end
-  # rubocop:enable Metrics/ClassLength
 end

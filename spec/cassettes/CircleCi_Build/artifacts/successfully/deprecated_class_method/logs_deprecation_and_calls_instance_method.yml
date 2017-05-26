@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/140/artifacts?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/140/artifacts?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"

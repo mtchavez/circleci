@@ -11,17 +11,6 @@ RSpec.describe CircleCi::RecentBuilds, :vcr do
         expect(res).to be_success
       end
 
-      describe 'deprecated class method' do
-        let(:res) { described_class.get }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::RecentBuilds#get instead')
-          expect(described_class).to receive(:new).with(CircleCi.config).and_return(subject)
-          expect(subject).to receive(:get).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
-      end
-
       describe 'recent builds' do
         let(:builds) { res.body }
 

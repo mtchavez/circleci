@@ -6,6 +6,7 @@ require 'uri'
 
 files = %w[
   api_resource
+  api_project_resource
   build
   config
   project

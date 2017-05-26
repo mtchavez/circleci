@@ -14,38 +14,13 @@ module CircleCi
       super(nil, nil, conf)
     end
 
-    class << self
-      ##
-      #
-      # Get user account details
-      #
-      # @deprecated Please use instance method of [CircleCi::User] instead
-      # @return [CircleCi::Response] - Response object
-      def me
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::User#me instead')
-        new(default_config).me
-      end
-
-      ##
-      #
-      # Add a Heroku API key to CircleCI
-      #
-      # @deprecated Please use instance method of [CircleCi::User] instead
-      # @param apikey   [String] - The Heroku API key
-      # @return         [CircleCi::Response] - Response object
-      def heroku_key(apikey)
-        default_config.logger.warn('[Deprecated] Use instance method CircleCi::User#heroku_key instead')
-        new(default_config).heroku_key(apikey)
-      end
-    end
-
     ##
     #
     # Get user account details
     #
     # @return [CircleCi::Response] - Response object
     def me
-      CircleCi.request(@conf, '/me').get
+      CircleCi.request(conf, '/me').get
     end
 
     ##
@@ -55,7 +30,7 @@ module CircleCi
     # @param apikey   [String] - The Heroku API key
     # @return         [CircleCi::Response] - Response object
     def heroku_key(apikey)
-      CircleCi.request(@conf, '/user/heroku-key').post(apikey: apikey)
+      CircleCi.request(conf, '/user/heroku-key').post(apikey: apikey)
     end
   end
 end
