@@ -4,8 +4,9 @@ require 'spec_helper'
 RSpec.describe CircleCi::Build, :vcr do
   let(:username)  { 'mtchavez' }
   let(:project)   { 'circleci' }
+  let(:vcs)       { CircleCi::ApiProjectResource::DEFAULT_VCS_TYPE }
   let(:build_num) { 140 }
-  let(:new_build) { described_class.new username, project, build_num }
+  let(:new_build) { described_class.new username, project, vcs, build_num }
 
   describe 'artifacts' do
     context 'successfully' do
@@ -14,17 +15,6 @@ RSpec.describe CircleCi::Build, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.artifacts username, project, build_num }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Build#artifacts instead')
-          expect(described_class).to receive(:new).with(username, project, build_num, CircleCi.config).and_return(new_build)
-          expect(new_build).to receive(:artifacts).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'artifacts' do
@@ -60,17 +50,6 @@ RSpec.describe CircleCi::Build, :vcr do
         expect(res).to be_success
       end
 
-      describe 'deprecated class method' do
-        let(:res) { described_class.cancel username, project, build_num }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Build#cancel instead')
-          expect(described_class).to receive(:new).with(username, project, build_num, CircleCi.config).and_return(new_build)
-          expect(new_build).to receive(:cancel).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
-      end
-
       describe 'canceled build' do
         subject { res.body }
 
@@ -91,17 +70,6 @@ RSpec.describe CircleCi::Build, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.get username, project, build_num }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Build#get instead')
-          expect(described_class).to receive(:new).with(username, project, build_num, CircleCi.config).and_return(new_build)
-          expect(new_build).to receive(:get).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'build' do
@@ -130,17 +98,6 @@ RSpec.describe CircleCi::Build, :vcr do
         expect(res).to be_success
       end
 
-      describe 'deprecated class method' do
-        let(:res) { described_class.retry username, project, build_num }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Build#retry instead')
-          expect(described_class).to receive(:new).with(username, project, build_num, CircleCi.config).and_return(new_build)
-          expect(new_build).to receive(:retry).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
-      end
-
       describe 'build' do
         subject { res.body }
 
@@ -165,17 +122,6 @@ RSpec.describe CircleCi::Build, :vcr do
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
-      end
-
-      describe 'deprecated class method' do
-        let(:res) { described_class.tests username, project, build_num }
-
-        it 'logs deprecation and calls instance method' do
-          expect(CircleCi.config.logger).to receive(:warn).with('[Deprecated] Use instance method CircleCi::Build#tests instead')
-          expect(described_class).to receive(:new).with(username, project, build_num, CircleCi.config).and_return(new_build)
-          expect(new_build).to receive(:tests).and_call_original
-          expect(res).to be_instance_of(CircleCi::Response)
-        end
       end
 
       describe 'for build' do

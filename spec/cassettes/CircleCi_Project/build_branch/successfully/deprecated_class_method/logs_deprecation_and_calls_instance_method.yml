@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1.1/project/mtchavez/circleci/tree/master?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/tree/master?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -27,7 +27,7 @@ http_interactions:
       Date:
       - Sat, 18 Feb 2017 20:17:04 GMT
       Location:
-      - https://circleci.com/api/v1.1/project/mtchavez/circleci/319
+      - https://circleci.com/api/v1.1/project/github/mtchavez/circleci/319
       Server:
       - nginx
       Set-Cookie:
