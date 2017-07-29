@@ -163,7 +163,7 @@ project.vcs_type # will be github
   * [Recent Project Builds](#recent_project_builds)
   * [Recent Builds Branch](#recent_builds_branch)
   * [Settings](#settings)
-  * [Set Envvar](#set_envvar)
+  * [Add Envvar](#add_envvar)
   * [SSH Key](#ssh_key)
   * [Unfollow](#unfollow)
 * [Build](#build)
@@ -870,7 +870,7 @@ Example response
 }
 ```
 
-#### [set_envvar](#set_envvar)
+#### [add_envvar](#add_envvar)
 
 Endpoint: `/project/:username/:project/envvar`
 
@@ -881,11 +881,11 @@ environment = { name: 'foo', value: 'bar' }
 
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
-res = project.set_envvar environment
+res = project.add_envvar environment
 
 # Use a different config with another user token
 project = CircleCi::Project.new 'username', 'reponame', other_project_config
-project.set_envvar environment
+project.add_envvar environment
 ```
 
 Example response
