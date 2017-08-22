@@ -52,7 +52,7 @@ Lint/Debugger:
 Lint/DefEndAlignment:
   Description: Align ends corresponding to defs correctly.
   Enabled: true
-  AlignWith: start_of_line
+  EnforcedStyleAlignWith: start_of_line
   SupportedStyles:
   - start_of_line
   - def
@@ -91,7 +91,7 @@ Lint/EmptyInterpolation:
 Lint/EndAlignment:
   Description: Align ends correctly.
   Enabled: true
-  AlignWith: keyword
+  EnforcedStyleAlignWith: keyword
   SupportedStyles:
   - keyword
   - variable
@@ -259,6 +259,15 @@ Metrics/AbcSize:
   Reference: http://c2.com/cgi/wiki?AbcMetric
   Enabled: true
   Max: 15
+
+Metrics/BlockLength:
+  CountComments: false
+  Max: 25
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+    - '*.gemspec'
 
 Metrics/BlockNesting:
   Description: Avoid excessive block nesting
@@ -701,7 +710,7 @@ Style/CaseIndentation:
   Description: Indentation of when in a case/when/[else/]end.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#indent-when-to-case
   Enabled: true
-  IndentWhenRelativeTo: case
+  EnforcedStyle: case
   SupportedStyles:
   - case
   - end
@@ -1166,7 +1175,7 @@ Style/LineEndConcatenation:
   Enabled: true
 
 # Supports --auto-correct
-Style/MethodCallParentheses:
+Style/MethodCallWithoutArgsParentheses:
   Description: Do not use parentheses for method calls with no arguments.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-args-no-parens
   Enabled: true
