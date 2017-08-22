@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 Gem::Specification.new do |s|
   s.name                  = 'circleci'
   s.version               = '2.0.0'
