@@ -1,4 +1,4 @@
-# Version 2.0.1 (Unreleased)
+# Version 2.0.1 (2017-08-22)
 
 * Add params to `Project#recent_builds_branch`
 
