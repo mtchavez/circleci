@@ -142,10 +142,11 @@ module CircleCi
     #
     # Get all recent builds for a specific branch of a project
     #
-    # @param branch [String] - Name of branch
-    # @return       [CircleCi::Response] - Response object
-    def recent_builds_branch(branch)
-      CircleCi.request(conf, "#{base_path}/tree/#{branch}").get
+    # @param branch   [String] - Name of branch
+    # @param params   [Hash] - Parameters for builds (limit, offset, filter)
+    # @return         [CircleCi::Response] - Response object
+    def recent_builds_branch(branch, params = {})
+      CircleCi.request(conf, "#{base_path}/tree/#{branch}", params).get
     end
 
     ##

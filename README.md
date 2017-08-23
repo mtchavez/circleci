@@ -753,6 +753,12 @@ Build summary for each of the last 30 recent builds for a specific branch, order
 project = CircleCi::Project.new 'username', 'reponame'
 res = project.recent_builds_branch 'branch'
 
+# Use params to filter by status
+res = project.recent_builds_branch 'branch', filter: 'failed'
+
+# Use params to limit and give an offset
+res = project.recent_builds_branch 'branch', limit: 10, offset: 50
+
 # Use a different config with another user token
 project = CircleCi::Project.new 'username', 'reponame', other_project_config
 project.recent_builds_branch 'branch'
