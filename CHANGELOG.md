@@ -1,4 +1,8 @@
-# Version 2.0.0 (Unreleased)
+# Version 2.0.1 (Unreleased)
+
+* Add params to `Project#recent_builds_branch`
+
+# Version 2.0.0 (2017-05-26)
 
 ## Breaking Changes
 
