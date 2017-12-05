@@ -306,7 +306,7 @@ res.body['status']
 res.body['build_url']
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.build_branch 'branch'
 ```
 
@@ -407,7 +407,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.build_ssh_key 'username', 'repo', 'RSA private key', 'hostname'
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.build_ssh_key 'username', 'repo', 'RSA private key', 'hostname'
 ```
 
@@ -430,7 +430,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.clear_cache
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.clear_cache
 ```
 
@@ -453,7 +453,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.delete_checkout_key 'fingerprint'
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.delete_checkout_key 'fingerprint'
 ```
 
@@ -476,7 +476,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.enable
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.enable
 ```
 
@@ -569,7 +569,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.envvar
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.envvar
 ```
 
@@ -591,7 +591,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.follow
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.follow
 ```
 
@@ -616,7 +616,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.get_checkout_key 'fingerprint'
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.get_checkout_key 'fingerprint
 ```
 
@@ -644,7 +644,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.checkout_keys
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.checkout_keys
 ```
 
@@ -675,7 +675,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.new_checkout_key 'deploy-key'
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.new_checkout_key 'deploy-key
 ```
 
@@ -709,7 +709,7 @@ res = project.recent_builds filter: 'failed'
 res = project.recent_builds limit: 10, offset: 50
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.recent_builds
 ```
 
@@ -760,7 +760,7 @@ res = project.recent_builds_branch 'branch', filter: 'failed'
 res = project.recent_builds_branch 'branch', limit: 10, offset: 50
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.recent_builds_branch 'branch'
 ```
 
@@ -805,7 +805,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.settings
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.settings
 ```
 
@@ -890,7 +890,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.add_envvar environment
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.add_envvar environment
 ```
 
@@ -913,7 +913,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.ssh_key 'RSA private key', 'hostname'
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.ssh_key 'RSA private key', 'hostname'
 ```
 
@@ -936,7 +936,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.unfollow
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
 project.unfollow
 ```
 
