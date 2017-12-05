@@ -9,9 +9,8 @@
 Circle CI API Wrapper. Requires ruby `>= 2.0.0`.
 
 **Version 2.x has breaking changes from v1.x**
-> Please use branch v-1.1.0 or tag v1.1.0 for previous 1.x version of
-> the gem until you can update to the latest version. 1.x will not be supported
-> in the longer term.
+
+> Please use branch v-1.1.0 or tag v1.1.0 for previous 1.x version of the gem until you can update to the latest version. 1.x will not be supported in the longer term.
 
 ## Install
 
@@ -43,8 +42,7 @@ CircleCi.configure do |config|
 end
 ```
 
-Optionally you can configure your own host and/or port if using an enterprise
-CircleCi host. The port will default to `80` if not set.
+Optionally you can configure your own host and/or port if using an enterprise CircleCi host. The port will default to `80` if not set.
 
 ```ruby
 CircleCi.configure do |config|
@@ -69,6 +67,7 @@ end
 ```
 
 Setup for proxying requests
+
 ```ruby
 require 'circleci'
 
@@ -84,9 +83,7 @@ end
 
 #### Config Object
 
-If you need to use custom config per request or for specific non-global cases
-you can instantiate a `CircleCi::Config` object with all the same granularity
-as a global config.
+If you need to use custom config per request or for specific non-global cases you can instantiate a `CircleCi::Config` object with all the same granularity as a global config.
 
 ```ruby
 # Using a new token
@@ -107,9 +104,7 @@ config.proxy_pass = ENV['CIRCLECI_PROXY_PASS']
 
 ### API Versioning
 
-CircleCi is a versioned API. This gem attempts to stay up to date with any
-changes between versions. As of now you can change the version on the config
-you use to make requests.
+CircleCi is a versioned API. This gem attempts to stay up to date with any changes between versions. As of now you can change the version on the config you use to make requests.
 
 ```ruby
 config = CircleCi::Config.new token: ENV['CIRCLECI_TOKEN'], version: 'v1.1'
@@ -121,10 +116,7 @@ This will change the requests to be in the format of
 
 ### VCS Type
 
-Introduced in `v1.1` of the API is interacting with projects and builds based
-on their version control system type. Currently this can be `github` or `bitbucket`.
-Please see endpoint documentation for `Project` and `Build` on usage but you can
-set a vcs type on either as so
+Introduced in `v1.1` of the API is interacting with projects and builds based on their version control system type. Currently this can be `github` or `bitbucket`. Please see endpoint documentation for `Project` and `Build` on usage but you can set a vcs type on either as so
 
 ```ruby
 # A bitbucket project
@@ -142,38 +134,44 @@ project = CircleCi::Project.new 'username', 'project', 'gitlab'
 project.vcs_type # will be github
 ```
 
-
 ## API Endpoints
 
-* [User](#user)
-  * [Heroku Key](#heroku_key)
-  * [Me](#me)
-* [Project](#project)
-  * [All](#all)
-  * [Build Branch](#build_branch)
-  * [Build SSH Key](#build_ssh_key)
-  * [Clear Cache](#clear_cache)
-  * [Enable](#enable)
-  * [Envvar](#envvar)
-  * [Follow](#follow)
-  * [Delete Checkout Key](#delete_checkout_key)
-  * [Get Checkout Key](#get_checkout_key)
-  * [List Checkout Keys](#list_checkout_keys)
-  * [New Checkout Key](#new_checkout_key)
-  * [Recent Project Builds](#recent_project_builds)
-  * [Recent Builds Branch](#recent_builds_branch)
-  * [Settings](#settings)
-  * [Add Envvar](#add_envvar)
-  * [SSH Key](#ssh_key)
-  * [Unfollow](#unfollow)
-* [Build](#build)
-  * [Artifacts](#artifacts)
-  * [Cancel](#cancel)
-  * [Get](#get)
-  * [Retry](#retry)
-  * [Tests](#tests)
-* [Recent Builds](#recent_builds)
-  * [Get Recent Builds](#get_recent_builds)
+- [User](#user)
+
+  - [Heroku Key](#heroku_key)
+  - [Me](#me)
+
+- [Project](#project)
+
+  - [All](#all)
+  - [Build Branch](#build_branch)
+  - [Build SSH Key](#build_ssh_key)
+  - [Clear Cache](#clear_cache)
+  - [Enable](#enable)
+  - [Envvar](#envvar)
+  - [Follow](#follow)
+  - [Delete Checkout Key](#delete_checkout_key)
+  - [Get Checkout Key](#get_checkout_key)
+  - [List Checkout Keys](#list_checkout_keys)
+  - [New Checkout Key](#new_checkout_key)
+  - [Recent Project Builds](#recent_project_builds)
+  - [Recent Builds Branch](#recent_builds_branch)
+  - [Settings](#settings)
+  - [Add Envvar](#add_envvar)
+  - [SSH Key](#ssh_key)
+  - [Unfollow](#unfollow)
+
+- [Build](#build)
+
+  - [Artifacts](#artifacts)
+  - [Cancel](#cancel)
+  - [Get](#get)
+  - [Retry](#retry)
+  - [Tests](#tests)
+
+- [Recent Builds](#recent_builds)
+
+  - [Get Recent Builds](#get_recent_builds)
 
 ### [User](#user)
 
@@ -182,6 +180,7 @@ project.vcs_type # will be github
 Endpoint: `/user/heroku-key`
 
 Adds your Heroku API key to CircleCI.
+
 ```ruby
 # Use global config with token for user
 user = CircleCi::User.new
@@ -195,6 +194,7 @@ user.heroku_key 'your-api-key'
 Example response
 
 Empty body response with a `200 OK` response code
+
 ```javascript
 ""
 ```
@@ -306,10 +306,9 @@ res.body['status']
 res.body['build_url']
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.build_branch 'branch'
 ```
-
 
 Example response
 
@@ -407,13 +406,14 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.build_ssh_key 'username', 'repo', 'RSA private key', 'hostname'
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.build_ssh_key 'username', 'repo', 'RSA private key', 'hostname'
 ```
 
 Example response
 
 Empty response body with a `200 OK` successful response code
+
 ```javascript
 ""
 ```
@@ -430,7 +430,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.clear_cache
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.clear_cache
 ```
 
@@ -447,13 +447,14 @@ Example response
 Endpoint: `/project/:username/:repository/checkout-key/:fingerprint`
 
 Delete a checkout key for a project by supplying the fingerprint of the key.
+
 ```ruby
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
 res = project.delete_checkout_key 'fingerprint'
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.delete_checkout_key 'fingerprint'
 ```
 
@@ -467,8 +468,7 @@ Example response
 
 Endpoint: `/project/:username/:repository/enable`
 
-Enable a project in CircleCI. Causes a CircleCI SSH key to be added to
-the GitHub. Requires admin privilege to the repository.
+Enable a project in CircleCI. Causes a CircleCI SSH key to be added to the GitHub. Requires admin privilege to the repository.
 
 ```ruby
 # Use global config with token for user
@@ -476,11 +476,12 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.enable
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.enable
 ```
 
 Example response
+
 ```javascript
 {
     "hall_notify_prefs": nil,
@@ -569,7 +570,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.envvar
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.envvar
 ```
 
@@ -591,7 +592,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.follow
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.follow
 ```
 
@@ -616,8 +617,8 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.get_checkout_key 'fingerprint'
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
-project.get_checkout_key 'fingerprint
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
+project.get_checkout_key 'fingerprint'
 ```
 
 Example response
@@ -644,7 +645,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.checkout_keys
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.checkout_keys
 ```
 
@@ -666,8 +667,7 @@ Example response
 
 Endpoint: `/project/:username/:repository/checkout-key`
 
-Create an ssh key used to access external systems that require SSH key-based authentication.
-Takes a type of key to create which an be `deploy-key` or `github-user-key`.
+Create an ssh key used to access external systems that require SSH key-based authentication. Takes a type of key to create which an be `deploy-key` or `github-user-key`.
 
 ```ruby
 # Use global config with token for user
@@ -675,8 +675,8 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.new_checkout_key 'deploy-key'
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
-project.new_checkout_key 'deploy-key
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
+project.new_checkout_key 'deploy-key'
 ```
 
 Example response
@@ -709,7 +709,7 @@ res = project.recent_builds filter: 'failed'
 res = project.recent_builds limit: 10, offset: 50
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.recent_builds
 ```
 
@@ -760,7 +760,7 @@ res = project.recent_builds_branch 'branch', filter: 'failed'
 res = project.recent_builds_branch 'branch', limit: 10, offset: 50
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.recent_builds_branch 'branch'
 ```
 
@@ -805,7 +805,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.settings
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.settings
 ```
 
@@ -890,7 +890,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.add_envvar environment
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.add_envvar environment
 ```
 
@@ -904,8 +904,7 @@ Example response
 
 Endpoint: `/project/:username/:repository/ssh-key`
 
-Creates an ssh key that will be used to access the external system identified
-by the hostname parameter for SSH key-based authentication.
+Creates an ssh key that will be used to access the external system identified by the hostname parameter for SSH key-based authentication.
 
 ```ruby
 # Use global config with token for user
@@ -913,13 +912,14 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.ssh_key 'RSA private key', 'hostname'
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.ssh_key 'RSA private key', 'hostname'
 ```
 
 Example response
 
 Empty response body with a `200 OK` successful response code
+
 ```javascript
 ""
 ```
@@ -936,7 +936,7 @@ project = CircleCi::Project.new 'username', 'reponame'
 res = project.unfollow
 
 # Use a different config with another user token
-project = CircleCi::Project.new 'username', 'reponame', other_project_config
+project = CircleCi::Project.new 'username', 'reponame', 'vcs_type', other_project_config
 project.unfollow
 ```
 
@@ -1174,8 +1174,7 @@ Example response
 
 Endpoint: `/project/:username/:repository/:build/tests`
 
-Tests endpoint to get the recorded tests for a build. Will return an array of
-the tests ran and some details.
+Tests endpoint to get the recorded tests for a build. Will return an array of the tests ran and some details.
 
 ```ruby
 # Use global config with token for user
@@ -1262,14 +1261,8 @@ recent.get
 
 ### Tests
 
-Tests are ran using Rspec and VCR for API interaction recording.
-Run using `rake` or `rspec`. Please add tests for any new features or
-endpoints added if you are contributing. Code styling is enforced with RuboCop
-and uses a checked in `.rubocop.yml` for this project.
+Tests are ran using Rspec and VCR for API interaction recording. Run using `rake` or `rspec`. Please add tests for any new features or endpoints added if you are contributing. Code styling is enforced with RuboCop and uses a checked in `.rubocop.yml` for this project.
 
-Tests are using a live CircleCi API token for this repository. Any tests
-should be using this key, which is in the `.env` file. You should not have
-to do anything outside of writing the tests against this repository.
-
+Tests are using a live CircleCi API token for this repository. Any tests should be using this key, which is in the `.env` file. You should not have to do anything outside of writing the tests against this repository.
 
 [docs]: http://www.rubydoc.info/gems/circleci
