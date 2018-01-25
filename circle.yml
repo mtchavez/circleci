@@ -2,6 +2,14 @@ version: 2
 jobs:
   build:
     docker:
+      - image: ruby:2.5
+    steps:
+      - checkout
+      - run: bundle install
+      - run: bundle exec rake
+    working_directory: ~/app
+  build_ruby_2_4:
+    docker:
       - image: ruby:2.4
     steps:
       - checkout
