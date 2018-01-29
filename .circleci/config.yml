@@ -4,7 +4,8 @@ version: 2
   steps:
     - checkout
     - run: bundle install
-    - run: bundle exec rake
+    - run: bundle exec rake rubocop
+    - run: bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml
   working_directory: ~/app
 
 jobs:
