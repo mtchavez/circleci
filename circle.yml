@@ -1,18 +1,22 @@
 version: 2
+
+.build_template: &build_definition
+  steps:
+    - checkout
+    - run: bundle install
+    - run: bundle exec rake
+  working_directory: ~/app
+
 jobs:
   build:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.5
+  build_ruby2_4:
+    <<: *build_definition
     docker:
       - image: ruby:2.4
-    steps:
-      - checkout
-      - run: bundle install
-      - run: bundle exec rake
-    working_directory: ~/app
   build_ruby2_3:
+    <<: *build_definition
     docker:
       - image: ruby:2.3
-    steps:
-      - checkout
-      - run: bundle install
-      - run: bundle exec rake
-    working_directory: ~/app
