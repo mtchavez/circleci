@@ -1,3 +1,10 @@
+# Version 2.0.2 (2018-01-28)
+
+House cleaning update, no changes to API or new endpoints added.
+
+- Upgrade Yard development dependency due to vulnerability
+- Add CI workflow for building against latest ruby versions
+
 # Version 2.0.1 (2017-08-22)
 
 * Add params to `Project#recent_builds_branch`
