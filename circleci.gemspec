@@ -34,5 +34,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'typhoeus',   '~> 1.3.0'
   s.add_development_dependency 'vcr',        '~> 3.0.3'
   s.add_development_dependency 'webmock',    '~> 3.0.1'
-  s.add_development_dependency 'yard',       '~> 0.9.5'
+  s.add_development_dependency 'yard',       '~> 0.9.11'
 end
