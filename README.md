@@ -4,14 +4,8 @@
 [![Circle CI](https://circleci.com/gh/mtchavez/circleci.svg?style=svg)](https://circleci.com/gh/mtchavez/circleci)
 [![Code Climate](https://codeclimate.com/github/mtchavez/circleci.png)](https://codeclimate.com/github/mtchavez/circleci)
 [![Coverage Status](https://coveralls.io/repos/mtchavez/circleci/badge.png)](https://coveralls.io/r/mtchavez/circleci)
-[![Dependency Status](https://gemnasium.com/mtchavez/circleci.svg)](https://gemnasium.com/mtchavez/circleci)
 
 Circle CI API Wrapper. Requires ruby `>= 2.0.0`.
-
-**Version 2.x has breaking changes from v1.x**
-> Please use branch v-1.1.0 or tag v1.1.0 for previous 1.x version of
-> the gem until you can update to the latest version. 1.x will not be supported
-> in the longer term.
 
 ## Install
 

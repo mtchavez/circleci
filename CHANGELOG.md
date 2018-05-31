@@ -13,6 +13,10 @@ House cleaning update, no changes to API or new endpoints added.
 
 ## Breaking Changes
 
+> Please use branch v-1.1.0 or tag v1.1.0 for previous 1.x version of
+> the gem until you can update to the latest version. 1.x will not be supported
+> in the longer term.
+
 * Remove all deprecated class methods in favor of instance API resources classes
   * Please look at the documentation in the README or rubydoc on changes. An example of a change might be:
 
