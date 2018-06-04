@@ -3,9 +3,16 @@ version: 2
 .build_template: &build_definition
   steps:
     - checkout
-    - run: bundle install
+    - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    - run: chmod +x ./cc-test-reporter
+    - run: ./cc-test-reporter before-build
+    - run: bundle install --jobs=4 --retry=4 --path vendor/bundle
     - run: bundle exec rake rubocop
-    - run: bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml
+    - run:
+        name: Run tests
+        command: |
+          bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml
+          ./cc-test-reporter after-build --exit-code $?
   working_directory: ~/app
 
 jobs:

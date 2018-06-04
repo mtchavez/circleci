@@ -1,18 +1,5 @@
 # frozen_string_literal: true
 
-require 'simplecov'
-if ENV['COVERALLS_REPO_TOKEN']
-  require 'coveralls'
-  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
-end
-SimpleCov.at_exit do
-  SimpleCov.result.format!
-end
-SimpleCov.start do
-  add_filter '/spec/'
-  add_filter 'vendor'
-end
-
 project_root = File.expand_path(File.dirname(__FILE__) + '/..')
 $LOAD_PATH << "#{project_root}/lib"
 
@@ -23,6 +10,9 @@ require 'pry'
 
 require 'dotenv'
 Dotenv.load
+
+require 'simplecov'
+SimpleCov.start
 
 Dir["#{project_root}/spec/support/**/*.rb"].each { |f| require f }
 
