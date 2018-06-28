@@ -23,7 +23,7 @@ GEM
     hashdiff (0.3.5)
     json (2.1.0)
     method_source (0.8.2)
-    multi_json (1.12.1)
+    multi_json (1.13.1)
     parallel (1.12.0)
     parser (2.4.0.0)
       ast (~> 2.2)
@@ -90,7 +90,7 @@ DEPENDENCIES
   circleci!
   dotenv (~> 2.2.0)
   gemcutter (~> 0.7.1)
-  multi_json (~> 1.12.1)
+  multi_json (~> 1.13.1)
   pry (~> 0.10.4)
   pry-byebug (~> 3.4.2)
   pry-doc (~> 0.11.1)
