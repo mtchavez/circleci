@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'multi_json', '~> 1.13.1'
   s.add_development_dependency 'pry',        '~> 0.10.4'
   s.add_development_dependency 'pry-byebug', '~> 3.4.2'
-  s.add_development_dependency 'pry-doc',    '~> 0.11.1'
+  s.add_development_dependency 'pry-doc',    '~> 0.12.0'
   s.add_development_dependency 'rake',       '~> 12.0.0'
   s.add_development_dependency 'redcarpet',  '~> 3.4.0'
   s.add_development_dependency 'rspec',      '~> 3.6.0'
