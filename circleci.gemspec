@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'dotenv',     '~> 2.5.0'
   s.add_development_dependency 'gemcutter',  '~> 0.7.1'
   s.add_development_dependency 'multi_json', '~> 1.13.1'
-  s.add_development_dependency 'pry',        '~> 0.11.3'
+  s.add_development_dependency 'pry',        '~> 0.12.0'
   s.add_development_dependency 'pry-byebug', '~> 3.6.0'
   s.add_development_dependency 'pry-doc',    '~> 0.13.4'
   s.add_development_dependency 'rake',       '~> 12.3.1'
