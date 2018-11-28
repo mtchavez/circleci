@@ -16,7 +16,7 @@ module CircleCi
     # Initializing response object to be returned from API calls, used internally.
     #
     # @private
-    def initialize(resp) # @private
+    def initialize(resp)
       @resp = resp
       @body = parsed_body
     end

@@ -25,7 +25,7 @@ module CircleCi
       @version = version
       @token = token
       @request_overrides = request_overrides
-      @logger = logger ? logger : Logger.new(STDOUT)
+      @logger = logger || Logger.new(STDOUT)
     end
     # rubocop:enable Metrics/ParameterLists
 
@@ -38,11 +38,12 @@ module CircleCi
     end
 
     def proxy_to_port
-      proxy_port ? proxy_port : 80
+      proxy_port || 80
     end
 
     def proxy_uri
       return unless @proxy && proxy_host
+
       host_uri = URI.parse(proxy_host)
       userinfo = proxy_userinfo? ? "#{proxy_user}:#{proxy_pass}@" : ''
       URI.parse("#{host_uri.scheme}://#{userinfo}#{host_uri.host}:#{proxy_to_port}#{host_uri.path}")
