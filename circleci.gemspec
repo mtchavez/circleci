@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.signing_key           = File.join(Gem.user_home, '.ssh', 'gem-private_key.pem') if $PROGRAM_NAME.end_with?('gem')
 
   # Dev Dependencies
-  s.add_development_dependency 'dotenv',     '~> 2.6.0'
+  s.add_development_dependency 'dotenv',     '~> 2.7.1'
   s.add_development_dependency 'gemcutter',  '~> 0.7.1'
   s.add_development_dependency 'multi_json', '~> 1.13.1'
   s.add_development_dependency 'pry',        '~> 0.12.0'
