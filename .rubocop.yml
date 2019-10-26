@@ -973,11 +973,6 @@ Layout/FirstParameterIndentation:
   - special_for_inner_method_call_in_parentheses
   IndentationWidth:
 
-Style/FlipFlop:
-  Description: Checks for flip flops
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-flip-flops
-  Enabled: true
-
 Style/For:
   Description: Checks use of for or each in multiline loops.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-for-loops
@@ -1860,18 +1855,3 @@ Style/WordArray:
   SupportedStyles:
   - percent
   - brackets
-  MinSize: 0
-  WordRegex: !ruby/regexp /\A[\p{Word}\n\t]+\z/
-
-Metrics/MethodLength:
-  Max: 30
-
-Metrics/LineLength:
-  Max: 200
-
-Style/NumericLiterals:
-  MinDigits: 7
-
-Metrics/ModuleLength:
-  CountComments: false
-  Max: 300
