@@ -284,8 +284,8 @@ Build a specific branch of a project
 # Use global config with token for user
 project = CircleCi::Project.new 'username', 'reponame'
 
-# Get recent failed builds with a filter parameter
-failed_builds = project.build_branch 'branch'
+# Build the latest push for this branch
+latest_build = project.build_branch 'branch'
 
 # Adding URL params for revision or parallel
 params = { revision: 'fda12345asdf', parallel: 2 }
