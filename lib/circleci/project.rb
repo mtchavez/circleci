@@ -170,6 +170,16 @@ module CircleCi
 
     ##
     #
+    # Deletes an envvar for a project
+    #
+    # @param envvar [String] - 'TESTENV'
+    # @return       [CircleCi::Response] - Response object
+    def delete_envvar(envvar)
+      CircleCi.request(conf, "#{base_path}/envvar/#{envvar}").delete
+    end
+
+    ##
+    #
     # Add a ssh key to a project
     #
     # @param key      [String] - The ssh private key

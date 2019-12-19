@@ -508,6 +508,49 @@ RSpec.describe CircleCi::Project, :vcr do
     end
   end
 
+  describe 'delete_envvar' do
+    context 'successfully' do
+      let(:temp_var) { new_project.add_envvar name: 'DELETE_ME', value: 'testvalue' }
+      let(:res) { new_project.delete_envvar 'DELETE_ME' }
+
+      before { temp_var }
+
+      it 'is verified by response' do
+        expect(res).to be_instance_of(CircleCi::Response)
+        expect(res).to be_success
+      end
+
+      describe 'envvar' do
+        let(:envvar) { res.body }
+
+        it 'has metadata' do
+          expect(envvar['message']).to eq 'ok'
+        end
+      end
+    end
+
+    context 'unsuccessfully' do
+      let(:project) { 'delete_envvar-bogus' }
+      let(:res) { new_project.delete_envvar 'DELETE_ME' }
+
+      it 'is verified by response' do
+        expect(res).to be_instance_of(CircleCi::Response)
+        expect(res).not_to be_success
+      end
+
+      describe 'message' do
+        subject { res.body }
+
+        it 'returns an error message' do
+          # NOTE: Appears to be a bug with this response returning a message
+          #       that is a JSON string of a github API response
+          expect(subject).to be_instance_of(Hash)
+          expect(subject['message']).to match(/Not Found/i)
+        end
+      end
+    end
+  end
+
   describe 'ssh_key' do
     context 'successfully' do
       let(:res) { new_project.ssh_key test_rsa_private_key, 'hostname' }
