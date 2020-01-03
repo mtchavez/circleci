@@ -895,6 +895,30 @@ Example response
 {"name":"foo","value":"xxxx"}
 ```
 
+#### [delete_envvar](#delete_envvar)
+
+Endpoint: `/project/:username/:project/envvar`
+
+Deletes an environment variable for a project
+
+```ruby
+envvar = 'SECRET_CI_TOKEN'
+
+# Use global config with token for user
+project = CircleCi::Project.new 'username', 'reponame'
+res = project.delete_envvar envvar
+
+# Use a different config with another user token
+project = CircleCi::Project.new 'username', 'reponame', 'github', other_project_config
+project.delete_envvar envvar
+```
+
+Example response
+
+```javascript
+{"message": "ok"}
+```
+
 #### [ssh_key](#ssh_key)
 
 Endpoint: `/project/:username/:repository/ssh-key`
