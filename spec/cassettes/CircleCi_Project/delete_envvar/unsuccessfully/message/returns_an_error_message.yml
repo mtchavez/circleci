@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/delete_envvar-bogus/envvar/TESTENV?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 19 Dec 2019 02:26:20 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=3%2Fd%2FI1wTy7d0xEYJES6fpiEI8XPXgxP2VMCkm7nv6jFBUM2H%2B1FhcIMu%2FyyQiDRFjJFICaN9fpAcJLEwZBqrsmkcHBZ0O3JQlP9MjxUIYtZ67KsNaVXopdPKvymPfLlIdFSmWjAXvkuNVxd47DV0VeTSCuH6NdQSOYeiMwrFw9gIWnl0nzgidZtU4gnzJSafbnipwDGsEXar%2BoB%2BR7WVrEB1Pd4LrJrA47%2BdmLtKk9Q%3D--m%2FJj7uH7MSVKoyilB2LqlqoiR3AWsyPjZkikQsj157E%3D;Path=/;HttpOnly;Expires=Fri,
+        18 Dec 2020 16:43:32 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-5544bcb64-6s4x5
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - a1a30175-f4c3-4f21-8039-4f843ce1014e
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/envvar/:var-name"
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Project not found"}'
+    http_version: 
+  recorded_at: Thu, 19 Dec 2019 02:26:20 GMT
+- request:
+    method: delete
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/delete_envvar-bogus/envvar/DELETE_ME?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 19 Dec 2019 02:36:44 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=9wV4kSi6OK%2F9lwhzRNuh0GVra038qAjkcA7Wia985Q6PwlNI2MvLVSTKB1CAh0sucERzCFg%2FIUPkgNvAR0rb9Vr1piDRZjXQD%2B3L%2Bkz8FzQhYIMNqpZ8aI%2BVfCXd8NMgGcEm1EOtI%2FRPdjucMe0sN048kZWLzO3JYlPoMqWwILEWOz5r4Xd1h4aYutbCAnjxQBxDmWiv173GDGjgtZ%2FOBLDd5%2B346ROmNhg3tYx1Fe4%3D--GLJVIDmnT2ouwzzi%2BzelcR6CYDxD%2FepuXISsuHN5KxA%3D;Path=/;HttpOnly;Expires=Fri,
+        18 Dec 2020 16:50:07 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-5544bcb64-9jws2
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 7ddec6bf-30dd-47de-a6c9-f291df97fef8
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/envvar/:var-name"
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Project not found"}'
+    http_version: 
+  recorded_at: Thu, 19 Dec 2019 02:36:44 GMT
+recorded_with: VCR 4.0.0

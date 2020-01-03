@@ -158,6 +158,7 @@ project.vcs_type # will be github
   * [Recent Builds Branch](#recent_builds_branch)
   * [Settings](#settings)
   * [Add Envvar](#add_envvar)
+  * [Delete Envvar](#delete_envvar)
   * [SSH Key](#ssh_key)
   * [Unfollow](#unfollow)
 * [Build](#build)
