@@ -3,50 +3,51 @@
 require 'spec_helper'
 
 RSpec.describe CircleCi::User, :vcr do
-  describe 'me' do
-    context 'successfully' do
-      let(:res) { subject.me }
+  subject(:user) { described_class.new }
 
-      it 'is verified by response' do
-        expect(res).to be_instance_of(CircleCi::Response)
-        expect(res).to be_success
-      end
+  describe 'me' do
+    context 'when successful' do
+      let(:res) { user.me }
+
+      it_behaves_like 'a successful response'
 
       describe 'user' do
-        let(:body) { res.body }
+        let(:response) { res.body }
+        let(:metadata_keys) { %w[login admin] }
 
         it 'has metadata' do
-          expect(body['login']).to eql 'mtchavez'
-          expect(body['admin']).to be_falsy
+          aggregate_failures do
+            metadata_keys.each do |key|
+              expect(response).to have_key(key), "Expected #{key} to exist in user"
+            end
+          end
         end
       end
     end
 
-    context 'custom config' do
+    context 'with custom config' do
       let(:custom_port) { 9090 }
       let(:custom_config) { CircleCi::Config.new(port: custom_port) }
       let(:new_user) { described_class.new custom_config }
       let(:fake_request) { instance_double('CircleCi::Request') }
 
-      it 'makes request with custom config' do
-        expect(CircleCi).to receive(:request).with(custom_config, '/me').and_return(fake_request)
-        expect(fake_request).to receive(:get)
-        expect(new_user.conf).not_to eq(CircleCi.config)
-        expect(new_user.conf).to eq(custom_config)
-        expect(new_user.conf.port).to eq(custom_port)
+      before do
+        allow(fake_request).to receive(:get)
+        allow(CircleCi).to receive(:request).with(custom_config, '/me').and_return(fake_request)
         new_user.me
+      end
+
+      it 'makes request with custom config' do
+        expect(CircleCi).to have_received(:request).with(custom_config, '/me')
       end
     end
   end
 
   describe 'heroku-key' do
-    context 'successfully' do
-      let(:res) { subject.heroku_key test_heroku_key }
+    context 'when successful' do
+      let(:res) { user.heroku_key test_heroku_key }
 
-      it 'is verified by response' do
-        expect(res).to be_instance_of(CircleCi::Response)
-        expect(res).to be_success
-      end
+      it_behaves_like 'a successful response'
     end
   end
 end

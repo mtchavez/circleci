@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/envvar?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 04 Jan 2020 00:33:11 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=qKZyG5ZFF6HdoVjNxdukXZFKAn9Svx%2BtpNzSpKFEUYVYuR42uVKMGQpLnpxhsepfenuQd90RUR9ftzm6oyUunCVwUveRbkkERKCSMF447J9F6rfkhZMf0Bn0HJuR6Ztozlm6TtOabvU4mq5efpWulI%2FIaysiB3fd7btIm0RZ0zuUAFtQhUmjmJj84V8mS4bqOgK0%2BfkMD6Fj%2FBVr8ytJ2OMYAI4JoDe4SSkhCErYXFw%3D--P3WKBgQ7AcAe6ZENEuFZ%2BFjQSmCd1L%2Bc%2FqHM%2F61hj5A%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 23:22:54 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      Vary:
+      - Origin
+      X-Circleci-Identity:
+      - circle-www-api-v1-5ddd5d69bc-zk8sh
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 494a5a6b-5de6-4222-a76c-5d4e30ca4c55
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/envvar"
+      Content-Length:
+      - '104'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"name":"CC_TEST_REPORTER_ID","value":"xxxxa869"},{"name":"COVERALLS_REPO_TOKEN","value":"xxxxskJS"},{"name":"TESTENV","value":"xxxxalue"}]'
+    http_version: 
+  recorded_at: Sat, 04 Jan 2020 00:33:11 GMT
+recorded_with: VCR 4.0.0

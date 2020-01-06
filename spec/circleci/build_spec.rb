@@ -10,11 +10,14 @@ RSpec.describe CircleCi::Build, :vcr do
   let(:new_build) { described_class.new username, project, vcs, build_num }
 
   describe 'artifacts' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_build.artifacts }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
@@ -22,19 +25,20 @@ RSpec.describe CircleCi::Build, :vcr do
         subject(:artifacts) { res.body }
 
         it 'are returned' do
-          expect(subject.size).to eql 1
-          expect(subject).to be_instance_of(Array)
+          expect(artifacts.size).to be 1
         end
 
-        context 'first artifact' do
-          subject { artifacts.first }
+        context 'with first artifact' do
+          subject(:artifact) { artifacts.first }
+
+          let(:metadata_keys) { %w[url node_index pretty_path path] }
 
           it 'has metadata' do
-            expect(subject).to be_instance_of(Hash)
-            expect(subject).to have_key 'url'
-            expect(subject).to have_key 'node_index'
-            expect(subject).to have_key 'pretty_path'
-            expect(subject).to have_key 'path'
+            aggregate_failures do
+              metadata_keys.each do |key|
+                expect(artifact).to have_key(key), "Expected #{key} to exist in artifact"
+              end
+            end
           end
         end
       end
@@ -42,101 +46,116 @@ RSpec.describe CircleCi::Build, :vcr do
   end
 
   describe 'cancel' do
-    context 'successfully' do
+    context 'when successful' do
       let(:build_num) { 145 }
       let(:res) { new_build.cancel }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'canceled build' do
-        subject { res.body }
+        subject(:response) { res.body }
 
-        it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['status']).to eql 'canceled'
-          expect(subject['outcome']).to eql 'canceled'
-          expect(subject['canceled']).to be_truthy
+        it 'has correct status' do
+          expect(response['status']).to eql 'canceled'
+        end
+
+        it 'is canceled' do
+          expect(response['canceled']).to be_truthy
         end
       end
     end
   end
 
   describe 'get' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_build.get }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'build' do
-        subject { res.body }
+        subject(:response) { res.body }
+
+        let(:metadata_keys) { %w[committer_name messages start_time stop_time status subject] }
 
         it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-
-          expect(subject).to have_key 'committer_name'
-          expect(subject).to have_key 'messages'
-          expect(subject).to have_key 'start_time'
-          expect(subject).to have_key 'stop_time'
-          expect(subject).to have_key 'status'
-          expect(subject).to have_key 'subject'
+          aggregate_failures do
+            metadata_keys.each do |key|
+              expect(response).to have_key(key), "Expected #{key} to exist in build response"
+            end
+          end
         end
       end
     end
   end
 
   describe 'retry' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_build.retry }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'build' do
-        subject { res.body }
+        subject(:response) { res.body }
+
+        let(:metadata_keys) { %w[committer_name messages start_time stop_time status subject] }
+
+        it 'has correct status' do
+          expect(response['status']).to eql 'not_run'
+        end
 
         it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['status']).to eql 'scheduled'
-          expect(subject).to have_key 'committer_name'
-          expect(subject).to have_key 'messages'
-          expect(subject).to have_key 'start_time'
-          expect(subject).to have_key 'stop_time'
-          expect(subject).to have_key 'status'
-          expect(subject).to have_key 'subject'
+          aggregate_failures do
+            metadata_keys.each do |key|
+              expect(response).to have_key(key), "Expected #{key} to exist in build response"
+            end
+          end
         end
       end
     end
   end
 
   describe 'tests' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_build.tests }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'for build' do
-        subject { res.body['tests'] }
+        subject(:tests) { res.body['tests'] }
 
-        it { expect(subject.size).to equal 78 }
+        it { expect(tests.size).to equal 78 }
 
-        describe 'a test' do
-          subject { res.body['tests'].first }
+        context 'with a test' do
+          subject(:test) { res.body['tests'].first }
 
-          it { expect(subject).to be_instance_of(Hash) }
-          it { expect(subject).to have_key 'file' }
-          it { expect(subject).to have_key 'source' }
-          it { expect(subject).to have_key 'result' }
+          it { expect(test).to be_instance_of(Hash) }
+          it { expect(test).to have_key 'file' }
+          it { expect(test).to have_key 'source' }
+          it { expect(test).to have_key 'result' }
         end
       end
     end

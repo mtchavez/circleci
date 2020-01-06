@@ -3,33 +3,37 @@
 require 'spec_helper'
 
 RSpec.describe CircleCi::Projects, :vcr do
+  subject(:projects) { described_class.new }
+
   describe 'initialize' do
-    context 'default config' do
+    context 'with default config' do
       it 'is set to global config' do
-        expect(subject.conf).to eq(CircleCi.config)
+        expect(projects.conf).to eq(CircleCi.config)
       end
     end
   end
 
   describe 'get' do
-    context 'successfully' do
-      let(:res) { subject.get }
+    context 'when successful' do
+      let(:res) { projects.get }
 
-      it 'is verified by response' do
-        expect(res).to be_instance_of(CircleCi::Response)
-        expect(res).to be_success
-      end
+      it_behaves_like 'a successful response'
 
       describe 'projects' do
-        let(:projects) { res.body }
+        let(:response) { res.body }
+        let(:metadata_keys) { %w[default_branch vcs_url] }
+        let(:project) { response.first }
+
+        it 'has correct size' do
+          expect(response.size).to be 7
+        end
 
         it 'has metadata' do
-          expect(projects).to be_instance_of(Array)
-          expect(projects.size).to eql 7
-
-          project = projects.first
-          expect(project).to have_key('default_branch')
-          expect(project).to have_key('vcs_url')
+          aggregate_failures do
+            metadata_keys.each do |key|
+              expect(project).to have_key(key), "Expected #{key} to exist in build"
+            end
+          end
         end
       end
     end

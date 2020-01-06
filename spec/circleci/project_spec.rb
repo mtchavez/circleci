@@ -9,65 +9,68 @@ RSpec.describe CircleCi::Project, :vcr do
   let(:new_project) { described_class.new username, project }
 
   describe 'build' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.build }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'build' do
-        subject { res.body }
+        subject(:response) { res.body }
+
+        let(:metadata_keys) { %w[branch committer_name messages start_time stop_time status subject] }
 
         it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['committer_name']).to eql 'Chavez'
-          expect(subject['branch']).to eql 'master'
-
-          expect(subject).to have_key 'messages'
-          expect(subject).to have_key 'start_time'
-          expect(subject).to have_key 'stop_time'
-          expect(subject).to have_key 'status'
-          expect(subject).to have_key 'subject'
+          aggregate_failures do
+            metadata_keys.each do |key|
+              expect(response).to have_key(key), "Expected #{key} to exist in build"
+            end
+          end
         end
       end
     end
   end
 
   describe 'build_branch' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.build_branch branch }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'build' do
-        subject { res.body }
+        subject(:response) { res.body }
+
+        let(:metadata_keys) { %w[messages start_time stop_time status subject] }
 
         it 'returns newly created build' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['committer_name']).to eql 'Chavez'
-          expect(subject['branch']).to eql 'master'
+          expect(response['branch']).to eql 'master'
+        end
 
-          expect(subject).to have_key 'messages'
-          expect(subject).to have_key 'start_time'
-          expect(subject).to have_key 'stop_time'
-          expect(subject).to have_key 'status'
-          expect(subject).to have_key 'subject'
+        it 'has metadata' do
+          aggregate_failures do
+            metadata_keys.each do |key|
+              expect(response).to have_key(key), "Expected #{key} to exist in build"
+            end
+          end
         end
       end
     end
 
-    context 'experimental api' do
+    context 'when experimental api' do
       let(:res) { new_project.build_branch branch, {}, 'SOME_VAR' => '123' }
 
-      it 'is verified by response' do
-        expect(res).to be_instance_of(CircleCi::Response)
-        expect(res).to be_success
-      end
+      it_behaves_like 'a successful response'
     end
   end
 
@@ -76,85 +79,96 @@ RSpec.describe CircleCi::Project, :vcr do
     let(:ssh_key)   { 'RSA Private Key' }
     let(:ssh_host)  { 'hostname' }
 
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.build_ssh_key build_num, ssh_key, ssh_host }
 
-      it 'is verified by response' do
-        expect(res).to be_instance_of(CircleCi::Response)
-        expect(res).to be_success
-      end
+      it_behaves_like 'a successful response'
     end
   end
 
   describe 'clear_cache' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.clear_cache }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'message' do
-        subject { res.body }
+        subject(:response) { res.body }
 
         it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['status']).to eql 'build dependency caches deleted'
+          expect(response['status']).to eql 'build dependency caches deleted'
         end
       end
     end
   end
 
   describe 'delete_checkout_key' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.delete_checkout_key test_delete_checkout_key_fingerprint }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
-        expect(res.body).to be_instance_of(Hash)
+      end
+
+      it 'has ok message' do
         expect(res.body['message']).to eql 'ok'
       end
     end
 
-    context 'unsuccessfully' do
+    context 'when unsuccessful' do
       let(:res) { new_project.delete_checkout_key 'asdf-bogus' }
       let(:message) { 'checkout key not found' }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has an unsuccessful response' do
         expect(res).not_to be_success
       end
 
       describe 'message' do
-        subject { res.body }
+        subject(:response) { res.body }
 
         it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['message']).to eql message
+          expect(response['message']).to eql message
         end
       end
     end
   end
 
   describe 'enable' do
-    context 'successfully' do
+    context 'when successful' do
       let(:project) { 'dotfiles' }
       let(:res) { new_project.enable }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
-      describe 'project' do
+      describe 'project checkout keys' do
         let(:res) { new_project.list_checkout_keys }
         let(:project_res) { res.body }
 
-        it 'returns the circleci project settings' do
-          expect(project_res).to be_instance_of(Array)
+        it 'has a public key' do
           expect(project_res.first).to have_key('public_key')
+        end
+
+        it 'has a deploy key' do
           expect(project_res.first['type']).to eql('deploy-key')
         end
       end
@@ -162,11 +176,14 @@ RSpec.describe CircleCi::Project, :vcr do
   end
 
   describe 'envvar' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.envvar }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
@@ -174,111 +191,126 @@ RSpec.describe CircleCi::Project, :vcr do
         let(:envvars) { res.body }
 
         it 'has list' do
-          expect(envvars).to be_instance_of(Array)
-          expect(envvars.size).to eql 2
+          expect(envvars.size).to be 2
         end
 
-        context 'first envvar' do
+        context 'when first envvar' do
           let(:envvar) { envvars.first }
 
           it 'returns a response hash' do
-            expect(envvar).to have_key 'name'
-            expect(envvar).to have_key 'value'
+            expect(envvar).to eq('name' => 'COVERALLS_REPO_TOKEN', 'value' => 'xxxxskJS')
           end
         end
       end
     end
 
-    context 'unsuccessfully' do
+    context 'when unsuccessful' do
       let(:project) { 'asdf-bogus' }
       let(:res) { new_project.envvar }
       let(:message) { 'Project not found' }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has an unsuccessful response' do
         expect(res).not_to be_success
       end
 
       describe 'message' do
-        subject { res.body }
+        subject(:response) { res.body }
 
         it 'returns an error message' do
           # NOTE: Appears to be a bug with this response returning a message
           #       that is a JSON string of a github API response
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['message']).to match(/Not Found/)
+          expect(response['message']).to match(/Not Found/)
         end
       end
     end
   end
 
   describe 'follow' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.follow }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'message' do
-        subject { res.body }
+        subject(:response) { res.body }
 
         it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['followed']).to be_truthy
+          expect(response['followed']).to be_truthy
         end
       end
     end
   end
 
   describe 'get_checkout_key' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.get_checkout_key test_checkout_key_fingerprint }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'key' do
         let(:key) { res.body }
 
-        it 'has metadata' do
-          expect(key).to be_instance_of(Hash)
+        it 'matches public key format' do
           expect(key['public_key']).to match(/^ssh-rsa/)
+        end
+
+        it 'has correct deploy-key type' do
           expect(key['type']).to eql 'deploy-key'
+        end
+
+        it 'matches fingerprint of the key' do
           expect(key['fingerprint']).to eql test_checkout_key_fingerprint
         end
       end
     end
 
-    context 'unsuccessfully' do
+    context 'when unsuccessful' do
       let(:res) { new_project.get_checkout_key 'asdf-bogus' }
       let(:message) { 'checkout key not found' }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has an unsuccessful response' do
         expect(res).not_to be_success
       end
 
       describe 'message' do
-        subject { res.body }
+        subject(:response) { res.body }
 
         it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['message']).to eql message
+          expect(response['message']).to eql message
         end
       end
     end
   end
 
   describe 'list_checkout_keys' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.list_checkout_keys }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
@@ -286,18 +318,19 @@ RSpec.describe CircleCi::Project, :vcr do
         let(:keys) { res.body }
 
         it 'are returned' do
-          expect(keys).to be_instance_of(Array)
-          expect(keys.size).to eql 1
+          expect(keys.size).to be 1
         end
 
-        context 'first key' do
+        context 'with first key' do
           let(:key) { keys.first }
+          let(:metadata_keys) { %w[public_key type fingerprint] }
 
           it 'has metadata' do
-            expect(key).to be_instance_of(Hash)
-            expect(key).to have_key 'public_key'
-            expect(key).to have_key 'type'
-            expect(key).to have_key 'fingerprint'
+            aggregate_failures do
+              metadata_keys.each do |keyname|
+                expect(key).to have_key(keyname), "Expected #{keyname} to exist in key"
+              end
+            end
           end
         end
       end
@@ -305,54 +338,67 @@ RSpec.describe CircleCi::Project, :vcr do
   end
 
   describe 'new_checkout_key' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.new_checkout_key 'deploy-key' }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'key' do
         let(:key) { res.body }
 
-        it 'has metadata' do
-          expect(key).to be_instance_of(Hash)
+        it 'matches public key format' do
           expect(key['public_key']).to match(/^ssh-rsa/)
+        end
+
+        it 'has correct deploy-key type' do
           expect(key['type']).to eql 'deploy-key'
+        end
+
+        it 'returns fingerprint of the key' do
           expect(key).to have_key 'fingerprint'
         end
       end
     end
 
-    context 'unsuccessfully' do
+    context 'when unsuccessful' do
       let(:username) { 'github' }
       let(:project) { 'hub' }
       let(:res) { new_project.new_checkout_key 'deploy-key' }
       let(:message) { 'Permission denied' }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has an unsuccessful response' do
         expect(res).not_to be_success
       end
 
       describe 'message' do
-        subject { res.body }
+        subject(:response) { res.body }
 
         it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['message']).to eql message
+          expect(response['message']).to eql message
         end
       end
     end
   end
 
   describe 'recent_builds' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.recent_builds }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
@@ -360,45 +406,38 @@ RSpec.describe CircleCi::Project, :vcr do
         let(:projects) { res.body }
 
         it 'are returned in a list' do
-          expect(projects).to be_instance_of(Array)
-          expect(projects.size).to eql 30
+          expect(projects.size).to be 30
         end
 
         describe 'first project' do
           let(:first_project) { projects.first }
+          let(:metadata_keys) { %w[committer_name messages start_time stop_time status subject] }
 
           it 'has metadata' do
-            expect(first_project['committer_name']).to eql 'Chavez'
-            expect(first_project).to have_key 'messages'
-            expect(first_project).to have_key 'start_time'
-            expect(first_project).to have_key 'stop_time'
-            expect(first_project).to have_key 'status'
-            expect(first_project).to have_key 'subject'
+            aggregate_failures do
+              metadata_keys.each do |key|
+                expect(first_project).to have_key(key), "Expected #{key} to exist in build"
+              end
+            end
           end
         end
       end
 
       describe 'params' do
-        context 'limit' do
+        context 'with limit' do
           let(:res) { new_project.recent_builds limit: 5 }
 
-          it 'is verified by response' do
-            expect(res).to be_instance_of(CircleCi::Response)
-            expect(res).to be_success
-          end
+          it_behaves_like 'a successful response'
 
           it 'returns correct total of builds' do
-            expect(res.body.size).to eql 5
+            expect(res.body.size).to be 5
           end
         end
 
-        context 'filter' do
+        context 'with filter' do
           let(:res) { new_project.recent_builds limit: 5, filter: 'failed' }
 
-          it 'is verified by response' do
-            expect(res).to be_instance_of(CircleCi::Response)
-            expect(res).to be_success
-          end
+          it_behaves_like 'a successful response'
 
           it 'returns builds filtered by status' do
             builds = res.body
@@ -412,11 +451,14 @@ RSpec.describe CircleCi::Project, :vcr do
   end
 
   describe 'recent_builds_branch' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.recent_builds_branch branch }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
@@ -424,20 +466,19 @@ RSpec.describe CircleCi::Project, :vcr do
         let(:projects) { res.body }
 
         it 'are returned in a list' do
-          expect(projects).to be_instance_of(Array)
-          expect(projects.size).to eql 30
+          expect(projects.size).to be 30
         end
 
         describe 'first project' do
           let(:first_project) { projects.first }
+          let(:metadata_keys) { %w[committer_name messages start_time stop_time status subject] }
 
           it 'has metadata' do
-            expect(first_project['committer_name']).to eql 'Chavez'
-            expect(first_project).to have_key 'messages'
-            expect(first_project).to have_key 'start_time'
-            expect(first_project).to have_key 'stop_time'
-            expect(first_project).to have_key 'status'
-            expect(first_project).to have_key 'subject'
+            aggregate_failures do
+              metadata_keys.each do |key|
+                expect(first_project).to have_key(key), "Expected #{key} to exist in build"
+              end
+            end
           end
         end
       end
@@ -445,78 +486,89 @@ RSpec.describe CircleCi::Project, :vcr do
   end
 
   describe 'settings' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.settings }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'project' do
         let(:project_res) { res.body }
+        let(:metadata_keys) { %w[vcs-type branches default_branch] }
 
         it 'has metadata' do
-          expect(project_res).to be_instance_of(Hash)
-          expect(project_res).to have_key 'vcs-type'
-          expect(project_res).to have_key 'branches'
-          expect(project_res).to have_key 'default_branch'
+          aggregate_failures do
+            metadata_keys.each do |key|
+              expect(project_res).to have_key(key), "Expected #{key} to exist in project"
+            end
+          end
         end
       end
     end
   end
 
   describe 'add_envvar' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.add_envvar name: 'TESTENV', value: 'testvalue' }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'envvar' do
-        let(:envvar) { res.body }
+        subject(:envvar) { res.body }
 
         it 'has metadata' do
-          expect(envvar['name']).to eq 'TESTENV'
-          # obfuscated value
-          expect(envvar['value']).to eq 'xxxxalue'
+          expect(envvar).to eq('name' => 'TESTENV', 'value' => 'xxxxalue')
         end
       end
     end
 
-    context 'unsuccessfully' do
+    context 'when unsuccessful' do
       let(:project) { 'asdf-bogus' }
       let(:res) { new_project.add_envvar name: 'TESTENV', value: 'testvalue' }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has an unsuccessful response' do
         expect(res).not_to be_success
       end
 
       describe 'message' do
-        subject { res.body }
+        subject(:response) { res.body }
 
         it 'returns an error message' do
           # NOTE: Appears to be a bug with this response returning a message
           #       that is a JSON string of a github API response
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['message']).to match(/Not Found/i)
+          expect(response['message']).to match(/Not Found/i)
         end
       end
     end
   end
 
   describe 'delete_envvar' do
-    context 'successfully' do
+    context 'when successful' do
       let(:temp_var) { new_project.add_envvar name: 'DELETE_ME', value: 'testvalue' }
       let(:res) { new_project.delete_envvar 'DELETE_ME' }
 
       before { temp_var }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has an unsuccessful response' do
         expect(res).to be_success
       end
 
@@ -529,72 +581,76 @@ RSpec.describe CircleCi::Project, :vcr do
       end
     end
 
-    context 'unsuccessfully' do
+    context 'when unsuccessful' do
       let(:project) { 'delete_envvar-bogus' }
       let(:res) { new_project.delete_envvar 'DELETE_ME' }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has an unsuccessful response' do
         expect(res).not_to be_success
       end
 
       describe 'message' do
-        subject { res.body }
+        subject(:response) { res.body }
 
         it 'returns an error message' do
           # NOTE: Appears to be a bug with this response returning a message
           #       that is a JSON string of a github API response
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['message']).to match(/Not Found/i)
+          expect(response['message']).to match(/Not Found/i)
         end
       end
     end
   end
 
   describe 'ssh_key' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.ssh_key test_rsa_private_key, 'hostname' }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
     end
 
-    context 'unsuccessfully' do
+    context 'when unsuccessful' do
       let(:res) { new_project.ssh_key 'RSA Private Key', 'hostname' }
       let(:message) { 'it looks like private key is invalid key.  Double check' }
 
-      it 'is verified by response' do
-        expect(res).to be_instance_of(CircleCi::Response)
-        expect(res).not_to be_success
-      end
+      it_behaves_like 'an unsuccessful response'
 
       describe 'message' do
-        subject { res.body }
+        subject(:response) { res.body }
 
         it 'has metadata' do
-          expect(subject['message']).to eql message
+          expect(response['message']).to eql message
         end
       end
     end
   end
 
   describe 'unfollow' do
-    context 'successfully' do
+    context 'when successful' do
       let(:res) { new_project.unfollow }
 
-      it 'is verified by response' do
+      it 'is a response object' do
         expect(res).to be_instance_of(CircleCi::Response)
+      end
+
+      it 'has a successful response' do
         expect(res).to be_success
       end
 
       describe 'message' do
-        subject { res.body }
+        subject(:response) { res.body }
 
         it 'has metadata' do
-          expect(subject).to be_instance_of(Hash)
-          expect(subject['followed']).to be_falsy
+          expect(response['followed']).to be_falsy
         end
       end
     end

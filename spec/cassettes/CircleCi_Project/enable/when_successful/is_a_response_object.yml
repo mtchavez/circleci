@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/dotfiles/enable?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 04 Jan 2020 00:33:09 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=ujohtHJxq3rM6xSZpq4UKf6ow8fKczIfadpUem%2BjZB1Hz690u8DWGWkjIohITEKDUaTLq8xELsulK3%2FT7Ylt9LRxjEVrNJ%2Fj5hJV32flk9lfkyYzzj6OMdb7CYKq7W%2FshLRXf1V1ScOC%2FvXw6gwKeRr3GKtmu4ae%2BeNcyxYFtYgh8rxGKtUk8zG4KiTPrmvY767uDGIcbaGTYVjX%2B7nlvk6S0jb%2BqdIgO8O4FQQQdm8%3D--ol%2FTMiVR9C2YWBBpdgg0MLooLZu0cuVGqEWlS6ARNLE%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 23:20:40 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-5ddd5d69bc-gldzx
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - caa4582d-2290-4ada-848d-caa055f9071d
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/enable"
+      Content-Length:
+      - '634'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"irc_server":null,"slack_integration_channel":null,"irc_keyword":null,"slack_integration_team_id":null,"vcs-type":"github","aws":{"keypair":null},"slack_webhook_url":null,"flowdock_api_token":null,"parallel":1,"slack_integration_team":null,"username":"mtchavez","campfire_room":null,"extra":"","branches":{"master":{"running_builds":[],"recent_builds":[{"build_num":3,"status":"no_tests","outcome":"no_tests","added-at":"2016-10-24T23:11:51.336Z"}],"latest_workflows":{},"latest_completed_workflows":{},"pusher_logins":["mtchavez"],"is_using_workflows":false}},"jira":null,"slack_integration_notify_prefs":null,"slack_integration_webhook_url":null,"slack_subdomain":null,"following":false,"setup":"","campfire_subdomain":null,"slack_notify_prefs":null,"irc_password":null,"vcs_url":"https://github.com/mtchavez/dotfiles","default_branch":"master","irc_username":null,"language":null,"slack_channel_override":null,"slack_api_token":null,"has_usable_key":true,"irc_notify_prefs":null,"campfire_token":null,"slack_channel":null,"feature_flags":{"trusty-beta":false,"builds-service":true,"osx":false,"set-github-status":true,"build-prs-only":false,"forks-receive-secret-env-vars":false,"fleet":null,"build-fork-prs":false,"autocancel-builds":false,"oss":true},"campfire_notify_prefs":null,"heroku_deploy_user":null,"slack_integration_channel_id":null,"irc_channel":null,"oss":true,"reponame":"dotfiles","compile":"","dependencies":"","slack_integration_access_token":null,"test":"","ssh_keys":[]}'
+    http_version: 
+  recorded_at: Sat, 04 Jan 2020 00:33:09 GMT
+recorded_with: VCR 4.0.0

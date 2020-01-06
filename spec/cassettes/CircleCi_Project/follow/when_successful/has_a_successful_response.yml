@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/follow?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 04 Jan 2020 00:33:18 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=RdsQaqHzoZQRE5zHcnRhea3q%2B26Ks04VQNc5m2lBYNRqR0gLTKJ6HfYCgCnXMHcdiHtEc0WD3tk5%2FzeiM1fUbioRKKDHH1aSwIsi1zVU3OzF5AUfW3Rg6y8jmy4Uqb1p%2BFPn2har2rssBsDJ53F7LIQRsneCr%2FJW6QSJjWnr3hMzLyfvt5S7DMyr9Pdy9EWb5ya5Y8oAGa9vEgJV04tDe1Ma%2BNINy8yEcn73PgoFpz8%3D--Jo0MFiNUg%2F2KVBnUt%2B0hvYCQ%2F3%2Fa1M8yyzIxq4bbxag%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 23:18:39 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-5ddd5d69bc-nc4q4
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - b5ec1313-66ff-49d9-84b6-d5f82af12a64
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/follow"
+      Content-Length:
+      - '71'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"following":true,"workflow":false,"first_build":null}'
+    http_version: 
+  recorded_at: Sat, 04 Jan 2020 00:33:18 GMT
+recorded_with: VCR 4.0.0

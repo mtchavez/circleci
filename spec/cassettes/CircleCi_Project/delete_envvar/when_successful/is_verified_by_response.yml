@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/envvar?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: '{"name":"DELETE_ME","value":"testvalue"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 03 Jan 2020 23:09:51 GMT
+      Location:
+      - https://circleci.com/api/v1.1/project/github/mtchavez/circleci/envvar/DELETE_ME
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=WizKf7dZd2blj6DYPNAAM%2B8%2FrAVLs%2FuTyoFcIoFtdRkxkYaRux%2BfCHwT7ZMG%2Bh5IFn4EVExUvGWDXseVUZ4qDy0iMTkVyBvhMa31dI8qX%2FqdALwGrGsJSgI%2B5spXiKFviPnyl7I5I%2FjHwNceTvgkFbmyn2ae0jHqcIl1NYh9dGPEF8dJ%2FqqgGYrKU1A2x7Zya%2FLcDzLHl1IcF5CoNJr6ORMoBffzubVNncYloPiS93w%3D--P%2BWTVMQIYuZ7lJVxtqCcIc7RMEyCTUeFxsJNwUjJ%2F7Q%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 15:18:20 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-6f9bbf4754-c78qq
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 9280a8a9-195a-4e25-a357-d866c03907e3
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/envvar"
+      Content-Length:
+      - '39'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"name":"DELETE_ME","value":"xxxxalue"}'
+    http_version: 
+  recorded_at: Fri, 03 Jan 2020 23:09:51 GMT
+- request:
+    method: delete
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/envvar/DELETE_ME?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 03 Jan 2020 23:09:51 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=t%2BBzhLz95s7T5SaWbaBM%2BFXFlZUo8FRjEjbeoQFDZgvgDbPSFbJOzvOT2StH2OwlUmwXaZgcTCCAj7zcIHwZiu%2FcWwTnk2y%2BGqw5ZvTE6Gxwa9wGLJg3g99fwK9iGosl9Ji8C%2Fp9YviOE03z2x2PMBz8319X8s0QzCy86POOpZ25%2FTXzQeTcwPTap0Tbqs%2FdnTAtRSwXIF%2BWVsP86eOlxRdcsWZ5rdXZsM2fRmxylYM%3D--BksPO7kJcCf4C5o4Zjh%2BzbY1FFU2xEsYfMss%2B1iPi%2BU%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 15:16:17 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-6f9bbf4754-jbrnk
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - c27967a5-8ec0-40fa-8117-66fe9519b96f
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/envvar/:var-name"
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"ok"}'
+    http_version: 
+  recorded_at: Fri, 03 Jan 2020 23:09:51 GMT
+recorded_with: VCR 4.0.0

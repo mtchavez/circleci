@@ -12,9 +12,12 @@ require 'dotenv'
 Dotenv.load
 
 require 'simplecov'
-SimpleCov.start
 
-Dir["#{project_root}/spec/support/**/*.rb"].each { |f| require f }
+SimpleCov.start do
+  add_filter '/spec/support'
+end
+
+Dir["#{project_root}/spec/support/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|
   config.filter_run :focus

@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/checkout-key?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: '{"type":"deploy-key"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 03 Jan 2020 23:09:45 GMT
+      Location:
+      - https://circleci.com/api/v1.1/project/github/mtchavez/circleci/checkout-key/10:1e:a8:74:c9:32:9f:1e:94:33:4a:ad:64:c0:4e:82
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=qUEV2k5ku8IKolCnUqn6Qr6WhsolGwCsKdKulD6yN%2FQ96AHcnDF%2B%2FmtUx5qHeDNR0xhSuB8Vk0gzVWv9PPVwLGTRYt%2Bc3GjZ084Fa2Uasjm6a63zAxe5XBrqpja99%2B8iOf6kAgKcncTvgqrDqNnIGpo97uQRwJ86%2F4ujTtshN%2F3%2FH62ctALYSMJmwlGoeTDYSOyztJbYSm6ej1ZZMuyEnz2kRUwdM87PnjG5ECwBUWE%3D--htSDtqsrW%2Fwr%2FEciMykZxkO19%2B6NhztoEjYS38qWqaE%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 15:22:49 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-6f9bbf4754-m2w6w
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - bd6be465-f6e8-4e2e-8e73-2d8c0aa5825b
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/checkout-key"
+      Content-Length:
+      - '548'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCDNJi8FantoIMiXEfgiR8Dgdi0209KE+KduRNxalg1z9uvlTKXGdj2DfcXZCiZoAgYnbCTTFl9wfXeTiyznH50mbhQF93x82da66E4fN3vrpvkeysU/ScUhymOXEQ2xcI3yGT2qdi44fuAJDNc1qbo8TISI9U6REaaEeloRgZrlDJ18qk3r8r8sai2hZhQP+MhQsKWx7oxEyJMWXolAFVcNq7uMrS8gexxfyGVErtunHbCZYHqtThmieTfkwRFj7AN+T2vT9t5Li82SD4xl3FfdIYUgMBWaivoP3fUQ91YmmmZZgDte8V9/yNfyyh4cDF+cNFEd2lvHtfa5rZjPTJX
+        \n","type":"deploy-key","fingerprint":"10:1e:a8:74:c9:32:9f:1e:94:33:4a:ad:64:c0:4e:82","login":null,"preferred":true,"time":"2020-01-03T23:09:45.932Z"}'
+    http_version:
+  recorded_at: Fri, 03 Jan 2020 23:09:46 GMT
+recorded_with: VCR 4.0.0

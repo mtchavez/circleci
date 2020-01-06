@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci?circle-token=<TOKEN>&filter=failed&limit=5
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 03 Jan 2020 23:09:44 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=6U1zE870Shgtz5EewW66lGkDeX8d6ilg3lEYKRukE0kc%2BMcgsSG0JdoFe4PHUT91SKDAt8IumGw1vNuC9XZYf3wnEmtPSa6FjgK%2BsTSYDgqY2CI%2BiDJEHkLfFtI7naZBhVmNHR0C06zbDnj4ur4XZI9cO8QgqfhfBDA6Vy4RMqPJ4CUP%2BGgE57bO0Sna%2FKPYidj2wS65BmvIP817IYz4TYyh4Pq53vCY4m6Niuc5IHY%3D--8WOUadRPoJ2jlLCiU3lV4RwbIou2v2jl62oWfp%2Bdoog%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 15:20:37 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      Vary:
+      - Origin
+      X-Circleci-Identity:
+      - circle-www-api-v1-6f9bbf4754-tx8b9
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 4f72d12c-f036-44d7-b723-a1e1357e6a0b
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/"
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"compare":null,"previous_successful_build":null,"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2020-01-03T20:55:33Z","body":"","usage_queued_at":"2020-01-03T23:04:12.022Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/1920","parallel":1,"failed":true,"branch":"master","username":"mtchavez","author_date":"2020-01-03T20:55:33Z","why":"api","user":{"is_user":false,"login":"none"},"vcs_revision":"d1feb2a327f3e1fbe9c4268fce145543e3d7a857","vcs_tag":null,"build_num":1920,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":{"build_num":1919,"status":"failed","build_time_millis":135},"status":"failed","committer_name":"Chavez","retries":null,"subject":"Doc:
+        Update delete envvar documentation","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2020-01-03T23:04:14.856Z","ssh_disabled":false,"build_time_millis":112,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2020-01-03T23:04:14.744Z","canceler":null,"all_commit_details":[{"committer_date":"2020-01-03T20:55:33Z","body":"","author_date":"2020-01-03T20:55:33Z","committer_email":"matthew@el-chavez.me","commit":"d1feb2a327f3e1fbe9c4268fce145543e3d7a857","committer_login":"mtchavez","committer_name":"Chavez","subject":"Doc:
+        Update delete envvar documentation","commit_url":"https://github.com/mtchavez/circleci/commit/d1feb2a327f3e1fbe9c4268fce145543e3d7a857","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"platform":"1.0","outcome":"failed","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"queued_at":"2020-01-03T23:04:12.081Z","canceled":false,"author_email":"matthew@el-chavez.me"},{"compare":null,"previous_successful_build":null,"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2020-01-03T20:55:33Z","body":"","usage_queued_at":"2020-01-03T23:04:11.344Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/1919","parallel":1,"failed":true,"branch":"master","username":"mtchavez","author_date":"2020-01-03T20:55:33Z","why":"api","user":{"is_user":false,"login":"none"},"vcs_revision":"d1feb2a327f3e1fbe9c4268fce145543e3d7a857","vcs_tag":null,"build_num":1919,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":{"build_num":1918,"status":"failed","build_time_millis":121},"status":"failed","committer_name":"Chavez","retries":null,"subject":"Doc:
+        Update delete envvar documentation","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2020-01-03T23:04:15.970Z","ssh_disabled":false,"build_time_millis":135,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2020-01-03T23:04:15.835Z","canceler":null,"all_commit_details":[{"committer_date":"2020-01-03T20:55:33Z","body":"","author_date":"2020-01-03T20:55:33Z","committer_email":"matthew@el-chavez.me","commit":"d1feb2a327f3e1fbe9c4268fce145543e3d7a857","committer_login":"mtchavez","committer_name":"Chavez","subject":"Doc:
+        Update delete envvar documentation","commit_url":"https://github.com/mtchavez/circleci/commit/d1feb2a327f3e1fbe9c4268fce145543e3d7a857","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"platform":"1.0","outcome":"failed","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"queued_at":"2020-01-03T23:04:11.385Z","canceled":false,"author_email":"matthew@el-chavez.me"},{"compare":null,"previous_successful_build":null,"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2020-01-03T20:55:33Z","body":"","usage_queued_at":"2020-01-03T23:04:07.085Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/1918","parallel":1,"failed":true,"branch":"master","username":"mtchavez","author_date":"2020-01-03T20:55:33Z","why":"api","user":{"is_user":false,"login":"none"},"vcs_revision":"d1feb2a327f3e1fbe9c4268fce145543e3d7a857","vcs_tag":null,"build_num":1918,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":{"build_num":1917,"status":"failed","build_time_millis":101},"status":"failed","committer_name":"Chavez","retries":null,"subject":"Doc:
+        Update delete envvar documentation","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2020-01-03T23:04:13.131Z","ssh_disabled":false,"build_time_millis":121,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2020-01-03T23:04:13.010Z","canceler":null,"all_commit_details":[{"committer_date":"2020-01-03T20:55:33Z","body":"","author_date":"2020-01-03T20:55:33Z","committer_email":"matthew@el-chavez.me","commit":"d1feb2a327f3e1fbe9c4268fce145543e3d7a857","committer_login":"mtchavez","committer_name":"Chavez","subject":"Doc:
+        Update delete envvar documentation","commit_url":"https://github.com/mtchavez/circleci/commit/d1feb2a327f3e1fbe9c4268fce145543e3d7a857","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"platform":"1.0","outcome":"failed","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"queued_at":"2020-01-03T23:04:07.121Z","canceled":false,"author_email":"matthew@el-chavez.me"},{"compare":null,"previous_successful_build":null,"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2020-01-03T20:55:33Z","body":"","usage_queued_at":"2020-01-03T23:04:06.367Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/1917","parallel":1,"failed":true,"branch":"master","username":"mtchavez","author_date":"2020-01-03T20:55:33Z","why":"api","user":{"is_user":false,"login":"none"},"vcs_revision":"d1feb2a327f3e1fbe9c4268fce145543e3d7a857","vcs_tag":null,"build_num":1917,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":{"build_num":1912,"status":"success","build_time_millis":34523},"status":"failed","committer_name":"Chavez","retries":null,"subject":"Doc:
+        Update delete envvar documentation","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2020-01-03T23:04:09.208Z","ssh_disabled":false,"build_time_millis":101,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2020-01-03T23:04:09.107Z","canceler":null,"all_commit_details":[{"committer_date":"2020-01-03T20:55:33Z","body":"","author_date":"2020-01-03T20:55:33Z","committer_email":"matthew@el-chavez.me","commit":"d1feb2a327f3e1fbe9c4268fce145543e3d7a857","committer_login":"mtchavez","committer_name":"Chavez","subject":"Doc:
+        Update delete envvar documentation","commit_url":"https://github.com/mtchavez/circleci/commit/d1feb2a327f3e1fbe9c4268fce145543e3d7a857","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"platform":"1.0","outcome":"failed","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"queued_at":"2020-01-03T23:04:06.404Z","canceled":false,"author_email":"matthew@el-chavez.me"},{"compare":null,"previous_successful_build":null,"build_parameters":{"CIRCLE_JOB":"build_ruby2_4"},"oss":true,"all_commit_details_truncated":false,"committer_date":"2019-12-23T13:26:00Z","body":"Updates
+        the requirements on [rubocop](https://github.com/rubocop-hq/rubocop) to permit
+        the latest version.\n- [Release notes](https://github.com/rubocop-hq/rubocop/releases)\n-
+        [Changelog](https://github.com/rubocop-hq/rubocop/blob/master/CHANGELOG....","usage_queued_at":"2019-12-23T13:26:02.949Z","context_ids":[],"fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/1896","parallel":1,"failed":true,"branch":"dependabot/bundler/rubocop-tw-0.78.0","username":"mtchavez","author_date":"2019-12-23T13:26:00Z","why":"github","user":{"is_user":false,"login":null,"vcs_type":"github"},"vcs_revision":"c7de0780ea0ab58d8e72c770c2831d69cc2ba576","workflows":{"job_name":"build_ruby2_4","job_id":"350e6c29-0982-4910-acbb-ce25f0be1b92","workflow_id":"3f9ade3e-0e3e-45eb-aaaf-04303080fe69","workspace_id":"3f9ade3e-0e3e-45eb-aaaf-04303080fe69","upstream_job_ids":[],"upstream_concurrency_map":{},"workflow_name":"build_ruby_versions"},"vcs_tag":null,"build_num":1896,"infrastructure_fail":false,"committer_email":"noreply@github.com","has_artifacts":true,"previous":{"build_num":1895,"status":"failed","build_time_millis":21907},"status":"failed","committer_name":"GitHub","retries":null,"subject":"build(deps-dev):
+        update rubocop requirement from ~> 0.66.0 to ~> 0.78.0","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2019-12-23T13:26:58.080Z","ssh_disabled":false,"build_time_millis":25449,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2019-12-23T13:26:32.631Z","canceler":null,"all_commit_details":[{"committer_date":"2019-12-23T13:26:00Z","body":"Updates
+        the requirements on [rubocop](https://github.com/rubocop-hq/rubocop) to permit
+        the latest version.\n- [Release notes](https://github.com/rubocop-hq/rubocop/releases)\n-
+        [Changelog](https://github.com/rubocop-hq/rubocop/blob/master/CHANGELOG....","branch":"dependabot/bundler/rubocop-tw-0.78.0","author_date":"2019-12-23T13:26:00Z","committer_email":"noreply@github.com","commit":"c7de0780ea0ab58d8e72c770c2831d69cc2ba576","committer_login":"web-flow","committer_name":"GitHub","subject":"build(deps-dev):
+        update rubocop requirement from ~> 0.66.0 to ~> 0.78.0","commit_url":"https://github.com/mtchavez/circleci/commit/c7de0780ea0ab58d8e72c770c2831d69cc2ba576","author_login":"dependabot-preview[bot]","author_name":"dependabot-preview[bot]","author_email":"27856297+dependabot-preview[bot]@users.noreply.github.com"}],"platform":"1.0","outcome":"failed","vcs_url":"https://github.com/mtchavez/circleci","author_name":"dependabot-preview[bot]","node":null,"queued_at":"2019-12-23T13:26:29.758Z","canceled":false,"author_email":"27856297+dependabot-preview[bot]@users.noreply.github.com"}]'
+    http_version: 
+  recorded_at: Fri, 03 Jan 2020 23:09:44 GMT
+recorded_with: VCR 4.0.0

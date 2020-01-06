@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1.1/me?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 03 Jan 2020 23:09:36 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=n7P5D165LxAmic99Up1tdoAj2LCkCNzhix6MM%2FyvATeyjwM0elNHtS6o8nYuVM3jqQEfdM8%2Ffel5tZeV1pvZyZDhEgtxBhtBg%2FLQEjJ80XVyY3uHQCmoUFvsZjr0vS4UwgX9YdScuOCSiIRMHNCOeVUKbze9VW%2Fx7gOMGiF0zlp3BQvQiDVt7Wx1ElnaJBNxrzvrfL503tFvvdNjuUh5JkKi%2BXafwifAswbC0Ikr208%3D--IPMwXRYz20auTKTSP3kpuqRMtRWPqIm6TyAGW15NO4A%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 15:20:21 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      Vary:
+      - Origin
+      X-Circleci-Identity:
+      - circle-www-api-v1-6f9bbf4754-zhjhz
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - a25b14ff-f0ad-440b-8099-a46f86334fd7
+      X-Route:
+      - "/api/v1.1/me"
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"enrolled_betas":[],"in_beta_program":false,"selected_email":"matthew@el-chavez.me","avatar_url":"https://avatars2.githubusercontent.com/u/44689?v=4","trial_end":"2013-05-01T02:51:18.043Z","admin":false,"basic_email_prefs":"smart","sign_in_count":183,"github_oauth_scopes":["user:email","repo"],"analytics_id":"10448f27-7256-49de-9099-6c89d09cb235","name":"Chavez","gravatar_id":null,"first_vcs_authorized_client_id":null,"days_left_in_trial":-2438,"privacy_optout":false,"parallelism":1,"student":false,"bitbucket_authorized":true,"github_id":44689,"web_ui_pipelines_optout":"not-selected","bitbucket":{"id":"{0b832565-c0a0-4eb0-aebf-d84d41da0117}","login":null},"dev_admin":false,"all_emails":["chavez@fastmail.fm","contact@el-chavez.me","matthew@autolist.com","matthew@el-chavez.me","nailsbrokeandfell@gmail.com"],"created_at":"2013-04-17T02:51:18.043Z","plan":null,"heroku_api_key":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxf7c5","identities":{"github":{"avatar_url":"https://avatars2.githubusercontent.com/u/44689?v=4","external_id":44689,"id":44689,"name":"Chavez","user?":true,"domain":"github.com","type":"github","authorized?":true,"provider_id":"bcc68be8-ef10-4dd6-9b76-34f19e0db930","login":"mtchavez"},"bitbucket":{"avatar_url":"https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:094245b6-ea29-4f47-9b3e-a4ede4346404/21d28eee-4a20-4a73-9ef2-3b6b45c05f71/128","external_id":"{0b832565-c0a0-4eb0-aebf-d84d41da0117}","id":"{0b832565-c0a0-4eb0-aebf-d84d41da0117}","name":"mtchavez","user?":true,"domain":"bitbucket.org","type":"bitbucket","authorized?":true,"provider_id":"752bbf0d-bea6-4c9c-9923-ce5936ca9be3","login":"mtchavez"}},"projects":{"https://github.com/autolist/serverless-lambda-starter":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/dealer-management-tool":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/daily-impressions-reporter":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/abtest":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/workstation-setup":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/shared-infrastructure":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/content-api":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/grafana-backup-runner":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/canned-listing-events-responder":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/ios":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/api-lookup":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/geobigfoot":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/Bigfoot":{"on_dashboard":true,"emails":"default"},"https://github.com/mtchavez/circleci":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/financing":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/financing-cdn-lambda":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/contentful":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/daily-impressions-report-validator":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/autolist":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/autolist-web":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/listing-impression-pipeline":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/infrastructure":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/grumman":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/search-urls-git-service":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/transmogrifier":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/android":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/remote-configurations":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/auth-token-generator-lambda":{"on_dashboard":true,"emails":"default"},"https://github.com/autolist/comparisons-api":{"on_dashboard":true,"emails":"default"}},"login":"mtchavez","organization_prefs":{},"containers":1,"pusher_id":"f5f3ca8621917bdabee2528aec295ab6f3792cc7","web_ui_pipelines_first_opt_in":false,"num_projects_followed":29}'
+    http_version: 
+  recorded_at: Fri, 03 Jan 2020 23:09:36 GMT
+recorded_with: VCR 4.0.0

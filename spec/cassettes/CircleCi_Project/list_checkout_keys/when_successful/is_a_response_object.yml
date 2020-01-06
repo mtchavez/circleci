@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/checkout-key?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 04 Jan 2020 00:33:13 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=oCpeLjNOPhNOy3baCVIRcscnJXCvyZMTp1F6%2FHfbKWGYcAX8W3bCjaRB6oN7pzUP88CBZdXC5uC7PMRmOmyzkH695zmVrxMtrau9h5N0X7R5pLL1unLFOY%2BpCLYvpzAZlFnEKoNpshEGB%2F2w6WYWT4CLvLnJ3hczQPb4pVZv0A6DDQcVGewaT5Gc91OlulNKOlT8W5C0xMRHPZVdVnh8Doo%2FOArZtHrVWuILAkMMemc%3D--DG0UIr1SfsfeyM6%2BNqobA%2BJ7Oru%2FZq%2FGZahbOrOPniE%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 23:20:54 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      Vary:
+      - Origin
+      X-Circleci-Identity:
+      - circle-www-api-v1-5ddd5d69bc-f4wvs
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 52be3d80-1eab-47dd-8bea-9c2fde7fbed9
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/checkout-key"
+      Content-Length:
+      - '22'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: "[]"
+    http_version: 
+  recorded_at: Sat, 04 Jan 2020 00:33:13 GMT
+recorded_with: VCR 4.0.0
