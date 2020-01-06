@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/build-cache?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 04 Jan 2020 00:33:13 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=RPY9IuQPgakWz7798CiCodoh17cigRBSSZvsNd6Qp9vlmqI9cnMxZhR4IODenFobe4lUKMALCfXt1TMi6f9Yy8MLZbikuvOrIGySsfkG5ayEsMaafv3coR9ATvTFpAdt4W9FBENVPbXwyLvOt3J1NY9ObSkEPDaXqx6uzSm5pZ2GZlhWC%2FO5nGmnz1%2FUrZF6JRLZEV%2F9nzIejMbado5t4DP32PxT5080YhA8gOPTRgc%3D--EM6LB1JGo6vBq%2FsfKi6rrcR60M1qUBTC%2FlZgiROupUA%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 23:16:06 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-5ddd5d69bc-m4zjq
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 425c0a0f-be28-4044-98b1-05cd28a2c419
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/build-cache"
+      Content-Length:
+      - '63'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"build dependency caches deleted"}'
+    http_version: 
+  recorded_at: Sat, 04 Jan 2020 00:33:13 GMT
+recorded_with: VCR 4.0.0

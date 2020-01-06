@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1.1/recent-builds?circle-token=<TOKEN>&limit=3
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 03 Jan 2020 23:09:55 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=i6DnLAhaFWx2oW61aKI9sQuJ34jCO%2B1hDVvaTsYacSNBymiFl9S0j7S9DbefEbUW019Xu1jQx6K9cNDMPqw7WLZJZjPVahb16KsdKg8rsqlAnTSGptrce3QO%2FTsNZc7UuNnOD7v3Ot27b0b%2BF1Udy3pClGnMOTgrMTVdYavoHHSbPjkhH9bqho8iWM829dCLtV%2B6UTNvfeMp9P7uuvq7jXpkgmURZ3NPmAvD5K5NMUA%3D--U0DlV1aiXaxv%2F0uYAlO0IX2YfOBJM3uyqvsZcgT%2BNOk%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 15:20:33 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      Vary:
+      - Origin
+      X-Circleci-Identity:
+      - circle-www-api-v1-6f9bbf4754-z66hz
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - e262908c-19b0-403b-8c2b-32b9f49b48c4
+      X-Route:
+      - "/api/v1.1/recent-builds"
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"compare":null,"previous_successful_build":null,"build_parameters":{"CIRCLE_JOB":"integration_test"},"oss":false,"all_commit_details_truncated":false,"committer_date":"2020-01-03T23:06:47Z","body":"","usage_queued_at":"2020-01-03T23:08:37.293Z","context_ids":[],"fail_reason":null,"retry_of":null,"reponame":"autolist-web","ssh_users":[],"build_url":"https://circleci.com/gh/autolist/autolist-web/25156","parallel":1,"failed":null,"branch":"refactor/ads-redux","username":"autolist","author_date":"2020-01-03T23:06:47Z","why":"github","user":{"is_user":true,"login":"Asherlc","avatar_url":"https://avatars3.githubusercontent.com/u/1294552?v=4","name":"Asher
+        Cohen","vcs_type":"github","id":1294552},"vcs_revision":"5f9920c5bbe2fc61f04bfcf9dd6c4d6c12f9a036","workflows":{"job_name":"integration_test","job_id":"eaa3e031-0e8b-41b8-99f9-6042b557a6b4","workflow_id":"1c386ce3-8f13-4a79-abdd-75ff18cdd2ce","workspace_id":"1c386ce3-8f13-4a79-abdd-75ff18cdd2ce","upstream_job_ids":["d63066a5-9cb6-4d2f-a78c-324bce0248bf"],"upstream_concurrency_map":{},"workflow_name":"build-test-and-deploy"},"vcs_tag":null,"build_num":25156,"infrastructure_fail":false,"committer_email":"asher@autolist.com","has_artifacts":true,"previous":{"build_num":25155,"status":"running","build_time_millis":71135},"status":"running","committer_name":"Asher
+        Cohen","retries":null,"subject":"fix: use store state interface","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"running","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2020-01-03T23:08:43.610Z","canceler":null,"all_commit_details":[{"committer_date":"2020-01-03T23:06:47Z","body":"","branch":"refactor/ads-redux","author_date":"2020-01-03T23:06:47Z","committer_email":"asher@autolist.com","commit":"5f9920c5bbe2fc61f04bfcf9dd6c4d6c12f9a036","committer_login":"Asherlc","committer_name":"Asher
+        Cohen","subject":"fix: use store state interface","commit_url":"https://github.com/autolist/autolist-web/commit/5f9920c5bbe2fc61f04bfcf9dd6c4d6c12f9a036","author_login":"Asherlc","author_name":"Asher
+        Cohen","author_email":"asher@autolist.com"}],"platform":"1.0","outcome":null,"vcs_url":"https://github.com/autolist/autolist-web","author_name":"Asher
+        Cohen","node":null,"queued_at":"2020-01-03T23:08:37.342Z","canceled":false,"author_email":"asher@autolist.com"},{"compare":null,"previous_successful_build":null,"build_parameters":{"CIRCLE_JOB":"unit_test"},"oss":false,"all_commit_details_truncated":false,"committer_date":"2020-01-03T23:06:47Z","body":"","usage_queued_at":"2020-01-03T23:08:37.264Z","context_ids":[],"fail_reason":null,"retry_of":null,"reponame":"autolist-web","ssh_users":[],"build_url":"https://circleci.com/gh/autolist/autolist-web/25155","parallel":1,"failed":null,"branch":"refactor/ads-redux","username":"autolist","author_date":"2020-01-03T23:06:47Z","why":"github","user":{"is_user":true,"login":"Asherlc","avatar_url":"https://avatars3.githubusercontent.com/u/1294552?v=4","name":"Asher
+        Cohen","vcs_type":"github","id":1294552},"vcs_revision":"5f9920c5bbe2fc61f04bfcf9dd6c4d6c12f9a036","workflows":{"job_name":"unit_test","job_id":"52461266-5133-431f-970c-0fcbfe215946","workflow_id":"1c386ce3-8f13-4a79-abdd-75ff18cdd2ce","workspace_id":"1c386ce3-8f13-4a79-abdd-75ff18cdd2ce","upstream_job_ids":["d63066a5-9cb6-4d2f-a78c-324bce0248bf"],"upstream_concurrency_map":{},"workflow_name":"build-test-and-deploy"},"vcs_tag":null,"build_num":25155,"infrastructure_fail":false,"committer_email":"asher@autolist.com","has_artifacts":true,"previous":{"build_num":25154,"status":"running","build_time_millis":74795},"status":"running","committer_name":"Asher
+        Cohen","retries":null,"subject":"fix: use store state interface","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"running","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2020-01-03T23:08:43.942Z","canceler":null,"all_commit_details":[{"committer_date":"2020-01-03T23:06:47Z","body":"","branch":"refactor/ads-redux","author_date":"2020-01-03T23:06:47Z","committer_email":"asher@autolist.com","commit":"5f9920c5bbe2fc61f04bfcf9dd6c4d6c12f9a036","committer_login":"Asherlc","committer_name":"Asher
+        Cohen","subject":"fix: use store state interface","commit_url":"https://github.com/autolist/autolist-web/commit/5f9920c5bbe2fc61f04bfcf9dd6c4d6c12f9a036","author_login":"Asherlc","author_name":"Asher
+        Cohen","author_email":"asher@autolist.com"}],"platform":"1.0","outcome":null,"vcs_url":"https://github.com/autolist/autolist-web","author_name":"Asher
+        Cohen","node":null,"queued_at":"2020-01-03T23:08:37.328Z","canceled":false,"author_email":"asher@autolist.com"},{"compare":null,"previous_successful_build":null,"build_parameters":{"CIRCLE_JOB":"lint"},"oss":false,"all_commit_details_truncated":false,"committer_date":"2020-01-03T23:06:47Z","body":"","usage_queued_at":"2020-01-03T23:08:37.156Z","context_ids":[],"fail_reason":null,"retry_of":null,"reponame":"autolist-web","ssh_users":[],"build_url":"https://circleci.com/gh/autolist/autolist-web/25154","parallel":1,"failed":null,"branch":"refactor/ads-redux","username":"autolist","author_date":"2020-01-03T23:06:47Z","why":"github","user":{"is_user":true,"login":"Asherlc","avatar_url":"https://avatars3.githubusercontent.com/u/1294552?v=4","name":"Asher
+        Cohen","vcs_type":"github","id":1294552},"vcs_revision":"5f9920c5bbe2fc61f04bfcf9dd6c4d6c12f9a036","workflows":{"job_name":"lint","job_id":"7ab04cae-f6f6-4ee6-b5b4-f7155442a5ac","workflow_id":"1c386ce3-8f13-4a79-abdd-75ff18cdd2ce","workspace_id":"1c386ce3-8f13-4a79-abdd-75ff18cdd2ce","upstream_job_ids":["d63066a5-9cb6-4d2f-a78c-324bce0248bf"],"upstream_concurrency_map":{},"workflow_name":"build-test-and-deploy"},"vcs_tag":null,"build_num":25154,"infrastructure_fail":false,"committer_email":"asher@autolist.com","has_artifacts":true,"previous":{"build_num":25153,"status":"running","build_time_millis":77451},"status":"running","committer_name":"Asher
+        Cohen","retries":null,"subject":"fix: use store state interface","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"running","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2020-01-03T23:08:40.282Z","canceler":null,"all_commit_details":[{"committer_date":"2020-01-03T23:06:47Z","body":"","branch":"refactor/ads-redux","author_date":"2020-01-03T23:06:47Z","committer_email":"asher@autolist.com","commit":"5f9920c5bbe2fc61f04bfcf9dd6c4d6c12f9a036","committer_login":"Asherlc","committer_name":"Asher
+        Cohen","subject":"fix: use store state interface","commit_url":"https://github.com/autolist/autolist-web/commit/5f9920c5bbe2fc61f04bfcf9dd6c4d6c12f9a036","author_login":"Asherlc","author_name":"Asher
+        Cohen","author_email":"asher@autolist.com"}],"platform":"1.0","outcome":null,"vcs_url":"https://github.com/autolist/autolist-web","author_name":"Asher
+        Cohen","node":null,"queued_at":"2020-01-03T23:08:37.203Z","canceled":false,"author_email":"asher@autolist.com"}]'
+    http_version: 
+  recorded_at: Fri, 03 Jan 2020 23:09:55 GMT
+recorded_with: VCR 4.0.0

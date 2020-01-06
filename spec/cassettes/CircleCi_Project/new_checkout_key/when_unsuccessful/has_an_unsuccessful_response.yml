@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/github/hub/checkout-key?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: '{"type":"deploy-key"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 04 Jan 2020 00:38:31 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=onEVsZljD4rbfrKtWnCVtNvAsXr3ju9UwTcJvEv2SEFNEhs0k2ZiQZSsCV3r1RlxpALApcbACUR1bz7bidbY39hx13gm4RouiYoAy7qxb48C2AgtM3NJQidTRo9xsjfGKi1Awdh36XhMay0tp1tOrEYpfb6QegfD0vXeO6ie7SketWmRu4a%2Bs2W0UsjddZiRPTVf5VpqsnbyUM0IetZWdPeQOBu1UmsVEhJTjmNieRE%3D--RFpp4u6mK57ykF2G%2BHlc0a0wpcam%2Fn8Q5i5IfcuAZis%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 23:22:51 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-5ddd5d69bc-5d9vx
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - d376b3b1-57bf-4d8a-8245-80271b89e7c1
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/checkout-key"
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Permission denied"}'
+    http_version: 
+  recorded_at: Sat, 04 Jan 2020 00:38:31 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/tree/master?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 04 Jan 2020 00:33:02 GMT
+      Location:
+      - https://circleci.com/api/v1.1/project/github/mtchavez/circleci/1932
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=J3MISdFFcUbMXp7wujpq%2FJ1x6hVzl5hy%2Bgr07jjgeKITpW%2FU40A9MvrN0Wr9NiEZNUVJrX3fHamCxyi3aq0gPpZZbqQpDLBqVgFKxF7BwtTxvOtL%2BNIDhTGx1ZriaZliaDvQG6R4NnT5SZjj4oqaxgNGuRwn5lt7v9xR5BEr1dhX288XYOTPNN%2BkXCPkfUyoKyFyIaP6lpbQ9XxHzSQJ%2FaR%2BwQNOEPQtv7rjNzjorC4%3D--HwZU%2BBFlG4GrOep%2FjvIQTAUu700R2s8y5jSvHJTIUJE%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 23:25:21 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-acl-v1-594d7f7f69-hn4nk
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 88a330a9-c78d-4ddc-9f16-1b8e17640350
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/tree/:branch"
+      Content-Length:
+      - '3312'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"compare":null,"previous_successful_build":{"build_num":1912,"status":"success","build_time_millis":34523},"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2020-01-03T20:55:33Z","body":"","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/1932","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":"2020-01-03T20:55:33Z","why":"api","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars2.githubusercontent.com/u/44689?v=4","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"d1feb2a327f3e1fbe9c4268fce145543e3d7a857","vcs_tag":null,"build_num":1932,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":1931,"status":"not_run","build_time_millis":0},"status":"not_run","committer_name":"Chavez","retries":null,"subject":"Doc:
+        Update delete envvar documentation","vcs_type":"github","timedout":false,"dont_build":"no-followers","lifecycle":"not_run","no_dependency_cache":false,"stop_time":null,"ssh_disabled":true,"build_time_millis":null,"picard":null,"circle_yml":{"string":"version:
+        2\n\n.build_template: &build_definition\n  steps:\n    - checkout\n    - run:
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+        > ./cc-test-reporter\n    - run: chmod +x ./cc-test-reporter\n    - run: ./cc-test-reporter
+        before-build\n    - run: bundle install --jobs=4 --retry=4 --path vendor/bundle\n    -
+        run: bundle exec rake rubocop\n    - run:\n        name: Run tests\n        command:
+        |\n          bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter
+        -o $CIRCLE_TEST_REPORTS/rspec/junit.xml\n          ./cc-test-reporter after-build
+        --exit-code $?\n  working_directory: ~/app\n\njobs:\n  build_ruby2_6rc:\n    <<:
+        *build_definition\n    docker:\n      - image: ruby:2.6-rc\n  build_ruby2_5:\n    <<:
+        *build_definition\n    docker:\n      - image: ruby:2.5\n  build_ruby2_4:\n    <<:
+        *build_definition\n    docker:\n      - image: ruby:2.4\n  build_ruby2_3:\n    <<:
+        *build_definition\n    docker:\n      - image: ruby:2.3\n\nworkflows:\n  version:
+        2\n  build_ruby_versions:\n    jobs:\n      - build_ruby2_6rc\n      - build_ruby2_5\n      -
+        build_ruby2_4\n      - build_ruby2_3\n"},"messages":[{"type":"warning","message":"Your
+        build was not run - reason code (no-followers).","reason":"no-followers"},{"type":"error","message":"We
+        did not test this push because nobody is following the project"}],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2020-01-03T20:55:33Z","body":"","author_date":"2020-01-03T20:55:33Z","committer_email":"matthew@el-chavez.me","commit":"d1feb2a327f3e1fbe9c4268fce145543e3d7a857","committer_login":"mtchavez","committer_name":"Chavez","subject":"Doc:
+        Update delete envvar documentation","commit_url":"https://github.com/mtchavez/circleci/commit/d1feb2a327f3e1fbe9c4268fce145543e3d7a857","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"platform":"2.0","outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"}'
+    http_version: 
+  recorded_at: Sat, 04 Jan 2020 00:33:02 GMT
+recorded_with: VCR 4.0.0

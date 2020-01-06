@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci?circle-token=<TOKEN>&limit=5
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 06 Jan 2020 20:16:25 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=vUb8jSs8oBpY80UWS5MDb9WRXiUY2h%2BkFuQBF4DRptz4wxJEQqzJI2tNTxMldYp2wdyiBrq%2FvCBlyydfprUqpXx8VUBOoFiqXVSg08xr1pkZDqq9yEoPDHhrRl4pOG5F%2FPgGGE1OGVLZXg2Bb1e4SX30RoYduJwaNiU6QOq5IbCzA2W12CX%2BrNc19yKf7voHnUwS1KIw6Nd2aj%2FW%2BYHNWjvzrs3PKeHIMGJKLifmORM%3D--7Y7PRz2CPrMWmPKdT28CIjrVycKWM4%2FZ2GltFWDhLVo%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 23:20:23 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      Vary:
+      - Origin
+      X-Circleci-Identity:
+      - circle-www-api-v1-5ddd5d69bc-c2h42
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - a7e6bcf6-b2a4-402b-8bf8-1753e68ca15e
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/"
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"compare":null,"previous_successful_build":null,"build_parameters":{},"oss":true,"all_commit_details_truncated":false,"committer_date":"2020-01-03T20:55:33Z","body":"","usage_queued_at":"2020-01-06T17:36:35.281Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/1943","parallel":1,"failed":true,"branch":"master","username":"mtchavez","author_date":"2020-01-03T20:55:33Z","why":"api","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars2.githubusercontent.com/u/44689?v=4","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"d1feb2a327f3e1fbe9c4268fce145543e3d7a857","vcs_tag":null,"build_num":1943,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":{"build_num":1934,"status":"not_run","build_time_millis":0},"status":"failed","committer_name":"Chavez","retries":null,"subject":"Doc:
+        Update delete envvar documentation","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2020-01-06T17:36:37.975Z","ssh_disabled":false,"build_time_millis":109,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2020-01-06T17:36:37.866Z","canceler":null,"all_commit_details":[{"committer_date":"2020-01-03T20:55:33Z","body":"","author_date":"2020-01-03T20:55:33Z","committer_email":"matthew@el-chavez.me","commit":"d1feb2a327f3e1fbe9c4268fce145543e3d7a857","committer_login":"mtchavez","committer_name":"Chavez","subject":"Doc:
+        Update delete envvar documentation","commit_url":"https://github.com/mtchavez/circleci/commit/d1feb2a327f3e1fbe9c4268fce145543e3d7a857","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"platform":"1.0","outcome":"failed","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"queued_at":"2020-01-06T17:36:35.320Z","canceled":false,"author_email":"matthew@el-chavez.me"},{"compare":null,"previous_successful_build":null,"build_parameters":{"CIRCLE_JOB":"build_ruby2_5"},"oss":true,"all_commit_details_truncated":false,"committer_date":"2020-01-06T13:30:41Z","body":"Bumps
+        [yard](https://github.com/lsegal/yard) from 0.9.20 to 0.9.23.\n- [Release
+        notes](https://github.com/lsegal/yard/releases)\n- [Changelog](https://github.com/lsegal/yard/blob/master/CHANGELOG.md)\n-
+        [Commits](https://github.com/lsegal/yard/compar...","usage_queued_at":"2020-01-06T13:30:44.759Z","context_ids":[],"fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/1942","parallel":1,"failed":false,"branch":"dependabot/bundler/yard-0.9.23","username":"mtchavez","author_date":"2020-01-06T13:30:41Z","why":"github","user":{"is_user":false,"login":null,"vcs_type":"github"},"vcs_revision":"6a12479f14c92e9b16ffa25682739983bab5a3fe","workflows":{"job_name":"build_ruby2_5","job_id":"552f9783-1aa8-4291-a097-88136354005b","workflow_id":"6f5c0644-8b39-4734-b614-da1514816fa2","workspace_id":"6f5c0644-8b39-4734-b614-da1514816fa2","upstream_job_ids":[],"upstream_concurrency_map":{},"workflow_name":"build_ruby_versions"},"vcs_tag":null,"build_num":1942,"infrastructure_fail":false,"committer_email":"noreply@github.com","has_artifacts":true,"previous":{"build_num":1941,"status":"success","build_time_millis":28011},"status":"success","committer_name":"GitHub","retries":null,"subject":"build(deps-dev):
+        bump yard from 0.9.20 to 0.9.23","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2020-01-06T13:31:23.399Z","ssh_disabled":false,"build_time_millis":30823,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2020-01-06T13:30:52.576Z","canceler":null,"all_commit_details":[{"committer_date":"2020-01-06T13:30:41Z","body":"Bumps
+        [yard](https://github.com/lsegal/yard) from 0.9.20 to 0.9.23.\n- [Release
+        notes](https://github.com/lsegal/yard/releases)\n- [Changelog](https://github.com/lsegal/yard/blob/master/CHANGELOG.md)\n-
+        [Commits](https://github.com/lsegal/yard/compar...","branch":"dependabot/bundler/yard-0.9.23","author_date":"2020-01-06T13:30:41Z","committer_email":"noreply@github.com","commit":"6a12479f14c92e9b16ffa25682739983bab5a3fe","committer_login":"web-flow","committer_name":"GitHub","subject":"build(deps-dev):
+        bump yard from 0.9.20 to 0.9.23","commit_url":"https://github.com/mtchavez/circleci/commit/6a12479f14c92e9b16ffa25682739983bab5a3fe","author_login":"dependabot-preview[bot]","author_name":"dependabot-preview[bot]","author_email":"27856297+dependabot-preview[bot]@users.noreply.github.com"}],"platform":"1.0","outcome":"success","vcs_url":"https://github.com/mtchavez/circleci","author_name":"dependabot-preview[bot]","node":null,"queued_at":"2020-01-06T13:30:48.685Z","canceled":false,"author_email":"27856297+dependabot-preview[bot]@users.noreply.github.com"},{"compare":null,"previous_successful_build":null,"build_parameters":{"CIRCLE_JOB":"build_ruby2_4"},"oss":true,"all_commit_details_truncated":false,"committer_date":"2020-01-06T13:30:41Z","body":"Bumps
+        [yard](https://github.com/lsegal/yard) from 0.9.20 to 0.9.23.\n- [Release
+        notes](https://github.com/lsegal/yard/releases)\n- [Changelog](https://github.com/lsegal/yard/blob/master/CHANGELOG.md)\n-
+        [Commits](https://github.com/lsegal/yard/compar...","usage_queued_at":"2020-01-06T13:30:44.697Z","context_ids":[],"fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/1941","parallel":1,"failed":false,"branch":"dependabot/bundler/yard-0.9.23","username":"mtchavez","author_date":"2020-01-06T13:30:41Z","why":"github","user":{"is_user":false,"login":null,"vcs_type":"github"},"vcs_revision":"6a12479f14c92e9b16ffa25682739983bab5a3fe","workflows":{"job_name":"build_ruby2_4","job_id":"0c989bdf-43dd-4f04-83f1-d5e1ff05855b","workflow_id":"6f5c0644-8b39-4734-b614-da1514816fa2","workspace_id":"6f5c0644-8b39-4734-b614-da1514816fa2","upstream_job_ids":[],"upstream_concurrency_map":{},"workflow_name":"build_ruby_versions"},"vcs_tag":null,"build_num":1941,"infrastructure_fail":false,"committer_email":"noreply@github.com","has_artifacts":true,"previous":{"build_num":1940,"status":"success","build_time_millis":23954},"status":"success","committer_name":"GitHub","retries":null,"subject":"build(deps-dev):
+        bump yard from 0.9.20 to 0.9.23","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2020-01-06T13:31:18.959Z","ssh_disabled":false,"build_time_millis":28011,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2020-01-06T13:30:50.948Z","canceler":null,"all_commit_details":[{"committer_date":"2020-01-06T13:30:41Z","body":"Bumps
+        [yard](https://github.com/lsegal/yard) from 0.9.20 to 0.9.23.\n- [Release
+        notes](https://github.com/lsegal/yard/releases)\n- [Changelog](https://github.com/lsegal/yard/blob/master/CHANGELOG.md)\n-
+        [Commits](https://github.com/lsegal/yard/compar...","branch":"dependabot/bundler/yard-0.9.23","author_date":"2020-01-06T13:30:41Z","committer_email":"noreply@github.com","commit":"6a12479f14c92e9b16ffa25682739983bab5a3fe","committer_login":"web-flow","committer_name":"GitHub","subject":"build(deps-dev):
+        bump yard from 0.9.20 to 0.9.23","commit_url":"https://github.com/mtchavez/circleci/commit/6a12479f14c92e9b16ffa25682739983bab5a3fe","author_login":"dependabot-preview[bot]","author_name":"dependabot-preview[bot]","author_email":"27856297+dependabot-preview[bot]@users.noreply.github.com"}],"platform":"1.0","outcome":"success","vcs_url":"https://github.com/mtchavez/circleci","author_name":"dependabot-preview[bot]","node":null,"queued_at":"2020-01-06T13:30:46.136Z","canceled":false,"author_email":"27856297+dependabot-preview[bot]@users.noreply.github.com"},{"compare":null,"previous_successful_build":null,"build_parameters":{"CIRCLE_JOB":"build_ruby2_3"},"oss":true,"all_commit_details_truncated":false,"committer_date":"2020-01-06T13:30:41Z","body":"Bumps
+        [yard](https://github.com/lsegal/yard) from 0.9.20 to 0.9.23.\n- [Release
+        notes](https://github.com/lsegal/yard/releases)\n- [Changelog](https://github.com/lsegal/yard/blob/master/CHANGELOG.md)\n-
+        [Commits](https://github.com/lsegal/yard/compar...","usage_queued_at":"2020-01-06T13:30:44.674Z","context_ids":[],"fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/1940","parallel":1,"failed":false,"branch":"dependabot/bundler/yard-0.9.23","username":"mtchavez","author_date":"2020-01-06T13:30:41Z","why":"github","user":{"is_user":false,"login":null,"vcs_type":"github"},"vcs_revision":"6a12479f14c92e9b16ffa25682739983bab5a3fe","workflows":{"job_name":"build_ruby2_3","job_id":"e4285f10-0c7f-4abd-9c24-74304d14fc4f","workflow_id":"6f5c0644-8b39-4734-b614-da1514816fa2","workspace_id":"6f5c0644-8b39-4734-b614-da1514816fa2","upstream_job_ids":[],"upstream_concurrency_map":{},"workflow_name":"build_ruby_versions"},"vcs_tag":null,"build_num":1940,"infrastructure_fail":false,"committer_email":"noreply@github.com","has_artifacts":true,"previous":{"build_num":1939,"status":"success","build_time_millis":32094},"status":"success","committer_name":"GitHub","retries":null,"subject":"build(deps-dev):
+        bump yard from 0.9.20 to 0.9.23","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2020-01-06T13:31:14.251Z","ssh_disabled":false,"build_time_millis":23954,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2020-01-06T13:30:50.297Z","canceler":null,"all_commit_details":[{"committer_date":"2020-01-06T13:30:41Z","body":"Bumps
+        [yard](https://github.com/lsegal/yard) from 0.9.20 to 0.9.23.\n- [Release
+        notes](https://github.com/lsegal/yard/releases)\n- [Changelog](https://github.com/lsegal/yard/blob/master/CHANGELOG.md)\n-
+        [Commits](https://github.com/lsegal/yard/compar...","branch":"dependabot/bundler/yard-0.9.23","author_date":"2020-01-06T13:30:41Z","committer_email":"noreply@github.com","commit":"6a12479f14c92e9b16ffa25682739983bab5a3fe","committer_login":"web-flow","committer_name":"GitHub","subject":"build(deps-dev):
+        bump yard from 0.9.20 to 0.9.23","commit_url":"https://github.com/mtchavez/circleci/commit/6a12479f14c92e9b16ffa25682739983bab5a3fe","author_login":"dependabot-preview[bot]","author_name":"dependabot-preview[bot]","author_email":"27856297+dependabot-preview[bot]@users.noreply.github.com"}],"platform":"1.0","outcome":"success","vcs_url":"https://github.com/mtchavez/circleci","author_name":"dependabot-preview[bot]","node":null,"queued_at":"2020-01-06T13:30:45.837Z","canceled":false,"author_email":"27856297+dependabot-preview[bot]@users.noreply.github.com"},{"compare":null,"previous_successful_build":null,"build_parameters":{"CIRCLE_JOB":"build_ruby2_6rc"},"oss":true,"all_commit_details_truncated":false,"committer_date":"2020-01-06T13:30:41Z","body":"Bumps
+        [yard](https://github.com/lsegal/yard) from 0.9.20 to 0.9.23.\n- [Release
+        notes](https://github.com/lsegal/yard/releases)\n- [Changelog](https://github.com/lsegal/yard/blob/master/CHANGELOG.md)\n-
+        [Commits](https://github.com/lsegal/yard/compar...","usage_queued_at":"2020-01-06T13:30:44.671Z","context_ids":[],"fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/1939","parallel":1,"failed":false,"branch":"dependabot/bundler/yard-0.9.23","username":"mtchavez","author_date":"2020-01-06T13:30:41Z","why":"github","user":{"is_user":false,"login":null,"vcs_type":"github"},"vcs_revision":"6a12479f14c92e9b16ffa25682739983bab5a3fe","workflows":{"job_name":"build_ruby2_6rc","job_id":"a1b5e854-0c4b-48ca-99ea-1b446b486dc5","workflow_id":"6f5c0644-8b39-4734-b614-da1514816fa2","workspace_id":"6f5c0644-8b39-4734-b614-da1514816fa2","upstream_job_ids":[],"upstream_concurrency_map":{},"workflow_name":"build_ruby_versions"},"vcs_tag":null,"build_num":1939,"infrastructure_fail":false,"committer_email":"noreply@github.com","has_artifacts":true,"previous":null,"status":"success","committer_name":"GitHub","retries":null,"subject":"build(deps-dev):
+        bump yard from 0.9.20 to 0.9.23","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2020-01-06T13:31:20.535Z","ssh_disabled":false,"build_time_millis":32094,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2020-01-06T13:30:48.441Z","canceler":null,"all_commit_details":[{"committer_date":"2020-01-06T13:30:41Z","body":"Bumps
+        [yard](https://github.com/lsegal/yard) from 0.9.20 to 0.9.23.\n- [Release
+        notes](https://github.com/lsegal/yard/releases)\n- [Changelog](https://github.com/lsegal/yard/blob/master/CHANGELOG.md)\n-
+        [Commits](https://github.com/lsegal/yard/compar...","branch":"dependabot/bundler/yard-0.9.23","author_date":"2020-01-06T13:30:41Z","committer_email":"noreply@github.com","commit":"6a12479f14c92e9b16ffa25682739983bab5a3fe","committer_login":"web-flow","committer_name":"GitHub","subject":"build(deps-dev):
+        bump yard from 0.9.20 to 0.9.23","commit_url":"https://github.com/mtchavez/circleci/commit/6a12479f14c92e9b16ffa25682739983bab5a3fe","author_login":"dependabot-preview[bot]","author_name":"dependabot-preview[bot]","author_email":"27856297+dependabot-preview[bot]@users.noreply.github.com"}],"platform":"1.0","outcome":"success","vcs_url":"https://github.com/mtchavez/circleci","author_name":"dependabot-preview[bot]","node":null,"queued_at":"2020-01-06T13:30:44.707Z","canceled":false,"author_email":"27856297+dependabot-preview[bot]@users.noreply.github.com"}]'
+    http_version: 
+  recorded_at: Mon, 06 Jan 2020 20:16:25 GMT
+recorded_with: VCR 4.0.0

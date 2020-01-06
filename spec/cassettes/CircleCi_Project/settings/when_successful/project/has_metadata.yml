@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/settings?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 03 Jan 2020 23:09:47 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=LZXunseD6qLvDKpahIZkkUnCBxRs2%2FdJNfwLlU3dONJltDW6ZocFc6vXtYvH3WLv0z3m6Dns82SYO0%2FWektS%2FBiQme82HWpun%2F3dxusyp%2FCAovbnhRNUD3OKnPtLAFXXURLUMKvO07NZV9d%2FTj0L21wd18X%2BzNuGtlYE9I5VlTh7LFc%2FbvyjX5c8bR3VF1%2BchEi%2F5v3Z5xhxswnyMOKPsRMFWLQ%2FfJ6%2B7VqwLClBzbg%3D--QoRjbSxlghWEU13OYwbNPtIPcwtWYoPxyiftLjlEqrQ%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 15:16:02 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      Vary:
+      - Origin
+      X-Circleci-Identity:
+      - circle-www-api-v1-6f9bbf4754-6x5tv
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 661fde6f-4736-4928-a8e6-16e8381b64c7
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/settings"
+      Content-Length:
+      - '1747'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"irc_server":null,"slack_integration_channel":null,"irc_keyword":null,"slack_integration_team_id":null,"vcs-type":"github","aws":{"keypair":null},"slack_webhook_url":null,"flowdock_api_token":null,"parallel":1,"slack_integration_team":null,"username":"mtchavez","campfire_room":null,"extra":"","branches":{"master":{"running_builds":[],"recent_builds":[{"build_num":1922,"status":"failed","outcome":"failed","added-at":"2020-01-03T23:09:46.480Z"},{"build_num":1921,"status":"failed","outcome":"failed","added-at":"2020-01-03T23:09:46.135Z"},{"build_num":1920,"status":"failed","outcome":"failed","added-at":"2020-01-03T23:04:14.956Z"},{"build_num":1919,"status":"failed","outcome":"failed","added-at":"2020-01-03T23:04:16.072Z"},{"build_num":1918,"status":"failed","outcome":"failed","added-at":"2020-01-03T23:04:13.222Z"}],"latest_workflows":{"build_ruby_versions":{"created_at":"2020-01-03T20:55:56.548Z","id":"41865175-e70b-42e4-ad71-479f4708c5b8","status":"success"}},"latest_completed_workflows":{"build_ruby_versions":{"created_at":"2020-01-03T20:55:56.548Z","id":"41865175-e70b-42e4-ad71-479f4708c5b8","status":"success"}},"pusher_logins":["mtchavez"],"is_using_workflows":false},"v-1%2E1%2E0":{"running_builds":[],"recent_builds":[{"build_num":386,"status":"success","outcome":"success","added-at":"2017-05-26T18:08:59.981Z"},{"build_num":385,"status":"success","outcome":"success","added-at":"2017-05-26T18:08:35.297Z"}],"latest_workflows":{},"latest_completed_workflows":{},"pusher_logins":["mtchavez"],"is_using_workflows":false},"dependabot%2Fbundler%2Fpry-0%2E12%2E2":{"running_builds":[],"recent_builds":[{"build_num":1076,"status":"success","outcome":"success","added-at":"2018-11-13T16:48:31.090Z"},{"build_num":1075,"status":"success","outcome":"success","added-at":"2018-11-13T16:48:14.316Z"},{"build_num":1074,"status":"success","outcome":"success","added-at":"2018-11-13T16:48:20.394Z"},{"build_num":1073,"status":"success","outcome":"success","added-at":"2018-11-13T16:48:24.595Z"},{"build_num":1072,"status":"success","outcome":"success","added-at":"2018-11-13T16:48:02.655Z"}],"latest_workflows":{"build_ruby_versions":{"created_at":"2018-11-13T16:46:25.137Z","id":"09310a56-bc0a-4276-bef3-09bc1d10a46d","status":"success"}},"latest_completed_workflows":{"build_ruby_versions":{"created_at":"2018-11-13T16:46:25.137Z","id":"09310a56-bc0a-4276-bef3-09bc1d10a46d","status":"success"}},"pusher_logins":[],"is_using_workflows":true},"dependabot%2Fbundler%2Fvcr-tw-5%2E0%2E0":{"running_builds":[],"recent_builds":[{"build_num":1760,"status":"success","outcome":"success","added-at":"2019-10-07T21:59:17.287Z"},{"build_num":1759,"status":"success","outcome":"success","added-at":"2019-10-07T21:59:16.364Z"},{"build_num":1758,"status":"success","outcome":"success","added-at":"2019-10-07T21:59:15.639Z"},{"build_num":1757,"status":"success","outcome":"success","added-at":"2019-10-07T21:58:37.385Z"},{"build_num":1756,"status":"success","outcome":"success","added-at":"2019-10-07T21:59:07.668Z"}],"latest_workflows":{"build_ruby_versions":{"created_at":"2019-10-07T21:58:07.116Z","id":"34182463-d4f1-4b38-9283-e016bb59eeb0","status":"success"}},"latest_completed_workflows":{"build_ruby_versions":{"created_at":"2019-10-07T21:58:07.116Z","id":"34182463-d4f1-4b38-9283-e016bb59eeb0","status":"success"}},"pusher_logins":[],"is_using_workflows":true},"dependabot%2Fbundler%2Frubocop-tw-0%2E78%2E0":{"running_builds":[],"recent_builds":[{"build_num":1896,"status":"failed","outcome":"failed","added-at":"2019-12-23T13:26:58.176Z"},{"build_num":1895,"status":"failed","outcome":"failed","added-at":"2019-12-23T13:26:52.493Z"},{"build_num":1894,"status":"failed","outcome":"failed","added-at":"2019-12-23T13:26:55.866Z"},{"build_num":1893,"status":"failed","outcome":"failed","added-at":"2019-12-23T13:27:07.583Z"},{"build_num":1892,"status":"failed","outcome":"failed","added-at":"2019-12-23T13:26:25.905Z"}],"latest_workflows":{"build_ruby_versions":{"created_at":"2019-12-23T13:26:02.490Z","id":"3f9ade3e-0e3e-45eb-aaaf-04303080fe69","status":"failed"}},"latest_completed_workflows":{"build_ruby_versions":{"created_at":"2019-12-23T13:26:02.490Z","id":"3f9ade3e-0e3e-45eb-aaaf-04303080fe69","status":"failed"}},"pusher_logins":[],"is_using_workflows":true},"typo":{"running_builds":[{"build_num":1916,"status":"not_run","outcome":null,"added-at":"2020-01-03T22:48:41.400Z"},{"build_num":1915,"status":"not_run","outcome":null,"added-at":"2020-01-03T22:40:32.531Z"},{"build_num":1914,"status":"not_run","outcome":null,"added-at":"2020-01-03T22:40:32.143Z"},{"build_num":1913,"status":"not_run","outcome":null,"added-at":"2020-01-03T22:40:31.305Z"}],"recent_builds":[],"latest_workflows":{},"latest_completed_workflows":{},"pusher_logins":["mtchavez"],"is_using_workflows":false}},"jira":null,"slack_integration_notify_prefs":null,"slack_integration_webhook_url":null,"slack_subdomain":null,"following":true,"setup":"","campfire_subdomain":null,"slack_notify_prefs":null,"irc_password":null,"vcs_url":"https://github.com/mtchavez/circleci","default_branch":"master","irc_username":null,"language":"Ruby","slack_channel_override":null,"slack_api_token":null,"has_usable_key":true,"irc_notify_prefs":null,"campfire_token":null,"slack_channel":null,"feature_flags":{"trusty-beta":false,"builds-service":false,"osx":false,"set-github-status":true,"build-prs-only":false,"forks-receive-secret-env-vars":false,"fleet":null,"build-fork-prs":false,"autocancel-builds":false,"oss":true},"campfire_notify_prefs":null,"post_dependencies":"","heroku_deploy_user":null,"slack_integration_channel_id":null,"irc_channel":null,"oss":true,"reponame":"circleci","compile":"","dependencies":"","slack_integration_access_token":null,"test":"","ssh_keys":[{"hostname":"hostname","public_key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"},{"hostname":"hostname","public_key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"},{"hostname":"hostname","public_key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"},{"hostname":"hostname","public_key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"},{"hostname":"hostname","public_key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"},{"hostname":"hostname","public_key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"},{"hostname":"hostname","public_key":"ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDDC7Ca3FXm9nAC5kpIQ+uB2a7ShJkj4PvjNJSsI1rmz2Z8eXDMLOEW08qGXBjFWlDtZkGtAw2U8UmaHKPcJ3YM+Ss5sw0sRURW3pPpqF0JzKvDaNg8UxDLBk8CFxb2YLjjSpM2G5BMY5w38Af/U/8Hhb284lg7sdbtM9rRLlDeYVEx+T/nVOWsH+j3SAICZfpKb7GCz1OCbH2lhEXQqPMin+0UYw4ePrB0NvtC/x55fQ+cK1K3jbyVkZIXRw1KZAhUjEGCLu3CYsqkWCpLUsAABv36Vdb7KH9/kWXhUGKsS8LeiVLrJQDFaENDbvBo4rum1ORhgbD72DtBZKON4r6/","fingerprint":"83:3d:57:76:98:96:f6:ae:20:57:18:84:a6:4d:58:9d"}]}'
+    http_version: 
+  recorded_at: Fri, 03 Jan 2020 23:09:47 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/checkout-key/asdf-bogus?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 04 Jan 2020 00:38:30 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=JYk6hVs%2FMedwnCetOPOqCZmyCQxD7DmdsYO2gqXumbnkAkotvfospQqKvkC5oDUvUcWnO49u9czm0wa24AHDIyACxkTcsdW54LShw%2BkceYySVFZvfjNmT%2BFyh75IfX1cgJEij8It521S9rsLsV1Y0QWWc11d6RJvKMLtbf2tANKqZyCjcBPFw%2B4zmpgZOWkegD1w%2B6Cmz6WBpiqWdWKgon0i31wJptJskYwdVQ83bac%3D--mk6F9W5QL0JhJSbmCXAwIUrAY%2FVvb33qdKuWgXrHgpw%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 23:18:20 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-5ddd5d69bc-c7p6g
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 2c5488b9-1626-451d-ae94-b11221147e98
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/checkout-key/:fingerprint"
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"checkout key not found"}'
+    http_version: 
+  recorded_at: Sat, 04 Jan 2020 00:38:30 GMT
+recorded_with: VCR 4.0.0

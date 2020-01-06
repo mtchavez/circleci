@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/asdf-bogus/envvar?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 04 Jan 2020 00:33:11 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=bCJbgKFirRvASQYHORPdn3ns9K3q7FxK%2BrShmsjXGK2L0%2FsY7BDGooJEzVUZZXdOiUMMloWFf7ktJ%2BuCuLq9BfFx0FPRACqJOSdH7eRDj8JDVvxeFkB52gkroEjbufI6DRbeu1QUWBJP4Z%2FbGmiwIdChmyqHiobe29l%2F5cOxhLQsiiADT0N8KJ2F%2BwO11p6Z63Rpwx2ozjZEwkykAAyNnAHAiBEFTw%2BP%2BrdNG67V8Aw%3D--k8n5p2UkS%2FcSrX65DFC7HBBqOJ9%2B4XKMyM7ZAwu7y9w%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 23:18:17 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      Vary:
+      - Origin
+      X-Circleci-Identity:
+      - circle-www-api-v1-5ddd5d69bc-hsz4v
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 787c27a9-33f1-4903-8227-3d47c4482b2f
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/envvar"
+      Content-Length:
+      - '110'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"{\"message\":\"Not Found\",\"documentation_url\":\"https://developer.github.com/v3/repos/#get\"}"}'
+    http_version: 
+  recorded_at: Sat, 04 Jan 2020 00:33:11 GMT
+recorded_with: VCR 4.0.0

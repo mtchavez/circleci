@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/145/cancel?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 03 Jan 2020 23:09:56 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=C7dUb1nKohtA%2BL7UkaMnJxRhxvGZ%2B0pXB%2FwPWuzTFQKLgn%2BSAVSaRTdrwvoTzUmFJAfXO%2BJlL3S7qU1zwGfygxMTZLiCginciH9zpAUMWJK%2FX1B81vlJCaoc%2FR%2B3%2BJoHe%2B%2BRyoWWB9tn2sPH1UoeHNR3CQLa53TjE%2Fp2qIoeqwiQ7wqGmcRpRpI%2BW%2Bho1YFD47IO4NuKIpiWHpKC74PEoqW6mU93JgGwRmV3uhqWIVE%3D--XFwE3ZfPceDCLjyXuVPks9Y1OrCHFeZvGH8vRxwgiL0%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 15:20:39 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-6f9bbf4754-lgds6
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 3cfd1276-b3fc-4442-aea6-546c042cd6b7
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/:build_num/cancel"
+      Content-Length:
+      - '1010'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"compare":null,"previous_successful_build":{"build_num":144,"status":"success","build_time_millis":73455},"build_parameters":null,"oss":true,"committer_date":"2016-07-25T10:23:21-07:00","body":"*
+        Update dev dependencies\r\n\r\n* Remove deprecated rubocop cop\r\n\r\n* Fix
+        hash code styling issue","usage_queued_at":"2016-07-25T18:26:14.920Z","fail_reason":null,"retry_of":144,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/145","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":"2016-07-25T10:23:21-07:00","why":"retry","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars2.githubusercontent.com/u/44689?v=4","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"cc1e87745e2ffcf5d20dec47c4bcf3dd5ebc3f56","vcs_tag":null,"build_num":145,"infrastructure_fail":false,"committer_email":"noreply@github.com","previous":{"build_num":144,"status":"success","build_time_millis":73455},"status":"canceled","committer_name":"GitHub","retries":[146],"subject":"Dev
+        dependencies (#72)","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2016-07-25T18:27:07.919Z","ssh_disabled":false,"build_time_millis":45670,"picard":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2016-07-25T18:26:22.249Z","canceler":{"avatar_url":"https://avatars2.githubusercontent.com/u/44689?v=4","external_id":44689,"id":44689,"name":"Chavez","user?":true,"domain":"github.com","type":"github","authorized?":true,"provider_id":"bcc68be8-ef10-4dd6-9b76-34f19e0db930","login":"mtchavez"},"all_commit_details":[{"committer_date":"2016-07-25T10:23:21-07:00","body":"*
+        Update dev dependencies\r\n\r\n* Remove deprecated rubocop cop\r\n\r\n* Fix
+        hash code styling issue","branch":"master","author_date":"2016-07-25T10:23:21-07:00","committer_email":"noreply@github.com","commit":"cc1e87745e2ffcf5d20dec47c4bcf3dd5ebc3f56","committer_login":"web-flow","committer_name":"GitHub","subject":"Dev
+        dependencies (#72)","commit_url":"https://github.com/mtchavez/circleci/commit/cc1e87745e2ffcf5d20dec47c4bcf3dd5ebc3f56","author_login":"mtchavez","author_name":"Chavez","author_email":"mtchavez@users.noreply.github.com"}],"platform":"1.0","outcome":"canceled","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":[{"public_ip_addr":"54.198.218.117","port":64628,"username":"ubuntu","image_id":"s3://lxc-images/circletar-1741-cc586-20160424T232626Z","ssh_enabled":false}],"queued_at":"2016-07-25T18:26:22.224Z","canceled":true,"author_email":"mtchavez@users.noreply.github.com"}'
+    http_version: 
+  recorded_at: Fri, 03 Jan 2020 23:09:56 GMT
+recorded_with: VCR 4.0.0

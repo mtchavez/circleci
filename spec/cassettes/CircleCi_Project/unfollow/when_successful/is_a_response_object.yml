@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/unfollow?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 04 Jan 2020 00:33:07 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=Y%2Bmr0EjNpRj5xf7MhxXPJklV5TjzTj9NhAYgoIK3ePRCg63lckGFbMKpEWnjMvvPzZDvpjMET4wWg%2B0Vjat9%2FTf%2FOFGMpGfW5iJ%2FMQixHO%2B064p5%2BeP7hAKmbfGNWj%2F%2F1KKK4Z%2FVRKco8eI87jPml9oOnP%2FUyiquI%2Fb7TCCL2TKIPFYglFdZk9MMCrGH%2FQDqTXttSl4ABNPAXI23G2Qn6tShsPgRV%2BqD5qjSPZ7FjP8%3D--qpLNxPZIqfMoagfdxOQrABNqOpibF1A1pYIZCWg%2F5mE%3D;Path=/;HttpOnly;Expires=Sun,
+        03 Jan 2021 23:22:42 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-5ddd5d69bc-n42pc
+      X-Client-Trace-Id:
+      - ''
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - af128f13-5431-40ab-b6ec-d0509efc2651
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/unfollow"
+      Content-Length:
+      - '39'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"following":false}'
+    http_version: 
+  recorded_at: Sat, 04 Jan 2020 00:33:07 GMT
+recorded_with: VCR 4.0.0

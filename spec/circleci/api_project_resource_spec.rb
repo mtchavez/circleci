@@ -3,17 +3,18 @@
 require 'spec_helper'
 
 RSpec.describe CircleCi::ApiProjectResource do
+  subject(:resource) { described_class.new username, project, vcs, build }
+
   let(:username) { 'mtchavez' }
   let(:project)  { 'circleci' }
   let(:vcs)      { described_class::DEFAULT_VCS_TYPE }
   let(:build)    { nil }
-  subject        { described_class.new username, project, vcs, build }
 
   describe 'initialize' do
-    context 'vcs type' do
+    context 'with vcs type' do
       describe 'default' do
         it 'sets to github' do
-          expect(subject.vcs_type).to eq(described_class::DEFAULT_VCS_TYPE)
+          expect(resource.vcs_type).to eq(described_class::DEFAULT_VCS_TYPE)
         end
       end
 
@@ -21,7 +22,7 @@ RSpec.describe CircleCi::ApiProjectResource do
         let(:vcs) { 'bitbucket' }
 
         it 'sets vcs type' do
-          expect(subject.vcs_type).to eq(vcs)
+          expect(resource.vcs_type).to eq(vcs)
         end
       end
 
@@ -29,35 +30,42 @@ RSpec.describe CircleCi::ApiProjectResource do
         let(:vcs) { 'gitlab' }
 
         it 'uses default' do
-          expect(subject.vcs_type).to eq(described_class::DEFAULT_VCS_TYPE)
+          expect(resource.vcs_type).to eq(described_class::DEFAULT_VCS_TYPE)
         end
       end
     end
 
-    context 'build' do
+    context 'with build' do
       let(:build) { '12345' }
 
       it 'can be set' do
-        expect(subject.build).to eq(build)
+        expect(resource.build).to eq(build)
       end
     end
 
-    context 'custom config' do
+    context 'with custom config' do
+      subject(:resource) { described_class.new username, project, vcs, build, new_config }
+
       let(:custom_port) { 9090 }
       let(:new_config) { CircleCi::Config.new(port: custom_port) }
-      subject { described_class.new username, project, vcs, build, new_config }
 
-      it 'can be set' do
-        expect(subject.conf).not_to eq(CircleCi.config)
-        expect(subject.conf).to eq(new_config)
-        expect(subject.conf.port).to eq(custom_port)
+      it 'does not set global config' do
+        expect(resource.conf).not_to eq(CircleCi.config)
+      end
+
+      it 'sets the config on the resource' do
+        expect(resource.conf).to eq(new_config)
+      end
+
+      it 'uses new config' do
+        expect(resource.conf.port).to eq(custom_port)
       end
     end
   end
 
   describe 'default_config' do
     it 'returns global config' do
-      expect(subject.conf).to eq(CircleCi.config)
+      expect(resource.conf).to eq(CircleCi.config)
     end
   end
 end
