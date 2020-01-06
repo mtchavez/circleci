@@ -42,6 +42,7 @@ jobs:
       - image: ruby:2.3
 
 workflows:
+  version: 2
   build_ruby_versions:
     jobs:
       - build_ruby2_7
