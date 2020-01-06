@@ -1,3 +1,8 @@
+# Version 2.0.3 (2020-01-06)
+
+- Internal: Rubocop update and styling fixes
+- Added Project#delete_envvar to remove envvars (@lacostenycoder)
+
 # Version 2.0.2 (2018-01-28)
 
 House cleaning update, no changes to API or new endpoints added.
