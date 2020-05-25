@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake',                '~> 13.0.0'
   s.add_development_dependency 'redcarpet',           '~> 3.5.0'
   s.add_development_dependency 'rspec',               '~> 3.9.0'
-  s.add_development_dependency 'rubocop',             '~> 0.79.0'
+  s.add_development_dependency 'rubocop',             '~> 0.84.0'
   s.add_development_dependency 'rubocop-performance', '~> 1.5.2'
   s.add_development_dependency 'rubocop-rspec',       '~> 1.38.1'
   s.add_development_dependency 'simplecov',           '~> 0.17.0'
