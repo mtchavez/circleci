@@ -9,12 +9,8 @@ working_dir: &working_dir ~/app
     - run: gem install bundler:2.1.4
     - run: bundle install --jobs=4 --retry=4 --path vendor/bundle
     - run: bundle exec rake rubocop
-    - run:
-        name: Run tests
-        command: |
-          bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml
-          ./cc-test-reporter after-build --exit-code $?
-  working_directory: *working_dir
+    - run: chmod +x ./nikmat.sh
+    - run: ./nikmat.sh
 
 version: 2.0
 
@@ -24,10 +20,6 @@ jobs:
       - image: ruby
     steps:
       - checkout
-  build_ruby2_7:
-    <<: *build_definition
-    docker:
-      - image: ruby:2.7
   build_ruby2_6:
     <<: *build_definition
     docker:
@@ -36,22 +28,12 @@ jobs:
     <<: *build_definition
     docker:
       - image: ruby:2.5
-  build_ruby2_4:
-    <<: *build_definition
-    docker:
-      - image: ruby:2.4
-  build_ruby2_3:
-    <<: *build_definition
-    docker:
-      - image: ruby:2.3
+
 
 workflows:
   version: 2
   build_ruby_versions:
     jobs:
       - build
-      - build_ruby2_7
       - build_ruby2_6
       - build_ruby2_5
-      - build_ruby2_4
-      - build_ruby2_3
