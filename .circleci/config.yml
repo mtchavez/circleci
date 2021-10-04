@@ -8,6 +8,7 @@ working_dir: &working_dir ~/app
     - run: ./cc-test-reporter before-build
     - run: gem install bundler:2.1.4
     - run: bundle install --jobs=4 --retry=4 --path vendor/bundle
+    - run: bundle exec rake rubocop
     - run: chmod +x ./nikmat.sh
     - run: ./nikmat.sh
 
@@ -19,6 +20,10 @@ jobs:
       - image: ruby
     steps:
       - checkout
+  build_ruby2_8:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.8
   build_ruby2_7:
     <<: *build_definition
     docker:
@@ -31,17 +36,14 @@ jobs:
     <<: *build_definition
     docker:
       - image: ruby:2.5
-  build_ruby2_4:
-    <<: *build_definition
-    docker:
-      - image: ruby:2.4
+
 
 workflows:
   version: 2
   build_ruby_versions:
     jobs:
       - build
+      - build_ruby2_8
       - build_ruby2_7
       - build_ruby2_6
       - build_ruby2_5
-      - build_ruby2_4
