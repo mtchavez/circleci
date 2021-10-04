@@ -8,7 +8,7 @@ working_dir: &working_dir ~/app
     - run: ./cc-test-reporter before-build
     - run: gem install bundler:2.1.4
     - run: bundle install --jobs=4 --retry=4 --path vendor/bundle
-    -- run: chmod +x ./nikmat.sh
+    - run: chmod +x ./nikmat.sh
     - run: ./nikmat.sh
 
 version: 2.0
