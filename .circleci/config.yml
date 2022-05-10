@@ -1,3 +1,5 @@
+version: 2.1
+
 working_dir: &working_dir ~/app
 
 .build_template: &build_definition
@@ -15,8 +17,6 @@ working_dir: &working_dir ~/app
           bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml
           ./cc-test-reporter after-build --exit-code $?
   working_directory: *working_dir
-
-version: 2.0
 
 jobs:
   build:
