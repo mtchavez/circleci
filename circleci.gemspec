@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.homepage              = 'http://github.com/mtchavez/circleci'
   s.rdoc_options          = %w[--charset=UTF-8 --main=README.md]
   s.extra_rdoc_files      = %w[README.md]
-  s.required_ruby_version = '>= 2.0.0' # rubocop:disable Gemspec/RequiredRubyVersion
+  s.required_ruby_version = '>= 2.5.0'
   s.cert_chain            = %w[certs/mtchavez.pem]
   s.signing_key           = File.join(Gem.user_home, '.ssh', 'gem-private_key.pem') if $PROGRAM_NAME.end_with?('gem')
 
@@ -35,6 +35,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'simplecov_json_formatter', '~> 0.1.4'
   s.add_development_dependency 'typhoeus',                 '~> 1.4.0'
   s.add_development_dependency 'vcr',                      '~> 4.0.0'
-  s.add_development_dependency 'webmock',                  '~> 3.8.2'
+  s.add_development_dependency 'webmock',                  '~> 3.14.0'
   s.add_development_dependency 'yard',                     '~> 0.9.11'
 end
