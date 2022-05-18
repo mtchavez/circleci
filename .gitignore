@@ -18,3 +18,5 @@ tmp
 _yardoc
 doc/
 vendor/bundle
+
+!spec/cassettes/**/build

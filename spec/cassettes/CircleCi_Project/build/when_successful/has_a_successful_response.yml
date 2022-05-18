@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 21 Jun 2020 11:54:55 GMT
+      Location:
+      - https://circleci.com/api/v1.1/project/github/mtchavez/circleci/3928
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=Vbu7LwDGCLx6CvR773p%2BT2d%2Fl3UVqI0rLbP1FHCSYFPGgGHgZCm0Gui2gJ80AuDurmRp%2BXfm8d9LVKy0nndzQ6wlOtbTBX6tePwyWeGJsAR8FFdx18BLfmLMxBYa%2F8asvUL8gnbHD0T5jfqtW18GhrLeXrhkMF2doy8Hsl0ojp4rPofaJmP7QJGLqNDrIKF5XiRl50%2BlTDOA0RYIKSOqa%2Fj8TEHbKDSpyRPEBQgKhZ4%3D--WhSx4obBs44eWRFhgkqIKCAgEQaEDjVamOuaadrLbmw%3D;Path=/;HttpOnly;Expires=Fri,
+        18 Jun 2021 19:44:48 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-acl-v1-7d84dfcd88-ztgfv
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 7fe1cef6-d6af-4d16-a95e-85dc73eb04fb
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/"
+      Content-Length:
+      - '6146'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"compare":null,"previous_successful_build":{"build_num":3924,"status":"success","build_time_millis":6806},"build_parameters":{"CIRCLE_JOB":"build"},"oss":true,"all_commit_details_truncated":false,"committer_date":null,"body":null,"usage_queued_at":"2020-06-21T11:54:54.478Z","context_ids":[],"fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/3928","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":null,"why":"api","user":{"is_user":false,"login":"none"},"vcs_revision":"4abf27c499581fceaa1a3d2903d99a9e4262c920","workflows":{"job_name":"build","job_id":"0aac4cb8-0cbe-4712-8076-e83cdc8c5cc3","workflow_id":"65836404-b6e4-4df3-b25a-4a8841475c85","workspace_id":"65836404-b6e4-4df3-b25a-4a8841475c85","upstream_job_ids":[],"upstream_concurrency_map":{},"workflow_name":"build"},"vcs_tag":null,"build_num":3928,"infrastructure_fail":false,"committer_email":null,"has_artifacts":null,"previous":{"build_num":3927,"status":"queued","build_time_millis":0},"status":"queued","committer_name":null,"retries":null,"subject":null,"vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"queued","no_dependency_cache":false,"stop_time":null,"ssh_disabled":true,"build_time_millis":null,"picard":{"build_agent":{"image":"circleci/picard@sha256:ea6c856572603d47e8f5e8013f8a0b45c0fb91267a6a80ff51068a25e97ed6cd"},"resource_class":{"cpu":2.0,"ram":4096,"class":"medium","name":"Docker
+        Medium"},"executor":"docker"},"circle_yml":{"string":"working_dir: ~/app\n.build_template:\n  steps:\n  -
+        checkout\n  - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+        > ./cc-test-reporter\n  - run: chmod +x ./cc-test-reporter\n  - run: ./cc-test-reporter
+        before-build\n  - run: gem install bundler:2.1.4\n  - run: bundle install
+        --jobs=4 --retry=4 --path vendor/bundle\n  - run: bundle exec rake rubocop\n  -
+        run:\n      name: Run tests\n      command: |\n        bundle exec rspec -r
+        rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml\n        ./cc-test-reporter
+        after-build --exit-code $?\n  working_directory: ~/app\nversion: 2.0\njobs:\n  build:\n    docker:\n    -
+        image: ruby\n    steps:\n    - checkout\n  build_ruby2_7:\n    steps:\n    -
+        checkout\n    - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+        > ./cc-test-reporter\n    - run: chmod +x ./cc-test-reporter\n    - run: ./cc-test-reporter
+        before-build\n    - run: gem install bundler:2.1.4\n    - run: bundle install
+        --jobs=4 --retry=4 --path vendor/bundle\n    - run: bundle exec rake rubocop\n    -
+        run:\n        name: Run tests\n        command: |\n          bundle exec rspec
+        -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml\n          ./cc-test-reporter
+        after-build --exit-code $?\n    working_directory: ~/app\n    docker:\n    -
+        image: ruby:2.7\n  build_ruby2_6:\n    steps:\n    - checkout\n    - run:
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+        > ./cc-test-reporter\n    - run: chmod +x ./cc-test-reporter\n    - run: ./cc-test-reporter
+        before-build\n    - run: gem install bundler:2.1.4\n    - run: bundle install
+        --jobs=4 --retry=4 --path vendor/bundle\n    - run: bundle exec rake rubocop\n    -
+        run:\n        name: Run tests\n        command: |\n          bundle exec rspec
+        -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml\n          ./cc-test-reporter
+        after-build --exit-code $?\n    working_directory: ~/app\n    docker:\n    -
+        image: ruby:2.6\n  build_ruby2_5:\n    steps:\n    - checkout\n    - run:
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+        > ./cc-test-reporter\n    - run: chmod +x ./cc-test-reporter\n    - run: ./cc-test-reporter
+        before-build\n    - run: gem install bundler:2.1.4\n    - run: bundle install
+        --jobs=4 --retry=4 --path vendor/bundle\n    - run: bundle exec rake rubocop\n    -
+        run:\n        name: Run tests\n        command: |\n          bundle exec rspec
+        -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml\n          ./cc-test-reporter
+        after-build --exit-code $?\n    working_directory: ~/app\n    docker:\n    -
+        image: ruby:2.5\n  build_ruby2_4:\n    steps:\n    - checkout\n    - run:
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+        > ./cc-test-reporter\n    - run: chmod +x ./cc-test-reporter\n    - run: ./cc-test-reporter
+        before-build\n    - run: gem install bundler:2.1.4\n    - run: bundle install
+        --jobs=4 --retry=4 --path vendor/bundle\n    - run: bundle exec rake rubocop\n    -
+        run:\n        name: Run tests\n        command: |\n          bundle exec rspec
+        -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml\n          ./cc-test-reporter
+        after-build --exit-code $?\n    working_directory: ~/app\n    docker:\n    -
+        image: ruby:2.4\n  build_ruby2_3:\n    steps:\n    - checkout\n    - run:
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+        > ./cc-test-reporter\n    - run: chmod +x ./cc-test-reporter\n    - run: ./cc-test-reporter
+        before-build\n    - run: gem install bundler:2.1.4\n    - run: bundle install
+        --jobs=4 --retry=4 --path vendor/bundle\n    - run: bundle exec rake rubocop\n    -
+        run:\n        name: Run tests\n        command: |\n          bundle exec rspec
+        -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml\n          ./cc-test-reporter
+        after-build --exit-code $?\n    working_directory: ~/app\n    docker:\n    -
+        image: ruby:2.3\nworkflows:\n  version: 2\n  build:\n    jobs:\n    - build:
+        {}\n"},"messages":[],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[],"platform":"2.0","outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":null,"node":null,"queued_at":"2020-06-21T11:54:54.505Z","canceled":false,"author_email":null}'
+    http_version:
+  recorded_at: Sun, 21 Jun 2020 11:54:55 GMT
+recorded_with: VCR 4.0.0
