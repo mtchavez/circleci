@@ -190,7 +190,7 @@ user.heroku_key 'your-api-key'
 Example response
 
 Empty body response with a `200 OK` response code
-```javascript
+```js
 ""
 ```
 
@@ -212,7 +212,7 @@ user.me
 
 Example response
 
-```javascript
+```js
 {
   "basic_email_prefs" : "smart", // can be "smart", "none" or "all"
   "login" : "pbiggar" // your github username
@@ -239,7 +239,7 @@ projects.get
 
 Example response
 
-```javascript
+```js
 [ {
   "vcs_url": "https://github.com/circleci/mongofinil"
   "followed": true // true if you follow this project in Circle
@@ -308,7 +308,7 @@ project.build_branch 'branch'
 
 Example response
 
-```javascript
+```js
 {
   "compare" : null,
   "previous_successful_build" : {
@@ -409,7 +409,7 @@ project.build_ssh_key 'username', 'repo', 'RSA private key', 'hostname'
 Example response
 
 Empty response body with a `200 OK` successful response code
-```javascript
+```js
 ""
 ```
 
@@ -431,7 +431,7 @@ project.clear_cache
 
 Example response
 
-```javascript
+```js
 {
   "status" : "build caches deleted"
 }
@@ -454,7 +454,7 @@ project.delete_checkout_key 'fingerprint'
 
 Example response
 
-```javascript
+```js
 {"message":"ok"}
 ```
 
@@ -476,7 +476,7 @@ project.enable
 ```
 
 Example response
-```javascript
+```js
 {
     "hall_notify_prefs": nil,
     "irc_password": nil,
@@ -570,7 +570,7 @@ project.envvar
 
 Example response
 
-```javascript
+```js
 [{"name":"foo","value":"xxxx"}]
 ```
 
@@ -592,7 +592,7 @@ project.follow
 
 Example response
 
-```javascript
+```js
 {
     "followed": true,
     "first_build": nil
@@ -617,7 +617,7 @@ project.get_checkout_key 'fingerprint
 
 Example response
 
-```javascript
+```js
 {
     "public_key": "ssh-rsa...",
     "type": "deploy-key", // can be "deploy-key" or "user-key"
@@ -645,7 +645,7 @@ project.checkout_keys
 
 Example response
 
-```javascript
+```js
 [
     {
         "public_key": "ssh-rsa...",
@@ -676,7 +676,7 @@ project.new_checkout_key 'deploy-key
 
 Example response
 
-```javascript
+```js
 {
     "public_key": "ssh-rsa...",
     "type": "deploy-key", // can be "deploy-key" or "user-key"
@@ -710,7 +710,7 @@ project.recent_builds
 
 Example response
 
-```javascript
+```js
 [ {
   "vcs_url" : "https://github.com/circleci/mongofinil",
   "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
@@ -761,7 +761,7 @@ project.recent_builds_branch 'branch'
 
 Example response
 
-```javascript
+```js
 [ {
   "vcs_url" : "https://github.com/circleci/mongofinil",
   "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
@@ -806,7 +806,7 @@ project.settings
 
 Example response
 
-```javascript
+```js
 {
     "hall_notify_prefs": nil,
     "irc_password": nil,
@@ -891,7 +891,7 @@ project.add_envvar environment
 
 Example response
 
-```javascript
+```js
 {"name":"foo","value":"xxxx"}
 ```
 
@@ -915,7 +915,7 @@ project.delete_envvar envvar
 
 Example response
 
-```javascript
+```js
 {"message": "ok"}
 ```
 
@@ -939,7 +939,7 @@ project.ssh_key 'RSA private key', 'hostname'
 Example response
 
 Empty response body with a `200 OK` successful response code
-```javascript
+```js
 ""
 ```
 
@@ -961,7 +961,7 @@ project.unfollow
 
 Example response
 
-```javascript
+```js
 {
     "followed": false
 }
@@ -985,7 +985,7 @@ build = CircleCi::Build.new 'username', 'reponame', nil, 'build', other_build_co
 build.artifacts
 ```
 
-```javascript
+```js
 [
   {
     node_index: 0,
@@ -1020,7 +1020,7 @@ build.cancel
 
 Example response
 
-```javascript
+```js
 {
   "vcs_url" : "https://github.com/circleci/mongofinil",
   "build_url" : "https://circleci.com/gh/circleci/mongofinil/26",
@@ -1069,7 +1069,7 @@ build.get
 
 Example response
 
-```javascript
+```js
 {
   "vcs_url" : "https://github.com/circleci/mongofinil",
   "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
@@ -1162,7 +1162,7 @@ build.retry
 
 Example response
 
-```javascript
+```js
 {
   "vcs_url" : "https://github.com/circleci/mongofinil",
   "build_url" : "https://circleci.com/gh/circleci/mongofinil/23",
@@ -1206,7 +1206,7 @@ build = CircleCi::Build.new 'username', 'reponame', nil, 'build', other_build_co
 build.tests
 ```
 
-```javascript
+```js
 [
   {
     "message" => nil,
@@ -1250,7 +1250,7 @@ recent = CircleCi::RecentBuilds.new other_builds_config
 recent.get
 ```
 
-```javascript
+```js
 [ {
   "vcs_url" : "https://github.com/circleci/mongofinil",
   "build_url" : "https://circleci.com/gh/circleci/mongofinil/22",
