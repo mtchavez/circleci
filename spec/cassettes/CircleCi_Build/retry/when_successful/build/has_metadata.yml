@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/140/retry?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 21 Jun 2020 11:54:57 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=bOsFiXvm9kTjfUUBWApl8YEQFf1UfHcH9Bt6hALCYnt7z2yWqZ5gtMbI8cqTZL7xXoFu5Q982GKk33Esd97lS0e%2BB9yhaaY6ha%2FTYVDndjfwTVjvwaASKixkDEO3%2BezwcdEyf%2BKNNKvn64vNaL8PvNckjF6PInSCb36lF9EA2%2BD5clGlFP1m3gbvUkA66dNqp%2B%2F8%2B9xK1IVdZkaxz3Oq67ba0clu4%2B%2Fjclzcv2sebEI%3D--ykhruaDUJnVa%2BDYyywjE%2BIa1dxN1ga2fuxinxzmJPF4%3D;Path=/;HttpOnly;Expires=Fri,
+        18 Jun 2021 19:46:35 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - circle-www-api-v1-5c76bbddcf-587sq
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 741a3b91-986a-4973-a5fd-08d0b84107f4
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/:build_num/retry"
+      Content-Length:
+      - '1054'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"compare":null,"previous_successful_build":{"build_num":227,"status":"success","build_time_millis":58369},"build_parameters":null,"oss":true,"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","fail_reason":null,"retry_of":140,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/3931","parallel":1,"failed":null,"branch":"typo","username":"mtchavez","author_date":"2016-07-25T10:03:49-07:00","why":"retry","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars2.githubusercontent.com/u/44689?v=4","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"d9a5a207e10209eecef8ed02289824a8630ed67d","vcs_tag":null,"build_num":3931,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":null,"previous":{"build_num":140,"status":"success","build_time_millis":223674},"status":"not_run","committer_name":"Chavez","retries":null,"subject":"Project#envvar
+        method naming fix","vcs_type":"github","timedout":false,"dont_build":"1.0-not-available","lifecycle":"scheduled","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"picard":null,"circle_yml":{"string":"machine:\n  ruby:\n    version:
+        2.2.3\n"},"messages":[{"type":"warning","message":"Your build was not run
+        - reason code (1.0-not-available).","reason":"1.0-not-available"},{"type":"error","message":"Service
+        alert: Your project references CircleCI 1.0, or it has no configuration. CircleCI
+        1.0 and projects without configuration files are no longer supported. You
+        must update your project to use CircleCI 2.0 configuration to continue. <a
+        href=\"https://circleci.com/sunset1-0/\">Learn more</a>."}],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","branch":"typo","author_date":"2016-07-25T10:03:49-07:00","committer_email":"matthew@el-chavez.me","commit":"d9a5a207e10209eecef8ed02289824a8630ed67d","committer_login":"mtchavez","committer_name":"Chavez","subject":"Project#envvar
+        method naming fix","commit_url":"https://github.com/mtchavez/circleci/commit/d9a5a207e10209eecef8ed02289824a8630ed67d","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"platform":"1.0","outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"}'
+    http_version:
+  recorded_at: Sun, 21 Jun 2020 11:54:57 GMT
+recorded_with: VCR 4.0.0

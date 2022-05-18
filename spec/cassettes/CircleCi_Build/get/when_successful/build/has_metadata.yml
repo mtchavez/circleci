@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/140?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 21 Jun 2020 11:54:57 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=Wl5qS8DTdvL7H%2BDCfjc86udBX48vCB%2FoE%2F8igmKV8A7b1ee%2BzyDqzEz2R%2BJjoeZFUxULHFnukABKLx5zRNJ1T95%2BUkeVnum1qewsPGRzTdqtmr9lll18q1E%2BXmuwn0cRbCd0RCEg0QOrpHVa9fTuPoZTW0HlP0ERr7phOwbbrSZm9AYZwslzErbhTZUnW9uXHMvt0Xr3Tb%2B5E0bPwm%2BbS%2FnHjYmYWDkKkCwgsyoFRJE%3D--OIRT8TWN5ap3BXhPn8OHYzm%2Fm05QamXs%2FzeJcCjEI4Y%3D;Path=/;HttpOnly;Expires=Fri,
+        18 Jun 2021 19:40:08 +0000;Max-Age=1209600;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      Vary:
+      - Origin
+      X-Circleci-Identity:
+      - circle-www-api-v1-5c76bbddcf-zxtkc
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 44635497-ba6f-4f3f-b91c-d6eff255cfa9
+      X-Route:
+      - "/api/v1.1/project/:vcs-type/:username/:repo/:build_num/"
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"compare":"https://github.com/mtchavez/circleci/commit/d9a5a207e102","previous_successful_build":{"build_num":139,"status":"success","build_time_millis":83094},"build_parameters":null,"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-07-25T10:03:49-07:00","steps":[],"body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","usage_queued_at":"2016-07-25T17:03:26.930Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/140","parallel":1,"failed":null,"branch":"typo","username":"mtchavez","author_date":"2016-07-25T10:03:49-07:00","why":"github","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars2.githubusercontent.com/u/44689?v=4","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"d9a5a207e10209eecef8ed02289824a8630ed67d","owners":["mtchavez"],"vcs_tag":null,"pull_requests":[{"head_sha":"d9a5a207e10209eecef8ed02289824a8630ed67d","url":"https://github.com/mtchavez/circleci/pull/71"}],"build_num":140,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":false,"previous":null,"status":"success","committer_name":"Chavez","retries":[150,156,149,147,151,155,154,153,148,152,162,157,160,166,164,158,165,169,163,168,159,161,171,175,176,174,170,167,172,173,178,177,183,184,185,186,190,189,194,193,226,225,317,1913,1914,1915,1916,1923,1925,1924,1926,1927,1928,1929,1930,1950,1949,1961,1962,1963,1964,1975,1976,1994,1993,1992,1995,1997,1996,2001,2002,2010,2011,2022,2023,2033,2031,2037,2039,2048,2049,2056,2055,2068,2070,2076,2074,2078,2080,2087,2086,2105,2106,2113,2112,2125,2124,2137,2135,2138,2139,2155,2156,2153,2159,2158,2160,2161,2162,2174,2173,2184,2183,2187,2188,2194,2195,2201,2202,2203,2204,2215,2216,2224,2225,2232,2233,2241,2242,2243,2244,2250,2251,2262,2263,2274,2277,2276,2275,2288,2289,2290,2291,2311,2309,2315,2316,2314,2317,2329,2328,2335,2336,2343,2342,2349,2350,2353,2351,2368,2369,2375,2376,2384,2382,2383,2385,2389,2399,2395,2397,2417,2415,2416,2418,2435,2434,2437,2436,2443,2444,2455,2456,2470,2468,2472,2474,2480,2478,2482,2484,2496,2497,2517,2521,2526,2528,2530,2529,2532,2531,2543,2544,2563,2562,2565,2564,2571,2572,2583,2584,2585,2586,2592,2593,2604,2608,2606,2609,2615,2617,2620,2621,2645,2644,2646,2647,2663,2661,2666,2665,2667,2668,2680,2679,2689,2691,2696,2694,2700,2701,2708,2707,2714,2715,2716,2717,2741,2740,2748,2747,2749,2750,2756,2754,2780,2781,2782,2783,2789,2790,2801,2802,2832,2833,2834,2835,2841,2842,2849,2848,2860,2861,2862,2863,2870,2869,2872,2874,2884,2883,2895,2896,2923,2925,2932,2935,2939,2940,2947,2948,2966,2967,2968,2969,2976,2978,2986,2984,2994,2995,2996,2997,3004,3003,3010,3011,3017,3018,3029,3030,3037,3038,3050,3049,3051,3052,3059,3058,3089,3088,3090,3091,3097,3098,3109,3110,3112,3111,3129,3130,3140,3144,3143,3141,3146,3145,3157,3158,3159,3160,3183,3184,3190,3191,3193,3192,3208,3206,3215,3213,3218,3219,3220,3221,3227,3228,3240,3239,3247,3246,3248,3249,3260,3261,3262,3263,3274,3275,3276,3277,3288,3289,3290,3291,3304,3303,3315,3316,3317,3318,3329,3330,3332,3331,3345,3344,3370,3371,3382,3383,3389,3390,3397,3396,3422,3423,3430,3429,3434,3435,3449,3448,3468,3467,3469,3470,3481,3482,3488,3489,3490,3491,3524,3526,3538,3536,3534,3540,3547,3548,3554,3555,3587,3586,3592,3594,3605,3606,3608,3607,3620,3619,3627,3628,3639,3640,3642,3641,3648,3649,3655,3656,3703,3704,3711,3710,3712,3713,3724,3725,3727,3726,3741,3739,3740,3738,3747,3748,3760,3759,3779,3780,3790,3791,3793,3795,3806,3805,3812,3813,3845,3843,3846,3847,3857,3858,3859,3860,3866,3867,3909,3910,3915,3913,3916,3917,3918,3919,3931,3930],"subject":"Project#envvar
+        method naming fix","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2016-07-25T17:07:31.761Z","ssh_disabled":false,"build_time_millis":223674,"picard":null,"circle_yml":{"string":"machine:\n  ruby:\n    version:
+        2.2.3\n"},"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2016-07-25T17:03:48.087Z","canceler":null,"all_commit_details":[{"committer_date":"2016-07-25T10:03:49-07:00","body":"*
+        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
+        old functionality","branch":"typo","author_date":"2016-07-25T10:03:49-07:00","committer_email":"matthew@el-chavez.me","commit":"d9a5a207e10209eecef8ed02289824a8630ed67d","committer_login":"mtchavez","committer_name":"Chavez","subject":"Project#envvar
+        method naming fix","commit_url":"https://github.com/mtchavez/circleci/commit/d9a5a207e10209eecef8ed02289824a8630ed67d","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"platform":"1.0","outcome":"success","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":[{"public_ip_addr":"54.191.221.156","port":64561,"username":"ubuntu","image_id":"s3://lxc-images-us-west-2/circletar-1741-cc586-20160424T232626Z","ssh_enabled":false}],"queued_at":"2016-07-25T17:03:48.067Z","canceled":false,"author_email":"matthew@el-chavez.me"}'
+    http_version:
+  recorded_at: Sun, 21 Jun 2020 11:54:57 GMT
+recorded_with: VCR 4.0.0
