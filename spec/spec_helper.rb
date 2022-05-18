@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-project_root = File.expand_path(File.dirname(__FILE__) + '/..')
+project_root = File.expand_path("#{File.dirname(__FILE__)}/..")
 $LOAD_PATH << "#{project_root}/lib"
 
 require 'rubygems'

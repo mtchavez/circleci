@@ -26,7 +26,7 @@ RSpec.describe CircleCi::Config do
 
     context 'when default port' do
       it 'is not used in uri' do
-        host_and_port = CircleCi::Config::DEFAULT_HOST + ':80'
+        host_and_port = "#{CircleCi::Config::DEFAULT_HOST}:80"
         expect(config.uri).not_to match(host_and_port)
       end
     end

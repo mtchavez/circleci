@@ -12,6 +12,7 @@ AllCops:
     - 'env/vendor/**/*'
     - 'cookbooks/**/**'
   TargetRubyVersion: 2.5
+  NewCops: enable
 
 RSpec/FilePath:
   Exclude:
@@ -1738,3 +1739,9 @@ Style/WordArray:
   SupportedStyles:
   - percent
   - brackets
+
+RSpec/FactoryBot/CreateList:
+  Include:
+    - spec/factories.rb
+    - spec/factories/**/*.rb
+    - features/support/factories/**/*.rb
