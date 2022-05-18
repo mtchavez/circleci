@@ -1745,3 +1745,6 @@ RSpec/FactoryBot/CreateList:
     - spec/factories.rb
     - spec/factories/**/*.rb
     - features/support/factories/**/*.rb
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10

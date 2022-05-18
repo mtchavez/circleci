@@ -29,7 +29,7 @@ RSpec.describe CircleCi::User, :vcr do
       let(:custom_port) { 9090 }
       let(:custom_config) { CircleCi::Config.new(port: custom_port) }
       let(:new_user) { described_class.new custom_config }
-      let(:fake_request) { instance_double('CircleCi::Request') }
+      let(:fake_request) { instance_double(CircleCi::Request) }
 
       before do
         allow(fake_request).to receive(:get)
