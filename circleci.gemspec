@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
   # Dev Dependencies
   s.add_development_dependency 'dotenv',                   '~> 2.7.1'
   s.add_development_dependency 'gemcutter',                '~> 0.7.1'
-  s.add_development_dependency 'multi_json',               '~> 1.14.1'
   s.add_development_dependency 'pry',                      '~> 0.14.1'
   s.add_development_dependency 'pry-byebug',               '~> 3.8.0'
   s.add_development_dependency 'pry-doc',                  '~> 1.3.0'
