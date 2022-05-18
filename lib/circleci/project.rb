@@ -14,7 +14,7 @@ module CircleCi
     # @param vcs_type [String] - The vcs type i.e. github or bitbucket
     # @param conf     [CircleCi::Config] - Optional config to use for request
     # @return         [CircleCi::Project]
-    def initialize(username = nil, project = nil, vcs_type = nil, conf = nil)
+    def initialize(username = nil, project = nil, vcs_type = nil, conf = nil) # rubocop:disable Metrics/ParameterLists
       super(username, project, vcs_type, nil, conf)
     end
 

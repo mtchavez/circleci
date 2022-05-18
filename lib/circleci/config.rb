@@ -25,7 +25,7 @@ module CircleCi
       @version = version
       @token = token
       @request_overrides = request_overrides
-      @logger = logger || Logger.new(STDOUT)
+      @logger = logger || Logger.new($stdout)
     end
     # rubocop:enable Metrics/ParameterLists
 

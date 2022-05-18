@@ -11,7 +11,8 @@ AllCops:
     - 'vendor/**/*'
     - 'env/vendor/**/*'
     - 'cookbooks/**/**'
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.6
+  NewCops: enable
 
 RSpec/FilePath:
   Exclude:
@@ -77,10 +78,6 @@ Lint/EmptyEnsure:
 
 Lint/EmptyInterpolation:
   Description: Checks for empty string interpolation.
-  Enabled: true
-
-Lint/EndInMethod:
-  Description: END blocks should not be placed inside method definitions.
   Enabled: true
 
 Lint/EnsureReturn:
@@ -201,10 +198,6 @@ Lint/UselessAccessModifier:
 Lint/UselessAssignment:
   Description: Checks for useless assignment to a local variable.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#underscore-unused-vars
-  Enabled: true
-
-Lint/UselessComparison:
-  Description: Checks for comparison of something with itself.
   Enabled: true
 
 Lint/UselessElseWithoutRescue:
@@ -578,16 +571,6 @@ Style/BlockDelimiters:
 Layout/BlockEndNewline:
   Description: Put end statement of multiline block on its own line.
   Enabled: true
-
-# Supports --auto-correct
-Style/BracesAroundHashParameters:
-  Description: Enforce braces style around hash parameters.
-  Enabled: true
-  EnforcedStyle: no_braces
-  SupportedStyles:
-  - braces
-  - no_braces
-  - context_dependent
 
 Style/CaseEquality:
   Description: Avoid explicit use of the case equality operator(===).
@@ -1636,12 +1619,6 @@ Style/SymbolProc:
   - respond_to
 
 # Supports --auto-correct
-Layout/Tab:
-  Description: No hard tabs.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#spaces-indentation
-  Enabled: true
-
-# Supports --auto-correct
 Layout/TrailingEmptyLines:
   Description: Checks trailing blank lines and final newline.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#newline-eof
@@ -1762,3 +1739,12 @@ Style/WordArray:
   SupportedStyles:
   - percent
   - brackets
+
+RSpec/FactoryBot/CreateList:
+  Include:
+    - spec/factories.rb
+    - spec/factories/**/*.rb
+    - features/support/factories/**/*.rb
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10

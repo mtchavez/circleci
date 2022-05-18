@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-project_root = File.expand_path(File.dirname(__FILE__) + '/..')
+project_root = File.expand_path("#{File.dirname(__FILE__)}/..")
 $LOAD_PATH << "#{project_root}/lib"
 
 require 'rubygems'
@@ -31,7 +31,7 @@ RSpec.configure do |config|
 
   config.before do
     CircleCi.configure do |c|
-      c.token = ENV['TOKEN']
+      c.token = ENV.fetch('TOKEN', nil)
       c.request_overrides = {
         verify_ssl: false
       }
@@ -45,8 +45,8 @@ VCR.configure do |config|
   config.ignore_localhost         = true
   config.default_cassette_options = { record: :new_episodes }
 
-  config.filter_sensitive_data('<TOKEN>') { ENV['TOKEN'] }
-  config.filter_sensitive_data('<ORG_NAME>') { ENV['ORGANIZATION'] }
-  config.filter_sensitive_data('<HEROKU_TOKEN>') { ENV['HEROKU_TOKEN'] }
+  config.filter_sensitive_data('<TOKEN>') { ENV.fetch('TOKEN', nil) }
+  config.filter_sensitive_data('<ORG_NAME>') { ENV.fetch('ORGANIZATION', nil) }
+  config.filter_sensitive_data('<HEROKU_TOKEN>') { ENV.fetch('HEROKU_TOKEN', nil) }
   config.configure_rspec_metadata!
 end
