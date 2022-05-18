@@ -1,29 +1,25 @@
 version: 2.1
 
+orbs:
+  ruby: circleci/ruby@1.8.0
+
 working_dir: &working_dir ~/app
 
 .build_template: &build_definition
   steps:
     - checkout
+    - ruby/install-deps
     - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
     - run: chmod +x ./cc-test-reporter
     - run: ./cc-test-reporter before-build
-    - run: gem install bundler:2.1.4
-    - run: bundle install --jobs=4 --retry=4 --path vendor/bundle
-    - run: bundle exec rake rubocop
+    - ruby/rubocop-check
+    - ruby/rspec-test
     - run:
-        name: Run tests
-        command: |
-          bundle exec rspec
-          ./cc-test-reporter after-build --exit-code $?
+        name: Report test coverage
+        command: ./cc-test-reporter after-build --exit-code $?
   working_directory: *working_dir
 
 jobs:
-  build:
-    docker:
-      - image: ruby
-    steps:
-      - checkout
   build_ruby3_0:
     <<: *build_definition
     docker:
@@ -45,7 +41,6 @@ workflows:
   version: 2
   build_ruby_versions:
     jobs:
-      - build
       - build_ruby3_0
       - build_ruby2_7
       - build_ruby2_6
