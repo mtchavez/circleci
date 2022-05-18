@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.homepage              = 'http://github.com/mtchavez/circleci'
   s.rdoc_options          = %w[--charset=UTF-8 --main=README.md]
   s.extra_rdoc_files      = %w[README.md]
-  s.required_ruby_version = '>= 2.5.0'
+  s.required_ruby_version = '>= 2.6.0'
   s.cert_chain            = %w[certs/mtchavez.pem]
   s.signing_key           = File.join(Gem.user_home, '.ssh', 'gem-private_key.pem') if $PROGRAM_NAME.end_with?('gem')
 
