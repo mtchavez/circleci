@@ -79,10 +79,6 @@ Lint/EmptyInterpolation:
   Description: Checks for empty string interpolation.
   Enabled: true
 
-Lint/EndInMethod:
-  Description: END blocks should not be placed inside method definitions.
-  Enabled: true
-
 Lint/EnsureReturn:
   Description: Do not use return in an ensure block.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-return-ensure
@@ -201,10 +197,6 @@ Lint/UselessAccessModifier:
 Lint/UselessAssignment:
   Description: Checks for useless assignment to a local variable.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#underscore-unused-vars
-  Enabled: true
-
-Lint/UselessComparison:
-  Description: Checks for comparison of something with itself.
   Enabled: true
 
 Lint/UselessElseWithoutRescue:
@@ -578,16 +570,6 @@ Style/BlockDelimiters:
 Layout/BlockEndNewline:
   Description: Put end statement of multiline block on its own line.
   Enabled: true
-
-# Supports --auto-correct
-Style/BracesAroundHashParameters:
-  Description: Enforce braces style around hash parameters.
-  Enabled: true
-  EnforcedStyle: no_braces
-  SupportedStyles:
-  - braces
-  - no_braces
-  - context_dependent
 
 Style/CaseEquality:
   Description: Avoid explicit use of the case equality operator(===).
@@ -1634,12 +1616,6 @@ Style/SymbolProc:
   Enabled: true
   IgnoredMethods:
   - respond_to
-
-# Supports --auto-correct
-Layout/Tab:
-  Description: No hard tabs.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#spaces-indentation
-  Enabled: true
 
 # Supports --auto-correct
 Layout/TrailingEmptyLines:
