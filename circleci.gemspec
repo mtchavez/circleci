@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'redcarpet',                '~> 3.5.0'
   s.add_development_dependency 'rspec',                    '~> 3.11.0'
   s.add_development_dependency 'rubocop',                  '~> 1.29.1'
-  s.add_development_dependency 'rubocop-performance',      '~> 1.13.3'
+  s.add_development_dependency 'rubocop-performance',      '~> 1.14.3'
   s.add_development_dependency 'rubocop-rspec',            '~> 2.11.0'
   s.add_development_dependency 'simplecov',                '~> 0.21.2'
   s.add_development_dependency 'simplecov_json_formatter', '~> 0.1.4'
