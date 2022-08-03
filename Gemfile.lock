@@ -15,7 +15,7 @@ GEM
       rexml
     diff-lcs (1.5.0)
     docile (1.4.0)
-    dotenv (2.7.6)
+    dotenv (2.8.1)
     ethon (0.15.0)
       ffi (>= 1.15.0)
     ffi (1.15.5)
@@ -95,7 +95,7 @@ PLATFORMS
 
 DEPENDENCIES
   circleci!
-  dotenv (~> 2.7.1)
+  dotenv (~> 2.8.1)
   gemcutter (~> 0.7.1)
   pry (~> 0.14.1)
   pry-byebug (~> 3.8.0)
