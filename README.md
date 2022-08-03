@@ -7,6 +7,8 @@
 
 Circle CI API Wrapper. Requires ruby `>= 2.0.0`.
 
+⚠️ **403 Forbidden issue with GET Requests fixed in 2.1.0**
+
 ## Install
 
 ```ruby
