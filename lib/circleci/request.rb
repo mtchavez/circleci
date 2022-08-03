@@ -49,7 +49,7 @@ module CircleCi
 
     def connection(verb, body = {})
       req = Net::HTTP.const_get(verb.to_s.capitalize, false).new(@uri, DEFAULT_HEADERS)
-      req.body = JSON.dump(body)
+      req.body = JSON.dump(body) unless verb == :get
       req
     end
 
