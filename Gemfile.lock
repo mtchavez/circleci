@@ -82,7 +82,7 @@ GEM
       ethon (>= 0.9.0)
     unicode-display_width (2.1.0)
     vcr (6.1.0)
-    webmock (3.14.0)
+    webmock (3.17.0)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -111,7 +111,7 @@ DEPENDENCIES
   simplecov_json_formatter (~> 0.1.4)
   typhoeus (~> 1.4.0)
   vcr (~> 6.1.0)
-  webmock (~> 3.14.0)
+  webmock (~> 3.17.0)
   yard (~> 0.9.11)
 
 BUNDLED WITH
